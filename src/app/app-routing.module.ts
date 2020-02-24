@@ -49,7 +49,11 @@ const routes: Routes = [
   {
     path: 'restaurants',
     loadChildren: () => import('./restaurants/restaurants.module').then( m => m.RestaurantsPageModule)
+  },  {
+    path: 'vendor-admin',
+    loadChildren: () => import('./pages/vendor-admin/vendor-admin.module').then( m => m.VendorAdminPageModule)
   },
+
 
 
 ];
