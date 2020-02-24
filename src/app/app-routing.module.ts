@@ -53,6 +53,10 @@ const routes: Routes = [
     path: 'vendor-admin',
     loadChildren: () => import('./pages/vendor-admin/vendor-admin.module').then( m => m.VendorAdminPageModule)
   },
+  {
+    path: 'front-admin-ghost',
+    loadChildren: () => import('./pages/front-admin-ghost/front-admin-ghost.module').then( m => m.FrontAdminGhostPageModule)
+  },
 
 
 
