@@ -5,58 +5,62 @@
 </ion-header>
 
 <ion-content>
+  <div class="wrapper">
+    <div class="nav">
+        <div class="menu">
+            <ul>
+                <li><a href="/profile">My Profile</a></li>
+                <li><a href="/">Previous Orders</a></li>
+                <li><a href="/add-menu">Add MENU</a></li>
+                <li><a href="/overview">Monthly Overview</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+      <ion-list>
+        <ion-row>
+         <ion-img class="logo" src="assets/images/logo4.jpeg" alt=""></ion-img>
+        </ion-row>
+      </ion-list>
 
-  <ion-menu side="start" menuId="first" contentId="main">
-    <ion-header>
-      <ion-toolbar color="primary">
-        <ion-title>Start Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
+      <ion-card>
+        <ion-card-header>ORDERS</ion-card-header>
+        <ion-card-content>
+          <table class="table table-bordered" color="danger">
+            <thead>
+              <tr>
+                <th scope="col">Order Number</th>
+                <th scope="col">Order Name</th>
+                <th scope="col">Order Status</th>
+                <th scope="col">Order Update</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Sphalo23</td>
+                <td>Preparing...</td>
+                <td><button type="button" class="btn btn-primary">Update Status</button></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Sphatlo77</td>
+                <td>Preparing...</td>
+                <td><button type="button" class="btn btn-primary">Update Status</button></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Sphatlo01</td>
+                <td>Ready</td>
+                <td><button type="button" class="btn btn-primary">Update Status</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </ion-card-content>
+      </ion-card>
   
-  <ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
-    <ion-header>
-      <ion-toolbar color="tertiary">
-        <ion-title>Custom Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-  
-  <ion-menu side="end" type="push" contentId="main">
-    <ion-header>
-      <ion-toolbar color="danger">
-        <ion-title>End Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-  
-  <ion-router-outlet id="main"></ion-router-outlet>
+  <!--<ion-router-outlet id="main"></ion-router-outlet>-->
+
+
 
 </ion-content>
