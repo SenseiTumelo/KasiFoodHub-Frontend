@@ -53,6 +53,18 @@ const routes: Routes = [
     path: 'vendor-admin',
     loadChildren: () => import('./pages/vendor-admin/vendor-admin.module').then( m => m.VendorAdminPageModule)
   },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/vendor/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'add-menu',
+    loadChildren: () => import('./pages/vendor/add-menu/add-menu.module').then( m => m.AddMenuPageModule)
+  },
+  {
+    path: 'overview',
+    loadChildren: () => import('./pages/vendor/overview/overview.module').then( m => m.OverviewPageModule)
+  },
 
 
 
