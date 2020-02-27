@@ -11,11 +11,8 @@ const routes: Routes = [
       { path:'signup', loadChildren:'./pages/signup/signup.module'},
       { path: 'home', loadChildren: './home/home.module'}
     ]
-  },
-  {
-    path:'',
-    redirectTo:'./home/home.module'
   }
+
 ];
 
 @NgModule({
