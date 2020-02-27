@@ -5,12 +5,16 @@ import { MenuPage } from './menu.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'menu',
     component: MenuPage,
     children: [
-      { path:'signup', loadChildren:'../pages/signup/signup.module'},
-      { path: 'home', loadChildren: '../pages/home/home.module'}
+      { path:'signup', loadChildren:'./pages/signup/signup.module'},
+      { path: 'home', loadChildren: './home/home.module'}
     ]
+  },
+  {
+    path:'',
+    redirectTo:'./home/home.module'
   }
 ];
 
