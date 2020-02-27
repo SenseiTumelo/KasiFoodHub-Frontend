@@ -12,7 +12,7 @@ export class MenuPage implements OnInit {
 
   ngOnInit() {
   }
-  openFirst() {
+ /* openFirst() {
     this.menu.enable(true, 'first');
     this.menu.open('first');
   }
@@ -23,6 +23,19 @@ export class MenuPage implements OnInit {
     openCustom() {
       this.menu.enable(true, 'custom');
       this.menu.open('custom');
-    }
+    }*/
+    pages= [
+
+      {
+        title:'Home',
+        url: '/menu/home',
+        icon:'home'
+      },
+      {
+         title: 'Sign Up',
+         url: '/mune/singup',
+         icon:'login'
+      }
+    ]
 
 }

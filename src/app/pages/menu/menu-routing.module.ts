@@ -7,7 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: MenuPage,
-  
+    children: [
+      { path:'signup', loadChildren:'../pages/signup/signup.module'},
+      { path: 'home', loadChildren: '../pages/home/home.module'}
+    ]
   }
 ];
 
