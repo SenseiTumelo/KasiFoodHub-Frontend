@@ -8,8 +8,8 @@ const routes: Routes = [
     path: 'menu',
     component: MenuPage,
     children: [
-      { path:'signup', loadChildren:'./pages/signup/signup.module'},
-      { path: 'home', loadChildren: './home/home.module'}
+      { path:'signup', loadChildren:'../pages/signup/signup.module'},
+      { path: 'home', loadChildren: '../home/home.module'}
     ]
   }
 

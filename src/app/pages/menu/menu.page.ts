@@ -18,7 +18,7 @@ export class MenuPage implements OnInit {
     },
     {
        title: 'Sign Up',
-       url: '/menu/singup',
+       url: '/menu/signup',
        icon:'login'
     }
   ]
