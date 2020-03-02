@@ -12,7 +12,7 @@ export class RestaurantsPage implements OnInit {
   constructor(private route: Router, private restService: RestaurantService) { }
    rest: any = [];
   ngOnInit() {
-    this.getData();
+    
   }
  order(){
    this.route.navigateByUrl('/order2');
@@ -23,7 +23,5 @@ export class RestaurantsPage implements OnInit {
  thirdOrder(){
    this.route.navigateByUrl('/order3');
  }
- getData(){
-   this.restService.getRest().subscribe((data: any)=> {this.rest =data; console.log(this.rest);});
- }
+
 }

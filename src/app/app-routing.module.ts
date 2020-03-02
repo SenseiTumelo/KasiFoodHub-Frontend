@@ -66,6 +66,13 @@ const routes: Routes = [
     path: 'overview',
     loadChildren: () => import('./pages/vendor/overview/overview.module').then( m => m.OverviewPageModule)
   },
+  {
+    path: 'sidebar',
+    loadChildren: () => import('./sidebar/sidebar.component').then( m => m.SidebarComponent)
+  },  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },
 
 
 
