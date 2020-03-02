@@ -38,12 +38,18 @@
     <img src = 'https://cdn.primedia.co.za/primedia-broadcasting/image/upload/v1488364912/qjwnidvakslcmh6rbp62.jpg' >
     <ion-button expand="block" color = 'success'  (click)="gotoRest()">View all Restaurant</ion-button>
   </ion-card>
-  
+  <!--testing the admin -->
+ <div *ngFor="let a of adminData">
+   <ion-title >{{a.system_id}}</ion-title>
+ </div>
+
+
+
 
   <!--Daily Deals ,where you will see the advertisement and also special from the restaurant-->
   <ion-card>
     <ion-card-title>Daily Deals</ion-card-title>
-    <ion-slides>
+    <ion-slides >
       <ion-slide style="background-color: grey">
         <ion-card >
           <img
