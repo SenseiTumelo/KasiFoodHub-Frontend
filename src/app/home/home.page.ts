@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NavController, NavParams, AlertController, ActionSheetController } from '@ionic/angular';
+import { NavController, NavParams, AlertController, ActionSheetController ,LoadingController} from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,8 +11,10 @@ export class HomePage implements OnInit {
 
   
  
-   constructor(private route: Router,public actionSheetController: ActionSheetController) {}
+   constructor(private route: Router,public actionSheetController: ActionSheetController,private loadingCtrl: LoadingController) {}
 
+
+   //this a functionof the actionsheet
    async presentActionSheet() {
      const actionSheet = await this.actionSheetController.create({
        header: 'Menu',
@@ -44,28 +46,54 @@ export class HomePage implements OnInit {
          icon: 'cart',
          handler: () => {
            console.log('Favorite clicked');
-           this.route.navigateByUrl('/order');
+           this.route.navigateByUrl('/cart-modal');
          }
        },
         {
-         text: 'Sign in',
-         icon: 'heart',
+         text: 'Register as a Vendor',
+         icon: 'person',
          handler: () => {
            console.log('Favorite clicked');
-           this.route.navigateByUrl('/login');
+           this.route.navigateByUrl('/signupadmin');
          }
-       }, {
+       }, 
+       {
+        text: 'Register as a customer',
+        icon: 'person',
+        handler: () => {
+          console.log('Favorite clicked');
+          this.route.navigateByUrl('/signupcust');
+        }
+      },   {
+        text: 'Sign in',
+        icon: 'person',
+        handler: () => {
+          console.log('Favorite clicked');
+          this.route.navigateByUrl('/login');
+        }
+      },{
          text: 'Cancel',
          icon: 'close',
          role: 'cancel',
          handler: () => {
            console.log('Cancel clicked');
-           this.route.navigateByUrl('home');
          }
        }]
      });
      await actionSheet.present();
    }
+
+
+   //Loader controller function
+  /* presentLoading() {
+    const loader = this.loadingCtrl.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+    loader.present();
+    \
+    
+  }*/
   ngOnInit() {
   }
   gotoRest(){

@@ -9,8 +9,8 @@ import { RestaurantService } from '../services/restaurant.service';
 })
 export class RestaurantsPage implements OnInit {
 
-  constructor(private route: Router, private restService: RestaurantService) { }
-   rest: any = [];
+  constructor(private route: Router) { }
+   
   ngOnInit() {
     
   }
