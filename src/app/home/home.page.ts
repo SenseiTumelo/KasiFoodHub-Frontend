@@ -119,7 +119,7 @@ export class HomePage implements OnInit {
   }*/
 
   //testing 
-  adminData:any = [];
+  adminData:any  = [];
 
   public getRest(){
     return this.dataService.adminService().subscribe((data:any) => {this.adminData = data; console.log(this.adminData);});

@@ -15,10 +15,10 @@ export class RestaurantsPage implements OnInit {
   ngOnInit() {
     
   }
-  list()
+ /* list()
   {
     return this.asheet.presentActionSheet()
-  }
+  }*/
  order(){
    this.route.navigateByUrl('/order2');
  }
