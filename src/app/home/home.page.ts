@@ -11,11 +11,13 @@ import { DataService } from '../services/data.service';
 export class HomePage implements OnInit {
 
   
- 
-   constructor(private route: Router,public actionSheetController: ActionSheetController,private loadingCtrl: LoadingController,private dataService: DataService) {}
+   // tslint:disable-next-line: max-line-length
+   constructor(private route: Router,public actionSheetController: ActionSheetController,
+               private loadingCtrl: LoadingController,private dataService: DataService) {}
 
-
-   //this a function of the actionsheet  
+   searchTerm: any = "";
+   jsonData: any;
+   // this a function of the actionsheet  
 
    async presentActionSheet() {
      const actionSheet = await this.actionSheetController.create({
@@ -24,7 +26,6 @@ export class HomePage implements OnInit {
          text: 'Home',
          role: 'destructive',
          icon: 'home-outline',
-         
          handler: () => {
            console.log('Home clicked');
            this.route.navigateByUrl('home');
@@ -58,7 +59,7 @@ export class HomePage implements OnInit {
            console.log('Favorite clicked');
            this.route.navigateByUrl('/signupadmin');
          }
-       }, 
+       },
        {
         text: 'Register as a customer',
         icon: 'person-add-outline',
@@ -77,7 +78,7 @@ export class HomePage implements OnInit {
         text: 'History',
         icon: 'time-outline',
         handler: () => {
-          console.log('Share clicked');
+          console.log('history clicked');
           this.route.navigateByUrl('/profile');
         }
       }, {
@@ -98,6 +99,7 @@ export class HomePage implements OnInit {
          text: 'Cancel',
          icon: 'close',
          role: 'cancel',
+    
          handler: () => {
            console.log('Cancel clicked');
          }
@@ -115,14 +117,13 @@ export class HomePage implements OnInit {
     });
     loader.present();
     \
-    
   }*/
 
-  //testing 
-  adminData:any  = [];
+  // testing
+  adminData: any =[];
 
   public getRest(){
-    return this.dataService.adminService().subscribe((data:any) => {this.adminData = data; console.log(this.adminData);});
+    return this.dataService.adminService().subscribe((data: any) => {this.adminData = data; console.log(this.adminData);});
   }
 
   ngOnInit() {
@@ -131,5 +132,18 @@ export class HomePage implements OnInit {
   gotoRest(){
     this.route.navigateByUrl('/restaurants');
   }
+
+  // search bar 
+  
+  ionViewDidLoad(){
+    this.setFilteredItems();
+  }
+
+  setFilteredItems() {
+ 
+        this.jsonData = this.dataService.filterItems(this.searchTerm);
+ 
+    }
+  
 
 }
