@@ -12,7 +12,7 @@ export class DataService {
   constructor(private http: HttpClient) {
     // data for testing searchbar, this will be deleted !!!
     this.jsonData=[
-      {"id":1,"label":"saw","name":"Sephahlo"},
+      {"id":1,"label":"saw","name": "Sephahlo"},
       {"id":2,"label":"saw1","name":"Mogodu"},
       {"id":3,"label":"saw2","name":"malana"},
       {"id":3,"label":"saw2","name":"Gowdaman"},

@@ -78,7 +78,7 @@ export class HomePage implements OnInit {
         text: 'History',
         icon: 'time-outline',
         handler: () => {
-          console.log('history clicked');
+          console.log('Share clicked');
           this.route.navigateByUrl('/profile');
         }
       }, {
@@ -120,9 +120,9 @@ export class HomePage implements OnInit {
   }*/
 
   // testing
-  adminData: any =[];
+  adminData: any =[]; 
 
-  public getRest(){
+  public getRest(){ //ive used the adminData here to test the connection. some of the variables should be change..pls dont touch
     return this.dataService.adminService().subscribe((data: any) => {this.adminData = data; console.log(this.adminData);});
   }
 
