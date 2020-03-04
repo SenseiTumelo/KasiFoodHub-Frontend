@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-  
   constructor(private route: Router) {
 
    }
@@ -17,8 +16,15 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
   }
-  gotoRest(){
+  gotoRest() {
     this.route.navigateByUrl('/restaurants');
   }
+  goApply() {
+    this.route.navigateByUrl('/rest-apply');
+  }
+  reset() {
+    this.route.navigateByUrl('/reset-password');
+  }
+
 
 }

@@ -66,6 +66,15 @@ const routes: Routes = [
     path: 'overview',
     loadChildren: () => import('./pages/vendor/overview/overview.module').then( m => m.OverviewPageModule)
   },
+  {
+    path: 'rest-apply',
+    loadChildren: () => import('./pages/rest-apply/rest-apply.module').then( m => m.RestApplyPageModule)
+  },
+  {
+    path: 'reset-password',
+    loadChildren: () => import('./pages/reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
+  },
+
 
 
 

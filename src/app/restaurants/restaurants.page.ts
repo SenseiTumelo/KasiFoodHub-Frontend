@@ -24,6 +24,6 @@ export class RestaurantsPage implements OnInit {
    this.route.navigateByUrl('/order3');
  }
  getData(){
-   this.restService.getRest().subscribe((data: any)=> {this.rest =data; console.log(this.rest);});
+  // this.restService.getRest().subscribe((data: any)=> {this.rest =data; console.log(this.rest);});
  }
 }
