@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-vendor-admin',
   templateUrl: './vendor-admin.page.html',
@@ -12,4 +13,5 @@ export class VendorAdminPage implements OnInit {
   ngOnInit() {
   }
 
+  
 }

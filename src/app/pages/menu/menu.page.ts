@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Router, RouterEvent } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.page.html',
