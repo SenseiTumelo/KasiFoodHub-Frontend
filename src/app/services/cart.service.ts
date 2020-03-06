@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, from } from 'rxjs';
+import { HttpClient} from '@angular/common/http';
 
 export interface Product{
   id: number;
@@ -27,9 +28,10 @@ const ITEMS_KEY = 'myItems';
 })
 export class CartService {
 
+  private _addProduct = "http://168.172.185.4:3000/viewProduct";
   //read
   getItems(){
-
+    return this.http.get<any>(this._addProduct);
   }
 
   data: Product[] = [
@@ -58,9 +60,10 @@ export class CartService {
   ];
 
   private cart = [];
+  private ext = [];
   private cartItemCount = new BehaviorSubject(0);
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getProducts(){
     return this.data;
@@ -75,10 +78,31 @@ export class CartService {
   getCart(){
     return this.cart;
   }
+  getExt(){
+    return this.ext;
+  }
   getCartItemCount(){
     return this.cartItemCount;
   }
-
+  extraProd(product){
+    let added = false;
+    for(let p of this.ext){
+      if(p.id === product.id){
+        added = true;
+        break;
+      }
+    }
+    if(!added){
+      this.ext.push(product);
+    }
+  }
+  removeExtra(product){
+    for(let [index, p] of this.ext.entries()){
+      if(p.id === product.id){
+          this.ext.splice(index, 1);
+      }
+    }
+  }
   addProduct(product){
     let added = false;
     for(let p of this.cart){

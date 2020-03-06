@@ -49,7 +49,8 @@ const routes: Routes = [
   {
     path: 'restaurants',
     loadChildren: () => import('./restaurants/restaurants.module').then( m => m.RestaurantsPageModule)
-  },  {
+  },
+  {
     path: 'vendor-admin',
     loadChildren: () => import('./pages/vendor-admin/vendor-admin.module').then( m => m.VendorAdminPageModule)
   },
@@ -64,6 +65,14 @@ const routes: Routes = [
   {
     path: 'overview',
     loadChildren: () => import('./pages/vendor/overview/overview.module').then( m => m.OverviewPageModule)
+  },
+  {
+    path: 'admin-login',
+    loadChildren: () => import('./pages/admin-login/admin-login.module').then( m => m.AdminLoginPageModule)
+  },
+  {
+    path: 'extras',
+    loadChildren: () => import('./pages/extras/extras.module').then( m => m.ExtrasPageModule)
   },
 
 

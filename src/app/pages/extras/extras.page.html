@@ -1,0 +1,81 @@
+
+<ion-content>
+  <div id="myModal3">
+  
+  <div *ngFor="let p of ext">
+  <div class="ion-text-end">
+    <ion-button (click)="close()" (click)="removeExtraItem(p)" fill="clear" color="dark">
+      <ion-icon name="close" slot="start"></ion-icon>
+    </ion-button>
+  </div>
+
+  <ion-item>
+    <b>{{p.name}}</b>
+  </ion-item>
+
+  <ion-list>
+    <ion-radio-group>
+      <ion-list-header>
+        <ion-label color="">
+          Flavours
+        </ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label color="medium">Plain</ion-label>
+        <ion-radio value="plain"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="success">Lemon&Herb</ion-label>
+        <ion-radio value="Lemon&Herb"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="warning">Mild</ion-label>
+        <ion-radio value="mild"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="orange">Hot</ion-label>
+        <ion-radio value="hot"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="danger">Extra Hot</ion-label>
+        <ion-radio value="extra Hot"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Sources</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-radio value="Tomato Sauce"></ion-radio>
+      <ion-label>Tomato Sauce</ion-label>
+      <ion-label class="ion-text-right">{{0 | currency:'R'}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-radio></ion-radio>
+      <ion-label>Mustard</ion-label>
+      <ion-label class="ion-text-right">{{0 | currency:'R'}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-radio></ion-radio>
+      <ion-label>Chilli Sauce</ion-label>
+      <ion-label class="ion-text-right">{{0 | currency:'R'}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-radio></ion-radio>
+      <ion-label>Spicy Cheese</ion-label>
+      <ion-label class="ion-text-right">{{0 | currency:'R'}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  
+      <ion-button expand="full" (click)="removeExtraItem(p)" (click)="addToCart(p)" (click)="close()">Add to Cart</ion-button>
+ </div>
+</div>
+
+</ion-content>
