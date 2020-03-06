@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color = 'warning'>
     <ion-title>Menu</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,19 +11,21 @@
     <ion-card-content>
       <form>
         <ion-item>
-          <ion-label>Vendor ID</ion-label>
-          <ion-input type='number'></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label>Product Name</ion-label>
+          <ion-label position="floating">Product Name</ion-label>
           <ion-input type='text'></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label>Price R</ion-label>
+          <ion-label position="floating">Product Description</ion-label>
+          <ion-input type='text'></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Price R</ion-label>
           <ion-input type='number'></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label>Image</ion-label>
+          <ion-label position="fixed">Image</ion-label>
           <label class="control-label small" for="file_img">(jpg/png):</label> <input type="file" name="file_img">
         </ion-item>
         <ion-item>

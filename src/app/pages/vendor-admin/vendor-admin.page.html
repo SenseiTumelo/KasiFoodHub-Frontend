@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-toolbar>
+<!--ion-header>
+  <ion-toolbar color = "dark">
     <ion-title>Vendor Admin</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -59,8 +59,66 @@
         </ion-card-content>
       </ion-card>
   
-  <!--<ion-router-outlet id="main"></ion-router-outlet>-->
+  <<ion-router-outlet id="main"></ion-router-outlet>>
 
 
 
-</ion-content>
+</ion-content-->
+<ion-header>
+  <ion-toolbar color = "dark">
+    <ion-title>
+      Restaurant Admin
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="dark">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item href="/profile">Profile</ion-item>
+        <ion-item href="/add-menu">Add/ Create Menu</ion-item>
+        <ion-item href="/add-menu">Profile</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+
+  <button  (click)="openEnd()" >click</button>
+  <div class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        Menu Item Demands per month
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Doughnut Chart
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #doughnutCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Line Chart
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+  </div>
+ </ion-content>
+
