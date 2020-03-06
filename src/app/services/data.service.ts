@@ -34,13 +34,13 @@ export class DataService {
   log_url = '';
   show_rest_url = '';
   prof_url = '';
-  admin_prof_url = 'http://168.172.185.4:3000/admin';
+  admin_prof_url = 'http://168.172.185.4:6000/admin';
 
   adminService(){
     return this.http.get<any>(this.admin_prof_url); 
   }
 
-  //this was used for testing the search bar
+  // this was used for testing the search bar
   filterItems(searchTerm){
  
     return this.jsonData.filter((item) => {

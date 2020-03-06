@@ -34,7 +34,9 @@
     
     </ion-slides>
   </ion-card>
-
+   <div  *ngFor = "let a of adminData">
+       <ion-title>{{a.id}}</ion-title>
+   </div>
   <!--Restaurants picture with the view button-->
   <ion-card style="background-color: grey">
     <ion-card-title>Resturants</ion-card-title>
