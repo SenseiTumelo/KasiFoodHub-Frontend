@@ -1,6 +1,6 @@
 
   <ion-header>
-    <ion-toolbar color="primary">
+    <ion-toolbar color="warning">
       <ion-icon name="menu" (click)="presentActionSheet()"></ion-icon>
       <ion-title>Order</ion-title>
     </ion-toolbar>
@@ -36,7 +36,7 @@
        <ion-row>
         <ion-img class="logo" src="assets/images/logo3.png" alt=""></ion-img>
        </ion-row>
-     <ion-card color="" *ngFor="let p of prod">
+     <ion-card color="light" *ngFor="let p of prod">
       <ion-card-header>
         <ion-card-title>{{ p.name}}</ion-card-title>
       </ion-card-header>

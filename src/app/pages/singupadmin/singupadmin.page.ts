@@ -19,6 +19,9 @@ export class SingupadminPage implements OnInit {
  navAdmin(){
   return this.route.navigateByUrl('/vendor-admin')
 }
+ btnClear(){
+  
+}
 
 
 }
