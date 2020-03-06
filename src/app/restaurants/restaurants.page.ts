@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RestaurantService } from '../services/restaurant.service';
+import { ActionsheetComponent } from '../components/actionsheet/actionsheet.component';
 
 @Component({
   selector: 'app-restaurants',
@@ -8,10 +10,15 @@ import { Router } from '@angular/router';
 })
 export class RestaurantsPage implements OnInit {
 
-  constructor(private route: Router) { }
-
+  constructor(private route: Router, private asheet:ActionsheetComponent) { }
+   
   ngOnInit() {
+    
   }
+ /* list()
+  {
+    return this.asheet.presentActionSheet()
+  }*/
  order(){
    this.route.navigateByUrl('/order2');
  }
@@ -21,4 +28,5 @@ export class RestaurantsPage implements OnInit {
  thirdOrder(){
    this.route.navigateByUrl('/order3');
  }
+
 }

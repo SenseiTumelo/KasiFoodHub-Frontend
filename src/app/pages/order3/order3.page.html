@@ -6,7 +6,8 @@
     [stopPropagation]="showPropagate">
   ></ion-backdrop>-->
   <ion-header>
-    <ion-toolbar color="primary">
+    <ion-toolbar color="warning">
+      <ion-icon name="menu" (click)="presentActionSheet()"></ion-icon>
       <ion-title>Order</ion-title>
     </ion-toolbar>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
@@ -44,6 +45,7 @@
        <ion-row>
         <ion-img class="logo" src="assets/images/logo3.png" alt=""></ion-img>
        </ion-row>
+
      <ion-card data-backdrop="static" (click)="exProduct(p)" (click)="openExtras()" color="" *ngFor="let p of prod">
       <ion-card-header>
         <ion-card-title>{{ p.name}}</ion-card-title>

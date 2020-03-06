@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar color = 'warning'>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>singupcust</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -43,5 +46,6 @@
     <ion-input></ion-input>
   </ion-item>
   <ion-button shape="round" (click)=" goHome()">Register</ion-button>
+  <ion-button shape = "round" (click)= "btnClear()">Clear</ion-button>
 </ion-card>
 </ion-content>
