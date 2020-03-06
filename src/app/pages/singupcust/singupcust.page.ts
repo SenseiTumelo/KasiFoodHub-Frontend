@@ -16,5 +16,8 @@ export class SingupcustPage implements OnInit {
  {
    this.route.navigateByUrl('/home');
  }
+ btnClear(){
+   
+ }
 
 }

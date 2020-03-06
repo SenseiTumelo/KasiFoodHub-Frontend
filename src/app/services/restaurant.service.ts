@@ -8,5 +8,4 @@ export class RestaurantService {
 
   constructor() { }
 
-
 }
