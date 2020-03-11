@@ -63,7 +63,7 @@ export class VendorAdminPage implements OnInit {
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
       type: "doughnut",
       data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["Sphahlo", "Skopo", "Pap And Vors", "Pap", "Purple", "Orange"],
         datasets: [
           {
             label: "# of Votes",

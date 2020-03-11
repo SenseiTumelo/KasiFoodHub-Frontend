@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RestaurantService } from '../services/restaurant.service';
-import { ActionsheetComponent } from '../components/actionsheet/actionsheet.component';
+//import { RestaurantService } from '../services/restaurant.service';
+//import { ActionsheetComponent } from '../components/actionsheet/actionsheet.component';
 
 @Component({
   selector: 'app-restaurants',
@@ -10,7 +10,7 @@ import { ActionsheetComponent } from '../components/actionsheet/actionsheet.comp
 })
 export class RestaurantsPage implements OnInit {
 
-  constructor(private route: Router, private asheet:ActionsheetComponent) { }
+  constructor(private route: Router) { }
    
   ngOnInit() {
     
