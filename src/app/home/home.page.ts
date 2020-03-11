@@ -133,17 +133,13 @@ export class HomePage implements OnInit {
     this.route.navigateByUrl('/restaurants');
   }
 
-  // search bar 
-  
+  // search bar
   ionViewDidLoad(){
     this.setFilteredItems();
   }
 
   setFilteredItems() {
- 
         this.jsonData = this.dataService.filterItems(this.searchTerm);
- 
     }
-  
 
 }
