@@ -7,6 +7,6 @@ export class Employee{
    orderingData:Date;
    address:string;
    Price:string;
-   photoPath?:string;
+  // photoPath?:string;
 
 }
