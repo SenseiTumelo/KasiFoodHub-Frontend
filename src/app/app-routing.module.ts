@@ -39,11 +39,13 @@ const routes: Routes = [
     loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
   },
   {
+
     path: 'signupadmin',
     loadChildren: () => import('./pages/singupadmin/singupadmin.module').then( m => m.SingupadminPageModule)
   },
   {
     path: 'signupcust',
+
     loadChildren: () => import('./pages/singupcust/singupcust.module').then( m => m.SingupcustPageModule)
   },
   {
@@ -67,6 +69,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/vendor/overview/overview.module').then( m => m.OverviewPageModule)
   },
   {
+
+    path: 'admin-login',
+    loadChildren: () => import('./pages/admin-login/admin-login.module').then( m => m.AdminLoginPageModule)
+  },
+  {
+    path: 'extras',
+    loadChildren: () => import('./pages/extras/extras.module').then( m => m.ExtrasPageModule)
+  },
+
     path: 'sidebar',
     loadChildren: () => import('./sidebar/sidebar.component').then( m => m.SidebarComponent)
   },
