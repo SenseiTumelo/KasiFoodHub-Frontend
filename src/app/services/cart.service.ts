@@ -21,6 +21,11 @@ export interface Prods{
   amount: number;
   image: ImageBitmap;
 }
+export interface Extras{
+  id: number;
+  name: string;
+  price: number;
+}
 
 const ITEMS_KEY = 'myItems';
 @Injectable({
@@ -58,6 +63,12 @@ export class CartService {
     {id:2, name:'2 Wings', price:15.99, amount:1},
     {id:2, name:'Maotwana&Pap', price:19.99, amount:1},
   ];
+  datar: Extras[] =[
+    {id:0, name:'Tomato Sauce',price:0.00},
+    {id:1, name:'Mustard',price:1.99},
+    {id:2, name:'Chilli Sauce',price:1.99},
+    {id:3, name:'Spicy Cheese',price:3.46}
+  ];
 
   private cart = [];
   private ext = [];
@@ -67,7 +78,6 @@ export class CartService {
 
   getProducts(){
     return this.data;
-    
   }
   getProduct(){
     return this.dat;
@@ -80,6 +90,9 @@ export class CartService {
   }
   getExt(){
     return this.ext;
+  }
+  getExtras(){
+    return this.datar;
   }
   getCartItemCount(){
     return this.cartItemCount;
@@ -135,6 +148,7 @@ export class CartService {
         this.cartItemCount.next(this.cartItemCount.value - p.amount);
         
           this.cart.splice(index, 1);
+          
       }
     }
   }
@@ -146,4 +160,5 @@ export class CartService {
       (<HTMLInputElement> document.getElementById("check")).disabled = false;
     }
   }
+  
 }
