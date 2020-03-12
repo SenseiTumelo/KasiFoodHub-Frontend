@@ -25,7 +25,6 @@ export interface Employee{
   id:number;
    name:string;
    shopName:string;
-   phoneNumber?:string;
    orderingData:Date;
    address:string;
    Price:string;
@@ -69,15 +68,20 @@ export class CartService {
   ];
 
   employees:Employee[]=[
-    {id:1,name:'Mark',shopName:'Shisa Nyama',phoneNumber:'0139266862',orderingData:new Date('10/25/1988'),address:'2427 Block L',Price:'R49.99',photoPath:'assets/images/food1.jpg'},
-    {id:2,name:'Mary',shopName:'KFC',phoneNumber:'0129284862',orderingData:new Date('11/05/1978'),address:'024 Block H',Price:'R79.50',photoPath:'assets/images/kota1.jpg'},
-    {id:2,name:'john',shopName:'wimpy',phoneNumber:'0129284862',orderingData:new Date('11/05/1978'),address:'014 Block vv',Price:'R79.50',photoPath:'assets/images/food4.jpg'}
+    {id:1,name:'Skopo',shopName:'Shisa Nyama',orderingData:new Date('10/25/1988'),address:'2427 Block L',Price:'R49.99',photoPath:'assets/images/food1.png'},
+    {id:2,name:'Kota',shopName:'KFC',orderingData:new Date('11/05/1978'),address:'024 Block H',Price:'R79.50',photoPath:'assets/images/kota1.jpg'},
+    {id:2,name:'Beef',shopName:'wimpy',orderingData:new Date('11/05/1978'),address:'014 Block vv',Price:'R79.50',photoPath:'assets/images/food4.jpg'}
   ]
 
   private cart = [];
   private cartItemCount = new BehaviorSubject(0);
 
   constructor() { }
+
+  getEmploye(){
+    return this.employees;
+    
+  }
 
   getProducts(){
     return this.data;
