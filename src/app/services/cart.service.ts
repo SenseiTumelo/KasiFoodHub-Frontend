@@ -21,6 +21,17 @@ export interface Prods{
   image: ImageBitmap;
 }
 
+export interface Employee{
+  id:number;
+   name:string;
+   shopName:string;
+   phoneNumber?:string;
+   orderingData:Date;
+   address:string;
+   Price:string;
+  photoPath?:string;
+}
+
 const ITEMS_KEY = 'myItems';
 @Injectable({
   providedIn: 'root'
@@ -56,6 +67,12 @@ export class CartService {
     {id:2, name:'2 Wings', price:15.99, amount:1},
     {id:2, name:'Maotwana&Pap', price:19.99, amount:1},
   ];
+
+  employees:Employee[]=[
+    {id:1,name:'Mark',shopName:'Shisa Nyama',phoneNumber:'0139266862',orderingData:new Date('10/25/1988'),address:'2427 Block L',Price:'R49.99',photoPath:'assets/images/food1.jpg'},
+    {id:2,name:'Mary',shopName:'KFC',phoneNumber:'0129284862',orderingData:new Date('11/05/1978'),address:'024 Block H',Price:'R79.50',photoPath:'assets/images/kota1.jpg'},
+    {id:2,name:'john',shopName:'wimpy',phoneNumber:'0129284862',orderingData:new Date('11/05/1978'),address:'014 Block vv',Price:'R79.50',photoPath:'assets/images/food4.jpg'}
+  ]
 
   private cart = [];
   private cartItemCount = new BehaviorSubject(0);

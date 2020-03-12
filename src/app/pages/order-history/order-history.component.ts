@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Employee} from '../models/employee.model';
+//import {Employee} from '../models/employee.model';
 
 @Component({
   selector: 'app-order-history',
@@ -8,7 +8,7 @@ import {Employee} from '../models/employee.model';
 })
 export class OrderHistoryComponent implements OnInit {
 
-  employees:Employee[]=[
+  /*employees:Employee[]=[
     {
       id:1,
       name:'Mark',
@@ -17,7 +17,7 @@ export class OrderHistoryComponent implements OnInit {
       orderingData:new Date('10/25/1988'),
       address:'2427 Block L',
       Price:'R49.99',
-      //photoPath:'assets/images/maotwana.jpg'
+      photoPath:'assets/images/food1.jpg'
     },
     {
       id:2,
@@ -27,7 +27,7 @@ export class OrderHistoryComponent implements OnInit {
       orderingData:new Date('11/05/1978'),
       address:'024 Block H',
       Price:'R79.50',
-     // photoPath:'assets/images/kota1.jpg'
+     photoPath:'assets/images/kota1.jpg'
     },
     {
       id:2,
@@ -37,9 +37,9 @@ export class OrderHistoryComponent implements OnInit {
       orderingData:new Date('11/05/1978'),
       address:'014 Block vv',
       Price:'R79.50',
-     // photoPath:'assets/images/food4.jpg'
+      photoPath:'assets/images/food4.jpg'
     }
-  ]
+  ]*/
 
   constructor() { }
 

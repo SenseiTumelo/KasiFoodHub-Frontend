@@ -1,4 +1,4 @@
-export class Employee{
+/*export class Employee{
    id:number;
    name:string;
    shopName:string;
@@ -7,6 +7,6 @@ export class Employee{
    orderingData:Date;
    address:string;
    Price:string;
-  // photoPath?:string;
+   photoPath?:string;
 
-}
+}*/
