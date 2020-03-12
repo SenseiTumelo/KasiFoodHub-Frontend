@@ -27,8 +27,9 @@ export interface Employee{
    shopName:string;
    orderingData:Date;
    address:string;
-   Price:string;
+   price:number;
   photoPath?:string;
+  amount: number;
 }
 
 const ITEMS_KEY = 'myItems';
@@ -68,9 +69,9 @@ export class CartService {
   ];
 
   employees:Employee[]=[
-    {id:1,name:'Skopo',shopName:'Shisa Nyama',orderingData:new Date('10/25/1988'),address:'2427 Block L',Price:'R49.99',photoPath:'assets/images/food1.png'},
-    {id:2,name:'Kota',shopName:'KFC',orderingData:new Date('11/05/1978'),address:'024 Block H',Price:'R79.50',photoPath:'assets/images/kota1.jpg'},
-    {id:2,name:'Beef',shopName:'wimpy',orderingData:new Date('11/05/1978'),address:'014 Block vv',Price:'R79.50',photoPath:'assets/images/food4.jpg'}
+    {id:1,name:'Skopo',shopName:'Shisa Nyama',orderingData:new Date('10/25/1988'),address:'2427 Block L',price:49.99,photoPath:'assets/images/food1.png',amount:1},
+    {id:2,name:'Kota',shopName:'KFC',orderingData:new Date('11/05/1978'),address:'024 Block H',price:79.50,photoPath:'assets/images/kota1.jpg',amount:1},
+    {id:2,name:'Beef',shopName:'wimpy',orderingData:new Date('11/05/1978'),address:'014 Block vv',price:79.50,photoPath:'assets/images/food4.jpg',amount:1}
   ]
 
   private cart = [];

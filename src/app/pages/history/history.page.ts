@@ -26,6 +26,7 @@ export class HistoryPage implements OnInit {
   addToCart(product){
     this.cartService.addProduct(product);
   }
+  
 
   async openCart(){
     let modal = await this.modalCtrl.create({
