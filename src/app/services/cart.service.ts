@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, from } from 'rxjs';
+import { HttpClient} from '@angular/common/http';
 
 export interface Product{
   id: number;
@@ -20,6 +21,11 @@ export interface Prods{
   amount: number;
   image: ImageBitmap;
 }
+export interface Extras{
+  id: number;
+  name: string;
+  price: number;
+}
 
 export interface Employee{
   id:number;
@@ -38,9 +44,10 @@ const ITEMS_KEY = 'myItems';
 })
 export class CartService {
 
+  private _addProduct = "http://168.172.185.4:3000/viewProduct";
   //read
   getItems(){
-
+    return this.http.get<any>(this._addProduct);
   }
 
   data: Product[] = [
@@ -67,6 +74,12 @@ export class CartService {
     {id:2, name:'2 Wings', price:15.99, amount:1},
     {id:2, name:'Maotwana&Pap', price:19.99, amount:1},
   ];
+  datar: Extras[] =[
+    {id:0, name:'Tomato Sauce',price:0.00},
+    {id:1, name:'Mustard',price:1.99},
+    {id:2, name:'Chilli Sauce',price:1.99},
+    {id:3, name:'Spicy Cheese',price:3.46}
+  ];
 
   employees:Employee[]=[
     {id:1,name:'Skopo',shopName:'Shisa Nyama',orderingData:new Date('10/25/1988'),address:'2427 Block L',price:49.99,photoPath:'assets/images/food1.png',amount:1},
@@ -75,9 +88,10 @@ export class CartService {
   ]
 
   private cart = [];
+  private ext = [];
   private cartItemCount = new BehaviorSubject(0);
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getEmploye(){
     return this.employees;
@@ -86,7 +100,6 @@ export class CartService {
 
   getProducts(){
     return this.data;
-    
   }
   getProduct(){
     return this.dat;
@@ -97,10 +110,34 @@ export class CartService {
   getCart(){ 
     return this.cart;
   }
+  getExt(){
+    return this.ext;
+  }
+  getExtras(){
+    return this.datar;
+  }
   getCartItemCount(){
     return this.cartItemCount;
   }
-
+  extraProd(product){
+    let added = false;
+    for(let p of this.ext){
+      if(p.id === product.id){
+        added = true;
+        break;
+      }
+    }
+    if(!added){
+      this.ext.push(product);
+    }
+  }
+  removeExtra(product){
+    for(let [index, p] of this.ext.entries()){
+      if(p.id === product.id){
+          this.ext.splice(index, 1);
+      }
+    }
+  }
   addProduct(product){
     let added = false;
     for(let p of this.cart){
@@ -133,6 +170,7 @@ export class CartService {
         this.cartItemCount.next(this.cartItemCount.value - p.amount);
         
           this.cart.splice(index, 1);
+          
       }
     }
   }
@@ -144,4 +182,5 @@ export class CartService {
       (<HTMLInputElement> document.getElementById("check")).disabled = false;
     }
   }
+  
 }

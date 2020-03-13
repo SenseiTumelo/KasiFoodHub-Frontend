@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { CartService } from '../services/cart.service';
 import { ModalController } from '@ionic/angular';
 import { CartModalPage } from '../pages/cart-modal/cart-modal.page';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-order',
@@ -16,7 +17,7 @@ export class OrderPage implements OnInit {
 
   @ViewChild('cart',{static:false,read: ElementRef})fab: ElementRef;
 
-  constructor(private cartService: CartService, private modalCtrl: ModalController) { }
+  constructor(private cartService: CartService, private modalCtrl: ModalController,private location: Location) { }
 
   ngOnInit() {
     this.products = this.cartService.getProducts();
@@ -53,5 +54,10 @@ export class OrderPage implements OnInit {
     }
     node.addEventListener('animationend',handleAnimationEnd)
   }
+
+  //added the back button manipulation-Tumie
+  backButton(){
+    this.location.back();
+   }
 
 }
