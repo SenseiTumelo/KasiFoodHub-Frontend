@@ -3,6 +3,7 @@
     <ion-icon name="menu" (click)="presentActionSheet()"></ion-icon>
     <ion-title>home
       <ion-searchbar [(ngModel)] = "searchTerm" (ionInput)= "setFilteredItems()"></ion-searchbar>
+
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -57,7 +58,11 @@
     <ion-slides pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)">
       <ion-slide style="background-color: grey" style="width:600px;height:400px;" >
         <ion-card >
+<<<<<<< HEAD
           <img src='https://specsonline.com/wp-content/uploads/2019/01/Mobile-Deli-Page-Slider-600x200.jpg' style="width:600px;height:400px;">
+=======
+          <img src='https://specsonline.com/wp-content/uploads/2019/01/Mobile-Deli-Page-Slider-600x200.jpg'>
+>>>>>>> 0ec6d83f320a3a73eda93a749eb6a676884387b6
         </ion-card>
       </ion-slide>
       

@@ -144,6 +144,7 @@ export class HomePage implements OnInit {
   }
 
   setFilteredItems() {
+
  
         //this.jsonData = this.dataService.filterItems(this.searchTerm);
         this.searchData = this.searchService.filterItems(this.searchTerm);
@@ -161,5 +162,6 @@ export class HomePage implements OnInit {
       slides.startAutoplay();
     }
   
+
 
 }

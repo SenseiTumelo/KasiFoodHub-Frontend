@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
+
 import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
+
   search_url = 'http://168.172.185.4:6000/search';
   constructor(private http: HttpClient) { }
   search: any;
@@ -18,4 +21,5 @@ export class SearchService {
      });  
 
  }
+
 }

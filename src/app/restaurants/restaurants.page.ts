@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 //import { RestaurantService } from '../services/restaurant.service';
 //import { ActionsheetComponent } from '../components/actionsheet/actionsheet.component';
 
+
 @Component({
   selector: 'app-restaurants',
   templateUrl: './restaurants.page.html',
