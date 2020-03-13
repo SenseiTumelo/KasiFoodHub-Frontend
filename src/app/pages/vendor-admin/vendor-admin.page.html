@@ -69,29 +69,17 @@
     <ion-title>
       Restaurant Admin
     </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+      
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-menu side="start" menuId="first" contentId="main">
-    <ion-header>
-      <ion-toolbar color="dark">
-        <ion-title>Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <ion-item href="/profile">Profile</ion-item>
-        <ion-item href="/add-menu">Add/ Create Menu</ion-item>
-        <ion-item href="/add-menu">Profile</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
+ 
   <ion-router-outlet id="main"></ion-router-outlet>
-
-  <button  (click)="openEnd()" >click</button>
+  <ion-button (click)="openProfile()">prof</ion-button>
   <div class="ion-padding">
     <ion-card>
       <ion-card-header>
@@ -120,5 +108,6 @@
       </ion-card-content>
     </ion-card>
   </div>
+
  </ion-content>
 

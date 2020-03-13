@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { CartService } from '../services/cart.service';
 import { ModalController } from '@ionic/angular';
 import { CartModalPage } from '../pages/cart-modal/cart-modal.page';
-
+import { ExtrasPage } from '../pages/extras/extras.page';
 @Component({
   selector: 'app-order',
   templateUrl: './order.page.html',
@@ -28,6 +28,9 @@ export class OrderPage implements OnInit {
     this.animateCSS('tada');
     this.cartService.addProduct(product);
   }
+  exProduct(product){
+    this.cartService.extraProd(product);
+  }
   async openCart(){
     this.animateCSS('bounceOutLeft',true);
     let modal = await this.modalCtrl.create({
@@ -39,6 +42,14 @@ export class OrderPage implements OnInit {
       this.animateCSS('bounceLeft');
     });
     modal.present();
+  }
+  async openExtras(){
+    let modal = await this.modalCtrl.create({
+      component: ExtrasPage,
+      cssClass: 'extras'
+    });
+    modal.present();
+    
   }
 
   animateCSS(animationName, keepAnimated = false){

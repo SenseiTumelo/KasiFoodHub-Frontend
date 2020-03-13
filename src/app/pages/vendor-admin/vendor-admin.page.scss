@@ -1,3 +1,6 @@
+ion-title{
+    text-align: center;
+}
 .menu{
     float: right;
     line-height: 90px;
@@ -21,4 +24,9 @@
     font-weight: lighter;
     padding: 0 10px;
     transition: 0.6s ease;
+}
+.menu-icon{
+    font-size: 45px;
+    cursor: pointer;
+    margin-top: -5px;
 }

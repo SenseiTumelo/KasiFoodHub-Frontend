@@ -77,6 +77,7 @@ const routes: Routes = [
     path: 'extras',
     loadChildren: () => import('./pages/extras/extras.module').then( m => m.ExtrasPageModule)
   },
+/*,
 
     path: 'sidebar',
     loadChildren: () => import('./sidebar/sidebar.component').then( m => m.SidebarComponent)
@@ -88,13 +89,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
-  }
-
-
-
-
-
-
+  }*/
 ];
 @NgModule({
   imports: [
