@@ -1,0 +1,33 @@
+.masters{
+    background-color: orange;
+}
+
+.content-color{
+    background-color: black;
+}
+
+ion-content{
+   --background: lightblue;
+    //--background-image: url(/assets/images/background.jpg);
+   // --background: url(/assets/images/background.jpg) 0 0/100% 100% no-repeat;
+}
+
+.card {
+    width:10%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .card-body {
+    
+    --background: gold;
+    padding: 30px;
+    height: calc(100vh - (200px + 56px));
+    overflow: hidden;
+  }

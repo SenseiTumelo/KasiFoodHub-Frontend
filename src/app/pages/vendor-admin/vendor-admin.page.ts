@@ -65,7 +65,7 @@ export class VendorAdminPage implements OnInit {
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
       type: "doughnut",
       data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["Spathlo", "Skopo", "Pap And Wors", "Pap", "Marapo", "Mogodu"],
         datasets: [
           {
             label: "# of Votes",
@@ -87,7 +87,7 @@ export class VendorAdminPage implements OnInit {
     this.lineChart = new Chart(this.lineCanvas.nativeElement, {
       type: "line",
       data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December",],
         datasets: [
           {
             label: "My First dataset",
@@ -108,7 +108,7 @@ export class VendorAdminPage implements OnInit {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: [65, 59, 80, 81, 56, 55, 40],
+            data: [65, 59, 80, 81, 56, 55, 45, 54, 72, 64, 88, 74],
             spanGaps: false
           }
         ]
