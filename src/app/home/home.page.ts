@@ -138,13 +138,13 @@ export class HomePage implements OnInit {
     this.route.navigateByUrl('/restaurants');
   }
 
-  // search bar 
-  
+  // search bar
   ionViewDidLoad(){
     this.setFilteredItems();
   }
 
   setFilteredItems() {
+
  
         //this.jsonData = this.dataService.filterItems(this.searchTerm);
         this.searchData = this.searchService.filterItems(this.searchTerm);
@@ -158,5 +158,6 @@ export class HomePage implements OnInit {
      return this.searchService.searchD().subscribe((dat: any) => {this.searchData = dat;console.log(this.searchData);});
     }
   
+
 
 }

@@ -3,6 +3,7 @@
     <ion-icon name="menu" (click)="presentActionSheet()"></ion-icon>
     <ion-title>home
       <ion-searchbar [(ngModel)] = "searchTerm" (ionInput)= "setFilteredItems()"></ion-searchbar>
+
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -16,6 +17,7 @@
   <ion-card >
     <!--this is the slides you will see on the home page-->
     <ion-slides pager  >
+
 
       <ion-slide >
         <img src = 'assets/images/kfh6.png' style="width:500px;height:600px;" alt="kasi logo"/>
@@ -34,7 +36,9 @@
     
     </ion-slides>
   </ion-card>
-
+   <div  *ngFor = "let a of adminData">
+       <ion-title>{{a.id}}</ion-title>
+   </div>
   <!--Restaurants picture with the view button-->
   <ion-card style="background-color: grey">
     <ion-card-title>Resturants</ion-card-title>
@@ -55,8 +59,7 @@
     <ion-slides >
       <ion-slide style="background-color: grey">
         <ion-card >
-          <img
-            src='https://b.zmtcdn.com/data/menus/848/18370848/30be3612e24e3ecaaaec87fb2165422a.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'>
+          <img src='https://specsonline.com/wp-content/uploads/2019/01/Mobile-Deli-Page-Slider-600x200.jpg'>
         </ion-card>
       </ion-slide>
       

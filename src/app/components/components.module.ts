@@ -5,14 +5,13 @@ import { LogoComponent } from './logo/logo.component';
 import { StartComponent } from './start/start.component';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { ActionsheetComponent } from './actionsheet/actionsheet.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 
 
 
 @NgModule({
-  declarations: [SlidesComponent, LogoComponent, StartComponent, ActionsheetComponent, SearchbarComponent],
-  exports: [SlidesComponent, LogoComponent, StartComponent, ActionsheetComponent, SearchbarComponent],
+  declarations: [SlidesComponent, LogoComponent, StartComponent, SearchbarComponent],
+  exports: [SlidesComponent, LogoComponent, StartComponent,  SearchbarComponent],
   imports: [
     CommonModule,
     FormsModule,
