@@ -43,15 +43,16 @@ const ITEMS_KEY = 'myItems';
   providedIn: 'root'
 })
 export class CartService {
+  http: any;
 
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   private _addProduct = "http://168.172.185.4:3000/viewProduct";
   //read
-  getItems(){
-    return this.http.get<any>(this._addProduct);
-  }
+  // getItems(){
+  //   return this.http.get<any>(this._addProduct);
+  // }
 
 
   data: Product[] = [
@@ -97,23 +98,13 @@ export class CartService {
 
 
   // read
-  getItems() {
-
-
-  constructor(private http: HttpClient) { }
 
   getEmploye(){
     return this.employees;
-    
-
   }
 
   getProducts() {
     return this.data;
-
-
-
-
   }
   getProduct() {
     return this.dat;
@@ -124,12 +115,6 @@ export class CartService {
   getCart() {
     return this.cart;
   }
-
-  getCartItemCount() {
-    return this.cartItemCount;
-  }
-
-  addProduct(product) {
 
   getExt(){
     return this.ext;
@@ -191,10 +176,6 @@ export class CartService {
       if (p.id === product.id) {
         this.cartItemCount.next(this.cartItemCount.value - p.amount);
 
-
-        this.cart.splice(index, 1);
-
-        
           this.cart.splice(index, 1);
           
       }
