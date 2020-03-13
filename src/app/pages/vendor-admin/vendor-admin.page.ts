@@ -2,6 +2,8 @@ import { Component, OnInit, ElementRef,  } from '@angular/core';
 import { ViewChild } from '@angular/core'
 import { Chart } from 'chart.js';
 import { MenuController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import { ProfilePage} from '../vendor/profile/profile.page';
 
 @Component({
   selector: 'app-vendor-admin',
@@ -16,7 +18,7 @@ export class VendorAdminPage implements OnInit {
   private barChart: Chart;
   private doughnutChart: Chart;
   private lineChart: Chart;
-  constructor(private menu: MenuController) { }
+  constructor(private menu: MenuController, private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.barChart = new Chart(this.barCanvas.nativeElement, {
@@ -128,5 +130,12 @@ export class VendorAdminPage implements OnInit {
     this.menu.enable(true, 'custom');
     this.menu.open('custom');
   }
-  
+  async openProfile(){
+    let modal = await this.modalCtrl.create({
+      component: ProfilePage,
+      cssClass: 'profile'
+    });
+    modal.present();
+  }
+
 }
