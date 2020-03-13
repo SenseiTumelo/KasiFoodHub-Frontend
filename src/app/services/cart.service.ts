@@ -94,7 +94,7 @@ export class CartService {
   getProds(){
     return this.datas;
   }
-  getCart(){
+  getCart(){ 
     return this.cart;
   }
   getCartItemCount(){
