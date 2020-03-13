@@ -91,6 +91,10 @@ const routes: Routes = [
   },  {
     path: 'signin',
     loadChildren: () => import('./pages/signin/signin.module').then( m => m.SigninPageModule)
+  },
+  {
+    path: 'custprof',
+    loadChildren: () => import('./pages/custprof/custprof.module').then( m => m.CustprofPageModule)
   }
 
 

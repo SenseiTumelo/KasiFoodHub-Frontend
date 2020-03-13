@@ -36,8 +36,8 @@ export class HomePage implements OnInit {
          text: 'My Account',
          icon: 'person-circle-outline',
          handler: () => {
-           console.log('Share clicked');
-           this.route.navigateByUrl('/profile');
+           console.log('Myprofile clicked');
+           this.route.navigateByUrl('/custprof');
          }
        }, {
          text: 'Restaurants',
