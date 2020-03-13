@@ -20,6 +20,7 @@ export class SingupcustPage implements OnInit {
  btnClear(){
    
  }
+ //back button
  backButton(){
   this.location.back();
  }
