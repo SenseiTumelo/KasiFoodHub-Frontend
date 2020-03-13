@@ -29,6 +29,7 @@
     "chart.js": "^2.9.3",
     "core-js": "^2.5.4",
     "ionic2-super-tabs": "^4.1.4",
+    "node-sass": "^4.13.1",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
