@@ -1,35 +1,46 @@
 <ion-header>
   <ion-toolbar color = 'warning'>
     <ion-icon name="menu" (click)="presentActionSheet()"></ion-icon>
-    <ion-title>home
+    <div>
+      <ion-title>Kasi Food Hub</ion-title>
       <ion-searchbar [(ngModel)] = "searchTerm" (ionInput)= "setFilteredItems()"></ion-searchbar>
-
-    </ion-title>
+    </div>
+    
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding class="masters">
+<ion-content padding class="content-color">
   <ion-list>
     <ion-item *ngFor="let data of searchData">
         {{data.product_name}}
     </ion-item>
-</ion-list>
-  <ion-card style="width:600px;height:400px;" class="masters">
-    <!--this is the slides you will see on the home page-->
-    <ion-slides pager  style="width:600px;height:400px;" pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)">
+   </ion-list>
 
-      <ion-slide style="width:600px;height:400px;">
-        <img src = 'assets/images/kfh6.png' style="width:600px;height:400px;" alt="kasi logo"/>
+  <ion-card class="card-body">
+    
+    <!--this is the slides you will see on the home page-->
+    <ion-slides  pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)">
+
+      <ion-slide >
+        <img src = 'assets/images/kfh6.png' alt="kasi logo"/>
         
       </ion-slide>
     
-      <ion-slide style="width:600px;height:400px;">
-        <img src = 'assets/images/Advertisement/ad2.jpg' style="width:600px;height:400px;" alt="kasi logo"/>
+      <ion-slide>
+        <img src = 'assets/images/Advertisement/ad2.jpg' alt="kasi logo"/>
         
       </ion-slide>
     
-      <ion-slide style="width:600px;height:400px;" >
-        <img src = 'assets/images/Advertisement/menatlana.jpg' style="width:600px;height:400px;" alt="kasi logo"/>
+      <ion-slide >
+        <img src = 'assets/images/Advertisement/menatlana.jpg' alt="kasi logo"/>
+        
+      </ion-slide>
+      <ion-slide >
+        <img src = 'https://specsonline.com/wp-content/uploads/2019/01/Mobile-Deli-Page-Slider-600x200.jpg' alt="kasi logo"/>
+        
+      </ion-slide>
+      <ion-slide >
+        <img src = 'https://www.findtakeaways.co.za/images/Specials/Chesa_Nyama_Family_Special.JPG' alt="kasi logo"/>
         
       </ion-slide>
     
@@ -39,7 +50,7 @@
        <ion-title>{{a.id}}</ion-title>
    </div>
   <!--Restaurants picture with the view button-->
-  <ion-card class="masters">
+  <ion-card class="card-body">
     <ion-card-title>Resturants</ion-card-title>
     <img src = 'https://cdn.primedia.co.za/primedia-broadcasting/image/upload/v1488364912/qjwnidvakslcmh6rbp62.jpg'>
     <ion-button expand="block" color = 'success'  (click)="gotoRest()">View all Restaurant</ion-button>
@@ -53,29 +64,21 @@
 
 
   <!--Daily Deals ,where you will see the advertisement and also special from the restaurant-->
-  <ion-card style="width:600px;height:400px;" class="masters">
+  <ion-card class="card-body">
     <ion-card-title>Daily Deals</ion-card-title>
     <ion-slides pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)">
-      <ion-slide style="background-color: grey" style="width:600px;height:400px;" >
+      <ion-slide style="background-color: grey" >
         <ion-card >
-<<<<<<< HEAD
-          <img src='https://specsonline.com/wp-content/uploads/2019/01/Mobile-Deli-Page-Slider-600x200.jpg' style="width:600px;height:400px;">
-=======
           <img src='https://specsonline.com/wp-content/uploads/2019/01/Mobile-Deli-Page-Slider-600x200.jpg'>
->>>>>>> 0ec6d83f320a3a73eda93a749eb6a676884387b6
         </ion-card>
       </ion-slide>
       
-      <ion-slide style="background-color: grey" style="width:600px;height:400px;">
+      <ion-slide style="background-color: grey">
         <ion-card>
-          <img src='https://www.findtakeaways.co.za/images/Specials/Chesa_Nyama_Family_Special.JPG' style="width:600px;height:400px;">
+          <img src='https://www.findtakeaways.co.za/images/Specials/Chesa_Nyama_Family_Special.JPG'>
         </ion-card>
       </ion-slide>
-  
-
-   
-    
-  </ion-slides>
+    </ion-slides>
    
 </ion-card>
 </ion-content>

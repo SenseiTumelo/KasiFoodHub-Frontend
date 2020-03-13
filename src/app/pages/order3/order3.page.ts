@@ -6,6 +6,7 @@ import { ModalController } from '@ionic/angular';
 import { CartModalPage } from '../cart-modal/cart-modal.page';
 import { ExtrasPage } from '../extras/extras.page';
 import { ExtrasPageModule } from '../extras/extras.module';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-order3',
@@ -27,7 +28,7 @@ export class Order3Page implements OnInit {
 
   @ViewChild('cart',{static:false,read: ElementRef})fab: ElementRef;
 
-  constructor(private cartService: CartService, private modalCtrl: ModalController) { }
+  constructor(private cartService: CartService, private modalCtrl: ModalController, private location: Location) { }
 
   ngOnInit() {
     this.prod = this.cartService.getProds();
@@ -82,6 +83,10 @@ export class Order3Page implements OnInit {
     }
     node.addEventListener('animationend',handleAnimationEnd)
   }
+//back button
+backButton(){
+  this.location.back();
+ }
 
 
 }
