@@ -13,7 +13,7 @@ import { CartModalPageModule } from './pages/cart-modal/cart-modal.module';
 
 import { ExtrasPageModule } from './pages/extras/extras.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
-//import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
+
 
 
 @NgModule({

@@ -74,7 +74,7 @@ export class HomePage implements OnInit {
         icon: 'person',
         handler: () => {
           console.log('Favorite clicked');
-          this.route.navigateByUrl('/login');
+          this.route.navigateByUrl('/signin');
         }
       },{
         text: 'History',
@@ -138,8 +138,7 @@ export class HomePage implements OnInit {
     this.route.navigateByUrl('/restaurants');
   }
 
-  // search bar 
-  
+  // search bar
   ionViewDidLoad(){
     this.setFilteredItems();
   }
@@ -156,6 +155,10 @@ export class HomePage implements OnInit {
 
     search(){
      return this.searchService.searchD().subscribe((dat: any) => {this.searchData = dat;console.log(this.searchData);});
+    }
+
+    slidesDidLoad(slides) {
+      slides.startAutoplay();
     }
   
 
