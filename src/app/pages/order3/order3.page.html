@@ -3,8 +3,8 @@
  <!--<ion-backdrop data-backdrop="static"></ion-backdrop>-->
   <ion-header>
     <ion-toolbar color="warning">
-<<<<<<< HEAD
-=======
+<!-- <<<<<<< HEAD
+======= -->
       <!-- <ion-icon name="menu" (click)="presentActionSheet()"></ion-icon> -->
 <!-- >>>>>>> 83fdc24b6241fe28dcbe71e2e921cbf5b3b33c0c -->
       <ion-title>Order</ion-title>
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
   </ion-header>
   
-  <ion-content>
+  <ion-content ng-controller="ComponentesJSCtrl as cc">
 
   
 
@@ -45,7 +45,7 @@
         <ion-img class="logo" src="assets/images/logo3.png" alt=""></ion-img>
        </ion-row>
 
-     <ion-card data-backdrop="static" (click)="exProduct(p)" (click)="openExtras()" color="" *ngFor="let p of prod">
+     <ion-card ng-click="cc.onShowBack" (click)="exProduct(p)" (click)="openExtras()" color="" *ngFor="let p of prod">
       <ion-card-header>
         <ion-card-title>{{ p.name}}</ion-card-title>
       </ion-card-header>
