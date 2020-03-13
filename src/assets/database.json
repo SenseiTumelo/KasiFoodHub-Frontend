@@ -2,7 +2,7 @@
   {
    "restId": 1,
    "restName":"Nkukhubox",
-   "location":"Aubrey matlala,Soshanguve 0152"
+   "location":"Aubrey matlala,Soshanguve 0152",
    "imgUrl":"assets/images/logo.png"
   },
   {
@@ -15,13 +15,13 @@
   {
    "restId": 3,
    "restName":"KASI food & drink fest",
-   "location":"Aubrey matlala,Soshanguve 0152"
+   "location":"Aubrey matlala,Soshanguve 0152",
    "imgUrl":"assets/images/logo3.jpg" 
   },
   {
      "restId": 4,
    "restName":"Jay's Eatery",
-   "location":"Aubrey matlala,Soshanguve 0152"
+   "location":"Aubrey matlala,Soshanguve 0152",
     "imgUrl":"assets/images/logo4.jpeg" 
   }
 ]

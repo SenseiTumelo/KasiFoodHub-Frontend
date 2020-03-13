@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 //import { RestaurantService } from '../services/restaurant.service';
 //import { ActionsheetComponent } from '../components/actionsheet/actionsheet.component';
 
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class RestaurantsPage implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private location: Location) { }
    
   ngOnInit() {
     
@@ -28,6 +29,10 @@ export class RestaurantsPage implements OnInit {
  }
  thirdOrder(){
    this.route.navigateByUrl('/order3');
+ }
+
+ backButton(){
+  this.location.back();
  }
 
 }

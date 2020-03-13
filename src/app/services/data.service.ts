@@ -15,15 +15,15 @@ export class DataService {
       {"id":1,"label":"saw","name": "Sephahlo"},
       {"id":2,"label":"saw1","name":"Mogodu"},
       {"id":3,"label":"saw2","name":"malana"},
-      {"id":3,"label":"saw2","name":"Gowdaman"},
-      {"id":3,"label":"saw2","name":"Neethi"},
-      {"id":3,"label":"saw2","name":"abirami1"},
-      {"id":3,"label":"saw2","name":"abirami2"},
-      {"id":3,"label":"saw2","name":"Harrish"},
-      {"id":3,"label":"saw2","name":"Lokesh"},
-      {"id":3,"label":"saw2","name":"Deepak"},
-      {"id":3,"label":"saw2","name":"malliga"},
-      {"id":3,"label":"saw2","name":"malliga"}
+      {"id":4,"label":"saw2","name":"Gowdaman"},
+      {"id":5,"label":"saw2","name":"Neethi"},
+      {"id":6,"label":"saw2","name":"abirami1"},
+      {"id":7,"label":"saw2","name":"abirami2"},
+      {"id":8,"label":"saw2","name":"Harrish"},
+      {"id":9,"label":"saw2","name":"Lokesh"},
+      {"id":10,"label":"saw2","name":"Deepak"},
+      {"id":11,"label":"saw2","name":"malliga"},
+      {"id":12,"label":"saw2","name":"malliga"}
 
       ];
 
@@ -35,7 +35,7 @@ export class DataService {
   show_rest_url = '';
   prof_url = '';
   admin_prof_url = 'http://168.172.185.4:6000/admin';
-
+  cust_url = 'http://168.172.185.4:6000/customer';
   adminService(){
     return this.http.get<any>(this.admin_prof_url); 
   }

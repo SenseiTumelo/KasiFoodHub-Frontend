@@ -36,8 +36,8 @@ export class HomePage implements OnInit {
          text: 'My Account',
          icon: 'person-circle-outline',
          handler: () => {
-           console.log('Share clicked');
-           this.route.navigateByUrl('/profile');
+           console.log('Myprofile clicked');
+           this.route.navigateByUrl('/custprof');
          }
        }, {
          text: 'Restaurants',
@@ -74,7 +74,7 @@ export class HomePage implements OnInit {
         icon: 'person',
         handler: () => {
           console.log('Favorite clicked');
-          this.route.navigateByUrl('/login');
+          this.route.navigateByUrl('/signin');
         }
       },{
         text: 'History',
@@ -156,6 +156,10 @@ export class HomePage implements OnInit {
 
     search(){
      return this.searchService.searchD().subscribe((dat: any) => {this.searchData = dat;console.log(this.searchData);});
+    }
+
+    slidesDidLoad(slides) {
+      slides.startAutoplay();
     }
   
 

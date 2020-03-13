@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-singupadmin',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SingupadminPage implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private location: Location) { }
 
   ngOnInit() {
   }
@@ -22,6 +23,10 @@ export class SingupadminPage implements OnInit {
  btnClear(){
   
 }
+//back button
+backButton(){
+  this.location.back();
+ }
 
 
 }
