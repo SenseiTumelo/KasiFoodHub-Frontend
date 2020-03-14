@@ -11,7 +11,11 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 
 @NgModule({
   declarations: [SlidesComponent, LogoComponent, StartComponent, SearchbarComponent],
-  exports: [SlidesComponent, LogoComponent, StartComponent,  SearchbarComponent],
+
+  exports: [SlidesComponent, LogoComponent, StartComponent, SearchbarComponent],
+
+  // exports: [SlidesComponent, LogoComponent, StartComponent,  SearchbarComponent],
+
   imports: [
     CommonModule,
     FormsModule,

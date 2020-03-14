@@ -91,12 +91,30 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
-  }
 
+  },
 
+  {
 
-
-
+    path: 'history',
+    loadChildren: () => import('./pages/history/history.module').then( m => m.HistoryPageModule)
+  },
+  {
+    path: 'signin',
+    loadChildren: () => import('./pages/signin/signin.module').then( m => m.SigninPageModule)
+  },
+  {
+    path: 'custprof',
+    loadChildren: () => import('./pages/custprof/custprof.module').then( m => m.CustprofPageModule)
+  },
+  {
+    path: 'rest-apply',
+    loadChildren: () => import('./pages/rest-apply/rest-apply.module').then( m => m.RestApplyPageModule)
+  },
+  {
+    path: 'reset-password',
+    loadChildren: () => import('./pages/reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
+  },
 
 ];
 @NgModule({

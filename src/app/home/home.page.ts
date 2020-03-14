@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavController, NavParams, AlertController, ActionSheetController ,LoadingController} from '@ionic/angular';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
+import { SearchService } from '../services/search.service';
 
 @Component({
   selector: 'app-home',
@@ -13,10 +14,11 @@ export class HomePage implements OnInit {
   
    // tslint:disable-next-line: max-line-length
    constructor(private route: Router,public actionSheetController: ActionSheetController,
-               private loadingCtrl: LoadingController,private dataService: DataService) {}
+               private loadingCtrl: LoadingController,private dataService: DataService,
+               private searchService: SearchService) {}
 
    searchTerm: any = "";
-   jsonData: any;
+
    // this a function of the actionsheet  
 
    async presentActionSheet() {
@@ -34,8 +36,8 @@ export class HomePage implements OnInit {
          text: 'My Account',
          icon: 'person-circle-outline',
          handler: () => {
-           console.log('Share clicked');
-           this.route.navigateByUrl('/profile');
+           console.log('Myprofile clicked');
+           this.route.navigateByUrl('/custprof');
          }
        }, {
          text: 'Restaurants',
@@ -72,7 +74,7 @@ export class HomePage implements OnInit {
         icon: 'person',
         handler: () => {
           console.log('Favorite clicked');
-          this.route.navigateByUrl('/login');
+          this.route.navigateByUrl('/signin');
         }
       },{
         text: 'History',
@@ -119,8 +121,11 @@ export class HomePage implements OnInit {
     \
   }*/
 
-  // testing
-  adminData: any =[]; 
+  // testing the admin data
+  adminData: any =[];
+
+  //search 
+  searchData: any = []; 
 
   public getRest(){ //ive used the adminData here to test the connection. some of the variables should be change..pls dont touch
     return this.dataService.adminService().subscribe((data: any) => {this.adminData = data; console.log(this.adminData);});
@@ -139,7 +144,24 @@ export class HomePage implements OnInit {
   }
 
   setFilteredItems() {
-        this.jsonData = this.dataService.filterItems(this.searchTerm);
+
+ 
+        //this.jsonData = this.dataService.filterItems(this.searchTerm);
+        this.searchData = this.searchService.filterItems(this.searchTerm);
+ 
     }
+//------------------------------------------------------
+
+
+
+    search(){
+     return this.searchService.searchD().subscribe((dat: any) => {this.searchData = dat;console.log(this.searchData);});
+    }
+
+    slidesDidLoad(slides) {
+      slides.startAutoplay();
+    }
+  
+
 
 }

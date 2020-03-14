@@ -2,6 +2,8 @@ import { Component, OnInit, ElementRef,  } from '@angular/core';
 import { ViewChild } from '@angular/core'
 import { Chart } from 'chart.js';
 import { MenuController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import { ProfilePage} from '../vendor/profile/profile.page';
 
 @Component({
   selector: 'app-vendor-admin',
@@ -16,7 +18,7 @@ export class VendorAdminPage implements OnInit {
   private barChart: Chart;
   private doughnutChart: Chart;
   private lineChart: Chart;
-  constructor(private menu: MenuController) { }
+  constructor(private menu: MenuController, private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.barChart = new Chart(this.barCanvas.nativeElement, {
@@ -63,7 +65,7 @@ export class VendorAdminPage implements OnInit {
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
       type: "doughnut",
       data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["Spathlo", "Skopo", "Pap And Wors", "Pap", "Marapo", "Mogodu"],
         datasets: [
           {
             label: "# of Votes",
@@ -85,7 +87,7 @@ export class VendorAdminPage implements OnInit {
     this.lineChart = new Chart(this.lineCanvas.nativeElement, {
       type: "line",
       data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December",],
         datasets: [
           {
             label: "My First dataset",
@@ -106,7 +108,7 @@ export class VendorAdminPage implements OnInit {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: [65, 59, 80, 81, 56, 55, 40],
+            data: [65, 59, 80, 81, 56, 55, 45, 54, 72, 64, 88, 74],
             spanGaps: false
           }
         ]
@@ -128,5 +130,12 @@ export class VendorAdminPage implements OnInit {
     this.menu.enable(true, 'custom');
     this.menu.open('custom');
   }
-  
+  async openProfile(){
+    let modal = await this.modalCtrl.create({
+      component: ProfilePage,
+      cssClass: 'profile'
+    });
+    modal.present();
+  }
+
 }
