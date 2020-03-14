@@ -80,7 +80,7 @@ const routes: Routes = [
     path: 'extras',
     loadChildren: () => import('./pages/extras/extras.module').then( m => m.ExtrasPageModule)
   },
-
+  {
     path: 'sidebar',
     loadChildren: () => import('./sidebar/sidebar.component').then( m => m.SidebarComponent)
   },
