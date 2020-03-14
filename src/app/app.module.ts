@@ -12,6 +12,7 @@ import { CartModalPage } from './pages/cart-modal/cart-modal.page';
 import { CartModalPageModule } from './pages/cart-modal/cart-modal.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { AuthGuard } from './gaurds/auth.guard';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 
   ],
   providers: [
-    StatusBar,
+    StatusBar, AuthGuard,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

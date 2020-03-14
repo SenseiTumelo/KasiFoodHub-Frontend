@@ -48,4 +48,20 @@ export class DataService {
      });  
 
  }
+ loginUser(user)
+  {
+
+    return this.http.post<any>(this.admin_prof_url + '_login', user);
+  }
+
+  loggedIn()
+  {
+    return !!localStorage.getItem('token'); 
+
+  }
+
+  getToken(){
+    return localStorage.getItem('token')
+  }
+
 }
