@@ -35,6 +35,7 @@ export class DataService {
   show_rest_url = '';
   prof_url = '';
   admin_prof_url = 'http://168.172.185.4:6000/admin';
+  logged =  0;
 
   adminService() {
     return this.http.get<any>(this.admin_prof_url);
@@ -53,12 +54,17 @@ export class DataService {
     return this.http.post<any>(this.admin_prof_url + '_login', user);
   }
 
-  loggedIn() {
-    return !!localStorage.getItem('token');
+  loggedIn(p) {
+      this.logged = p;
 
+    if (this.logged > 0) {
+      return true;
+    }
+    else return false;
+    // return !!localStorage.getItem('token');
   }
 
-  getToken() {
+getToken(){
     return localStorage.getItem('token');
   }
 

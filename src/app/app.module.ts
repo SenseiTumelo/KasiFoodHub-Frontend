@@ -17,6 +17,7 @@ import { AuthGuard } from './gaurds/auth.guard';
 
 import { ProfilePageModule } from './pages/vendor/profile/profile.module';
 import { AddMenuPageModule} from './pages/vendor/add-menu/add-menu.module';
+import { AdminauthGuard } from './gaurds/adminauth.guard';
 
 // import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
 
@@ -39,7 +40,7 @@ import { AddMenuPageModule} from './pages/vendor/add-menu/add-menu.module';
 
   ],
   providers: [
-    StatusBar, AuthGuard,
+    StatusBar, AuthGuard, AdminauthGuard,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

@@ -1,7 +1,10 @@
 <ion-header>
   <ion-toolbar color = 'warning'>
+    <div class="header ">
     <ion-icon name="menu" (click)="presentActionSheet()"></ion-icon>
-    <div>
+    <!--ion-avatar>
+    <img src="assets/images/kfh6.png" alt="logo" />
+  </ion-avatar-->
       <ion-title>Kasi Food Hub</ion-title>
       <ion-searchbar [(ngModel)] = "searchTerm" (ionInput)= "setFilteredItems()"></ion-searchbar>
     </div>
@@ -11,8 +14,8 @@
 
 <ion-content padding class="content-color">
   <ion-list>
-    <ion-item *ngFor="let data of searchData">
-        {{data.product_name}}
+    <ion-item *ngFor="let data of jsonData">
+        {{data.name}}
     </ion-item>
    </ion-list>
 

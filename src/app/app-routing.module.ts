@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './gaurds/auth.guard';
+import { AdminauthGuard } from './gaurds/adminauth.guard';
 
 
 const routes: Routes = [
@@ -57,11 +58,13 @@ const routes: Routes = [
   },
   {
     path: 'vendor-admin',
-    loadChildren: () => import('./pages/vendor-admin/vendor-admin.module').then( m => m.VendorAdminPageModule)
+    loadChildren: () => import('./pages/vendor-admin/vendor-admin.module').then( m => m.VendorAdminPageModule),
+    canActivate: [AdminauthGuard]
   },
   {
     path: 'profile',
-    loadChildren: () => import('./pages/vendor/profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () => import('./pages/vendor/profile/profile.module').then( m => m.ProfilePageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'add-menu',
@@ -105,7 +108,8 @@ const routes: Routes = [
   },
   {
     path: 'custprof',
-    loadChildren: () => import('./pages/custprof/custprof.module').then( m => m.CustprofPageModule)
+    loadChildren: () => import('./pages/custprof/custprof.module').then( m => m.CustprofPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'rest-apply',
