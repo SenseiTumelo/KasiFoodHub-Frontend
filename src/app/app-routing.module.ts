@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> a3d6e2fca4b55626cc0020150470910a4374dc2a
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -78,7 +81,11 @@ const routes: Routes = [
     path: 'extras',
     loadChildren: () => import('./pages/extras/extras.module').then( m => m.ExtrasPageModule)
   },
+
 /*,
+
+
+  {
 
     path: 'sidebar',
     loadChildren: () => import('./sidebar/sidebar.component').then( m => m.SidebarComponent)
@@ -90,15 +97,38 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+
   }*/
+<<<<<<< HEAD
   {
+=======
+
+  },
+  {
+
+    path: 'history',
+    loadChildren: () => import('./pages/history/history.module').then( m => m.HistoryPageModule)
+  }
+>>>>>>> a3d6e2fca4b55626cc0020150470910a4374dc2a
     path: 'signin',
     loadChildren: () => import('./pages/signin/signin.module').then( m => m.SigninPageModule)
   },
   {
     path: 'custprof',
     loadChildren: () => import('./pages/custprof/custprof.module').then( m => m.CustprofPageModule)
+<<<<<<< HEAD
   }
+=======
+  },
+  {
+    path: 'rest-apply',
+    loadChildren: () => import('./pages/rest-apply/rest-apply.module').then( m => m.RestApplyPageModule)
+  },
+  {
+    path: 'reset-password',
+    loadChildren: () => import('./pages/reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
+  },
+>>>>>>> a3d6e2fca4b55626cc0020150470910a4374dc2a
 
 ];
 @NgModule({
