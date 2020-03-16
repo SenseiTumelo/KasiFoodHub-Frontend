@@ -14,7 +14,7 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 
   exports: [SlidesComponent, LogoComponent, StartComponent, SearchbarComponent],
 
-  exports: [SlidesComponent, LogoComponent, StartComponent,  SearchbarComponent],
+  // exports: [SlidesComponent, LogoComponent, StartComponent,  SearchbarComponent],
 
   imports: [
     CommonModule,
