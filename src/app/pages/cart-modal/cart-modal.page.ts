@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { empty } from 'rxjs';
 import { Validators,FormBuilder,FormGroup} from '@angular/forms';
 import { NavController, NavParams } from "@ionic/angular";
-
+//import { ActiverateRoute}
 @Component({
   selector: 'app-cart-modal',
   templateUrl: './cart-modal.page.html',

@@ -41,6 +41,8 @@ export class Order3Page implements OnInit {
       this.menuList = data.menu;
       console.log(this.menuList);
     });
+    this.ext = this.cartService.getExt();
+    this.cartItemCount = this.cartService.getCartItemCount();
   }*/
 
   addToCart(product){

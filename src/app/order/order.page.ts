@@ -3,11 +3,17 @@ import { BehaviorSubject } from 'rxjs';
 import { CartService } from '../services/cart.service';
 import { ModalController } from '@ionic/angular';
 import { CartModalPage } from '../pages/cart-modal/cart-modal.page';
+<<<<<<< HEAD
+import { ExtrasPage } from '../pages/extras/extras.page';
+import { Location } from '@angular/common';
+
+=======
 
 import { ExtrasPage } from '../pages/extras/extras.page';
 
 import { Location } from '@angular/common';
 
+>>>>>>> a3d6e2fca4b55626cc0020150470910a4374dc2a
 
 @Component({
   selector: 'app-order',
