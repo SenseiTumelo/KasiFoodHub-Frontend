@@ -13,7 +13,10 @@ import { CartModalPageModule } from './pages/cart-modal/cart-modal.module';
 import { OverviewPageModule} from './pages/vendor/overview/overview.module';
 import { ExtrasPageModule } from './pages/extras/extras.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
+<<<<<<< HEAD
+=======
 
+>>>>>>> a3d6e2fca4b55626cc0020150470910a4374dc2a
 import { ProfilePageModule } from './pages/vendor/profile/profile.module';
 import { AddMenuPageModule} from './pages/vendor/add-menu/add-menu.module';
 
@@ -21,6 +24,12 @@ import { AddMenuPageModule} from './pages/vendor/add-menu/add-menu.module';
 
 
 //import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> a3d6e2fca4b55626cc0020150470910a4374dc2a
 
 
 @NgModule({

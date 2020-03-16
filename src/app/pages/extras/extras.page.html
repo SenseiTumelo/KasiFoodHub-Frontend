@@ -24,7 +24,7 @@
 
       <ion-item>
         <ion-label color="medium">Plain</ion-label>
-        <ion-radio checked value="plain"></ion-radio>
+        <ion-radio value="plain"></ion-radio>
       </ion-item>
 
       <ion-item>
@@ -48,13 +48,12 @@
     <ion-list-header>
       <ion-label>Sauces</ion-label>
     </ion-list-header>
-    <ion-item *ngFor="let s of extra">
-      <ion-radio value={{s.name}} (change)="radioChangeHandler($event)"></ion-radio>
-      <ion-label>{{s.name}}</ion-label>
-      <ion-label class="ion-text-right">{{s.price | currency:'R'}}</ion-label>
+    <ion-item *ngFor="let entry of extra">
+      <ion-label>{{entry.name}}</ion-label>
+      <ion-label class="ion-text-right">{{entry.price | currency:'R'}}</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="entry.isChecked"></ion-checkbox>
     </ion-item>
   </ion-list>
-
       <ion-button expand="full" (click)="removeExtraItem(p)" (click)="addToCart(p)" (click)="close()">Add to Cart</ion-button>
  </div>
 
