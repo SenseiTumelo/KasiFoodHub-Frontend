@@ -66,24 +66,24 @@
 </ion-content-->
 <ion-header>
   <ion-toolbar color = "dark" >
+    <ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
+      <ion-header>
+        <ion-toolbar color="tertiary">
+          <ion-title>Custom Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+    </ion-menu> <ion-icon name="menu"></ion-icon>
     <ion-title>
       Restaurant Admin
     </ion-title>
-    <ion-buttons slot="start">
-      <ion-menu-button autoHide="false"></ion-menu-button>
-      
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<<<<<<< HEAD
 
   <ion-router-outlet id="main"></ion-router-outlet>
-=======
 
   <ion-router-outlet id="main"></ion-router-outlet>
-  <ion-button (click)="openProfile()">prof</ion-button>
 
   <ion-menu side="start" menuId="first" contentId="main">
     <ion-header>
@@ -101,7 +101,6 @@
   <ion-router-outlet id="main"></ion-router-outlet>
 
   <button  (click)="openEnd()" >///</button>
->>>>>>> a3d6e2fca4b55626cc0020150470910a4374dc2a
 
   <div class="ion-padding">
     <ion-card>
