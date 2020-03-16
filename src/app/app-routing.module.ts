@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -15,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./order/order.module').then( m => m.OrderPageModule)
   },
   {
-    path: 'cart-modal',
+    path: 'cart-modal/:name',
     loadChildren: () => import('./pages/cart-modal/cart-modal.module').then( m => m.CartModalPageModule)
   },
   {
@@ -90,6 +91,15 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   }*/
+  {
+    path: 'signin',
+    loadChildren: () => import('./pages/signin/signin.module').then( m => m.SigninPageModule)
+  },
+  {
+    path: 'custprof',
+    loadChildren: () => import('./pages/custprof/custprof.module').then( m => m.CustprofPageModule)
+  }
+
 ];
 @NgModule({
   imports: [
