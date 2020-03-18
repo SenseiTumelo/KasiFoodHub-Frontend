@@ -54,14 +54,9 @@ export class DataService {
     return this.http.post<any>(this.admin_prof_url + '_login', user);
   }
 
-  loggedIn(p) {
-      this.logged = p;
-
-    if (this.logged > 0) {
-      return true;
-    }
-    else return false;
-    // return !!localStorage.getItem('token');
+  loggedIn() {
+      
+    return !!localStorage.getItem('token');
   }
 
 getToken(){

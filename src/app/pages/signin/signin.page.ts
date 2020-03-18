@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 
 @Component({
@@ -11,21 +12,22 @@ import { Router } from '@angular/router';
 })
 export class SigninPage implements OnInit {
 
-  constructor(private location: Location, private data: DataService, private route: Router) { }
+  constructor(private location: Location, private data: DataService, private route: Router, private authService: AuthenticationService) { }
 
   ngOnInit() {
   }
  back(){
    this.location.back();
  }
- num: Number = 0 ;
 
- clicked(){
- return this.data.loggedIn(1);
- }
 
  gotoProfile(){
    this.route.navigateByUrl('/custprof');
  }
+
+ // auth guard
+ loginUser(){
+  this.authService.login();
+}
 
 }

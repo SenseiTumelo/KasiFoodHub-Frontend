@@ -18,6 +18,8 @@ import { AuthGuard } from './gaurds/auth.guard';
 import { ProfilePageModule } from './pages/vendor/profile/profile.module';
 import { AddMenuPageModule} from './pages/vendor/add-menu/add-menu.module';
 import { AdminauthGuard } from './gaurds/adminauth.guard';
+import { AuthenticationService } from './services/authentication.service';
+import { Storage } from '@ionic/storage';
 
 // import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
 
@@ -40,8 +42,8 @@ import { AdminauthGuard } from './gaurds/adminauth.guard';
 
   ],
   providers: [
-    StatusBar, AuthGuard, AdminauthGuard,
-    SplashScreen,
+    StatusBar, AuthGuard, AdminauthGuard, AuthenticationService,
+    SplashScreen, NativeStorage,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -19,36 +19,36 @@
     </ion-item>
    </ion-list>
 
-  <ion-card class="card-body">
+  <!--ion-card class="card-body"-->
     
     <!--this is the slides you will see on the home page-->
-    <ion-slides  pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)">
+    <ion-slides  pager #mySlider1 class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider1)">
 
       <ion-slide >
-        <img src = 'assets/images/kfh6.png' alt="kasi logo"/>
+        <img src = 'assets/images/kfh6.png'  class="pics" alt="kasi logo"/>
         
       </ion-slide>
     
       <ion-slide>
-        <img src = 'assets/images/Advertisement/ad2.jpg' alt="kasi logo"/>
+        <img src = 'assets/images/Advertisement/ad2.jpg' class="pics" alt="kasi logo"/>
         
       </ion-slide>
     
       <ion-slide >
-        <img src = 'assets/images/Advertisement/menatlana.jpg' alt="kasi logo"/>
+        <img src = 'assets/images/Advertisement/menatlana.jpg' class="pics" alt="kasi logo"/>
         
       </ion-slide>
       <ion-slide >
-        <img src = 'https://specsonline.com/wp-content/uploads/2019/01/Mobile-Deli-Page-Slider-600x200.jpg' alt="kasi logo"/>
+        <img src = 'https://specsonline.com/wp-content/uploads/2019/01/Mobile-Deli-Page-Slider-600x200.jpg' class="pics" alt="kasi logo"/>
         
       </ion-slide>
       <ion-slide >
-        <img src = 'https://www.findtakeaways.co.za/images/Specials/Chesa_Nyama_Family_Special.JPG' alt="kasi logo"/>
+        <img src = 'https://www.findtakeaways.co.za/images/Specials/Chesa_Nyama_Family_Special.JPG'class="pics" alt="kasi logo"/>
         
       </ion-slide>
     
     </ion-slides>
-  </ion-card>
+  <!--/ion-card-->
    <div  *ngFor = "let a of adminData">
        <ion-title>{{a.id}}</ion-title>
    </div>
@@ -81,7 +81,25 @@
           <img src='https://www.findtakeaways.co.za/images/Specials/Chesa_Nyama_Family_Special.JPG'>
         </ion-card>
       </ion-slide>
-    </ion-slides>
-   
+
+      <ion-slide style="background-color: grey" >
+        <ion-card >
+          <img src='assets/images/Advertisement/ad2.jpg'>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide style="background-color: grey" >
+        <ion-card >
+          <img src='assets/images/Advertisement/menatlana.jpg'>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide style="background-color: grey" >
+        <ion-card >
+          <img src='https://specsonline.com/wp-content/uploads/2019/01/Mobile-Deli-Page-Slider-600x200.jpg'>
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>   
 </ion-card>
 </ion-content>
