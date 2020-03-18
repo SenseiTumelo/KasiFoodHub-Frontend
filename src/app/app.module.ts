@@ -13,6 +13,7 @@ import { CartModalPageModule } from './pages/cart-modal/cart-modal.module';
 import { OverviewPageModule} from './pages/vendor/overview/overview.module';
 import { ExtrasPageModule } from './pages/extras/extras.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
+
 import { AuthGuard } from './gaurds/auth.guard';
 
 import { ProfilePageModule } from './pages/vendor/profile/profile.module';
@@ -22,6 +23,8 @@ import { AuthenticationService } from './services/authentication.service';
 import { Storage } from '@ionic/storage';
 
 // import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
+
+
 
 
 @NgModule({
@@ -43,7 +46,7 @@ import { Storage } from '@ionic/storage';
   ],
   providers: [
     StatusBar, AuthGuard, AdminauthGuard, AuthenticationService,
-    SplashScreen, NativeStorage,
+    SplashScreen, //NativeStorage,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

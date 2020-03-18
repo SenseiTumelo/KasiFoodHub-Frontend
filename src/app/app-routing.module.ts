@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './gaurds/auth.guard';
@@ -18,7 +19,7 @@ const routes: Routes = [
     loadChildren: () => import('./order/order.module').then( m => m.OrderPageModule)
   },
   {
-    path: 'cart-modal',
+    path: 'cart-modal/:name',
     loadChildren: () => import('./pages/cart-modal/cart-modal.module').then( m => m.CartModalPageModule)
   },
   {
@@ -101,6 +102,7 @@ const routes: Routes = [
 
     path: 'history',
     loadChildren: () => import('./pages/history/history.module').then( m => m.HistoryPageModule)
+
   },
   {
     path: 'signin',
