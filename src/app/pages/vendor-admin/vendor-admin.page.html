@@ -69,14 +69,21 @@
     <ion-title>
       Restaurant Admin
     </ion-title>
+    
     <ion-buttons slot="start">
-      <ion-menu-button autoHide="false"></ion-menu-button>
-      
+      <ion-menu-button autoHide="false"></ion-menu-button>      
     </ion-buttons>
+
+    <ion-buttons collapse="true" slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color = "dark">
 
   <ion-router-outlet id="main"></ion-router-outlet>
 
@@ -120,7 +127,7 @@
 
     <ion-card color = "light">
       <ion-card-header>
-        Monthly Financial Performance
+        Annual Business Performance
       </ion-card-header>
       <ion-card-content>
         <canvas #lineCanvas></canvas>
