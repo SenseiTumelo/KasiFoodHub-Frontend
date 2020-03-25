@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/services/authentication.service';
+// import { AuthenticationService } from 'src/app/services/authentication.service';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class SigninPage implements OnInit {
 
-  constructor(private location: Location, private data: DataService, private route: Router, private authService: AuthenticationService) { }
+  constructor(private location: Location, private data: DataService, private route: Router /* , private authService: AuthenticationService */ ) { }
 
   ngOnInit() {
   }
@@ -25,9 +25,9 @@ export class SigninPage implements OnInit {
    this.route.navigateByUrl('/custprof');
  }
 
- // auth guard
+ /* auth guard
  loginUser(){
   this.authService.login();
-}
+}*/
 
 }

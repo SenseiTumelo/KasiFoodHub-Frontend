@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
 
+
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -20,7 +21,7 @@ import { ProfilePageModule } from './pages/vendor/profile/profile.module';
 import { AddMenuPageModule} from './pages/vendor/add-menu/add-menu.module';
 import { AdminauthGuard } from './gaurds/adminauth.guard';
 import { AuthenticationService } from './services/authentication.service';
-import { Storage } from '@ionic/storage';
+// import { Storage } from '@ionic/storage'; error
 
 // import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
 
@@ -45,8 +46,8 @@ import { Storage } from '@ionic/storage';
 
   ],
   providers: [
-    StatusBar, AuthGuard, AdminauthGuard, AuthenticationService,
-    SplashScreen, //NativeStorage,
+    StatusBar, /*AuthGuard, AdminauthGuard, AuthenticationService,*/ 
+    SplashScreen, // NativeStorage,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -1,13 +1,17 @@
 <ion-header>
   <ion-toolbar color = 'warning'>
     <div class="header ">
-    <ion-icon name="menu" (click)="presentActionSheet()"></ion-icon>
+    <ion-icon name="menu" (click)="presentActionSheet()"></ion-icon> <br>
+    <a href="/home">home</a>
+    <a href="/restaurant">home</a>
+    <a href="/signin">SignIn</a>
+  </div>
     <!--ion-avatar>
     <img src="assets/images/kfh6.png" alt="logo" />
   </ion-avatar-->
       <ion-title>Kasi Food Hub</ion-title>
       <ion-searchbar [(ngModel)] = "searchTerm" (ionInput)= "setFilteredItems()"></ion-searchbar>
-    </div>
+    
     
   </ion-toolbar>
 </ion-header>

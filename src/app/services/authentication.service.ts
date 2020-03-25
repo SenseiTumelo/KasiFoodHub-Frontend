@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 import { Platform, ToastController } from '@ionic/angular';
-
+import { Storage } from '@ionic/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -30,21 +30,21 @@ export class AuthenticationService {
     });
   }
  
- 
+  
   login() {
     var dummy_response = {
       user_id: '007',
       user_name: 'test'
     };
     this.storage.set('USER_INFO', dummy_response).then((response) => {
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['home']);
       this.authState.next(true);
     });
   }
  
   logout() {
     this.storage.remove('USER_INFO').then(() => {
-      this.router.navigate(['login']);
+      this.router.navigate(['signin']);
       this.authState.next(false);
     });
   }

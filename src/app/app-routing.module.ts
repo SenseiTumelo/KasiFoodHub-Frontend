@@ -24,8 +24,9 @@ const routes: Routes = [
   },
   {
     path: 'checkout',
-    loadChildren: () => import('./pages/checkout/checkout.module').then( m => m.CheckoutPageModule),
-   canActivate: [AuthGuard]
+    loadChildren: () => import('./pages/checkout/checkout.module').then( m => m.CheckoutPageModule)
+
+  // canActivate: [AuthGuard]
   },
   {
     path: 'order2',
@@ -60,12 +61,12 @@ const routes: Routes = [
   {
     path: 'vendor-admin',
     loadChildren: () => import('./pages/vendor-admin/vendor-admin.module').then( m => m.VendorAdminPageModule),
-    canActivate: [AdminauthGuard]
+   // canActivate: [AdminauthGuard]
   },
   {
     path: 'profile',
     loadChildren: () => import('./pages/vendor/profile/profile.module').then( m => m.ProfilePageModule),
-    canActivate: [AuthGuard]
+   // canActivate: [AuthGuard]
   },
   {
     path: 'add-menu',
@@ -111,7 +112,7 @@ const routes: Routes = [
   {
     path: 'custprof',
     loadChildren: () => import('./pages/custprof/custprof.module').then( m => m.CustprofPageModule),
-    canActivate: [AuthGuard]
+   // canActivate: [AuthGuard]
   },
   {
     path: 'rest-apply',

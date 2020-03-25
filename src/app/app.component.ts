@@ -20,7 +20,7 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar, private modalCtrl: ModalController,
-    private authenticationService: AuthenticationService
+   // private authenticationService: AuthenticationService
   ) {
     this.initializeApp();
   }
@@ -30,14 +30,14 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       // auth services and guard
-  
+  /*
       this.authenticationService.authState.subscribe(state => {
         if (state) {
           this.router.navigate(['home']);
         } else {
           this.router.navigate(['signin']);
         }
-      });
+      });*/
     });
   }
  
