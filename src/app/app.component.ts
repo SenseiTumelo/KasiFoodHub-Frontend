@@ -40,24 +40,30 @@ export class AppComponent {
       });*/
     });
   }
+<<<<<<< HEAD
  
    async openProfile(){
      let modal = await this.modalCtrl.create({
+=======
+
+   async openProfile() {
+     const modal = await this.modalCtrl.create({
+>>>>>>> 643992bd3dd18ee647a95176cbaaa90bfe841b3c
        component: ProfilePage,
        cssClass: 'profile'
      });
      modal.present();
    }
 
-  async openAddMenu(){
-    let modal = await this.modalCtrl.create({
+  async openAddMenu() {
+    const modal = await this.modalCtrl.create({
       component: AddMenuPage,
       cssClass: 'menu'
     });
     modal.present();
   }
-  async openOverview(){
-    let modal = await this.modalCtrl.create({
+  async openOverview() {
+    const modal = await this.modalCtrl.create({
       component: OverviewPage,
       cssClass: 'overview'
     });
