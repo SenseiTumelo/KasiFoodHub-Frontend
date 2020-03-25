@@ -14,12 +14,9 @@ import { CartModalPageModule } from './pages/cart-modal/cart-modal.module';
 import { OverviewPageModule} from './pages/vendor/overview/overview.module';
 import { ExtrasPageModule } from './pages/extras/extras.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
-<<<<<<< HEAD
 
-import { AuthGuard } from './gaurds/auth.guard';
+//import { AuthGuard } from './gaurds/auth.guard';
 
-=======
->>>>>>> 643992bd3dd18ee647a95176cbaaa90bfe841b3c
 import { ProfilePageModule } from './pages/vendor/profile/profile.module';
 import { AddMenuPageModule} from './pages/vendor/add-menu/add-menu.module';
 import { AdminauthGuard } from './gaurds/adminauth.guard';
@@ -30,14 +27,6 @@ import { AuthenticationService } from './services/authentication.service';
 
 
 
-<<<<<<< HEAD
-=======
-//import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
-
-
-
-
->>>>>>> 643992bd3dd18ee647a95176cbaaa90bfe841b3c
 
 @NgModule({
   declarations: [AppComponent],

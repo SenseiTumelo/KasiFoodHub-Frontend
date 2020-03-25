@@ -40,15 +40,9 @@ export class AppComponent {
       });*/
     });
   }
-<<<<<<< HEAD
  
    async openProfile(){
      let modal = await this.modalCtrl.create({
-=======
-
-   async openProfile() {
-     const modal = await this.modalCtrl.create({
->>>>>>> 643992bd3dd18ee647a95176cbaaa90bfe841b3c
        component: ProfilePage,
        cssClass: 'profile'
      });
