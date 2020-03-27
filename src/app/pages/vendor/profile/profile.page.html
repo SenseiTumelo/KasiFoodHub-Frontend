@@ -29,16 +29,21 @@
       </div>
     </div>
     </div>
-    <ion-list>
+    <div *ngFor="let a of adminProf ">
+
+    
+    <ion-list >
         <ion-item>
-          <ion-label position="stacked">Phone</ion-label>
+          <ion-label position="stacked">{{a.email_address}}</ion-label>
           <ion-input color="primary" readonly="true"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="stacked">Email</ion-label>
+          <ion-label position="stacked">{{a.password}}</ion-label>
           <ion-input color="primary" readonly="true"></ion-input>
         </ion-item>
       </ion-list>
+    </div>
   </div>
+ 
 
 </ion-content>
