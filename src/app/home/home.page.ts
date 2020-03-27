@@ -97,6 +97,14 @@ export class HomePage implements OnInit {
           console.log('Share clicked');
           this.route.navigateByUrl('/profile');
         }
+      },
+         {
+          text: 'goto admin',
+          icon: 'help-circle-outline',
+          handler: () => {
+            console.log('admin clicked');
+            this.route.navigateByUrl('/vendor-admin');
+          }
       },{
          text: 'Cancel',
          icon: 'close',
@@ -124,10 +132,11 @@ export class HomePage implements OnInit {
   // testing the admin data
   adminData: any =[];
 
-  //search 
-  searchData: any = []; 
+  // search 
+  // searchData: any = []; 
+  jsonData: any = [];
 
-  public getRest(){ //ive used the adminData here to test the connection. some of the variables should be change..pls dont touch
+  public getRest(){ // ive used the adminData here to test the connection. some of the variables should be change..pls dont touch
     return this.dataService.adminService().subscribe((data: any) => {this.adminData = data; console.log(this.adminData);});
   }
 
@@ -139,23 +148,24 @@ export class HomePage implements OnInit {
   }
 
   // search bar
-  ionViewDidLoad(){
+  // --------------------------------------------------
+  ionViewDidLoad() {
     this.setFilteredItems();
   }
 
   setFilteredItems() {
-
  
-        //this.jsonData = this.dataService.filterItems(this.searchTerm);
-        this.searchData = this.searchService.filterItems(this.searchTerm);
+        this.jsonData = this.dataService.filterItems(this.searchTerm);
+       // this.searchData = this.searchService.filterItems(this.searchTerm);
  
     }
-//------------------------------------------------------
+// ------------------------------------------------------
 
 
 
     search(){
-     return this.searchService.searchD().subscribe((dat: any) => {this.searchData = dat;console.log(this.searchData);});
+      this.dataService.jsonData.subscribe((dat: any) => {this.jsonData = dat; console.log(this.jsonData);});
+     // return this.searchService.searchD().subscribe((dat: any) => {this.searchData = dat;console.log(this.searchData);});
     }
 
     slidesDidLoad(slides) {
