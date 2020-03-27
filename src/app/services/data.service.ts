@@ -34,18 +34,11 @@ export class DataService {
   log_url = '';
   show_rest_url = '';
   prof_url = '';
-<<<<<<< HEAD
   admin_prof_url = 'http://168.172.185.4:6000/admin';
   logged =  0;
 
   adminService() {
     return this.http.get<any>(this.admin_prof_url);
-=======
-  admin_prof_url = 'http://168.172.185.4:3000/admin';
-  cust_url = 'http://168.172.185.4:3000/customer';
- adminService(){
-    return this.http.get<any>(this.admin_prof_url);//LOOL 
->>>>>>> d14aece4f05d3fb4fcbb6cdb79b6ea10c21533ea
   }
 
   // this was used for testing the search bar
