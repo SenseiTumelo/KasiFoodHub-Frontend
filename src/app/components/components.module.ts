@@ -14,6 +14,11 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 
   exports: [SlidesComponent, LogoComponent, StartComponent, SearchbarComponent],
 
+<<<<<<< HEAD
+=======
+  // exports: [SlidesComponent, LogoComponent, StartComponent,  SearchbarComponent],
+
+>>>>>>> 5a86e2ea675e37abd2e5c1c9d79ff3d027005336
   imports: [
     CommonModule,
     FormsModule,

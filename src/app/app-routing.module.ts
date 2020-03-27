@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5a86e2ea675e37abd2e5c1c9d79ff3d027005336
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -95,10 +99,18 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
 
   }*/
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5a86e2ea675e37abd2e5c1c9d79ff3d027005336
   {
 
     path: 'history',
     loadChildren: () => import('./pages/history/history.module').then( m => m.HistoryPageModule)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5a86e2ea675e37abd2e5c1c9d79ff3d027005336
   },
   {
     path: 'signin',
@@ -107,6 +119,10 @@ const routes: Routes = [
   {
     path: 'custprof',
     loadChildren: () => import('./pages/custprof/custprof.module').then( m => m.CustprofPageModule)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5a86e2ea675e37abd2e5c1c9d79ff3d027005336
   },
   {
     path: 'rest-apply',
