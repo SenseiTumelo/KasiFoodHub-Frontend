@@ -31,3 +31,19 @@ ion-content{
     height: calc(100vh - (200px + 56px));
     overflow: hidden;
   }
+  .header img {
+    float: left;
+    width: 85px;
+    height: 85px;
+    background: #555;
+  }
+  
+  .header h1 {
+    position: relative;
+    top: 18px;
+    left: 10px;
+  }
+  .pics{
+    width: 509px;
+    height: 476px;
+  }
