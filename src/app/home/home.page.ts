@@ -148,12 +148,12 @@ export class HomePage implements OnInit {
   }
 
   // search bar
-  ionViewDidLoad(){
+  // --------------------------------------------------
+  ionViewDidLoad() {
     this.setFilteredItems();
   }
 
   setFilteredItems() {
-
  
         this.jsonData = this.dataService.filterItems(this.searchTerm);
        // this.searchData = this.searchService.filterItems(this.searchTerm);
