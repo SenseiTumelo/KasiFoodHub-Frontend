@@ -6,11 +6,8 @@ import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-<<<<<<< HEAD
+
 import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
-=======
-import { HttpClientModule, HttpErrorResponse }  from '@angular/common/http';
->>>>>>> d14aece4f05d3fb4fcbb6cdb79b6ea10c21533ea
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CartModalPage } from './pages/cart-modal/cart-modal.page';
@@ -27,16 +24,11 @@ import { AdminauthGuard } from './gaurds/adminauth.guard';
 import { AuthenticationService } from './services/authentication.service';
 // import { Storage } from '@ionic/storage'; error
 
-<<<<<<< HEAD
-// import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
-=======
+//import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
 
 // import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
 
->>>>>>> d14aece4f05d3fb4fcbb6cdb79b6ea10c21533ea
-
-
-
+// import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
 
 @NgModule({
   declarations: [AppComponent],

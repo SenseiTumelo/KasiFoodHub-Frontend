@@ -19,15 +19,25 @@ export class Order2Page implements OnInit {
 
   cart = [];
   product = [];
+  ext = [];
+  menuList: Array<any> = [];
   cartItemCount: BehaviorSubject<number>;
 
   @ViewChild('cart',{static:false,read: ElementRef})fab: ElementRef;
 
   constructor(private cartService: CartService, private modalCtrl: ModalController, private location: Location) { }
 
+  // ngOnInit() {
+  //   this.product = this.cartService.getProduct();
+  //   this.cart = this.cartService.getCart();
+  //   this.cartItemCount = this.cartService.getCartItemCount();
+  // }
   ngOnInit() {
-    this.product = this.cartService.getProduct();
-    this.cart = this.cartService.getCart();
+    this.cartService.getItems().subscribe((data:any) => {
+      this.menuList = data.menu;
+      console.log(this.menuList);
+    });
+    this.ext = this.cartService.getExt();
     this.cartItemCount = this.cartService.getCartItemCount();
   }
 

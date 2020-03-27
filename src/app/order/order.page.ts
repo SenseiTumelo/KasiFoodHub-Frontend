@@ -6,7 +6,6 @@ import { CartModalPage } from '../pages/cart-modal/cart-modal.page';
 import { ExtrasPage } from '../pages/extras/extras.page';
 import { Location } from '@angular/common';
 
-
 @Component({
   selector: 'app-order',
   templateUrl: './order.page.html',
@@ -15,17 +14,28 @@ import { Location } from '@angular/common';
 export class OrderPage implements OnInit {
   cart = [];
   products = [];
+  ext = [];
   cartItemCount: BehaviorSubject<number>;
+  menuList: Array<any> = [];
 
   @ViewChild('cart',{static:false,read: ElementRef})fab: ElementRef;
 
   constructor(private cartService: CartService, private modalCtrl: ModalController,private location: Location) { }
 
+  // ngOnInit() {
+  //   this.products = this.cartService.getProducts();
+  //   this.cart = this.cartService.getCart();
+  //   this.cartItemCount = this.cartService.getCartItemCount();
+  // }
   ngOnInit() {
-    this.products = this.cartService.getProducts();
-    this.cart = this.cartService.getCart();
+    this.cartService.getItems().subscribe((data:any) => {
+      this.menuList = data.menu;
+      console.log(this.menuList);
+    });
+    this.ext = this.cartService.getExt();
     this.cartItemCount = this.cartService.getCartItemCount();
   }
+
 
   addToCart(product){
     this.animateCSS('tada');

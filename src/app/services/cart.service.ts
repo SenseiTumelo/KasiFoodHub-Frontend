@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, from } from 'rxjs';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient,HttpHeaders} from '@angular/common/http';
 
 export interface Product {
   id: number;
@@ -43,16 +43,15 @@ const ITEMS_KEY = 'myItems';
   providedIn: 'root'
 })
 export class CartService {
-  http: any;
-
+  
 
   constructor(private httpClient: HttpClient) { }
 
-  private _addProduct = "http://168.172.185.4:6000/viewMenu";
-  //read
-  // getItems(){
-  //   return this.http.get<any>(this._addProduct);
-  // }
+  private _addProduct = "http://localhost:6000/viewMenu";
+  
+  getItems(){
+   return this.httpClient.get<any>(this._addProduct);
+  }
 
 
   data: Product[] = [
