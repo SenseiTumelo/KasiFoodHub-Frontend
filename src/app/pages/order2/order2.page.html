@@ -37,15 +37,15 @@
        <ion-row>
         <ion-img class="logo" src="assets/images/logo2.png" alt=""></ion-img>
        </ion-row>
-     <ion-card *ngFor="let p of product" (click)="exProduct(p)" (click)="openExtras()">
+     <ion-card *ngFor="let p of menuList" (click)="exProduct(p)" (click)="openExtras()">
       <ion-card-header>
-        <ion-card-title>{{ p.name}}</ion-card-title>
+        <ion-card-title>{{ p.item_name}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-row class="ion-align-items-center">
           <ion-col size="8">
             <ion-label color="secondary">
-              <b>{{p.price | currency:'R'}}</b>
+              <b>{{p.item_price | currency:'R'}}</b>
             </ion-label>
           </ion-col>
           
