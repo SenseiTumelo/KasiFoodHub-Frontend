@@ -5,7 +5,7 @@ import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { HttpClientModule, HttpErrorResponse }    from '@angular/common/http';
+import { HttpClientModule, HttpErrorResponse }  from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CartModalPage } from './pages/cart-modal/cart-modal.page';
@@ -19,7 +19,8 @@ import { AddMenuPageModule} from './pages/vendor/add-menu/add-menu.module';
 
 
 
-//import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
+
+// import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
 
 
 
@@ -31,8 +32,8 @@ import { AddMenuPageModule} from './pages/vendor/add-menu/add-menu.module';
 
 
 
-  imports: [BrowserModule, 
-    IonicModule.forRoot(), 
+  imports: [BrowserModule,
+    IonicModule.forRoot(),
     AppRoutingModule,
     OverviewPageModule,
     CartModalPageModule,

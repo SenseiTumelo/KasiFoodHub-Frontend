@@ -6,11 +6,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AdminService {
-  profile_url ="http://localhost:6000/admin";
+  profile_url ='http://localhost:3000/admin';
+  overview_url = 'http://localhost:3000/';//check
   constructor(private http: HttpClient) { }
 
-  getProfile(){
-  
-    return this.http.get<any>(this.profile_url);  
+  getProfile() {
+
+    return this.http.get<any>(this.profile_url);
   }
 }
+//leave thos shit
