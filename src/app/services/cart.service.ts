@@ -47,7 +47,7 @@ export class CartService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private _addProduct = "http://localhost:4000/viewMenu";
+  private _addProduct = "http://localhost:6000/viewMenu";
   
   getItems(){
    return this.httpClient.get<any>(this._addProduct);
