@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, from } from 'rxjs';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient,HttpHeaders} from '@angular/common/http';
 
 export interface Product{
   id: number;
@@ -44,7 +44,7 @@ const ITEMS_KEY = 'myItems';
 })
 export class CartService {
 
-  private _addProduct = "http://168.172.185.4:6000/viewMenu";
+  private _addProduct = "http://localhost:4000/viewMenu";
   //read
   getItems(){
     return this.http.get<any>(this._addProduct);

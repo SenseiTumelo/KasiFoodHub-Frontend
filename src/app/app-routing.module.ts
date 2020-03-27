@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> a3d6e2fca4b55626cc0020150470910a4374dc2a
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -19,7 +15,7 @@ const routes: Routes = [
     loadChildren: () => import('./order/order.module').then( m => m.OrderPageModule)
   },
   {
-    path: 'cart-modal/:name',
+    path: 'cart-modal',
     loadChildren: () => import('./pages/cart-modal/cart-modal.module').then( m => m.CartModalPageModule)
   },
   {
@@ -99,26 +95,18 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
 
   }*/
-<<<<<<< HEAD
-  {
-=======
-
-  },
   {
 
     path: 'history',
     loadChildren: () => import('./pages/history/history.module').then( m => m.HistoryPageModule)
-  }
->>>>>>> a3d6e2fca4b55626cc0020150470910a4374dc2a
+  },
+  {
     path: 'signin',
     loadChildren: () => import('./pages/signin/signin.module').then( m => m.SigninPageModule)
   },
   {
     path: 'custprof',
     loadChildren: () => import('./pages/custprof/custprof.module').then( m => m.CustprofPageModule)
-<<<<<<< HEAD
-  }
-=======
   },
   {
     path: 'rest-apply',
@@ -128,7 +116,6 @@ const routes: Routes = [
     path: 'reset-password',
     loadChildren: () => import('./pages/reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
   },
->>>>>>> a3d6e2fca4b55626cc0020150470910a4374dc2a
 
 ];
 @NgModule({

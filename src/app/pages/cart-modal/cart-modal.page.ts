@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Product, CartService, Extras } from 'src/app/services/cart.service';
 import { ModalController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { empty } from 'rxjs';
 import { Validators,FormBuilder,FormGroup} from '@angular/forms';
-import { NavController, NavParams } from "@ionic/angular";
-//import { ActiverateRoute}
+import { NavController} from "@ionic/angular";
 @Component({
   selector: 'app-cart-modal',
   templateUrl: './cart-modal.page.html',
@@ -18,11 +17,8 @@ export class CartModalPage implements OnInit {
   ext: Extras[] = [];
   value: any;
   
-  constructor(public navParam: NavParams, private formBuilder: FormBuilder, private navCtrl: NavController,private cartService: CartService, private modalCtrl: ModalController,private router: Router){
-    this.value = navParam.get('flavor');
-  }
-  ionView(){
-    console.log('flavours');
+  constructor(public activatedRoute: ActivatedRoute, private formBuilder: FormBuilder, private navCtrl: NavController,private cartService: CartService, private modalCtrl: ModalController,private router: Router){
+   
   }
 
   ngOnInit() {
@@ -30,6 +26,7 @@ export class CartModalPage implements OnInit {
     this.ext = this.cartService.getExt();
     this.cartService.disableCheckout();
     
+
   }
 
   decreaseCartItem(product){
@@ -58,7 +55,6 @@ export class CartModalPage implements OnInit {
       clear all*/
     
   }
-
   
 
 }
