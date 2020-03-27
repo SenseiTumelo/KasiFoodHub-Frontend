@@ -19,7 +19,7 @@ export class VendorAdminPage implements OnInit {
   private doughnutChart: Chart;
   private lineChart: Chart;
   constructor(private menu: MenuController, private modalCtrl: ModalController) { }
-
+  
   ngOnInit() {
     this.barChart = new Chart(this.barCanvas.nativeElement, {
       type: 'bar',
