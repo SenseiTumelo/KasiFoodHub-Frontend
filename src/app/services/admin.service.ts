@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AdminService {
   profile_url ='http://localhost:3000/admin';
-  overview_url = 'http://localhost:3000/';//check
+  overview_url = 'http://localhost:3000/'; // check
   constructor(private http: HttpClient) { }
 
   getProfile() {
@@ -15,4 +15,3 @@ export class AdminService {
     return this.http.get<any>(this.profile_url);
   }
 }
-//leave thos shit
