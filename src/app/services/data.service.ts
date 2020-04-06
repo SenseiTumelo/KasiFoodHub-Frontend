@@ -7,11 +7,11 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
 
 
-  jsonData: any; // search bar purpose
+  jsonData: any  = 'http://localhost:6000/viewMenu'; // search bar purpose
 
   constructor(private http: HttpClient) {
     // data for testing searchbar, this will be deleted !!!
-    this.jsonData = [
+   /* this.jsonData = [
       {id: 1, label: 'saw', name: 'Sephahlo'},
       {id: 2, label: 'saw1', name: 'Mogodu'},
       {id: 3, label: 'saw2', name: 'malana'},
@@ -25,7 +25,7 @@ export class DataService {
       {id: 3, label: 'saw2', name: 'malliga'},
       {id: 3, label: 'saw2', name: 'malliga'}
 
-      ];
+      ];*/
 
    }
 
@@ -34,7 +34,7 @@ export class DataService {
   log_url = '';
   show_rest_url = '';
   prof_url = '';
-  admin_prof_url = 'http://168.172.185.4:6000/admin';
+  admin_prof_url = 'http://localhost:6000/admin';
   logged =  0;
 
   adminService() {

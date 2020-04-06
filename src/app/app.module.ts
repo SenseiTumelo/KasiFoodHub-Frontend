@@ -30,14 +30,15 @@ import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
 
-
+  declarations: [AppComponent],
+  entryComponents: [],
 
   imports: [BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     OverviewPageModule,
     CartModalPageModule,
-    AddMenuPageModule,
+    AddMenuPageModule, 
     ExtrasPageModule,
     HttpClientModule,
     ProfilePageModule
