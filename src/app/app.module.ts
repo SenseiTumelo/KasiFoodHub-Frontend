@@ -38,14 +38,14 @@ import { AuthenticationService } from './services/authentication.service';
     AppRoutingModule,
     OverviewPageModule,
     CartModalPageModule,
-    AddMenuPageModule, 
+    AddMenuPageModule,
     ExtrasPageModule,
     HttpClientModule,
     ProfilePageModule
 
   ],
   providers: [
-    StatusBar, /*AuthGuard, AdminauthGuard, AuthenticationService,*/ 
+    StatusBar, /*AuthGuard, AdminauthGuard, AuthenticationService,*/
     SplashScreen, // NativeStorage,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
