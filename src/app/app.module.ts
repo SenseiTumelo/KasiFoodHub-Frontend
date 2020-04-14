@@ -21,6 +21,8 @@ import { ProfilePageModule } from './pages/vendor/profile/profile.module';
 import { AddMenuPageModule} from './pages/vendor/add-menu/add-menu.module';
 import { AdminauthGuard } from './gaurds/adminauth.guard';
 import { AuthenticationService } from './services/authentication.service';
+import { ServiceproviderService } from './services/serviceprovider.service';
+
 // import { Storage } from '@ionic/storage'; error
 
 // import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
@@ -45,7 +47,7 @@ import { AuthenticationService } from './services/authentication.service';
 
   ],
   providers: [
-    StatusBar, /*AuthGuard, AdminauthGuard, AuthenticationService,*/
+    StatusBar, ServiceproviderService,
     SplashScreen, // NativeStorage,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
