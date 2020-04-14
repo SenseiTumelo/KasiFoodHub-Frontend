@@ -43,14 +43,14 @@ export class HomePage implements OnInit {
          text: 'Restaurants',
          icon: 'restaurant-outline',
          handler: () => {
-           console.log('Play clicked');
+           console.log('Restaurants clicked');
            this.route.navigateByUrl('/restaurants');
          }
        }, {
          text: 'My cart',
          icon: 'cart-outline',
          handler: () => {
-           console.log('Favorite clicked');
+           console.log('My cart clicked');
            this.route.navigateByUrl('/cart-modal');
          }
        },
@@ -58,7 +58,7 @@ export class HomePage implements OnInit {
          text: 'Register as a Vendor',
          icon: 'person-add-outline',
          handler: () => {
-           console.log('Favorite clicked');
+           console.log('Register as a Vendor clicked');
            this.route.navigateByUrl('/signupadmin');
          }
        },
@@ -66,14 +66,14 @@ export class HomePage implements OnInit {
         text: 'Register as a customer',
         icon: 'person-add-outline',
         handler: () => {
-          console.log('Favorite clicked');
+          console.log('Register as a customer clicked');
           this.route.navigateByUrl('/signupcust');
         }
       },   {
         text: 'Sign in',
         icon: 'person',
         handler: () => {
-          console.log('Favorite clicked');
+          console.log('Signin clicked');
           this.route.navigateByUrl('/signin');
         }
       },{

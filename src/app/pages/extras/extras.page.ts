@@ -11,15 +11,17 @@ import { Router, NavigationExtras } from '@angular/router';
   styleUrls: ['./extras.page.scss'],
 })
 export class ExtrasPage implements OnInit {
-  extra=[];
+
+  constructor(private router: Router, private cartService: CartService, private modalCtrl: ModalController) { }
+  extra = [];
   cart = [];
   prod = [];
   ext = [];
   cartItemCount: BehaviorSubject<number>;
 
-  @ViewChild('cart',{static:false,read: ElementRef})fab: ElementRef;
+  @ViewChild('cart', {static: false, read: ElementRef})fab: ElementRef;
 
-  constructor(private router: Router,private cartService: CartService, private modalCtrl: ModalController) { }
+  flavor: string;
 
   ngOnInit() {
     this.prod = this.cartService.getProds();
@@ -29,23 +31,21 @@ export class ExtrasPage implements OnInit {
     this.extra = this.cartService.getExtras();
   }
 
-  addToCart(product){
+  addToCart(product) {
     this.cartService.addProduct(product);
   }
-  addExtra(extr){
+  addExtra(extr) {
     this.cartService.extraProd(extr);
   }
-  removeExtraItem(product){
+  removeExtraItem(product) {
     this.cartService.removeExtra(product);
   }
 
-  close(){
+  close() {
     this.modalCtrl.dismiss();
   }
-  
-  flavor: string;
-  
-  radioChangeHandler(event: any){
+
+  radioChangeHandler(event: any) {
     this.flavor = event.target.value;
     console.log(this.flavor);
   }
