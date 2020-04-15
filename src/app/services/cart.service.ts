@@ -21,20 +21,20 @@ export interface Prods {
   amount: number;
   image: ImageBitmap;
 }
-export interface Extras{
+export interface Extras {
   id: number;
   name: string;
   price: number;
 }
 
-export interface Employee{
-  id:number;
-   name:string;
-   shopName:string;
-   orderingData:Date;
-   address:string;
-   price:number;
-  photoPath?:string;
+export interface Employee {
+  id: number;
+   name: string;
+   shopName: string;
+   orderingData: Date;
+   address: string;
+   price: number;
+  photoPath?: string;
   amount: number;
 }
 
@@ -48,8 +48,8 @@ export class CartService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private _addProduct = "http://168.172.185.4:6000/viewMenu";
-  //read
+  private _addProduct = 'http://168.172.185.4:6000/viewMenu';
+  // read
   // getItems(){
   //   return this.http.get<any>(this._addProduct);
   // }
@@ -79,18 +79,18 @@ export class CartService {
     {id: 2, name: '2 Wings', price: 15.99, amount: 1},
     {id: 2, name: 'Maotwana&Pap', price: 19.99, amount: 1},
   ];
-  datar: Extras[] =[
-    {id:0, name:'Tomato Sauce',price:0.00},
-    {id:1, name:'Mustard',price:1.99},
-    {id:2, name:'Chilli Sauce',price:1.99},
-    {id:3, name:'Spicy Cheese',price:3.46}
+  datar: Extras[] = [
+    {id: 0, name: 'Tomato Sauce', price: 0.00},
+    {id: 1, name: 'Mustard', price: 1.99},
+    {id: 2, name: 'Chilli Sauce', price: 1.99},
+    {id: 3, name: 'Spicy Cheese', price: 3.46}
   ];
 
-  employees:Employee[]=[
-    {id:1,name:'Skopo',shopName:'Shisa Nyama',orderingData:new Date('10/25/1988'),address:'2427 Block L',price:49.99,photoPath:'assets/images/food1.png',amount:1},
-    {id:2,name:'Kota',shopName:'KFC',orderingData:new Date('11/05/1978'),address:'024 Block H',price:79.50,photoPath:'assets/images/kota1.jpg',amount:1},
-    {id:2,name:'Beef',shopName:'wimpy',orderingData:new Date('11/05/1978'),address:'014 Block vv',price:79.50,photoPath:'assets/images/food4.jpg',amount:1}
-  ]
+  employees: Employee[] = [
+    {id: 1, name: 'Skopo', shopName: 'Shisa Nyama', orderingData: new Date('10/25/1988'), address: '2427 Block L', price: 49.99, photoPath: 'assets/images/food1.png', amount: 1},
+    {id: 2, name: 'Kota', shopName: 'KFC', orderingData: new Date('11/05/1978'), address: '024 Block H', price: 79.50, photoPath: 'assets/images/kota1.jpg', amount: 1},
+    {id: 2, name: 'Beef', shopName: 'wimpy', orderingData: new Date('11/05/1978'), address: '014 Block vv', price: 79.50, photoPath: 'assets/images/food4.jpg', amount: 1}
+  ];
 
   private cart = [];
   private ext = [];
@@ -99,7 +99,7 @@ export class CartService {
 
   // read
 
-  getEmploye(){
+  getEmploye() {
     return this.employees;
   }
 
@@ -116,35 +116,35 @@ export class CartService {
     return this.cart;
   }
 
-  getExt(){
+  getExt() {
     return this.ext;
   }
-  getExtras(){
+  getExtras() {
     return this.datar;
   }
-  getCartItemCount(){
+  getCartItemCount() {
     return this.cartItemCount;
   }
-  extraProd(product){
+  extraProd(product) {
     let added = false;
-    for(let p of this.ext){
-      if(p.id === product.id){
+    for (const p of this.ext) {
+      if (p.id === product.id) {
         added = true;
         break;
       }
     }
-    if(!added){
+    if (!added) {
       this.ext.push(product);
     }
   }
-  removeExtra(product){
-    for(let [index, p] of this.ext.entries()){
-      if(p.id === product.id){
+  removeExtra(product) {
+    for (const [index, p] of this.ext.entries()) {
+      if (p.id === product.id) {
           this.ext.splice(index, 1);
       }
     }
   }
-  addProduct(product){
+  addProduct(product) {
 
     let added = false;
     for (const p of this.cart) {
@@ -176,8 +176,8 @@ export class CartService {
       if (p.id === product.id) {
         this.cartItemCount.next(this.cartItemCount.value - p.amount);
 
-          this.cart.splice(index, 1);
-          
+        this.cart.splice(index, 1);
+
       }
     }
   }
@@ -189,5 +189,5 @@ export class CartService {
       (document.getElementById('check') as HTMLInputElement).disabled = false;
     }
   }
-  
+
 }

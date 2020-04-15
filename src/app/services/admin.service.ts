@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http'; //step 1
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
-  profile_url ='http://localhost:3000/admin';
+  profile_url ='http://localhost:3000/admin';  // step 2
   overview_url = 'http://localhost:3000/'; // check
   constructor(private http: HttpClient) { }
 
-  getProfile() {
+  getProfile() { // 
 
     return this.http.get<any>(this.profile_url);
   }
 }
+ 
