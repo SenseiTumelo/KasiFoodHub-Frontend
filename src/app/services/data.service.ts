@@ -29,11 +29,12 @@ export class DataService {
 
    }
 
-
+// create an API here, likke this?
   reg_url = '';
   log_url = '';
   show_rest_url = '';
   prof_url = '';
+  signup = 'http://localhost:6000/signupadmin';//remeber the port number that serve in node not our app port number
   admin_prof_url = 'http://localhost:6000/admin';
   logged =  0;
 
