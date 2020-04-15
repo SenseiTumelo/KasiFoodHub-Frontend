@@ -17,7 +17,6 @@ import { Location } from '@angular/common';
 export class RestaurantsPage implements OnInit {
 
 
-
   constructor(private route: Router, private location: Location) { }
 
    

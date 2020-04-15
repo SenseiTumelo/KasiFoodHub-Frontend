@@ -15,11 +15,6 @@ import { Location } from '@angular/common';
 })
 
 export class Order3Page implements OnInit {
-
-  enableBackdropDismiss = true;
-  showBackdrop = false;
-  showPropagate = false;
-
   cart = [];
   prod = [];
   ext = [];
@@ -30,20 +25,20 @@ export class Order3Page implements OnInit {
 
   constructor(private cartService: CartService, private modalCtrl: ModalController, private location: Location) { }
 
-  ngOnInit() {
+  /*ngOnInit() {
     this.prod = this.cartService.getProds();
     this.cart = this.cartService.getCart();
     this.ext = this.cartService.getExt();
     this.cartItemCount = this.cartService.getCartItemCount();
-  }
-  /*ngOnInit() {
+  }*/
+  ngOnInit() {
     this.cartService.getItems().subscribe((data:any) => {
       this.menuList = data.menu;
       console.log(this.menuList);
     });
     this.ext = this.cartService.getExt();
     this.cartItemCount = this.cartService.getCartItemCount();
-  }*/
+  }
 
   addToCart(product){
     this.animateCSS('tada');
@@ -64,6 +59,7 @@ export class Order3Page implements OnInit {
     });
     modal.present();
   }
+  enableBackdropDismiss = true;
   async openExtras(){
     let modal = await this.modalCtrl.create({
       component: ExtrasPage,

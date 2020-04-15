@@ -18,16 +18,16 @@
       <h3 class="playername">Welcome</h3>
       <h5 class="country">kasi food hub</h5>
       <ion-item>
-        <ion-label position="floating" class="country">email/username</ion-label>
-        <ion-input></ion-input>
+        <ion-label position="floating" class="country">email</ion-label>
+        <ion-input ngModel #email ="ngModel" type="text" [(ngModel)]="userData.email" ></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating" class="country">password</ion-label>
-        <ion-input></ion-input>
+        <ion-input ngModel #password ="ngModel" [(ngModel)]="userData.password" type ="password"></ion-input>
       </ion-item>
     </div>
   
-    <ion-button expand="full" type='submit' color="success">Log in</ion-button>
+    <ion-button expand="full" type='submit' color="success" (click)="signin()">Log in</ion-button>
   </div>
 </ion-content>
 

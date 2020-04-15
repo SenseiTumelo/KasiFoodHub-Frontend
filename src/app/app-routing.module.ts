@@ -1,6 +1,9 @@
 
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './gaurds/auth.guard';
+import { AdminauthGuard } from './gaurds/adminauth.guard';
+
 
 const routes: Routes = [
   {
@@ -16,12 +19,14 @@ const routes: Routes = [
     loadChildren: () => import('./order/order.module').then( m => m.OrderPageModule)
   },
   {
-    path: 'cart-modal/:name',
+    path: 'cart-modal',
     loadChildren: () => import('./pages/cart-modal/cart-modal.module').then( m => m.CartModalPageModule)
   },
   {
     path: 'checkout',
     loadChildren: () => import('./pages/checkout/checkout.module').then( m => m.CheckoutPageModule)
+
+  // canActivate: [AuthGuard]
   },
   {
     path: 'order2',
@@ -55,11 +60,13 @@ const routes: Routes = [
   },
   {
     path: 'vendor-admin',
-    loadChildren: () => import('./pages/vendor-admin/vendor-admin.module').then( m => m.VendorAdminPageModule)
+    loadChildren: () => import('./pages/vendor-admin/vendor-admin.module').then( m => m.VendorAdminPageModule),
+   // canActivate: [AdminauthGuard]
   },
   {
     path: 'profile',
-    loadChildren: () => import('./pages/vendor/profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () => import('./pages/vendor/profile/profile.module').then( m => m.ProfilePageModule),
+   // canActivate: [AuthGuard]
   },
   {
     path: 'add-menu',
@@ -78,12 +85,7 @@ const routes: Routes = [
     path: 'extras',
     loadChildren: () => import('./pages/extras/extras.module').then( m => m.ExtrasPageModule)
   },
-
-/*,
-
-
   {
-
     path: 'sidebar',
     loadChildren: () => import('./sidebar/sidebar.component').then( m => m.SidebarComponent)
   },
@@ -94,14 +96,12 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
-
-  }*/
+  },
 
   {
 
     path: 'history',
     loadChildren: () => import('./pages/history/history.module').then( m => m.HistoryPageModule)
-
   },
   {
     path: 'signin',
@@ -109,8 +109,8 @@ const routes: Routes = [
   },
   {
     path: 'custprof',
-    loadChildren: () => import('./pages/custprof/custprof.module').then( m => m.CustprofPageModule)
-
+    loadChildren: () => import('./pages/custprof/custprof.module').then( m => m.CustprofPageModule),
+   // canActivate: [AuthGuard]
   },
   {
     path: 'rest-apply',

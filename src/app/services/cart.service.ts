@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, from } from 'rxjs';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 export interface Product {
   id: number;
@@ -43,7 +43,6 @@ const ITEMS_KEY = 'myItems';
   providedIn: 'root'
 })
 export class CartService {
-  http: any;
 
 
   constructor(private httpClient: HttpClient) { }
@@ -95,6 +94,10 @@ export class CartService {
   private cart = [];
   private ext = [];
   private cartItemCount = new BehaviorSubject(0);
+
+  getItems() {
+   return this.httpClient.get<any>(this._addProduct);
+  }
 
 
   // read
