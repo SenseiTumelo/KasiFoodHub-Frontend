@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddMenuPage implements OnInit {
 
+  Prod_name : string = "";
+  Prod_desc : string = "";
+  Prod_price : number;
+
   constructor() { }
 
   ngOnInit() {
+  }
+  createdProses(){
+
+    console.log("Ok");
   }
 
 }
