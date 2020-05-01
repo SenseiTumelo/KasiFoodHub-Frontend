@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostProvider } from '../../Providers/post-provider';
+import {PostProvider } from '../../../../providers/post-provider';
 import { Router } from '@angular/router';
 
 
@@ -34,7 +34,7 @@ export class AddMenuPage implements OnInit {
 
         };
 
-        this.postPvdr.postData(body, 'proses-api.php').subcribe(data => {
+        this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
 
             this.router.navigate(['/menu']);
             console.log('Okay');
