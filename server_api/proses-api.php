@@ -23,7 +23,7 @@ $today = date('Y-m-d');
 
         $prod_id = mysqli_insert_id($mysqli);
 
-            if ($query) $result = json_encode(array('success' => true, 'customer' => $prod_id));
+            if ($query) $result = json_encode(array('success' => true, 'prod_id' => $prod_id));
             else $result = json_encode(array('success' => false));
 
             echo $result;
