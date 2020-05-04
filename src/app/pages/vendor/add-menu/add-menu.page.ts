@@ -12,7 +12,7 @@ export class AddMenuPage implements OnInit {
 
   Prod_name : string = "";
   Prod_desc : string = "";
-  Prod_price : number = 0;
+  Prod_price : string = "";
 
   constructor(
     private postPvdr: PostProvider,
@@ -21,25 +21,26 @@ export class AddMenuPage implements OnInit {
 
   ngOnInit() {
   }
-  createdProses(){
 
+  createdProses(){
+   
     return new Promise(resolve => {
 
-        let body = {
+      let body = {
 
-          aksi: 'add',
-          Prod_name : this.Prod_name,
-          Prod_desc : this.Prod_desc,
-          Prod_price : this.Prod_price,
+        aksi: 'add',
+        Prod_name : this.Prod_name,
+        Prod_desc : this.Prod_desc,
+        Prod_price : this.Prod_price,
+    
+      };
+      
+      this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
 
-        };
+        this.router.navigate(['/menu']);
+        console.log('Oks');
 
-        this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
-
-            this.router.navigate(['/menu']);
-            console.log('Okay');
-
-        });
+      });
 
     });
 
