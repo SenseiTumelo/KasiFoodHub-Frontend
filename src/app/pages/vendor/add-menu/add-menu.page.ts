@@ -12,7 +12,7 @@ export class AddMenuPage implements OnInit {
 
   Prod_name : string = "";
   Prod_desc : string = "";
-  Prod_price : number;
+  Prod_price : number = 0;
 
   constructor(
     private postPvdr: PostProvider,
