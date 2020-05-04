@@ -344,12 +344,23 @@
 
 
 	Ash introduced me to a nice software we could use as team, for communication purposes while coding. 
-	I downloaded the software immediately, and we got to use the software later on that day. Ash shared some light on how to go about doing my task, and used some of his ideas on my task.
+	I downloaded the software immediately, and we got to use the software later on that day. Ash also shared some light on how to go about doing my task, and i used some of his ideas on my task.
 
 
 30 APRIL 2020
 
 
-	I had my code working 
+	I added two new buttons on the "Add to menu" page, the Delete and Update menu. I also added a new page that shows a different kinds of menu items each vendor has in their resturant.  
+
 
 1 APRIL 2020
+
+
+	I created a new database for testing purposes, however i got stuck on how to connect the frontend to the database.    
+
+
+4 APRIL 2020
+
+
+	I added a sliding content on the menu page, and added the delete and update buttons on both sides of the menu page. I tried connecting the frontend to the database again, but failed.
+

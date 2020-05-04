@@ -10,7 +10,7 @@ import {PostProvider } from '../../../../providers/post-provider';
 })
 export class MenuPage implements OnInit {
 
-  menus : any = [];
+  menu : any = [];
   limit: number = 10;
   start: number = 0;
 
@@ -24,7 +24,7 @@ export class MenuPage implements OnInit {
 
   ionViewWillEnter(){
 
-      this.menus = [];
+      this.menu = [];
       this.start = 0;
       this.loadMenu();
 
@@ -51,7 +51,7 @@ export class MenuPage implements OnInit {
       this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
 
             for (let menu of data.result) {
-              this.menus.push(menu);
+              this.menu.push(menu);
 
             }
 
