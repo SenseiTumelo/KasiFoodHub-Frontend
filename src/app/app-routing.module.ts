@@ -7,6 +7,7 @@ import { AdminauthGuard } from './gaurds/adminauth.guard';
 
 const routes: Routes = [
 
+  
   {
     path: 'menu',
     loadChildren: () => import('./pages/vendor/menu/menu.module').then( m => m.MenuPageModule)

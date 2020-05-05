@@ -364,3 +364,8 @@
 
 	I added a sliding content on the menu page, and added the delete and update buttons on both sides of the menu page. I tried connecting the frontend to the database again, but failed.
 
+
+5 APRIL 2020
+		
+
+	I added the code for the functionality of the delete and update buttons.
