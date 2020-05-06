@@ -1,6 +1,6 @@
 <?php
 
-header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
@@ -14,10 +14,10 @@ $today = date('Y-m-d');
     if ($postjson['aksi'] == 'add') {
         
         $query = mysqli_query($mysqli,"INSERT INTO menu SET 
-            Prod_name = '$postjson[Prod_name]',   
-            Prod_desc = '$postjson[Prod_desc]',
-            Prod_price = '$postjson[Prod_price]',
-            date_created = '$today'
+            'Product_name' = '$postjson[product_name]',   
+            'Product_desc' = '$postjson[product_desc]',
+            'Product_price' = '$postjson[product_price]',
+            'date_created' = '$today'
 
         ");
 
@@ -39,9 +39,9 @@ $today = date('Y-m-d');
                 $data[] = array(
 
                     'prod_id' => $row['prod_id'],
-                    'prod_name' => $row['prod_name'],
-                    'prod_desc' => $row['prod_desc'],
-                    'prod_price' => $row['prod_price'],
+                    'Product_name' => $row['product_name'],
+                    'Product_desc' => $row['product_desc'],
+                    'Product_price' => $row['product_price'],
                     'date_created' => $row['date_created']
 
                 );

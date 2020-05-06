@@ -3,8 +3,8 @@
     <ion-title>Menu</ion-title>
 
     <ion-button slot="primary" (click)="add-Menu()">
-  
-      <ion-back-button slot="end" text ="Back" icon= "" color = "dark"></ion-back-button>
+      Back
+      <ion-back-button slot="end" text ="Back" icon= ""></ion-back-button>
     
     </ion-button>
   </ion-toolbar>
@@ -18,15 +18,15 @@
       <form>
         <ion-item>
           <ion-label position="floating">Product Name</ion-label>
-          <ion-input type='text' [(ngModel)] ="Prod_name"></ion-input>
+          <ion-input type='text' [(ngModel)] ="Product_name"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Product Description</ion-label>
-          <ion-input type='text' [(ngModel)] ="Prod_desc"></ion-input>
+          <ion-input type='text' [(ngModel)] ="Product_desc"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Price R</ion-label>
-          <ion-input type='text' [(ngModel)] ="Prod_price"></ion-input>
+          <ion-input type='text' [(ngModel)] ="Product_price"></ion-input>
         </ion-item>
         
         <ion-item>

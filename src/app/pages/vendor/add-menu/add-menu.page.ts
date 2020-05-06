@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
 })
 export class AddMenuPage implements OnInit {
 
-  Prod_name : string = "";
-  Prod_desc : string = "";
-  Prod_price : string = "";
+  Product_name : string = "";
+  Product_desc : string = "";
+  Product_price : string = "";
 
   constructor(
     private postPvdr: PostProvider,
@@ -29,9 +29,9 @@ export class AddMenuPage implements OnInit {
       let body = {
 
         aksi: 'add',
-        Prod_name : this.Prod_name,
-        Prod_desc : this.Prod_desc,
-        Prod_price : this.Prod_price,
+        Product_name : this.Product_name,
+        Product_desc : this.Product_desc,
+        Product_price : this.Product_price,
     
       };
       
