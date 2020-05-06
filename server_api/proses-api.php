@@ -23,16 +23,8 @@ $today = date('Y-m-d');
         
         $item_id = mysqli_insert_id($mysqli);
 
-            if ($query){ 
-            
-            $result = json_encode(array('success' => true, 'prod_id' => $item_id));
-            
-            }
-            else{
-                
-                $result = json_encode(array('success' => false)); 
-            
-            }
+            if ($query) $result = json_encode(array('success' => true, 'prod_id' => $item_id));
+            else $result = json_encode(array('success' => false)); 
        
             echo $result;
             console.log("Okay");
