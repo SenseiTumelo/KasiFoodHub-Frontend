@@ -23,13 +23,12 @@ $today = date('Y-m-d');
         
         $item_id = mysqli_insert_id($mysqli);
 
-            if ($query) $result = json_encode(array('success' => true, 'prod_id' => $item_id));
-            else $result = json_encode(array('success' => false)); 
-       
+              if ($query){ $result = json_encode(array('success' => true, 'prod_id' => $item_id));
+              }else{ $result = json_encode(array('success' => false)); } 
+            
             echo $result;
             console.log("Okay");
-        }
-        /*elseif($postjson['aksi'] == 'getdata'){
+        }elseif($postjson['aksi'] == 'getdata'){
 
             $data = array();
             $query = mysqli_query($mysqli,"SELECT * FROM menu ORDER BY prod_id DESC LIMIT $postjson[start], $postjson[limit]");
@@ -53,5 +52,5 @@ $today = date('Y-m-d');
             echo $result;
             
         }
-*/
+
 ?>
