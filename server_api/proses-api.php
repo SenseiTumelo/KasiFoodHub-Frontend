@@ -14,10 +14,10 @@ $today = date('Y-m-d');
     if ($postjson['aksi'] == 'add') {
         
         $query = mysqli_query($mysqli,"INSERT INTO menu SET 
-            'Product_name' = '$postjson[product_name]',   
-            'Product_desc' = '$postjson[product_desc]',
-            'Product_price' = '$postjson[product_price]',
-            'date_created' = '$today'
+            Product_name = '$postjson[product_name]',   
+            Product_desc = '$postjson[product_desc]',
+            Product_price = '$postjson[product_price]',
+            date_created = '$today'
 
         ");
 
