@@ -1,6 +1,6 @@
 <?php
 
-header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
@@ -14,20 +14,18 @@ $today = date('Y-m-d');
     if ($postjson['aksi'] == 'add') {
         
         $query = mysqli_query($mysqli,"INSERT INTO menu SET 
-            product_name = '$postjson[product_name]',   
-            product_desc = '$postjson[product_desc]',
-            product_price = '$postjson[product_price]',
+            product_name = "$postjson['product_name']",   
             date_created = '$today'
 
         ");
         
         $item_id = mysqli_insert_id($mysqli);
 
-              if ($query){ $result = json_encode(array('success' => true, 'prod_id' => $item_id));
-              }else{ $result = json_encode(array('success' => false)); } 
+              if ($query) {$result = json_encode(array('success' => true, 'prod_id' => $item_id));
+              }else{ $result = json_encode(array('success' => false)); }
             
             echo $result;
-            console.log("Okay");
+        
         }elseif($postjson['aksi'] == 'getdata'){
 
             $data = array();

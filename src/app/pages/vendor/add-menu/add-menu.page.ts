@@ -23,7 +23,8 @@ export class AddMenuPage implements OnInit {
   }
 
   createdProses(){
-   
+    console.log('Oks');
+
     return new Promise(resolve => {
 
       let body = {
@@ -38,7 +39,6 @@ export class AddMenuPage implements OnInit {
       this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
 
         this.router.navigate(['/menu']);
-        console.log('Oks');
 
       });
 

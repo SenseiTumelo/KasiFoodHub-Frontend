@@ -12,13 +12,13 @@ export class PostProvider{
     }
     postData(body,file){
 
-        let type = "application/html; charset= UTF-8";
+        let type = "application/json; charset= UTF-8";
         let headers = new Headers({'Content-Type': type});
         let Options = new RequestOptions({headers:headers});
 
         return this.http.post(this.server + file, JSON.stringify(body),Options)
         .map(res => res.json());
-        console.log('text');
+    
     }
 
 }
