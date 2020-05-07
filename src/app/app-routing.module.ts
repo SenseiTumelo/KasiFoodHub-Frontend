@@ -6,6 +6,12 @@ import { AdminauthGuard } from './gaurds/adminauth.guard';
 
 
 const routes: Routes = [
+
+  
+  {
+    path: 'menu',
+    loadChildren: () => import('./pages/vendor/menu/menu.module').then( m => m.MenuPageModule)
+  },
   {
     path: '',
     loadChildren: () => import('./index/index.module').then(m => m.IndexPageModule)
@@ -77,6 +83,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/vendor/overview/overview.module').then( m => m.OverviewPageModule)
   },
   {
+    path: 'menu',
+    loadChildren: () => import('./pages/vendor/menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
 
     path: 'admin-login',
     loadChildren: () => import('./pages/admin-login/admin-login.module').then( m => m.AdminLoginPageModule)
@@ -119,7 +129,8 @@ const routes: Routes = [
   {
     path: 'reset-password',
     loadChildren: () => import('./pages/reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
-  },
+  }
+ 
 
 ];
 @NgModule({
