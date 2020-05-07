@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, from } from 'rxjs';
-import { HttpClient,HttpHeaders} from '@angular/common/http';
-
+import { HttpClient,HttpHeaders, HttpErrorResponse} from '@angular/common/http';
+import { map } from 'rxjs/operators';
 export interface Product {
   id: number;
   name: string;
@@ -44,15 +44,42 @@ const ITEMS_KEY = 'myItems';
 })
 export class CartService {
   
-
+  
   constructor(private httpClient: HttpClient) { }
 
-  private _addProduct = "http://localhost:6000/viewMenu";
+  private _viewProduct = "http://localhost:4000/viewMenu";
+  private _viewCart = "http://localhost:4000/viewCart";
+  private _addProduct ="http://localhost:4000/add";
+  private _adminLogin ="http://localhost:4000/login";
+  responseData: any;
   
-  getItems(){
-   return this.httpClient.get<any>(this._addProduct);
+  private handleError(errorResponse: HttpErrorResponse){
+    if(errorResponse.error instanceof ErrorEvent){
+      console.error('Client Side Error: ', errorResponse.error.message);
+    }else{
+      console.error('Client Side Error: ', errorResponse);
+    }
   }
 
+  registerData(name: string, surname: string, email: string, password: string, cpassword: string, cell_no: string) {
+
+    // tslint:disable-next-line: max-line-length
+    return this.httpClient.get('${this.reg_URL}?name=${name}&surname=${surname}&email=${email}&password=${password}&cell_no=${cell_no}').pipe(map(results => {
+      this.responseData = results;
+    }));
+  }
+  getCartItems(){
+    return this.httpClient.get<any>(this._viewCart);
+  }
+  getItems(){
+   return this.httpClient.get<any>(this._viewProduct);
+  }
+  addProductCart(prod){
+    return this.httpClient.post<any>(this._addProduct,prod);
+  }
+  adminLogin(admin){
+    return this.httpClient.post<any>(this._adminLogin,admin);
+  }
 
   data: Product[] = [
     {id: 0, name: 'Full Chicken', price: 47.99, amount: 1},
@@ -93,6 +120,7 @@ export class CartService {
 
   private cart = [];
   private ext = [];
+  private checkout = [];
   private cartItemCount = new BehaviorSubject(0);
 
 
@@ -114,7 +142,9 @@ export class CartService {
   getCart() {
     return this.cart;
   }
-
+  getCheckout(){
+    return this.checkout;
+  }
   getExt(){
     return this.ext;
   }
@@ -143,11 +173,11 @@ export class CartService {
       }
     }
   }
+  
   addProduct(product){
-
     let added = false;
     for (const p of this.cart) {
-      if (p.id === product.id) {
+      if (p.item_id === product.item_id) {
         p.amount += 1;
         added = true;
         break;
@@ -161,7 +191,7 @@ export class CartService {
   }
   decreaseProduct(product) {
     for (const [index, p] of this.cart.entries()) {
-      if (p.id === product.id) {
+      if (p.item_id === product.item_id) {
         p.amount -= 1;
         if (p.amount === 0) {
           this.cart.splice(index, 1);
@@ -178,6 +208,20 @@ export class CartService {
           this.cart.splice(index, 1);
           
       }
+    }
+  }
+
+  //checkout
+  addToCheckout(product){
+    let added = false;
+    for(let p of this.checkout){
+      if(p.id === product.id){
+        added = true;
+        break;
+      }
+    }
+    if(!added){
+      this.checkout.push(product);
     }
   }
 

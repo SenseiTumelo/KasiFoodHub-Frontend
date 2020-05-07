@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestaurantService } from 'src/app/services/restaurant.service'
 
 @Component({
   selector: 'app-overview',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewPage implements OnInit {
 
-  constructor() { }
+  orderList: any;
+  menuList:any;
+  constructor(private resturant: RestaurantService) { }
 
   ngOnInit() {
+    this.resturant.getOrders().subscribe( data => {
+      console.log(data);
+      this.orderList = data.data;
+    })
+    this.resturant.getItems().subscribe(data => {
+      console.log(data);
+      this.menuList = data.data;
+      console.log(this.menuList);
+    });
   }
 
 }

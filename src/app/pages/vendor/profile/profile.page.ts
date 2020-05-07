@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { RestaurantService } from 'src/app/services/restaurant.service'
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePage implements OnInit {
 
-  constructor() { }
+  rest_profile: any;
+  constructor(private resturant: RestaurantService) { }
 
   ngOnInit() {
+    this.resturant.getProfile().subscribe(data => {
+      console.log(data)
+      this.rest_profile = data.data
+    })
   }
 
 }
