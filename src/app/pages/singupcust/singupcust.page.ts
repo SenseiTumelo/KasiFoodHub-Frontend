@@ -22,7 +22,7 @@ export class SingupcustPage implements OnInit {
 
     // tslint:disable-next-line: max-line-length
     this.serv.registerData(this.userData.name, this.userData.surname, this.userData.email, this.userData.password, this.userData.cpassword, this.userData.cell_no);
-
+    this.route.navigateByUrl('/home');
 
   }
 
