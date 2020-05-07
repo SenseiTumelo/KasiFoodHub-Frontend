@@ -14,15 +14,17 @@ $today = date('Y-m-d');
     if ($postjson['aksi'] == 'add') {
         
         $query = mysqli_query($mysqli,"INSERT INTO menu SET 
-            product_name = "$postjson['product_name']",   
+            product_name = '$postjson[product_name]',   
+            product_desc = '$postjson[product_desc]',
+            product_price = '$postjson[product_price]',
             date_created = '$today'
 
         ");
         
         $item_id = mysqli_insert_id($mysqli);
 
-              if ($query) {$result = json_encode(array('success' => true, 'prod_id' => $item_id));
-              }else{ $result = json_encode(array('success' => false)); }
+              if ($query) $result = json_encode(array('success' => true, 'prod_id' => $item_id));
+              else $result = json_encode(array('success' => false,'msg'=>'error, please try again')); 
             
             echo $result;
         
