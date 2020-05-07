@@ -32,7 +32,7 @@ export class AddMenuPage implements OnInit {
         aksi: 'add',
         product_name : this.product_name,
         product_desc : this.product_desc,
-        product_price : this.product_price,
+        product_price : this.product_price
     
       };
       

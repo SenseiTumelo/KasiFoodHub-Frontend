@@ -14,9 +14,9 @@ export class PostProvider{
 
         let type = "application/json; charset= UTF-8";
         let headers = new Headers({'Content-Type': type});
-        let Options = new RequestOptions({headers:headers});
+        let options = new RequestOptions({headers:headers});
 
-        return this.http.post(this.server + file, JSON.stringify(body),Options)
+        return this.http.post(this.server + file, JSON.stringify(body),options)
         .map(res => res.json());
     
     }
