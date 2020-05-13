@@ -15,23 +15,23 @@
   <ion-card>
     <ion-card-header>Add Product</ion-card-header>
     <ion-card-content>
-      <form method="POST">
+      <form action = "add-menu.page.ts" Method="POST">
         <ion-item>
-          <ion-label position="floating">Product Name</ion-label>
+          <ion-label name = "product_name" position="floating">Product Name</ion-label>
           <ion-input type='text' [(ngModel)]="product_name"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Product Description</ion-label>
+          <ion-label name = "product_desc" position="floating">Product Description</ion-label>
           <ion-input type='text' [(ngModel)]="product_desc"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Price R</ion-label>
+          <ion-label text = "product_price" position="floating">Price R</ion-label>
           <ion-input type='text' [(ngModel)]="product_price"></ion-input>
         </ion-item>
         
         <ion-item>
           Is item available ?  
-          <ion-toggle color="success"></ion-toggle>
+          <ion-toggle color="ssuccess"></ion-toggle>
         </ion-item>
         
         <ion-item>
