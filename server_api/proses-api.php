@@ -1,12 +1,12 @@
 <?php
 
-include "library/config.php";
-
 header('Access-Control-Allow-Origin: *');
-header("Content-Type: application/json; charset=utf-8");
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS,DELETE");
 header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+header("Content-Type: application/json; charset=utf-8");
+
+include "library/config.php";
 
 $_POST = json_decode(file_get_contents('php://input'), true);
 $today = date('Y-m-d');
@@ -23,8 +23,8 @@ $today = date('Y-m-d');
 
             $item_id = $mysqli->insert_id($mysqli);
 
-            if ($query) $result = json_encode(array('success' => true, 'prod_id' => $item_id));
-            else $result = json_encode(array('success' => false)); 
+            if ($query) {$result = json_encode(array('success' => true, 'prod_id' => $item_id));
+            }else {$result = json_encode(array('success' => false)); }
           
           echo $result;
       
@@ -32,7 +32,7 @@ $today = date('Y-m-d');
         product_name = '$prod_name',   
         product_desc = '$prod_desc',
         product_price = '$prod_price',
-        date_created = '$today'";
+        date_created = '$today'"; 
         */
         /*$query = mysqli_query($mysqli,$stmt);
         echo $stmt;
