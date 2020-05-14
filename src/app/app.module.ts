@@ -22,9 +22,8 @@ import { AddMenuPageModule} from './pages/vendor/add-menu/add-menu.module';
 import { AdminauthGuard } from './gaurds/adminauth.guard';
 import { AuthenticationService } from './services/authentication.service';
 import { ServiceproviderService } from './services/serviceprovider.service';
-import { PostProvider } from '../providers/post-provider';
 import { HttpModule } from '@angular/http';
-
+import { PostProvider } from '../providers/post-provider';
 // import { Storage } from '@ionic/storage'; error
 
 // import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';

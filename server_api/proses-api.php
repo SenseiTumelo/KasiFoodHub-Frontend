@@ -8,27 +8,41 @@ header("Content-Type: application/json; charset=utf-8");
 
 include "library/config.php";
 
-$_POST = json_decode(file_get_contents('php://input'), true);
+$postjson = json_decode(file_get_contents('php://input'), true);
 $today = date('Y-m-d');
 
-    if ($_POST['aksi'] === 'add') {
+    if ($postjson['aksi'] === 'add') {
                             
         $sql = mysqli_query($mysqli,"INSERT INTO menu SET 
-        product_name = '$_POST[product_name]',
-        product_desc = '$_POST[product_desc]'
-        product_price = '$_POST[product_price]',
-        date_created = '$today'
-         
-         "):
+        product_name = '$postjson[product_name]',
+        product_desc = '$postjson[product_desc]',
+        product_price = '$postjson[product_price]',
+        date_created = '$today'");
 
-            $item_id = $mysqli->insert_id($mysqli);
+            $item_id = mysqli_insert_id($mysqli);
 
-            if ($query) {$result = json_encode(array('success' => true, 'prod_id' => $item_id));
-            }else {$result = json_encode(array('success' => false)); }
+            if ($sql) $result = json_encode(array('success'=> true, 'prod_id' => $item_id));
+            else $result = json_encode(array('success'=> false)); 
           
-          echo $result;
-      
-        /*$stmt = "INSERT INTO menu SET 
+          echo $result;         
+ 
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                /*$stmt = "INSERT INTO menu SET 
         product_name = '$prod_name',   
         product_desc = '$prod_desc',
         product_price = '$prod_price',
@@ -68,6 +82,4 @@ $today = date('Y-m-d');
   */
 
 
-        }
-
-?>
+        ?>             
