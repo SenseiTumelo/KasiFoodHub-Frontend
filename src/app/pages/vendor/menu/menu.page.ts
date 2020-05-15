@@ -11,7 +11,7 @@ import {PostProvider } from '../../../../providers/post-provider';
 export class MenuPage implements OnInit {
 
   menus : any = [];
-  limit: number = 10; //limit get perdata returned
+  limit: number = 300; //limit get perdata returned
   start: number = 0;
 
   constructor(
@@ -54,9 +54,6 @@ export class MenuPage implements OnInit {
               this.menus.push(menu);
 
             }
-
-          /*this.router.navigate(['/menu']);*/
-           console.log('Okay');
 
             resolve(true);
 
