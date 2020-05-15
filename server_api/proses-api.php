@@ -27,8 +27,30 @@ $today = date('Y-m-d');
           echo $result;         
  
         }
+        elseif($postjson['aksi'] == 'getdata'){
 
+            $data = array();
+            $sql = mysqli_query($mysqli,"SELECT * FROM menu ORDER BY prod_id DESC LIMIT $postjson[start], $postjson[limit]");
 
+            while ($row = mysqli_fetch_array($query)) {
+                
+                $data[] = array(
+
+                    prod_id => $row['prod_id'],
+                    product_name => $row['product_name'],
+                    product_desc => $row['product_desc'],
+                    product_price => $row['[product_price'],
+                    date_created => $row['date_created']
+
+                );
+            }
+  
+            if ($sql) $result = json_encode(array('success' => true, 'result' => $data));
+            else $result = json_encode(array('success' => false)); 
+
+            echo $result;
+
+        }
 
 
 

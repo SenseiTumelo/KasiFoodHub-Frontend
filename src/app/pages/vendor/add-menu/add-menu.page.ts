@@ -15,8 +15,8 @@ export class AddMenuPage implements OnInit {
   product_price: string ="";
 
   constructor(
-    private postPvdr: PostProvider,
-    private router: Router
+    private router: Router,
+    private postPvdr: PostProvider
     ) { }
 
   ngOnInit() {

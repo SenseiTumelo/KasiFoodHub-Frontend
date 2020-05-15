@@ -10,8 +10,8 @@ import {PostProvider } from '../../../../providers/post-provider';
 })
 export class MenuPage implements OnInit {
 
-  menu : any = [];
-  limit: number = 10;
+  menus : any = [];
+  limit: number = 10; //limit get perdata returned
   start: number = 0;
 
   constructor(
@@ -24,7 +24,7 @@ export class MenuPage implements OnInit {
 
   ionViewWillEnter(){
 
-      this.menu = [];
+      this.menus = [];
       this.start = 0;
       this.loadMenu();
 
@@ -44,19 +44,19 @@ export class MenuPage implements OnInit {
 
         aksi: 'getdata',
         limit: this.limit,
-        start:this.start,
+        start: this.start,
 
       };
 
       this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
 
             for (let menu of data.result) {
-              this.menu.push(menu);
+              this.menus.push(menu);
 
             }
 
-          /*this.router.navigate(['/menu']);
-          console.log('Okay');*/
+          /*this.router.navigate(['/menu']);*/
+           console.log('Okay');
 
             resolve(true);
 
@@ -64,8 +64,6 @@ export class MenuPage implements OnInit {
 
       });
 
-
-     }
-
     }
 
+  }
