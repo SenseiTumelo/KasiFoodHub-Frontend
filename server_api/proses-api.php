@@ -45,8 +45,8 @@ $today = date('Y-m-d');
 
             }
   
-            if ($sql) $result = json_encode(array('success' => true, 'result' => $data));
-            else $result = json_encode(array('success' => false)); 
+            if ($sql) {$result = json_encode(array('success' => true, 'result' => $data));
+            }else {$result = json_encode(array('success' => false));} 
 
             echo $result;
 
