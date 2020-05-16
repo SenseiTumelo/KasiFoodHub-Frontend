@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
 })
 export class AddMenuPage implements OnInit {
 
-  product_name: string ="";
-  product_desc: string ="";
-  product_price: string ="";
+  item_name: string ="";
+  item_description: string ="";
+  item_price: string ="";
 
   constructor(
     private router: Router,
@@ -29,9 +29,9 @@ export class AddMenuPage implements OnInit {
       let body = {
 
         aksi: 'add',
-        product_name : this.product_name,
-        product_desc : this.product_desc,
-        product_price: this.product_price, 
+        item_name : this.item_name,
+        item_description : this.item_description,
+        item_price: this.item_price, 
        
       };
       
