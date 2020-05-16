@@ -5,7 +5,6 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AddMenuPage} from './pages/vendor/add-menu/add-menu.page';
-import { MenuPage} from './pages/vendor/menu/menu.page';
 import { OverviewPage} from './pages/vendor/overview/overview.page';
 import { from } from 'rxjs';
 import { AuthenticationService } from './services/authentication.service';
@@ -65,5 +64,5 @@ export class AppComponent {
     });
     modal.present();
   }
-
+  
 }
