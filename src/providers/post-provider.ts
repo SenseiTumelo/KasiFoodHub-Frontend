@@ -12,7 +12,7 @@ export class PostProvider{
     }
     postData(body,file){
 
-        let type = "application/json; charset= UTF-8";
+        let type = "application/json; charset=UTF-8";
         let headers = new Headers({'Content-Type': type});
         let options = new RequestOptions({headers:headers});
 
