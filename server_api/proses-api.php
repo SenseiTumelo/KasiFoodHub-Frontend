@@ -9,15 +9,14 @@ header("Content-Type: application/json; charset=utf-8");
 include "library/config.php";
 
 $postjson = json_decode(file_get_contents('php://input'), true);
-$today = date('Y-m-d');
+//$today = date('Y-m-d');
 
     if ($postjson['aksi'] === 'add') {
                             
         $sql = mysqli_query($mysqli,"INSERT INTO menu SET 
         item_name = '$postjson[item_name]',
         item_description = '$postjson[item_description]',
-        item_price = '$postjson[item_price]',
-        date_created = '$today'");
+        item_price = '$postjson[item_price]'");
 
             $item_id = mysqli_insert_id($mysqli);
 
@@ -38,8 +37,7 @@ $today = date('Y-m-d');
                     'item_id' => $row['item_id'],
                     'item_name' => $row['item_name'],
                     'item_description' => $row['item_description'],
-                    'item_price' => $row['[item_price'],
-                    'date_created' => $row['date_created'],
+                    'item_price' => $row['item_price'],
 
                 );
 
