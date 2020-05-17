@@ -36,9 +36,23 @@ export class MenuPage implements OnInit {
 
   }
 
-  deleteMenu(){
-  }
+  deleteMenu(id){
+ 
+      let body = {
 
+        aksi: 'delete',
+        item_id: id
+
+      };
+
+      this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
+
+        this.ionViewWillEnter();
+
+      });
+ 
+  }
+  
   updateMenu(id,name,price,description){
 
     this.router.navigate(['add-menu/' + id  + '/' + name + '/' + description + '/' + price]);

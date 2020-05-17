@@ -60,7 +60,17 @@ $postjson = json_decode(file_get_contents('php://input'), true);
 
             echo $result;
 
+        }elseif($postjson['aksi'] === 'delete'){
+
+            $sql = mysqli_query($mysqli,"DELETE FROM menu WHERE item_id = '$postjson[item_id]'");
+
+            if ($sql) $result = json_encode(array('success' => true, 'result' => 'success'));
+            else $result = json_encode(array('success' => false, 'result' => 'error')); 
+
+            echo $result;
+
         }
+
  
 
 ?>             

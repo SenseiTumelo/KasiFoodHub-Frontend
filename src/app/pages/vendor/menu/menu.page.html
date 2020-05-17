@@ -17,7 +17,7 @@
 
       <ion-item-sliding *ngFor="let menu of menus">
         <ion-item-options side="start">
-          <ion-item-option color="danger" (click)="deleteMenu()">Delete</ion-item-option>
+          <ion-item-option color="danger" (click)="deleteMenu(menu.item_id)">Delete</ion-item-option>
         </ion-item-options>
     
         <ion-item>
