@@ -2,7 +2,7 @@
   <ion-toolbar color = 'dark'>
     <ion-title>Menu</ion-title>
 
-    <ion-button slot="primary" (click)="menu()">
+    <ion-button slot="primary">
 
       <ion-back-button text = "Back" icon =""></ion-back-button>
       
@@ -39,7 +39,8 @@
           <label class="control-label small" for="file_img">(jpg/png):</label> <input type="file" name="file_img">
         </ion-item>
         <ion-item>
-          <ion-button type ="submit" color = "tertiary" (click)="createdProses()">Add to menu</ion-button>
+          <ion-button type ="submit" color = "tertiary" *ngIf="!id" (click)="createdProses()">Add to menu</ion-button>
+          <ion-button type ="submit" color = "tertiary" *ngIf="id >= 1" (click)="updateProses()">Update</ion-button>
         </ion-item>
         
       </form>

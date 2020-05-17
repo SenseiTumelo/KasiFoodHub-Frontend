@@ -36,6 +36,19 @@ export class MenuPage implements OnInit {
 
   }
 
+  deleteMenu(){
+
+
+
+  }
+
+  updateMenu(id,name,description,price){
+
+    this.router.navigate(['add-menu/' + id + '/' + '/' + name + '/' + description + '/' + price]);
+
+  }
+
+
   loadMenu(){
 
     return new Promise(resolve => {

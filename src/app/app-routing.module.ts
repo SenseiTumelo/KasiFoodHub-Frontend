@@ -78,6 +78,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/vendor/add-menu/add-menu.module').then( m => m.AddMenuPageModule)
   },
   {
+    path: 'add-menu/:id/:name/:description/:price',
+    loadChildren: () => import('./pages/vendor/add-menu/add-menu.module').then( m => m.AddMenuPageModule)
+  },
+  {
     path: 'overview',
     loadChildren: () => import('./pages/vendor/overview/overview.module').then( m => m.OverviewPageModule)
   },
