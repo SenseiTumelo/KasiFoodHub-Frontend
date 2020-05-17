@@ -28,7 +28,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
     }elseif($postjson['aksi'] === 'getdata'){
 
             $data = array();
-            $sql = mysqli_query($mysqli,"SELECT * FROM menu ORDER BY item_id DESC LIMIT $postjson[start], $postjson[limit]");
+            $sql = mysqli_query($mysqli,"SELECT * FROM menu ORDER BY item_id ASC LIMIT $postjson[start], $postjson[limit]");
 
             while ($row = mysqli_fetch_array($sql)) {
                 
