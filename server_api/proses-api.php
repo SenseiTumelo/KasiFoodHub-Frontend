@@ -47,7 +47,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
             else $result = json_encode(array('success' => false)); 
 
             echo $result;
-
+ 
         }elseif($postjson['aksi'] === 'update'){
 
             $sql = mysqli_query($mysqli,"UPDATE menu SET 
@@ -55,13 +55,12 @@ $postjson = json_decode(file_get_contents('php://input'), true);
             item_description = '$postjson[item_description]',
             item_price = '$postjson[item_price]' WHERE item_id = '$postjson[item_id]'");
 
-  
             if ($sql) $result = json_encode(array('success' => true, 'result' => 'success'));
             else $result = json_encode(array('success' => false, 'result' => 'error')); 
 
             echo $result;
 
         }
-
+ 
 
 ?>             

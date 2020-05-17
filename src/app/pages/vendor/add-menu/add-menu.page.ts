@@ -32,7 +32,6 @@ export class AddMenuPage implements OnInit {
       this.item_description = data.description;
       this.item_price = data.price;
       console.log(data);
-
     });
 
   }

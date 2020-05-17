@@ -37,14 +37,11 @@ export class MenuPage implements OnInit {
   }
 
   deleteMenu(){
-
-
-
   }
 
-  updateMenu(id,name,description,price){
+  updateMenu(id,name,price,description){
 
-    this.router.navigate(['add-menu/' + id + '/' + '/' + name + '/' + description + '/' + price]);
+    this.router.navigate(['add-menu/' + id  + '/' + name + '/' + description + '/' + price]);
 
   }
 
