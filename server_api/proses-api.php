@@ -16,7 +16,8 @@ $postjson = json_decode(file_get_contents('php://input'), true);
         $sql = mysqli_query($mysqli,"INSERT INTO menu SET 
         item_name = '$postjson[item_name]',
         item_description = '$postjson[item_description]',
-        item_price = '$postjson[item_price]'");
+        item_price = '$postjson[item_price]',
+        statusValue = '$postjson[statusValue]'");
 
             $item_id = mysqli_insert_id($mysqli);
 
