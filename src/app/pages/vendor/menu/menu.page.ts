@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class MenuPage implements OnInit {
 
   menus : any = [];
-  limit: number = 10; //limit get perdata returned
+  limit: number = 50; //limit get perdata returned
   start: number = 0;
 
   constructor(

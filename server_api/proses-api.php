@@ -12,7 +12,10 @@ $postjson = json_decode(file_get_contents('php://input'), true);
 //$today = date('Y-m-d');
 
     if ($postjson['aksi'] === 'add') {
-                            
+                
+        if ($postjson[statusValue] == 'true') {
+            statusValue = "Active";
+        }
         $sql = mysqli_query($mysqli,"INSERT INTO menu SET 
         item_name = '$postjson[item_name]',
         item_description = '$postjson[item_description]',
