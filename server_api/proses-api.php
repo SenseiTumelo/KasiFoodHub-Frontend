@@ -13,7 +13,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
 
     if ($postjson['aksi'] === 'add') {
                 
-        if (statusValue === 'true') {
+        if (statusValue === true) {
             
             statusValue = "Active";
         
