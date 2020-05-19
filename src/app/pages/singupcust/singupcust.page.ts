@@ -11,7 +11,7 @@ import { ServiceproviderService } from 'src/app/services/serviceprovider.service
 })
 export class SingupcustPage implements OnInit {
 
-  //userData = {"name":"", "surname":"", "email":"","password":"", "cpassword":"", "cell_no":""};//reg
+  // userData = {"name":"", "surname":"", "email":"","password":"", "cpassword":"", "cell_no":""};//reg
   // tslint:disable-next-line: max-line-length
   constructor(private route: Router, private location: Location, private toastController: ToastController, private serv: ServiceproviderService) { }
 
