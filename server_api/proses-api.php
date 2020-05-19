@@ -11,11 +11,12 @@ include "library/config.php";
 $postjson = json_decode(file_get_contents('php://input'), true);
 //$today = date('Y-m-d');
 
-            if ($postjson[statusValue] == 1) $postjson[statusValue] = "Active";
-            else $postjson[statusValue] = "Inactive";
-
     if ($postjson['aksi'] === 'add') {
-                
+
+        
+        if ($postjson[statusValue] === 1) {$postjson[statusValue] = "Active";
+        }else{$postjson[statusValue] = "Inactive";}
+
         $sql = mysqli_query($mysqli,"INSERT INTO menu SET 
         item_name = '$postjson[item_name]',
         item_description = '$postjson[item_description]',
@@ -54,7 +55,11 @@ $postjson = json_decode(file_get_contents('php://input'), true);
             echo $result;
  
         }elseif($postjson['aksi'] === 'update'){
+
             
+            if ($postjson[statusValue] === 1) {$postjson[statusValue] = "Active";
+            }else{$postjson[statusValue] = "Inactive";}
+
             $sql = mysqli_query($mysqli,"UPDATE menu SET 
             item_name = '$postjson[item_name]',
             item_description = '$postjson[item_description]',
