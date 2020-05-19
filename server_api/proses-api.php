@@ -13,7 +13,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
 
     if ($postjson['aksi'] === 'add') {
                 
-        if ($postjson[statusValue == 'true') {
+        if ($postjson[statusValue] == 'true') {
             $postjson[statusValue] = "Active";
         }
         $sql = mysqli_query($mysqli,"INSERT INTO menu SET 
