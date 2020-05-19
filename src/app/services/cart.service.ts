@@ -48,7 +48,11 @@ export class CartService {
   constructor(private httpClient: HttpClient) { }
 
   // tslint:disable-next-line: variable-name
-  private _addProduct = 'http://localhost:6000/viewMenu';
+  private _addProduct = 'http://168.172.185.4:6000/viewMenu';
+  // read
+  // getItems(){
+  //   return this.http.get<any>(this._addProduct);
+  // }
 
 
   data: Product[] = [
@@ -83,11 +87,8 @@ export class CartService {
   ];
 
   employees: Employee[] = [
-    // tslint:disable-next-line: max-line-length
     {id: 1, name: 'Skopo', shopName: 'Shisa Nyama', orderingData: new Date('10/25/1988'), address: '2427 Block L', price: 49.99, photoPath: 'assets/images/food1.png', amount: 1},
-    // tslint:disable-next-line: max-line-length
     {id: 2, name: 'Kota', shopName: 'KFC', orderingData: new Date('11/05/1978'), address: '024 Block H', price: 79.50, photoPath: 'assets/images/kota1.jpg', amount: 1},
-    // tslint:disable-next-line: max-line-length
     {id: 2, name: 'Beef', shopName: 'wimpy', orderingData: new Date('11/05/1978'), address: '014 Block vv', price: 79.50, photoPath: 'assets/images/food4.jpg', amount: 1}
   ];
 

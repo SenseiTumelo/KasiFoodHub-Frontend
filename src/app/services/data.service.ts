@@ -29,7 +29,7 @@ export class DataService {
 
    }
 
-
+// create an API here, likke this?
   reg_url = '';
   log_url = '';
   show_rest_url = '';

@@ -22,7 +22,8 @@ import { AddMenuPageModule} from './pages/vendor/add-menu/add-menu.module';
 import { AdminauthGuard } from './gaurds/adminauth.guard';
 import { AuthenticationService } from './services/authentication.service';
 import { ServiceproviderService } from './services/serviceprovider.service';
-
+import { HttpModule } from '@angular/http';
+import { PostProvider } from '../providers/post-provider';
 // import { Storage } from '@ionic/storage'; error
 
 // import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
@@ -36,6 +37,7 @@ import { ServiceproviderService } from './services/serviceprovider.service';
   entryComponents: [],
 
   imports: [BrowserModule,
+    HttpModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     OverviewPageModule,
@@ -47,7 +49,9 @@ import { ServiceproviderService } from './services/serviceprovider.service';
 
   ],
   providers: [
-    StatusBar, ServiceproviderService,
+    StatusBar, 
+    PostProvider,
+    ServiceproviderService,
     SplashScreen, // NativeStorage,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

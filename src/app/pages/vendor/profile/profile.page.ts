@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminService } from 'src/app/services/admin.service';
+import { AdminService } from 'src/app/services/admin.service'; // here is that class
 
 @Component({
   selector: 'app-profile',

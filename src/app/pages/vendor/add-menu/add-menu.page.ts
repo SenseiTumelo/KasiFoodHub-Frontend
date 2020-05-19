@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {PostProvider } from '../../../../providers/post-provider';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-add-menu',
@@ -7,9 +10,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddMenuPage implements OnInit {
 
-  constructor() { }
+  product_name: string ="";
+  product_desc: string ="";
+  product_price: string ="";
+
+  constructor(
+    private router: Router,
+    private postPvdr: PostProvider
+    ) { }
 
   ngOnInit() {
+
+  }
+
+  createdProses(){
+    return new Promise(resolve => {
+
+      let body = {
+
+        aksi: 'add',
+        product_name : this.product_name,
+        product_desc : this.product_desc,
+        product_price: this.product_price, 
+       
+      };
+      
+      this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
+
+        this.router.navigate(['/menu']);
+        console.log('submit works');
+
+      });
+
+    });
+
   }
 
 }

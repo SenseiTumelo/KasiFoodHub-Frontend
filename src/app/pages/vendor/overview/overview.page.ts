@@ -8,13 +8,13 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class OverviewPage implements OnInit {
 
-  constructor(private adminService : AdminService ) { }
+  constructor(private adminService: AdminService ) { }
   adminProf: any = '';
  ngOnInit() {
   this.getAdminData();
  }
- getAdminData(){
-   return this.adminService.getProfile().subscribe((data: any) => {this.adminProf = data; console.log(this.adminProf);})
+ getAdminData() {
+   return this.adminService.getProfile().subscribe((data: any) => {this.adminProf = data; console.log(this.adminProf); });
  }
 
 }
