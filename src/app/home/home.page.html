@@ -1,32 +1,57 @@
 <ion-header>
-  <ion-toolbar color = 'warning'>
+  <!--ion-toolbar color = 'warning'>
     <div class="header ">
     <ion-icon name="menu" (click)="presentActionSheet()"></ion-icon> <br>
     <a href="/home">home</a>
-    <a href="/restaurant">home</a>
+    
     <a href="/signin">SignIn</a>
+    <ion-col><a href="/restaurant">home</a></ion-col>
   </div>
-    <!--ion-avatar>
+    <ion-avatar>
     <img src="assets/images/kfh6.png" alt="logo" />
-  </ion-avatar-->
+  </ion-avatar>
       <ion-title>Kasi Food Hub</ion-title>
-      <ion-searchbar [(ngModel)] = "searchTerm" (ionInput)= "setFilteredItems()"></ion-searchbar>
+      <ion-searchbar [(ngModel)] = "searchTerm" (ionInput)= "setFilteredItems()"></ion-searchbar-->
     
     
-  </ion-toolbar>
+  
+  <ion-toolbar color = "warning" >
+    <ion-title>
+      Kasi Food Hub
+    </ion-title>
+    
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>      
+    </ion-buttons>
+
+    <ion-buttons collapse="true" slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    </ion-toolbar>
+    <ion-grid>
+      <ion-col>
+        <ion-icon name="home" (click)="presentActionSheet()"></ion-icon>
+      </ion-col>
+      <ion-col>
+          <ion-icon name="person" (click)="presentActionSheet()"></ion-icon>
+      </ion-col>
+   </ion-grid>
+    <ion-searchbar [(ngModel)] = "searchTerm" (ionInput)= "setFilteredItems()"></ion-searchbar>
 </ion-header>
 
 <ion-content padding class="content-color">
-  <ion-list>
+  <!--ion-list>
     <ion-item *ngFor="let data of jsonData">
         {{data.item_name}}
     </ion-item>
-   </ion-list>
+   </ion-list-->
 
   <!--ion-card class="card-body"-->
     
     <!--this is the slides you will see on the home page-->
-    <ion-slides  pager #mySlider1 class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider1)">
+    <!--ion-slides  pager #mySlider1 class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider1)">
 
       <ion-slide >
         <img src = 'assets/images/kfh6.png'  class="pics" alt="kasi logo"/>
@@ -51,50 +76,43 @@
         
       </ion-slide>
     
-    </ion-slides>
+    </ion-slides-->
   <!--/ion-card-->
    <div  *ngFor = "let a of adminData">
        <ion-title>{{a.id}}</ion-title>
    </div>
   <!--Restaurants picture with the view button-->
-  <ion-card class="card-body">
+  <ion-card class="card" >
     <ion-card-title>Resturants</ion-card-title>
-    <img src = 'https://cdn.primedia.co.za/primedia-broadcasting/image/upload/v1488364912/qjwnidvakslcmh6rbp62.jpg'>
+    <img class= "pics" src = 'https://cdn.primedia.co.za/primedia-broadcasting/image/upload/v1488364912/qjwnidvakslcmh6rbp62.jpg'>
     <ion-button expand="block" color = 'success'  (click)="gotoRest()">View all Restaurant</ion-button>
   </ion-card>
-
-
-  <!--testing the admin -->
- <div *ngFor="let a of adminData">
-   <ion-title >{{a.system_id}}</ion-title>
- </div>
-
 
   <!--Daily Deals ,where you will see the advertisement and also special from the restaurant-->
   <ion-card class="card-body">
     <ion-card-title>Daily Deals</ion-card-title>
-    <ion-slides pager #mySlider class="slides" (ionSlidesDidLoad)="slidesDidLoad(mySlider)">
+    <ion-slides pager #mySlider class="slides " (ionSlidesDidLoad)="slidesDidLoad(mySlider)">
       <ion-slide style="background-color: grey" >
         <ion-card >
-          <img src='https://specsonline.com/wp-content/uploads/2019/01/Mobile-Deli-Page-Slider-600x200.jpg'>
+          <img class = "pics" src='https://specsonline.com/wp-content/uploads/2019/01/Mobile-Deli-Page-Slider-600x200.jpg'>
         </ion-card>
       </ion-slide>
       
       <ion-slide style="background-color: grey">
         <ion-card>
-          <img src='https://www.findtakeaways.co.za/images/Specials/Chesa_Nyama_Family_Special.JPG'>
+          <img class = "pics" src='https://www.findtakeaways.co.za/images/Specials/Chesa_Nyama_Family_Special.JPG'>
         </ion-card>
       </ion-slide>
 
       <ion-slide style="background-color: grey" >
         <ion-card >
-          <img src='assets/images/Advertisement/ad2.jpg'>
+          <img class = "pics" src='assets/images/Advertisement/ad2.jpg'>
         </ion-card>
       </ion-slide>
 
       <ion-slide style="background-color: grey" >
         <ion-card >
-          <img src='assets/images/Advertisement/menatlana.jpg'>
+          <img class = "pics" src='assets/images/Advertisement/menatlana.jpg'>
         </ion-card>
       </ion-slide>
 
