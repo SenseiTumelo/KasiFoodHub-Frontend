@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-import {PostProvider } from '../../../../providers/post-provider';
+import { PostProvider } from '../../../../providers/post-provider';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,12 +11,12 @@ import {PostProvider } from '../../../../providers/post-provider';
 export class MenuPage implements OnInit {
 
   menus : any = [];
-  limit: number = 300; //limit get perdata returned
+  limit: number = 10; //limit get perdata returned
   start: number = 0;
 
   constructor(
     private router:Router,
-    private postPvdr: PostProvider
+    private postPvdr: PostProvider,
   ) { }
 
   ngOnInit() {
