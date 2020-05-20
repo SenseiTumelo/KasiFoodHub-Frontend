@@ -23,6 +23,7 @@ export class SigninPage implements OnInit {
   
   signin(){
     this.serv.loginData(this.userData.email, this.userData.password).subscribe(data => {this.result = data;console.log(this.result);});
+    this.route.navigateByUrl('/home');
   }
 
 

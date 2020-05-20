@@ -11,21 +11,21 @@ export class DataService {
 
   constructor(private http: HttpClient) {
     // data for testing searchbar, this will be deleted !!!
-   /* this.jsonData = [
+   this.jsonData = [
       {id: 1, label: 'saw', name: 'Sephahlo'},
       {id: 2, label: 'saw1', name: 'Mogodu'},
       {id: 3, label: 'saw2', name: 'malana'},
-      {id: 3, label: 'saw2', name: 'Gowdaman'},
-      {id: 3, label: 'saw2', name: 'Neethi'},
-      {id: 3, label: 'saw2', name: 'abirami1'},
-      {id: 3, label: 'saw2', name: 'abirami2'},
-      {id: 3, label: 'saw2', name: 'Harrish'},
-      {id: 3, label: 'saw2', name: 'Lokesh'},
-      {id: 3, label: 'saw2', name: 'Deepak'},
-      {id: 3, label: 'saw2', name: 'malliga'},
-      {id: 3, label: 'saw2', name: 'malliga'}
+      {id: 4, label: 'saw2', name: 'Gowdaman'},
+      {id: 5, label: 'saw2', name: 'Neethi'},
+      {id: 6, label: 'saw2', name: 'abirami1'},
+      {id: 7, label: 'saw2', name: 'abirami2'},
+      {id: 8, label: 'saw2', name: 'Harrish'},
+      {id: 9, label: 'saw2', name: 'Lokesh'},
+      {id: 10, label: 'saw2', name: 'Deepak'},
+      {id: 11, label: 'saw2', name: 'malliga'},
+      {id: 12, label: 'saw2', name: 'malliga1'}
 
-      ];*/
+      ];
 
    }
 
@@ -34,8 +34,7 @@ export class DataService {
   log_url = '';
   show_rest_url = '';
   prof_url = '';
-  signup = 'http://localhost:6000/signupadmin';//remeber the port number that serve in node not our app port number
-  admin_prof_url = 'http://localhost:6000/admin';
+  admin_prof_url = 'http://localhost:3000/admin';
   logged =  0;
 
   adminService() {
@@ -50,17 +49,19 @@ export class DataService {
      });
 
  }
+
+ // user login
  loginUser(user) {
 
     return this.http.post<any>(this.admin_prof_url + '_login', user);
   }
 
   loggedIn() {
-      
+
     return !!localStorage.getItem('token');
   }
 
-getToken(){
+getToken() {
     return localStorage.getItem('token');
   }
 
