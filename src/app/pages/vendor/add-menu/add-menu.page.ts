@@ -14,8 +14,7 @@ export class AddMenuPage implements OnInit {
   item_description: string ="";
   item_price: string ="";
   id: number;
-  statusValue: boolean = true;
-
+  
   constructor(
 
     private router: Router,
@@ -32,7 +31,6 @@ export class AddMenuPage implements OnInit {
       this.item_name = data.name;
       this.item_description = data.description;
       this.item_price = data.price;
-      this.statusValue = data.status;
       console.log(data);
     });
 
@@ -47,7 +45,6 @@ export class AddMenuPage implements OnInit {
         item_name : this.item_name,
         item_description : this.item_description,
         item_price: this.item_price,
-        statusValue: this.statusValue,
 
       };
       
@@ -72,7 +69,6 @@ export class AddMenuPage implements OnInit {
         item_name : this.item_name,
         item_description : this.item_description,
         item_price: this.item_price,
-        statusValue: this.statusValue,
        
       };
       
