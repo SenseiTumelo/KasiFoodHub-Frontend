@@ -14,8 +14,8 @@ export class AddMenuPage implements OnInit {
   item_description: string ="";
   item_price: string ="";
   id: number;
-  itemStatus: boolean = true;
-  menuStatus: string ="";
+  itemStatus: string ="";
+  menuStatus: boolean = true;
 
   constructor(
 
@@ -33,7 +33,7 @@ export class AddMenuPage implements OnInit {
       this.item_name = data.name;
       this.item_description = data.description;
       this.item_price = data.price;
-      this.menuStatus = data.menuStatus;
+      this.itemStatus = data.Status;
       console.log(data);
     });
 
@@ -48,7 +48,7 @@ export class AddMenuPage implements OnInit {
         item_name : this.item_name,
         item_description : this.item_description,
         item_price: this.item_price,
-        menuStatus:this.menuStatus,
+        itemStatus:this.itemStatus,
 
       };
       
@@ -73,7 +73,7 @@ export class AddMenuPage implements OnInit {
         item_name : this.item_name,
         item_description : this.item_description,
         item_price: this.item_price,
-        menuStatus: this.menuStatus,
+        itemStatus: this.itemStatus,
 
       };
       

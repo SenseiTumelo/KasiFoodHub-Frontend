@@ -21,7 +21,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
         item_name = '$postjson[item_name]',
         item_description = '$postjson[item_description]',
         item_price = '$postjson[item_price]',
-        menuStatus = '$postjson[itemStatus]'");
+        itemStatus = '$postjson[itemStatus]'");
 
             $item_id = mysqli_insert_id($mysqli);
 
@@ -43,7 +43,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
                     'item_name' => $row['item_name'],
                     'item_description' => $row['item_description'],
                     'item_price' => $row['item_price'],
-                    'menuStatus' => $row['itemStatus'],
+                    'itemStatus' => $row['itemStatus'],
 
                 );
 
@@ -64,7 +64,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
             item_name = '$postjson[item_name]',
             item_description = '$postjson[item_description]',
             item_price = '$postjson[item_price]', 
-            menuStatus = '$postjson[itemStatus]'
+            itemStatus = '$postjson[itemStatus]'
             WHERE item_id = '$postjson[item_id]'");
 
             if ($sql) $result = json_encode(array('success' => true, 'result' => 'success'));

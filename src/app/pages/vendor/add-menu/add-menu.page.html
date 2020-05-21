@@ -31,9 +31,9 @@
         
         <ion-item>
           Is item available ?  
-          <ion-toggle [(ngModel)] ="itemStatus" name ="itemStatus" color="success"></ion-toggle>        
-          <p *ngIf="itemStatus" name = "menuStatus">Active</p>
-          <p *ngIf="!itemStatus" name = "menuStatus">Inactive</p>
+          <ion-toggle [(ngModel)] ="menuStatus" name ="menuStatus" color="success"></ion-toggle>        
+          <p *ngIf="menuStatus" name = "itemStatus">Active</p>
+          <p *ngIf="!menuStatus" name = "itemStatus">Inactive</p>
         </ion-item>
 
         <ion-item>
