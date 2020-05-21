@@ -72,7 +72,7 @@ export class AddMenuPage implements OnInit {
         item_name : this.item_name,
         item_description : this.item_description,
         item_price: this.item_price,
-        itemStatus:this.itemStatus,
+        itemStatus: this.itemStatus,
 
       };
       
