@@ -16,8 +16,9 @@
     <ion-list>
 
       <ion-item-sliding *ngFor="let menu of menus">
+
         <ion-item-options side="start">
-          <ion-item-option color="danger" (click)="deleteMenu(menu.item_id)">Delete</ion-item-option>
+         <ion-item-option color="danger" (click)="deleteMenu(menu.item_id)">Delete</ion-item-option>
         </ion-item-options>
     
         <ion-item>
@@ -25,7 +26,7 @@
         </ion-item>
     
         <ion-item-options side="end">
-          <ion-item-option (click)="updateMenu(menu.item_id,menu.item_name,menu.item_price,menu.item_description,menu.menuStatus)">Update</ion-item-option>
+          <ion-item-option (click)="updateMenu(menu.item_id,menu.item_name,menu.item_price,menu.item_description)">Update</ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
 
