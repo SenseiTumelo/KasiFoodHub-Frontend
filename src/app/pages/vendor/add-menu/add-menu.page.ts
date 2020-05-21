@@ -14,7 +14,6 @@ export class AddMenuPage implements OnInit {
   item_description: string ="";
   item_price: string ="";
   id: number;
-  itemStatus:boolean = true;
 
   constructor(
 
