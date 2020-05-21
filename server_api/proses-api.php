@@ -14,14 +14,14 @@ $postjson = json_decode(file_get_contents('php://input'), true);
     if ($postjson['aksi'] === 'add') {
 
         
-        /*if ($postjson[statusValue] === "1") {$postjson[statusValue] = "Active";
-        }else{$postjson[statusValue] = "Inactive";}*/
+        if ($postjson[itemStatus] === "1") {$postjson[itemStatus] = "Active";
+        }else{$postjson[itemStatus] = "Inactive";}
 
         $sql = mysqli_query($mysqli,"INSERT INTO menu SET 
         item_name = '$postjson[item_name]',
         item_description = '$postjson[item_description]',
         item_price = '$postjson[item_price]',
-        statusValue = '$postjson[statusValue]'");
+        itemStatus = '$postjson[itemStatus]'");
 
             $item_id = mysqli_insert_id($mysqli);
 
@@ -43,7 +43,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
                     'item_name' => $row['item_name'],
                     'item_description' => $row['item_description'],
                     'item_price' => $row['item_price'],
-                    'statusValue' => $row['statusValue'],
+                    'itemStatus' => $row['itemStatus'],
 
                 );
 
@@ -57,13 +57,15 @@ $postjson = json_decode(file_get_contents('php://input'), true);
         }elseif($postjson['aksi'] === 'update'){
 
             
-            /*if ($postjson[statusValue] === "1") {$postjson[statusValue] = "Active";
-            }else{$postjson[statusValue] = "Inactive";}*/
+            if ($postjson[itemStatus] === "1") {$postjson[itemStatus] = "Active";
+            }else{$postjson[itemStatus] = "Inactive";}
 
             $sql = mysqli_query($mysqli,"UPDATE menu SET 
             item_name = '$postjson[item_name]',
             item_description = '$postjson[item_description]',
-            item_price = '$postjson[item_price]' WHERE item_id = '$postjson[item_id]'");
+            item_price = '$postjson[item_price]', 
+            itemStatus = '$postjson[itemStatus]'
+            WHERE item_id = '$postjson[item_id]'");
 
             if ($sql) $result = json_encode(array('success' => true, 'result' => 'success'));
             else $result = json_encode(array('success' => false, 'result' => 'error')); 
