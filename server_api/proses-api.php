@@ -14,8 +14,8 @@ $postjson = json_decode(file_get_contents('php://input'), true);
     if ($postjson['aksi'] === 'add') {
 
         
-        /*if ($postjson[itemStatus] === '1') {$postjson[itemStatus] = "Active";
-        }else{$postjson[itemStatus] = "Inactive";}*/
+        if ($postjson[itemStatus] === '1') {$postjson[itemStatus] = "Active";
+        }else{$postjson[itemStatus] = "Inactive";}
 
         $sql = mysqli_query($mysqli,"INSERT INTO menu SET 
         item_name = '$postjson[item_name]',
@@ -57,8 +57,8 @@ $postjson = json_decode(file_get_contents('php://input'), true);
         }elseif($postjson['aksi'] === 'update'){
 
             
-            /*if ($postjson[itemStatus] === '1') {$postjson[itemStatus] = "Active";
-            }else{$postjson[itemStatus] = "Inactive";}*/
+            if ($postjson[itemStatus] === '1') {$postjson[itemStatus] = "Active";
+            }else{$postjson[itemStatus] = "Inactive";}
 
             $sql = mysqli_query($mysqli,"UPDATE menu SET 
             item_name = '$postjson[item_name]',
