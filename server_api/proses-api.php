@@ -14,8 +14,8 @@ $postjson = json_decode(file_get_contents('php://input'), true);
     if ($postjson['aksi'] === 'add') {
 
         
-        if (itemStatus === "true") itemStatus = "Active";
-        else itemStatus = "Inactive";
+        /*if (itemStatus === "true") itemStatus = "Active";
+        else itemStatus = "Inactive";*/
 
         $sql = mysqli_query($mysqli,"INSERT INTO menu SET 
         item_name = '$postjson[item_name]',
