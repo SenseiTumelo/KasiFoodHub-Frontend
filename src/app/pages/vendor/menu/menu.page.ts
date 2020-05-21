@@ -59,7 +59,6 @@ export class MenuPage implements OnInit {
 
   }
 
-
   loadMenu(){
 
     return new Promise(resolve => {
