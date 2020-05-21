@@ -31,7 +31,8 @@ export class AddMenuPage implements OnInit {
       this.item_name = data.name;
       this.item_description = data.description;
       this.item_price = data.price;
-      
+      console.log(data);
+            
     });
 
   }
@@ -50,7 +51,7 @@ export class AddMenuPage implements OnInit {
       
       this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
 
-        this.router.navigate(['/menu']);
+        this.router.navigate(['menu']);
         console.log('submit works');
 
       });
@@ -60,21 +61,22 @@ export class AddMenuPage implements OnInit {
   }
 
   updateProses(){
+   
     return new Promise(resolve => {
 
       let body = {
 
         aksi: 'update',
         item_id: this.id,
-        item_name : this.item_name,
-        item_description : this.item_description,
+        item_name: this.item_name,
+        item_description: this.item_description,
         item_price: this.item_price,
       
       };
       
       this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
 
-        this.router.navigate(['/menu']);
+        this.router.navigate(['menu']);
         console.log('submit works');
 
       });
