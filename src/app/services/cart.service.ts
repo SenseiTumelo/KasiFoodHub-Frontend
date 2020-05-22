@@ -50,7 +50,7 @@ export class CartService {
   private _viewProduct = "http://localhost:4000/viewMenu";
   private _viewCart = "http://localhost:4000/viewCart";
   private _addProduct ="http://localhost:4000/add";
-  private _adminLogin ="http://localhost:4000/login";
+  private _adminLogin ="http://localhost:4000/admin_login";
   responseData: any;
   
   private handleError(errorResponse: HttpErrorResponse){

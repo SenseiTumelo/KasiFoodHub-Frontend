@@ -7,9 +7,6 @@
       <ion-icon name="close" slot="start"></ion-icon>
     </ion-button>
   </div>
-  <div>
-    {{value}}
-  </div>
   <div class="ion-padding" *ngFor="let c of cart">
     <ion-list>
       <ion-card>
@@ -60,6 +57,6 @@
         </ion-row>
       </ion-item>
     </ion-list>
-    <ion-button id="check" expand="full" (click)="checkoutProduct(c)" (click)="checkout()" (click)="close()">Checkout</ion-button>
   </div>
+    <ion-button id="check" expand="full" (click)="checkoutProduct()" (click)="checkout()" (click)="close()">Checkout</ion-button>
 </ion-content>

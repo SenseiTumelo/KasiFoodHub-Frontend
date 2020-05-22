@@ -17,7 +17,6 @@ export class CartModalPage implements OnInit {
   composersForm: FormGroup; 
   cart: any;
   ext: Extras[] = [];
-  value: any;
   priceAmnt: any;
 
   
