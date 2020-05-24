@@ -10,19 +10,19 @@ import { Router } from '@angular/router';
 })
 export class MenuPage implements OnInit {
 
-  menus : any = [];
-  limit: number = 10; //limit get perdata returned
-  start: number = 0;
+  menus: any = [];
+  limit = 10; // limit get perdata returned
+  start = 0;
 
   constructor(
-    private router:Router,
+    private router: Router,
     private postPvdr: PostProvider,
   ) { }
 
   ngOnInit() {
   }
 
-  ionViewWillEnter(){
+  ionViewWillEnter() {
 
       this.menus = [];
       this.start = 0;
@@ -30,17 +30,17 @@ export class MenuPage implements OnInit {
 
   }
 
-  addMenu(){
+  addMenu() {
 
     this.router.navigate(['add-menu']);
 
   }
 
-  loadMenu(){
+  loadMenu() {
 
     return new Promise(resolve => {
 
-      let body = {
+      const body = {
 
         aksi: 'getdata',
         limit: this.limit,
@@ -50,7 +50,7 @@ export class MenuPage implements OnInit {
 
       this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
 
-            for (let menu of data.result) {
+            for (const menu of data.result) {
               this.menus.push(menu);
 
             }
