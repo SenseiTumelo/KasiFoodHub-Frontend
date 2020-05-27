@@ -13,23 +13,23 @@ export class SuperAdminPage implements OnInit {
     initialSlide : 0,
     slidesPerView: 1,
     speed: 400
-  }
+  };
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  async segmentChanged(){
+  async segmentChanged() {
     await this.selectedSlide.slideTo(this.segment);
 
   }
 
-  async slideChanged(slides : IonSlides){
+  async slideChanged(slides: IonSlides) {
     this.selectedSlide = slides;
-    slides.getActiveIndex().then(selectedIndex =>{
+    slides.getActiveIndex().then(selectedIndex => {
       this.segment = selectedIndex;
-    })
+    });
   }
 
 }
