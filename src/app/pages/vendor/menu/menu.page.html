@@ -26,6 +26,9 @@
         </ion-item>
     
         <ion-item-options side="end">
+          <ion-item-option (click)="showMenu(menu.item_id,menu.item_name,menu.item_price,menu.item_description)">Show
+          </ion-item-option>
+
           <ion-item-option (click)="updateMenu(menu.item_id,menu.item_name,menu.item_price,menu.item_description)">Update</ion-item-option>
         </ion-item-options>
       </ion-item-sliding>

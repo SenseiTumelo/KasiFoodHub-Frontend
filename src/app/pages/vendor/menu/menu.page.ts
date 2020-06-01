@@ -59,6 +59,13 @@ export class MenuPage implements OnInit {
 
   }
 
+showMenu(id,name,price,description){
+
+    this.router.navigate(['show-menu/' + id  + '/' + name + '/' + price + '/' + description]);
+
+  }
+
+
   loadMenu(){
 
     return new Promise(resolve => {
