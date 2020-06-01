@@ -6,7 +6,10 @@ import { AdminauthGuard } from './gaurds/adminauth.guard';
 
 const routes: Routes = [
 
-  
+  {
+    path: 'show-menu',
+    loadChildren: () => import('./pages/vendor/show-menu/show-menu.module').then( m => m.ShowMenuPageModule)
+  },
   {
     path: 'menu',
     loadChildren: () => import('./pages/vendor/menu/menu.module').then( m => m.MenuPageModule)
@@ -132,7 +135,8 @@ const routes: Routes = [
   {
     path: 'reset-password',
     loadChildren: () => import('./pages/reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
-  },  {
+  },
+  {
     path: 'show-menu',
     loadChildren: () => import('./pages/vendor/show-menu/show-menu.module').then( m => m.ShowMenuPageModule)
   }
