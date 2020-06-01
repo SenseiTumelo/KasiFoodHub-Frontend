@@ -13,7 +13,7 @@
 
 <ion-content>
 
-    <ion-list>
+    <ion-list color = "Primary">
 
       <ion-item-sliding *ngFor="let menu of menus">
 
@@ -29,7 +29,7 @@
           <ion-item-option (click)="showMenu(menu.item_id,menu.item_name,menu.item_price,menu.item_description)">Show
           </ion-item-option>
 
-          <ion-item-option (click)="updateMenu(menu.item_id,menu.item_name,menu.item_price,menu.item_description)">Update</ion-item-option>
+          <ion-item-option color ="success" (click)="updateMenu(menu.item_id,menu.item_name,menu.item_price,menu.item_description)">Update</ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
 
