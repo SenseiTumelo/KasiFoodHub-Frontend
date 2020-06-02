@@ -65,6 +65,15 @@ showMenu(id,name,price,description){
 
   }
 
+  doRefresh(event){
+
+    setTimeout(() => {
+      this.ionViewWillEnter();
+      event.target.complete();
+    }, 550);
+
+  }
+
 
   loadMenu(){
 
