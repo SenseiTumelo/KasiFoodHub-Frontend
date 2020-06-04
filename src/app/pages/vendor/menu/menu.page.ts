@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class MenuPage implements OnInit {
 
   menus: any = [];
-  limit = 10; // limit get perdata returned
+  limit = 50; // limit get perdata returned
   start = 0;
 
   constructor(
@@ -33,6 +33,44 @@ export class MenuPage implements OnInit {
   addMenu() {
 
     this.router.navigate(['add-menu']);
+
+  }
+
+  deleteMenu(id){
+ 
+      let body = {
+
+        aksi: 'delete',
+        item_id: id
+
+      };
+
+      this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
+
+        this.ionViewWillEnter();
+
+      });
+ 
+  }
+  
+  updateMenu(id,name,price,description){
+
+    this.router.navigate(['add-menu/' + id  + '/' + name + '/' + price + '/' + description]);
+
+  }
+
+showMenu(id,name,price,description){
+
+    this.router.navigate(['show-menu/' + id  + '/' + name + '/' + price + '/' + description]);
+
+  }
+
+  doRefresh(event){
+
+    setTimeout(() => {
+      this.ionViewWillEnter();
+      event.target.complete();
+    }, 550);
 
   }
 

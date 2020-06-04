@@ -78,6 +78,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/vendor/add-menu/add-menu.module').then( m => m.AddMenuPageModule)
   },
   {
+    path: 'add-menu/:id/:name/:price/:description',
+    loadChildren: () => import('./pages/vendor/add-menu/add-menu.module').then( m => m.AddMenuPageModule)
+  },
+  {
     path: 'overview',
     loadChildren: () => import('./pages/vendor/overview/overview.module').then( m => m.OverviewPageModule)
   },
@@ -128,11 +132,15 @@ const routes: Routes = [
   {
     path: 'reset-password',
     loadChildren: () => import('./pages/reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
-  },  {
+  },
+  {
     path: 'super-admin',
     loadChildren: () => import('./pages/super-admin/super-admin.module').then( m => m.SuperAdminPageModule)
+  },
+  {
+    path: 'show-menu/:id/:name/:price/:description',
+    loadChildren: () => import('./pages/vendor/show-menu/show-menu.module').then( m => m.ShowMenuPageModule)
   }
-
  
 
 ];

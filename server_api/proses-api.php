@@ -12,7 +12,11 @@ $postjson = json_decode(file_get_contents('php://input'), true);
 //$today = date('Y-m-d');
 
     if ($postjson['aksi'] === 'add') {
-                            
+
+        
+        /*if (itemStatus === "true") itemStatus = "Active";
+        else itemStatus = "Inactive";*/
+
         $sql = mysqli_query($mysqli,"INSERT INTO menu SET 
         item_name = '$postjson[item_name]',
         item_description = '$postjson[item_description]',
@@ -28,7 +32,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
     }elseif($postjson['aksi'] === 'getdata'){
 
             $data = array();
-            $sql = mysqli_query($mysqli,"SELECT * FROM menu ORDER BY item_id DESC LIMIT $postjson[start], $postjson[limit]");
+            $sql = mysqli_query($mysqli,"SELECT * FROM menu ORDER BY item_id ASC LIMIT $postjson[start], $postjson[limit]");
 
             while ($row = mysqli_fetch_array($sql)) {
                 
@@ -38,6 +42,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
                     'item_name' => $row['item_name'],
                     'item_description' => $row['item_description'],
                     'item_price' => $row['item_price'],
+                    /*'menuStatus' => $row['menuStatus'],*/
 
                 );
 
@@ -45,6 +50,32 @@ $postjson = json_decode(file_get_contents('php://input'), true);
   
             if ($sql) $result = json_encode(array('success' => true, 'result' => $data));
             else $result = json_encode(array('success' => false)); 
+
+            echo $result;
+ 
+        }elseif($postjson['aksi'] === 'update'){
+
+            
+            /*if ($postjson[itemStatus] === '1') {$postjson[itemStatus] = "Active";
+            }else{$postjson[itemStatus] = "Inactive";}*/
+
+            $sql = mysqli_query($mysqli,"UPDATE menu SET 
+            item_name = '$postjson[item_name]',
+            item_description = '$postjson[item_description]',
+            item_price = '$postjson[item_price]'
+            WHERE item_id = '$postjson[item_id]'");
+
+            if ($sql) $result = json_encode(array('success' => true, 'result' => 'success'));
+            else $result = json_encode(array('success' => false, 'result' => 'error')); 
+
+            echo $result;
+
+        }elseif($postjson['aksi'] === 'delete'){
+
+            $sql = mysqli_query($mysqli,"DELETE FROM menu WHERE item_id = '$postjson[item_id]'");
+
+            if ($sql) $result = json_encode(array('success' => true, 'result' => 'success'));
+            else $result = json_encode(array('success' => false, 'result' => 'error')); 
 
             echo $result;
 

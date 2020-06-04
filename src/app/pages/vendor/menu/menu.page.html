@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>Menu list</ion-title>
     
     <ion-button slot="primary" (click)="addMenu()">
@@ -13,11 +13,21 @@
 
 <ion-content>
 
-    <ion-list>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content> 
+  </ion-refresher>
+
+    <ion-list color = "Primary">
 
       <ion-item-sliding *ngFor="let menu of menus">
+
         <ion-item-options side="start">
-          <ion-item-option color="danger" (click)="deleteMenu()">Delete</ion-item-option>
+         <ion-item-option color="danger" (click)="deleteMenu(menu.item_id)">Delete</ion-item-option>
         </ion-item-options>
     
         <ion-item>
@@ -25,7 +35,10 @@
         </ion-item>
     
         <ion-item-options side="end">
-          <ion-item-option (click)="updateMenu()">Update</ion-item-option>
+          <ion-item-option (click)="showMenu(menu.item_id,menu.item_name,menu.item_price,menu.item_description)">Show
+          </ion-item-option>
+
+          <ion-item-option color ="success" (click)="updateMenu(menu.item_id,menu.item_name,menu.item_price,menu.item_description)">Update</ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
 
