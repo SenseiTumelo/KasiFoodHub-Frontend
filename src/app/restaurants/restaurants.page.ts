@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 import { RestaurantService } from '../services/restaurant.service';
 
 import { Location } from '@angular/common';
-//import { RestaurantService } from '../services/restaurant.service';
-//import { ActionsheetComponent } from '../components/actionsheet/actionsheet.component';
+// import { RestaurantService } from '../services/restaurant.service';
+// import { ActionsheetComponent } from '../components/actionsheet/actionsheet.component';
 
 
 
@@ -19,25 +19,25 @@ export class RestaurantsPage implements OnInit {
 
   constructor(private route: Router, private location: Location) { }
 
-   
+
   ngOnInit() {
-    
+
   }
  /* list()
   {
     return this.asheet.presentActionSheet()
   }*/
- order(){
+ order() {
    this.route.navigateByUrl('/order2');
  }
- secOrder(){
+ secOrder() {
    this.route.navigateByUrl('/order');
  }
- thirdOrder(){
+ thirdOrder() {
    this.route.navigateByUrl('/order3');
  }
 
- backButton(){
+ backButton() {
   this.location.back();
  }
 

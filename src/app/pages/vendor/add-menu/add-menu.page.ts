@@ -10,10 +10,16 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 export class AddMenuPage implements OnInit {
 
+<<<<<<< HEAD
   item_name: string ="";
   item_description: string ="";
   item_price: string ="";
   id: number;
+=======
+  item_name = '';
+  item_description = '';
+  item_price = '';
+>>>>>>> d93c222c4a5f1e8cd2cb69957641914cbe4f6216
 
   constructor(
 
@@ -37,15 +43,16 @@ export class AddMenuPage implements OnInit {
 
   }
 
-  createdProses(){
+  createdProses() {
     return new Promise(resolve => {
 
-      let body = {
+      const body = {
 
         aksi: 'add',
         item_name : this.item_name,
         item_description : this.item_description,
         item_price: this.item_price,
+<<<<<<< HEAD
         
       };
       
@@ -72,8 +79,11 @@ export class AddMenuPage implements OnInit {
         item_description: this.item_description,
         item_price: this.item_price,
       
+=======
+
+>>>>>>> d93c222c4a5f1e8cd2cb69957641914cbe4f6216
       };
-      
+
       this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
 
         this.router.navigate(['menu']);

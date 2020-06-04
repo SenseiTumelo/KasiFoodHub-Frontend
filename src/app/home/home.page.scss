@@ -7,22 +7,17 @@
 }
 
 ion-content{
-   --background: lightblue;
-    //--background-image: url(/assets/images/background.jpg);
-   // --background: url(/assets/images/background.jpg) 0 0/100% 100% no-repeat;
+   --background: rgb(201, 92, 41);
+   // --background-image: url(/src/assets/images/kfh6.png);
+   // --background: url(/src/assets/images/kfh6.png) 0 0/100% 100% no-repeat;
+   //assets/images/kfh6.png
 }
 
 .card {
-    width:10%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  --background: gold;
+  padding: 30px;
+  height: calc(100vh - (200px + 56px));
+  overflow: hidden;
   }
   .card-body {
     
@@ -54,6 +49,10 @@ ion-content{
     left: 10px;
   }
   .pics{
-    width: 509px;
-    height: 476px;
+    
+    width: auto;
+    padding: 30px;
+   
   }
+
+  

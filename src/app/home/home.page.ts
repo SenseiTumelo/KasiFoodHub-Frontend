@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NavController, NavParams, AlertController, ActionSheetController ,LoadingController} from '@ionic/angular';
+import { NavController, NavParams, AlertController, ActionSheetController , LoadingController} from '@ionic/angular';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { SearchService } from '../services/search.service';
@@ -13,8 +13,8 @@ export class HomePage implements OnInit {
 
   
    // tslint:disable-next-line: max-line-length
-   constructor(private route: Router,public actionSheetController: ActionSheetController,
-               private loadingCtrl: LoadingController,private dataService: DataService,
+   constructor(private route: Router, public actionSheetController: ActionSheetController,
+               private loadingCtrl: LoadingController, private dataService: DataService,
                private searchService: SearchService) {}
 
    searchTerm: any = "";
@@ -76,7 +76,7 @@ export class HomePage implements OnInit {
           console.log('Signin clicked');
           this.route.navigateByUrl('/signin');
         }
-      },{
+      }, {
         text: 'History',
         icon: 'time-outline',
         handler: () => {
@@ -90,7 +90,7 @@ export class HomePage implements OnInit {
           console.log('Share clicked');
           this.route.navigateByUrl('/profile');
         }
-      },{
+      }, {
         text: 'About Us',
         icon: 'information-circle-outline',
         handler: () => {
@@ -105,7 +105,7 @@ export class HomePage implements OnInit {
             console.log('admin clicked');
             this.route.navigateByUrl('/vendor-admin');
           }
-      },{
+      }, {
          text: 'Cancel',
          icon: 'close',
          role: 'cancel',
@@ -130,14 +130,14 @@ export class HomePage implements OnInit {
   }*/
 
   // testing the admin data
-  adminData: any =[];
+  adminData: any = [];
 
   // search 
   // searchData: any = []; 
   jsonData: any = [];
 
   public getRest(){ // ive used the adminData here to test the connection. some of the variables should be change..pls dont touch
-    return this.dataService.adminService().subscribe((data: any) => {this.adminData = data; console.log(this.adminData);});
+    return this.dataService.adminService().subscribe((data: any) => {this.adminData = data; console.log(this.adminData); });
   }
 
   ngOnInit() {
@@ -164,7 +164,7 @@ export class HomePage implements OnInit {
 
 
     search(){
-      this.dataService.jsonData.subscribe((dat: any) => {this.jsonData = dat; console.log(this.jsonData);});
+      this.dataService.jsonData.subscribe((dat: any) => {this.jsonData = dat; console.log(this.jsonData); });
      // return this.searchService.searchD().subscribe((dat: any) => {this.searchData = dat;console.log(this.searchData);});
     }
 

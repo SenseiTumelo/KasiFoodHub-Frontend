@@ -4,18 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { VendorAdminPageRoutingModule } from './vendor-admin-routing.module';
+import { SuperAdminPageRoutingModule } from './super-admin-routing.module';
 
-import { VendorAdminPage } from './vendor-admin.page';
+import { SuperAdminPage } from './super-admin.page';
 
 @NgModule({
-
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    VendorAdminPageRoutingModule
+    SuperAdminPageRoutingModule
   ],
-  declarations: [VendorAdminPage]
+  declarations: [SuperAdminPage]
 })
-export class VendorAdminPageModule {}
+export class SuperAdminPageModule {}
