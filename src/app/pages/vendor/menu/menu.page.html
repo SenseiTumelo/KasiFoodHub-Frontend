@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="dark">
     <ion-title>Menu list</ion-title>
-    
+    <ion-searchbar [(ngModel)] = "searchTerm" (ionInput)= "setFilteredItems($event)"></ion-searchbar>
     <ion-button slot="primary" (click)="addMenu()">
           
       New 
@@ -30,7 +30,7 @@
          <ion-item-option color="danger" (click)="deleteMenu(menu.item_id)">Delete</ion-item-option>
         </ion-item-options>
     
-        <ion-item>
+        <ion-item (click) = "selectVal(item_name)">
           <ion-label>{{menu.item_name}}</ion-label>
         </ion-item>
     

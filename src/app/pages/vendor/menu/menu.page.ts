@@ -17,7 +17,29 @@ export class MenuPage implements OnInit {
   constructor(
     private router: Router,
     private postPvdr: PostProvider,
-  ) { }
+  ) {
+
+    this.loadMenu();
+
+   }
+
+  setFilteredItems(event){
+
+    this.loadMenu();
+    const val = event.target.value;
+
+      if (val && val.trim() != '') {
+        
+          this.menus = this.menus.filter((item) => {
+
+              return (item.item_name.toLowerCase().indexOf(val.toLowerCase())>-1);
+
+          })
+
+      }
+
+
+  }
 
   ngOnInit() {
   }
