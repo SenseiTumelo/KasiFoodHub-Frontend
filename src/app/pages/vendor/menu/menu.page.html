@@ -35,10 +35,10 @@
         </ion-item>
     
         <ion-item-options side="end">
-          <ion-item-option (click)="showMenu(menu.item_id,menu.item_name,menu.item_price,menu.item_description)">Show
+          <ion-item-option (click)="showMenu(menu.item_id,menu.item_name,menu.item_price,menu.item_description,menu.itemStatus)">Show
           </ion-item-option>
 
-          <ion-item-option color ="success" (click)="updateMenu(menu.item_id,menu.item_name,menu.item_price,menu.item_description)">Update</ion-item-option>
+          <ion-item-option color ="success" (click)="updateMenu(menu.item_id,menu.item_name,menu.item_price,menu.item_description,menu.itemStatus)">Update</ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
 

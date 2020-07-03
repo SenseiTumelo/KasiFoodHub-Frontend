@@ -78,7 +78,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/vendor/add-menu/add-menu.module').then( m => m.AddMenuPageModule)
   },
   {
-    path: 'add-menu/:id/:name/:price/:description',
+    path: 'add-menu/:id/:name/:price/:description/:status',
     loadChildren: () => import('./pages/vendor/add-menu/add-menu.module').then( m => m.AddMenuPageModule)
   },
   {
@@ -138,7 +138,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/super-admin/super-admin.module').then( m => m.SuperAdminPageModule)
   },
   {
-    path: 'show-menu/:id/:name/:price/:description',
+    path: 'show-menu/:id/:name/:price/:description/:status',
     loadChildren: () => import('./pages/vendor/show-menu/show-menu.module').then( m => m.ShowMenuPageModule)
   }
  
