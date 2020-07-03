@@ -12,12 +12,8 @@ export class SingupadminPage implements OnInit {
 
     restuarant_id: number;
     restuarant_name: string = "";
-    Plot_number: number;
-    Street_name: string = "";
-    Suburb: string = "";
-    City: string = "";
-    Province: string = "";
-    Zip_code: number;
+    contact: string = "";
+    address_loc: string = "";
     pass_word: string = "";
     email_address: string = "";
     rest_status: string = "";
@@ -26,7 +22,7 @@ export class SingupadminPage implements OnInit {
     private route: Router,
     private postPvdr: PostProvider,
     private actRoute:ActivatedRoute,
-    private location: Location) { }
+    private location: Location,) { }
 
   ngOnInit() {
   
@@ -34,16 +30,11 @@ export class SingupadminPage implements OnInit {
 
       this.restuarant_id = data.id;
       this.restuarant_name = data.name;
-      this.Plot_number = data.Pnumber;
-      this.Street_name = data.Sname;
-      this.Suburb = data.Sub_urb;
-      this.City = data.city;
-      this.Province = data.province;
-      this.Zip_code = data.code;
       this.pass_word = data.password;
       this.email_address = data.e_address;
       this.rest_status = data.status;
-
+      this.contact = data.phone;
+      this.address_loc = data.address;
       console.log(data);
             
     });
@@ -58,28 +49,24 @@ export class SingupadminPage implements OnInit {
         const body = {
 
           aksi: 'add',
-          restuarant_name : this.restuarant_name,
-          Plot_number : this.Plot_number,
-          Street_name: this.Street_name,
-          Suburb: this.Suburb,
-          City: this.City,
-          Province: this.Province,
-          Zip_code: this.Zip_code,
+          restuarant_name: this.restuarant_name,
           pass_word: this.pass_word,
           email_address: this.email_address,
           rest_status: this.rest_status,
+          contact: this.contact,
+          address_loc: this.address_loc,
 
         };
         
         this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
-          this.route.navigate(['signin']);
-          console.log('submit works');
+        this.route.navigate(['signin']);
+        console.log('submit works');
 
         });
 
       });
   
-      this.route.navigateByUrl('/home');
+      this.route.navigate(['home']);
 
  }
  navAdmin(){

@@ -13,6 +13,7 @@ export class AddMenuPage implements OnInit {
   item_name: string ="";
   item_description: string ="";
   item_price: string ="";
+  itemStatus: string = "";
   id: number;
 
   constructor(
@@ -31,6 +32,7 @@ export class AddMenuPage implements OnInit {
       this.item_name = data.name;
       this.item_description = data.description;
       this.item_price = data.price;
+      this.itemStatus = data.stutas;
       console.log(data);
             
     });
@@ -46,6 +48,7 @@ export class AddMenuPage implements OnInit {
         item_name : this.item_name,
         item_description : this.item_description,
         item_price: this.item_price,
+        itemStatus: this.itemStatus,
         
       };
       
@@ -71,7 +74,8 @@ export class AddMenuPage implements OnInit {
         item_name: this.item_name,
         item_description: this.item_description,
         item_price: this.item_price,
-      
+        itemStatus: this.itemStatus,
+
       };
 
       this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {

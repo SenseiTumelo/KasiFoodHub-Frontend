@@ -6,29 +6,32 @@
 </ion-header>
 
 <ion-content >
-      <ion-item>
-        <ion-label position="floating" name = "restuarant_name">Restuarant Name</ion-label>
-        <ion-input></ion-input>
+     
+  <ion-card-content>
+  <ion-item>
+        <ion-label position="floating" >Restuarant Name</ion-label>
+        <ion-input type ="text" [(ngModel)]= "restuarant_name" name = "restuarant_name"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="floating" name = "email_address">Email Address</ion-label>
-        <ion-input type = "email"></ion-input>
+        <ion-label position="floating" >Email Address</ion-label>
+        <ion-input type = "email" [(ngModel)]= "email_address" name = "email_address"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" >Contacts</ion-label>
+        <ion-input type = "text" [(ngModel)]= "contact" name = "contact"></ion-input>
+      </ion-item>
+
 
      <ion-item>
         <ion-label position="floating">Address</ion-label>
-        <ion-input placeholder="Plot Number" name = "Plot_number"></ion-input>
-        <ion-input placeholder = "Street Name" name = "Street_name"></ion-input>
-        <ion-input placeholder="Suburb" name = "Suburb"></ion-input>
-        <ion-input placeholder="City" name = "City"></ion-input>
-        <ion-input placeholder="Province" name = "Province"></ion-input>
-        <ion-input placeholder="Zip Code" name = "Zip_code"></ion-input>
-      </ion-item>
-    
+        <ion-textarea type = "text" [(ngModel)]= "address_loc" placeholder="Address" name = "address_loc"></ion-textarea>
+     </ion-item>
+
       <ion-item>
         <ion-label  position="floating">Password</ion-label>
-        <ion-input type= "password" name = "pass_word"></ion-input>
+        <ion-input type= "password" [(ngModel)]= "pass_word" name = "pass_word"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -50,10 +53,13 @@
         </ion-item>
       </ion-item>
     <!-- </div>  -->
+ 
     <div>
-      <ion-button color = "success" shape="round" (click)="goHome()">Register</ion-button>
+      <ion-button type = "submit"color = "success" shape="round" (click)="goHome()">Register</ion-button>
       <ion-button color = "danger" shape = "round" (click)= "backButton()">Cancel</ion-button>
     </div>
-  <!-- </div> -->
   
+  <!-- </div> -->
+
+</ion-card-content>  
 </ion-content>
