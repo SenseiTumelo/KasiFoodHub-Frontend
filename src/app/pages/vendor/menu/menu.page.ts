@@ -81,13 +81,13 @@ export class MenuPage implements OnInit {
  
   }
   
-  updateMenu(id,name,price,description){
+  updateMenu(id,name,price,description,status){
 
     this.router.navigate(['add-menu/' + id  + '/' + name + '/' + price + '/' + description + '/' + status]);
 
   }
 
-showMenu(id,name,price,description){
+showMenu(id,name,price,description, status){
 
     this.router.navigate(['show-menu/' + id  + '/' + name + '/' + price + '/' + description + '/' + status]);
 

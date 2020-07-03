@@ -75,7 +75,8 @@ $postjson = json_decode(file_get_contents('php://input'), true);
             $sql = mysqli_query($mysqli,"UPDATE menu SET 
             item_name = '$postjson[item_name]',
             item_description = '$postjson[item_description]',
-            item_price = '$postjson[item_price]'
+            item_price = '$postjson[item_price]',
+            itemStatus = '$postjson[itemStatus]'
             WHERE item_id = '$postjson[item_id]'");
 
             if ($sql) $result = json_encode(array('success' => true, 'result' => 'success'));
