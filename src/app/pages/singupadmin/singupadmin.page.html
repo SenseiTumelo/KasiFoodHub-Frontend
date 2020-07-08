@@ -42,9 +42,9 @@
       <ion-item>
         <ion-item>
           Is delivery available ?  
-          <ion-toggle [(ngModel)] ="isDeliever" color="success"></ion-toggle>
-          <p *ngIf="isDeliever" name = "isDeliever">Active</p>
-          <p *ngIf="!isDeliever" name = "isDeliever">Inactive</p>
+          <ion-toggle [(ngModel)] ="rest_status" name = "rest_status" color="success"></ion-toggle>
+          <p *ngIf="rest_status" name = "rest_status">Active</p>
+          <p *ngIf="!rest_status" name = "rest_status">Inactive</p>
         </ion-item>
         
         <ion-item>
@@ -55,7 +55,7 @@
     <!-- </div>  -->
  
     <div>
-      <ion-button type = "submit"color = "success" shape="round" (click)="goHome()">Register</ion-button>
+      <ion-button type = "submit" color = "success" shape="round" (click)="goHome()">Register</ion-button>
       <ion-button color = "danger" shape = "round" (click)= "backButton()">Cancel</ion-button>
     </div>
   

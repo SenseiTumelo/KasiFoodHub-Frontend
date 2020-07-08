@@ -31,7 +31,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
             pass_word = '$postjson[pass_word]',
             email_address = '$postjson[email_address]',
             rest_status = '$postjson[rest_status]',
-            contact = '$postjson[Zip_code]',
+            contact = '$postjson[contact]',
             address_loc = '$postjson[address_loc]'");
            
            

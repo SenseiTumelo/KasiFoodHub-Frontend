@@ -53,9 +53,9 @@ export class AddMenuPage implements OnInit {
       };
       
       this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
-
         this.router.navigate(['menu']);
         console.log('submit works');
+     
 
       });
 

@@ -19,7 +19,7 @@ export class SingupadminPage implements OnInit {
     rest_status: string = "";
 
   constructor(   
-    private route: Router,
+    private router: Router,
     private postPvdr: PostProvider,
     private actRoute:ActivatedRoute,
     private location: Location,) { }
@@ -59,18 +59,18 @@ export class SingupadminPage implements OnInit {
         };
         
         this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
-        this.route.navigate(['signin']);
+        this.router.navigate(['signin']);
         console.log('submit works');
 
         });
 
       });
   
-      this.route.navigate(['home']);
+      this.router.navigate(['home']);
 
  }
  navAdmin(){
-  return this.route.navigateByUrl('/vendor-admin')
+  return this.router.navigateByUrl('/vendor-admin')
 }
  btnClear(){
   
