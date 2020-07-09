@@ -23,7 +23,7 @@ import { AddMenuPageModule} from './pages/vendor/add-menu/add-menu.module';
 import { AdminauthGuard } from './gaurds/adminauth.guard';
 import { AuthenticationService } from './services/authentication.service';
 // import { Storage } from '@ionic/storage'; error
-
+import { IonicStorageModule } from '@ionic/storage';
 //import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
 
 // import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
@@ -44,8 +44,8 @@ import { AuthenticationService } from './services/authentication.service';
     AddMenuPageModule,
     ExtrasPageModule,
     HttpClientModule,
-    ProfilePageModule
-
+    ProfilePageModule,
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar, /*AuthGuard, AdminauthGuard, AuthenticationService,*/ 

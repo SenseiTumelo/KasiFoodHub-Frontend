@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CartService } from 'src/app/services/cart.service';
+import { AdminService } from 'src/app/services/admin.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { IonSegment } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
-import { HttpClient,HttpErrorResponse} from '@angular/common/http'
+import { HttpClient,HttpErrorResponse} from '@angular/common/http';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.page.html',
@@ -13,13 +14,14 @@ export class AdminLoginPage implements OnInit {
 
   @ViewChild(IonSegment, {static: true}) segment: IonSegment;
   login: any;
+  name: string;
 
   loginUserData = {
     email_address: "",
     password:  ""
   };
 
-  constructor(private alertService: AlertService,private cartService: CartService,private router: Router) { }
+  constructor(private http:HttpClient,private alertService: AlertService,private admin: AdminService,private router: Router) { }
 
   ngOnInit() {
   }
@@ -34,7 +36,7 @@ export class AdminLoginPage implements OnInit {
        this.alertService.presentToast("Provide password");
      }
     
-    this.cartService.adminLogin(this.loginUserData).subscribe(
+    this.admin.adminLogin(this.loginUserData).subscribe(
       _data => {
         this.alertService.presentToast("Logged In");
       },
@@ -48,4 +50,14 @@ export class AdminLoginPage implements OnInit {
 
   }
 
+  checkEmail(){
+
+    this.http.get('http://localhost:4000/admin_login').pipe(
+        map(res => res)
+    ).subscribe(response => {
+        console.log('GET Response:', response);
+    });
+
+}
+  
 }
