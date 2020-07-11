@@ -105,6 +105,14 @@ export class HomePage implements OnInit {
             console.log('admin clicked');
             this.route.navigateByUrl('/vendor-admin');
           }
+          },
+          {
+            text:'Super Admin',
+            icon:'Person',
+            handler:()=>{
+              console.log('addRemoveAdmin clicked');
+              this.route.navigateByUrl('/add-remove-admin');  
+          }
       }, {
          text: 'Cancel',
          icon: 'close',

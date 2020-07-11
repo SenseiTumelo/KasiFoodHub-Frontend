@@ -89,11 +89,11 @@ const routes: Routes = [
     path: 'menu',
     loadChildren: () => import('./pages/vendor/menu/menu.module').then( m => m.MenuPageModule)
   },
-  {
+  /*{
 
     path: 'admin-login',
     loadChildren: () => import('./pages/admin-login/admin-login.module').then( m => m.AdminLoginPageModule)
-  },
+  },*/
   {
     path: 'extras',
     loadChildren: () => import('./pages/extras/extras.module').then( m => m.ExtrasPageModule)
@@ -140,9 +140,11 @@ const routes: Routes = [
   {
     path: 'show-menu/:id/:name/:price/:description',
     loadChildren: () => import('./pages/vendor/show-menu/show-menu.module').then( m => m.ShowMenuPageModule)
+  },
+  {
+    path: 'add-remove-admin',
+    loadChildren: () => import('./pages/add-remove-admin/add-remove-admin.module').then( m => m.AddRemoveAdminPageModule)
   }
- 
-
 ];
 @NgModule({
   imports: [
