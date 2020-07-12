@@ -144,7 +144,11 @@ const routes: Routes = [
   {
     path: 'add-remove-admin',
     loadChildren: () => import('./pages/add-remove-admin/add-remove-admin.module').then( m => m.AddRemoveAdminPageModule)
+  },  {
+    path: 'remove-add-admin',
+    loadChildren: () => import('./pages/remove-add-admin/remove-add-admin.module').then( m => m.RemoveAddAdminPageModule)
   }
+
 ];
 @NgModule({
   imports: [
