@@ -13,7 +13,7 @@ export class AdminService { // class name
 
   getProfile() { // this is a function
 
-    return this.http.get<any>(this.profile_url);
+    return this.http.get(this.profile_url);
   }
 }
 // thats all you need inside the service.. now we are goin to use this service anywhere were it is required
