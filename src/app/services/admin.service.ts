@@ -17,4 +17,4 @@ export class AdminService { // class name
   }
 }
 // thats all you need inside the service.. now we are goin to use this service anywhere were it is required
- 
+// 
