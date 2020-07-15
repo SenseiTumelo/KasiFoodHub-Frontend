@@ -36,7 +36,7 @@ export class DataService {
   show_rest_url = 'http://localhost:4000/allrestuarant';
   prof_url = '';
   admin_prof_url = 'http://localhost:4000/admin';
-  
+
   logged =  0;
 
   adminService() {

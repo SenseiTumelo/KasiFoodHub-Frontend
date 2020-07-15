@@ -12,8 +12,24 @@ export class SuperAdminPage implements OnInit {
   sliderOptions = {
     initialSlide : 0,
     slidesPerView: 1,
-    speed: 400
+    speed: 400,
   };
+
+  items = ['apple', 'banana', 'cherry', 'apple', 'banana', 'cherry'];
+
+
+  unread() {
+
+    console.log('my test works');
+
+  }
+  test() {
+    console.log('my test works');
+  }
+
+  delete() {
+    console.log('my delete works');
+  }
 
   constructor() { }
 
