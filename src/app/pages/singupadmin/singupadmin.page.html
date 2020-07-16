@@ -6,47 +6,32 @@
 </ion-header>
 
 <ion-content >
-      <ion-item>
-        <ion-label position="floating">First Name</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Last Name</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Gender</ion-label>
-        <ion-select placeholder="Select One">
-          <ion-select-option value="f">Female</ion-select-option>
-          <ion-select-option value="m">Male</ion-select-option>
-        </ion-select>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Cellphone number</ion-label>
-        <ion-input></ion-input>
+     
+  <ion-card-content>
+  <ion-item>
+        <ion-label position="floating" >Restuarant Name</ion-label>
+        <ion-input type ="text" [(ngModel)]= "restuarant_name" name = "restuarant_name"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating" >Email Address</ion-label>
-        <ion-input type = "email"></ion-input>
+        <ion-input type = "email" [(ngModel)]= "email_address" name = "email_address"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" >Contacts</ion-label>
+        <ion-input type = "text" [(ngModel)]= "contact" name = "contact"></ion-input>
+      </ion-item>
+
 
      <ion-item>
         <ion-label position="floating">Address</ion-label>
-        <ion-input placeholder="Plot Number"></ion-input>
-        <ion-input placeholder = "Street Name"></ion-input>
-        <ion-input placeholder="Suburb"></ion-input>
-        <ion-input placeholder="City"></ion-input>
-        <ion-input placeholder="Province"></ion-input>
-        <ion-input placeholder="Zip Code"></ion-input>
-      </ion-item>
-    
+        <ion-textarea type = "text" [(ngModel)]= "address_loc" placeholder="Address" name = "address_loc"></ion-textarea>
+     </ion-item>
+
       <ion-item>
         <ion-label  position="floating">Password</ion-label>
-        <ion-input type= "password"></ion-input>
+        <ion-input type= "password" [(ngModel)]= "pass_word" name = "pass_word"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -57,7 +42,9 @@
       <ion-item>
         <ion-item>
           Is delivery available ?  
-          <ion-toggle color="success"></ion-toggle>
+          <ion-toggle [(ngModel)] ="rest_status" name = "rest_status" color="success"></ion-toggle>
+          <p *ngIf="rest_status" name = "rest_status">Active</p>
+          <p *ngIf="!rest_status" name = "rest_status">Inactive</p>
         </ion-item>
         
         <ion-item>
@@ -66,10 +53,13 @@
         </ion-item>
       </ion-item>
     <!-- </div>  -->
+ 
     <div>
-      <ion-button color = "success" shape="round" (click)="goHome()">Register</ion-button>
+      <ion-button type = "submit" color = "success" shape="round" (click)="goHome()">Register</ion-button>
       <ion-button color = "danger" shape = "round" (click)= "backButton()">Cancel</ion-button>
     </div>
-  <!-- </div> -->
   
+  <!-- </div> -->
+
+</ion-card-content>  
 </ion-content>

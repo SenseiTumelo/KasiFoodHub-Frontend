@@ -17,7 +17,35 @@ export class MenuPage implements OnInit {
   constructor(
     private router: Router,
     private postPvdr: PostProvider,
-  ) { }
+  ) {
+
+    this.loadMenu();
+
+   }
+
+  setFilteredItems(event){
+
+    this.loadMenu();
+    const val = event.target.value;
+
+      if (val && val.trim() != '') {
+        
+          this.menus = this.menus.filter((item) => {
+
+              return (item.item_name.toLowerCase().indexOf(val.toLowerCase()) >-1);
+
+          })
+
+      }
+
+
+  }
+
+  selectVal(val){
+
+      alert("You have selected = " + val);
+
+  }
 
   ngOnInit() {
   }
@@ -30,7 +58,7 @@ export class MenuPage implements OnInit {
 
   }
 
-  addMenu() {
+  addMenu(){
 
     this.router.navigate(['add-menu']);
 
@@ -53,15 +81,15 @@ export class MenuPage implements OnInit {
  
   }
   
-  updateMenu(id,name,price,description){
+  updateMenu(id,name,price,description,status){
 
-    this.router.navigate(['add-menu/' + id  + '/' + name + '/' + price + '/' + description]);
+    this.router.navigate(['add-menu/' + id  + '/' + name + '/' + price + '/' + description + '/' + status]);
 
   }
 
-showMenu(id,name,price,description){
+showMenu(id,name,price,description, status){
 
-    this.router.navigate(['show-menu/' + id  + '/' + name + '/' + price + '/' + description]);
+    this.router.navigate(['show-menu/' + id  + '/' + name + '/' + price + '/' + description + '/' + status]);
 
   }
 

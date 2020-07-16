@@ -12,6 +12,7 @@ export class ShowMenuPage implements OnInit {
   item_name: string = "";
   item_description: string = "";
   item_price: string = "";
+  itemStatus: string = "";
   id: number;
 
   constructor(
@@ -28,6 +29,7 @@ export class ShowMenuPage implements OnInit {
       this.item_name = data.name;
       this.item_description = data.description;
       this.item_price = data.price;
+      this.itemStatus = data.status;
       console.log(data);
 
       });
