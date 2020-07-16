@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import 'rxjs/add/operator/map';
 
 import { RestaurantService } from '../services/restaurant.service';
 
 import { Location } from '@angular/common';
+import { DataService } from '../services/data.service';
 // import { RestaurantService } from '../services/restaurant.service';
 // import { ActionsheetComponent } from '../components/actionsheet/actionsheet.component';
 
@@ -17,11 +19,11 @@ import { Location } from '@angular/common';
 export class RestaurantsPage implements OnInit {
 
 
-  constructor(private route: Router, private location: Location) { }
-
+  constructor(private route: Router, private location: Location, private dataService: DataService) { }
+rest: any = [];
 
   ngOnInit() {
-
+   this.getRest();
   }
  /* list()
   {
@@ -37,8 +39,13 @@ export class RestaurantsPage implements OnInit {
    this.route.navigateByUrl('/order3');
  }
 
- backButton() {
+ backButto() {
   this.location.back();
+ }
+ getRest() {
+
+  return this.dataService.grest()
+  .subscribe(data => {this.rest = data ; console.log(data); });
  }
 
 }
