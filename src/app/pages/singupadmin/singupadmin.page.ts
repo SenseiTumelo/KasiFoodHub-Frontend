@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import {PostProvider } from '../../../providers/post-provider';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-singupadmin',
@@ -9,16 +10,67 @@ import { Location } from '@angular/common';
 })
 export class SingupadminPage implements OnInit {
 
-  constructor(private route: Router, private location: Location) { }
+    restuarant_id: number;
+    restuarant_name: string = "";
+    contact: string = "";
+    address_loc: string = "";
+    pass_word: string = "";
+    email_address: string = "";
+    rest_status: string = "";
+
+  constructor(   
+    private router: Router,
+    private postPvdr: PostProvider,
+    private actRoute:ActivatedRoute,
+    private location: Location,) { }
 
   ngOnInit() {
+  
+    this.actRoute.params.subscribe((data:any) => {
+
+      this.restuarant_id = data.id;
+      this.restuarant_name = data.name;
+      this.pass_word = data.password;
+      this.email_address = data.e_address;
+      this.rest_status = data.status;
+      this.contact = data.phone;
+      this.address_loc = data.address;
+      console.log(data);
+            
+    });
+  
   }
+  
   goHome()
  {
-   this.route.navigateByUrl('/home');
+
+      return new Promise(resolve => {
+
+        const body = {
+
+          aksi: 'add',
+          restuarant_name: this.restuarant_name,
+          pass_word: this.pass_word,
+          email_address: this.email_address,
+          rest_status: this.rest_status,
+          contact: this.contact,
+          address_loc: this.address_loc,
+
+        };
+        
+        this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
+        this.router.navigate(['signin']);
+        console.log('submit works');
+
+        });
+
+      });
+  
+      this.router.navigate(['home']);
+
  }
  navAdmin(){
-  return this.route.navigateByUrl('/vendor-admin')
+  return this.router.navigateByUrl('/vendor-admin')
 }
  btnClear(){
   
@@ -30,3 +82,4 @@ backButton(){
 
 
 }
+

@@ -2,7 +2,7 @@
   <ion-toolbar color = 'dark'>
     <ion-title>Menu</ion-title>
 
-    <ion-button slot="primary" (click)="menu()">
+    <ion-button slot="primary">
 
       <ion-back-button text = "Back" icon =""></ion-back-button>
       
@@ -10,9 +10,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color = "dark">
+<ion-content>
   
-  <ion-card>
+  <ion-card color="dark">
     <ion-card-header>Add Product</ion-card-header>
     <ion-card-content>
       <form action="add-menu.page.ts" method="POST">
@@ -31,15 +31,18 @@
         
         <ion-item>
           Is item available ?  
-          <ion-toggle color="success"></ion-toggle>
+          <ion-toggle [(ngModel)]="itemStatus" name ="itemStatus" color="success"></ion-toggle>        
+          <p *ngIf="itemStatus" name = "itemStatus">Active</p>
+          <p *ngIf="!itemStatus"  name = "itemStatus">Inactive</p>
         </ion-item>
-        
+
         <ion-item>
           <ion-label position="fixed">Image</ion-label>
           <label class="control-label small" for="file_img">(jpg/png):</label> <input type="file" name="file_img">
         </ion-item>
         <ion-item>
-          <ion-button type ="submit" color = "success" (click)="createdProses()">Add to menu</ion-button>
+          <ion-button type ="submit" color = "tertiary" *ngIf="!id" (click)="createdProses()">Add to menu</ion-button>
+          <ion-button type ="submit" color = "tertiary" *ngIf="id>=1" (click)="updateProses()">Update</ion-button>
         </ion-item>
         
       </form>
