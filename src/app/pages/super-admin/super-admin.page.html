@@ -24,7 +24,7 @@
   <ion-slides #slides pager = "false" [options]="sliderOptions" (ionSlidesDidChange)="slideChanged(slides)" (ionSlidesDidLoad)="slideChanged(slides)">
     <ion-slide>
 
-      <ion-grid>
+      <!-- <ion-grid>
         <ion-row>
           <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1,1,1,1,1,1,1,1,1,1]; let i = index">
            
@@ -38,7 +38,42 @@
 
           </ion-col>
         </ion-row>
-      </ion-grid>
+      </ion-grid> -->
+
+
+
+
+
+      
+        <div class = "cards">
+          <ion-card  >
+            <ion-card-header>
+              Bar Chart
+            </ion-card-header>
+            <ion-card-content>
+              <canvas #barCanvas></canvas>
+            </ion-card-content>
+          </ion-card>
+      
+          <ion-card>
+            <ion-card-header>
+              Doughnut Chart
+            </ion-card-header>
+            <ion-card-content>
+              <canvas #doughnutCanvas></canvas>
+            </ion-card-content>
+          </ion-card>
+      
+          <ion-card>
+            <ion-card-header>
+              Line Chart
+            </ion-card-header>
+            <ion-card-content>
+              <canvas #lineCanvas></canvas>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      
 
       <!-- <ion-grid>
         <ion-row>
