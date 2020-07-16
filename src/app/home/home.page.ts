@@ -11,15 +11,15 @@ import { SearchService } from '../services/search.service';
 })
 export class HomePage implements OnInit {
 
-  
+
    // tslint:disable-next-line: max-line-length
    constructor(private route: Router, public actionSheetController: ActionSheetController,
                private loadingCtrl: LoadingController, private dataService: DataService,
                private searchService: SearchService) {}
 
-   searchTerm: any = "";
+   searchTerm: any = '';
 
-   // this a function of the actionsheet  
+   // this a function of the actionsheet
 
    async presentActionSheet() {
      const actionSheet = await this.actionSheetController.create({
@@ -109,7 +109,7 @@ export class HomePage implements OnInit {
          text: 'Cancel',
          icon: 'close',
          role: 'cancel',
-    
+
          handler: () => {
            console.log('Cancel clicked');
          }
@@ -117,7 +117,7 @@ export class HomePage implements OnInit {
      });
      await actionSheet.present();
    }
-  
+
 /*
    //Loader controller function
    presentLoading() {
@@ -132,18 +132,18 @@ export class HomePage implements OnInit {
   // testing the admin data
   adminData: any = [];
 
-  // search 
-  // searchData: any = []; 
+  // search
+  // searchData: any = [];
   jsonData: any = [];
 
-  public getRest(){ // ive used the adminData here to test the connection. some of the variables should be change..pls dont touch
+  public getRest() { // ive used the adminData here to test the connection. some of the variables should be change..pls dont touch
     return this.dataService.adminService().subscribe((data: any) => {this.adminData = data; console.log(this.adminData); });
   }
 
   ngOnInit() {
     this.getRest();
   }
-  gotoRest(){
+  gotoRest() {
     this.route.navigateByUrl('/restaurants');
   }
 
@@ -154,16 +154,16 @@ export class HomePage implements OnInit {
   }
 
   setFilteredItems() {
- 
+
         this.jsonData = this.dataService.filterItems(this.searchTerm);
        // this.searchData = this.searchService.filterItems(this.searchTerm);
- 
+
     }
 // ------------------------------------------------------
 
 
 
-    search(){
+    search() {
       this.dataService.jsonData.subscribe((dat: any) => {this.jsonData = dat; console.log(this.jsonData); });
      // return this.searchService.searchD().subscribe((dat: any) => {this.searchData = dat;console.log(this.searchData);});
     }
@@ -171,7 +171,7 @@ export class HomePage implements OnInit {
     slidesDidLoad(slides) {
       slides.startAutoplay();
     }
-  
+
 
 
 }
