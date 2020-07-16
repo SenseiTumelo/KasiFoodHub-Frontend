@@ -81,7 +81,7 @@ export class HomePage implements OnInit {
         icon: 'time-outline',
         handler: () => {
           console.log('Share clicked');
-          this.route.navigateByUrl('/profile');
+          this.route.navigateByUrl('/history');
         }
       }, {
         text: 'Support',
@@ -108,10 +108,10 @@ export class HomePage implements OnInit {
           },
           {
             text:'Super Admin',
-            icon:'Users-circle-outline',
+            icon:'person-add-outline',
             handler:() => {
               console.log('addRemoveAdmin clicked');
-              this.route.navigateByUrl('/add-remove-admin');  
+              this.route.navigateByUrl('/remove-add-admin');  
           }
       }, {
          text: 'Cancel',

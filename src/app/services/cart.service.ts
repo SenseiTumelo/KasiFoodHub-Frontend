@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, from } from 'rxjs';
+import { BehaviorSubject, from, Observable } from 'rxjs';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
 
 export interface Product {
   id: number;
@@ -36,6 +37,14 @@ export interface Employee {
    price: number;
   photoPath?: string;
   amount: number;
+}
+
+export interface Admin {
+   name: string;
+   email: string;
+   phone: string;
+   address: string;
+  
 }
 
 const ITEMS_KEY = 'myItems';
@@ -89,9 +98,15 @@ export class CartService {
   employees: Employee[] = [
     {id: 1, name: 'Skopo', shopName: 'Shisa Nyama', orderingData: new Date('10/25/1988'), address: '2427 Block L', price: 49.99, photoPath: 'assets/images/food1.png', amount: 1},
     {id: 2, name: 'Kota', shopName: 'KFC', orderingData: new Date('11/05/1978'), address: '024 Block H', price: 79.50, photoPath: 'assets/images/kota1.jpg', amount: 1},
-    {id: 2, name: 'Beef', shopName: 'wimpy', orderingData: new Date('11/05/1978'), address: '014 Block vv', price: 79.50, photoPath: 'assets/images/food4.jpg', amount: 1}
+    {id: 3, name: 'Beef', shopName: 'wimpy', orderingData: new Date('11/05/1978'), address: '014 Block vv', price: 79.50, photoPath: 'assets/images/food4.jpg', amount: 1}
   ];
 
+  adminRe: Admin[] = [
+    {name: 'Mary', email: 'maryzp@gmail.com',phone: "072 759 6153",address: '2427 Block L'},
+    {name: 'Mary', email: 'maryzp@gmail.com',phone: "031 589 1934",address: '2847 Block vv'},
+    {name: 'Mary', email: 'maryzp@gmail.com',phone: "071 379 6842",address: '4480 Block H'},
+    
+  ];
   private cart = [];
   private ext = [];
   private cartItemCount = new BehaviorSubject(0);
@@ -105,6 +120,9 @@ export class CartService {
 
   getEmploye() {
     return this.employees;
+  }
+  getAdminRemove(){
+    return this.adminRe;
   }
 
   getProducts() {
@@ -193,5 +211,22 @@ export class CartService {
       (document.getElementById('check') as HTMLInputElement).disabled = false;
     }
   }
+
+
+
+  //remove admin from local ()array
+  removeAdmin(name:string){
+    const i=this.adminRe.findIndex(e=>e.name===name);
+    if(i !== -1){
+      this.adminRe.splice(i,1); 
+    }
+  }
+
+  //remove admin from data base (db.json)
+
+ /* removeAdmin(name:string):Observable<void>{
+    return this.httpClient.delete<void>('${this.baseUrl}/${name}')
+    .pipe(catchError(this.handleError))
+  }*/
 
 }

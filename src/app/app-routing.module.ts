@@ -142,12 +142,13 @@ const routes: Routes = [
     loadChildren: () => import('./pages/vendor/show-menu/show-menu.module').then( m => m.ShowMenuPageModule)
   },
   {
-    path: 'add-remove-admin',
-    loadChildren: () => import('./pages/add-remove-admin/add-remove-admin.module').then( m => m.AddRemoveAdminPageModule)
-  },  {
     path: 'remove-add-admin',
     loadChildren: () => import('./pages/remove-add-admin/remove-add-admin.module').then( m => m.RemoveAddAdminPageModule)
+  },  {
+    path: 'add-remove-admin',
+    loadChildren: () => import('./pages/add-remove-admin/add-remove-admin.module').then( m => m.AddRemoveAdminPageModule)
   }
+
 
 ];
 @NgModule({

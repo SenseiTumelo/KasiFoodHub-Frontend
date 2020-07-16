@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-remove-add-admin',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RemoveAddAdminPage implements OnInit {
 
-  constructor() { }
+  adminRemove=[];
+
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
+    this.adminRemove = this.cartService.getAdminRemove();
+
+    
   }
+
+  /*removeAdmin(){
+    this.cartService.removeAdmin(this.admin.id);
+    
+  }*/
 
 }

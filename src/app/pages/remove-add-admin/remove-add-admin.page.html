@@ -1,9 +1,53 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>removeAddAdmin</ion-title>
+    <ion-title>RemoveAdmin</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+<!--table header-->
+    <ion-row   style='background-color:rgb(226, 95, 95)'>
+      <ion-col size="2">
+        name
+      </ion-col>
+
+      <ion-col size="2">
+        email
+      </ion-col>
+
+      <ion-col size="2">
+        phone 
+      </ion-col>
+
+      <ion-col size="2">
+        address
+      </ion-col>
+
+      <ion-col size="2">
+        
+      </ion-col>
+    </ion-row>
+<!--table data-->
+    <ion-row *ngFor="let admin of adminRemove" style='background-color:rgb(194, 162, 22)'>
+      <ion-col size="2">
+        {{admin.name}}
+      </ion-col>
+
+      <ion-col size="2">
+        {{admin.email}}
+      </ion-col>
+
+      <ion-col size="2">
+        {{admin.phone}} 
+      </ion-col>
+
+      <ion-col size="2">
+        {{admin.address}}
+      </ion-col>
+
+      <ion-col size="2">
+        <button class="btn btn-danger" (click)="removeAdmin(admin)">Remove</button>
+      </ion-col>
+    </ion-row>
 
 </ion-content>
