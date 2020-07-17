@@ -6,7 +6,6 @@ import { AdminauthGuard } from './gaurds/adminauth.guard';
 
 const routes: Routes = [
 
-  
   {
     path: 'menu',
     loadChildren: () => import('./pages/vendor/menu/menu.module').then( m => m.MenuPageModule)
@@ -55,7 +54,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/singupadmin/singupadmin.module').then( m => m.SingupadminPageModule)
   },
   {
-    path: 'signupcust',
+    path: 'singupcust',
 
     loadChildren: () => import('./pages/singupcust/singupcust.module').then( m => m.SingupcustPageModule)
   },
@@ -141,7 +140,6 @@ const routes: Routes = [
     path: 'show-menu/:id/:name/:price/:description/:status',
     loadChildren: () => import('./pages/vendor/show-menu/show-menu.module').then( m => m.ShowMenuPageModule)
   }
- 
 
 ];
 @NgModule({

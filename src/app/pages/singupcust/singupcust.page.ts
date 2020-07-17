@@ -11,13 +11,24 @@ import { ServiceproviderService } from 'src/app/services/serviceprovider.service
 })
 export class SingupcustPage implements OnInit {
 
+  name: string = "";
+  surname: string = "";
+  gender: string = "";
+  cell_no: string = "";
+  password: string = "";
+  confirm_password: string = "";
+
   // userData = {"name":"", "surname":"", "email":"","password":"", "cpassword":"", "cell_no":""};//reg
   // tslint:disable-next-line: max-line-length
-  constructor(private route: Router, private location: Location, private toastController: ToastController, private serv: ServiceproviderService) { }
+  constructor(private route: Router, private location: Location) { }
 
   ngOnInit() {
   }
 
+  registerEnter() {
+
+this.route.navigate(['/signin']);
+ }
  /* registerEnter() {
 
     // tslint:disable-next-line: max-line-length

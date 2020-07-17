@@ -23,25 +23,25 @@ export class MenuPage implements OnInit {
 
    }
 
-  setFilteredItems(event){
+  setFilteredItems(event) {
 
     this.loadMenu();
     const val = event.target.value;
 
-      if (val && val.trim() != '') {
-        
+    if (val && val.trim() != '') {
+
           this.menus = this.menus.filter((item) => {
 
-              return (item.item_name.toLowerCase().indexOf(val.toLowerCase()) >-1);
+              return (item.item_name.toLowerCase().indexOf(val.toLowerCase()) > -1);
 
-          })
+          });
 
       }
 
 
   }
 
-  selectVal(val){
+  selectVal(val) {
 
       alert("You have selected = " + val);
 
@@ -58,15 +58,15 @@ export class MenuPage implements OnInit {
 
   }
 
-  addMenu(){
+  addMenu() {
 
     this.router.navigate(['add-menu']);
 
   }
 
-  deleteMenu(id){
- 
-      let body = {
+  deleteMenu(id) {
+
+      const body = {
 
         aksi: 'delete',
         item_id: id
@@ -78,22 +78,22 @@ export class MenuPage implements OnInit {
         this.ionViewWillEnter();
 
       });
- 
+
   }
-  
-  updateMenu(id,name,price,description,status){
+
+  updateMenu(id, name, price, description, status) {
 
     this.router.navigate(['add-menu/' + id  + '/' + name + '/' + price + '/' + description + '/' + status]);
 
   }
 
-showMenu(id,name,price,description, status){
+showMenu(id, name, price, description, status) {
 
     this.router.navigate(['show-menu/' + id  + '/' + name + '/' + price + '/' + description + '/' + status]);
 
   }
 
-  doRefresh(event){
+  doRefresh(event) {
 
     setTimeout(() => {
       this.ionViewWillEnter();

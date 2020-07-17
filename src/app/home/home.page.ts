@@ -19,6 +19,16 @@ export class HomePage implements OnInit {
 
    searchTerm: any = '';
 
+  // testing the admin data
+  adminData: any = [];
+
+  data: any = [];
+
+  // search
+  // searchData: any = [];
+  rest: any = [];
+  jsonData: any = [];
+
    // this a function of the actionsheet
 
    async presentActionSheet() {
@@ -55,21 +65,14 @@ export class HomePage implements OnInit {
          }
        },
         {
-         text: 'Register as a Vendor',
+         text: 'Signup',
          icon: 'person-add-outline',
          handler: () => {
-           console.log('Register as a Vendor clicked');
-           this.route.navigateByUrl('/signupadmin');
+           console.log('Signup clicked');
+           this.route.navigateByUrl('/signup');
          }
-       },
+        },
        {
-        text: 'Register as a customer',
-        icon: 'person-add-outline',
-        handler: () => {
-          console.log('Register as a customer clicked');
-          this.route.navigateByUrl('/signupcust');
-        }
-      },   {
         text: 'Sign in',
         icon: 'person',
         handler: () => {
@@ -118,24 +121,6 @@ export class HomePage implements OnInit {
      await actionSheet.present();
    }
 
-/*
-   //Loader controller function
-   presentLoading() {
-    const loader = this.loadingCtrl.create({
-      content: "Please wait...",
-      duration: 3000
-    });
-    loader.present();
-    \
-  }*/
-
-  // testing the admin data
-  adminData: any = [];
-
-  // search
-  // searchData: any = [];
-  jsonData: any = [];
-
   public getRest() { // ive used the adminData here to test the connection. some of the variables should be change..pls dont touch
     return this.dataService.adminService().subscribe((data: any) => {this.adminData = data; console.log(this.adminData); });
   }
@@ -147,31 +132,48 @@ export class HomePage implements OnInit {
     this.route.navigateByUrl('/restaurants');
   }
 
+  // Refresh fuction
+  doRefresh(event) {
+
+    setTimeout(() => {
+      this.ionViewWillEnter();
+      event.target.complete();
+    }, 550);
+
+  }
   // search bar
   // --------------------------------------------------
-  ionViewDidLoad() {
-    this.setFilteredItems();
+//   ionViewDidLoad() {
+//    this.setFilteredItems();
+// }
+
+
+  ionViewWillEnter() {
+    setTimeout(() => {
+      this.data = {
+        heading: 'mama`s kitchen',
+        para1: 'real african food',
+        para2: 'food for thought.'
+      };
+    }, 5000);
   }
-
-  setFilteredItems() {
-
-        this.jsonData = this.dataService.filterItems(this.searchTerm);
-       // this.searchData = this.searchService.filterItems(this.searchTerm);
-
-    }
-// ------------------------------------------------------
-
-
-
-    search() {
-      this.dataService.jsonData.subscribe((dat: any) => {this.jsonData = dat; console.log(this.jsonData); });
-     // return this.searchService.searchD().subscribe((dat: any) => {this.searchData = dat;console.log(this.searchData);});
-    }
-
-    slidesDidLoad(slides) {
-      slides.startAutoplay();
-    }
-
-
-
 }
+
+//  setFilteredItems() {
+
+//          this.jsonData = this.dataService.filterItems(this.searchTerm);
+//         /this.searchData = this.searchService.filterItems(this.searchTerm);
+// }
+// // ------------------------------------------------------
+
+
+
+//     search() {
+//       this.dataService.jsonData.subscribe((dat: any) => {this.jsonData = dat; console.log(this.jsonData); });
+//      // return this.searchService.searchD().subscribe((dat: any) => {this.searchData = dat;console.log(this.searchData);});
+//     }
+
+//     slidesDidLoad(slides) {
+//       slides.startAutoplay();
+//     }
+

@@ -10,7 +10,22 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class SingupadminPage implements OnInit {
 
+    // tslint:disable-next-line: variable-name
     restuarant_id: number;
+    // tslint:disable-next-line: variable-name
+    // tslint:disable-next-line: variable-name
+    // tslint:disable-next-line: no-inferrable-types
+    // tslint:disable-next-line: variable-name
+    // tslint:disable-next-line: quotemark
+    // tslint:disable-next-line: no-inferrable-types
+    // tslint:disable-next-line: variable-name
+    // tslint:disable-next-line: no-inferrable-types
+    // tslint:disable-next-line: variable-name
+    // tslint:disable-next-line: no-inferrable-types
+    // tslint:disable-next-line: variable-name
+    // tslint:disable-next-line: no-inferrable-types
+    // tslint:disable-next-line: variable-name
+    // tslint:disable-next-line: quotemark
     restuarant_name: string = "";
     contact: string = "";
     address_loc: string = "";
@@ -18,15 +33,15 @@ export class SingupadminPage implements OnInit {
     email_address: string = "";
     rest_status: string = "";
 
-  constructor(   
+  constructor(
     private router: Router,
     private postPvdr: PostProvider,
-    private actRoute:ActivatedRoute,
-    private location: Location,) { }
+    private actRoute: ActivatedRoute,
+    private location: Location, ) { }
 
   ngOnInit() {
-  
-    this.actRoute.params.subscribe((data:any) => {
+
+    this.actRoute.params.subscribe((data: any) => {
 
       this.restuarant_id = data.id;
       this.restuarant_name = data.name;
@@ -36,13 +51,12 @@ export class SingupadminPage implements OnInit {
       this.contact = data.phone;
       this.address_loc = data.address;
       console.log(data);
-            
+
     });
-  
+
   }
-  
-  goHome()
- {
+
+  goHome() {
 
       return new Promise(resolve => {
 
@@ -57,7 +71,7 @@ export class SingupadminPage implements OnInit {
           address_loc: this.address_loc,
 
         };
-        
+
         this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
         this.router.navigate(['signin']);
         console.log('submit works');
@@ -65,18 +79,18 @@ export class SingupadminPage implements OnInit {
         });
 
       });
-  
+
       this.router.navigate(['home']);
 
  }
- navAdmin(){
-  return this.router.navigateByUrl('/vendor-admin')
+ navAdmin() {
+  return this.router.navigateByUrl('/vendor-admin');
 }
- btnClear(){
-  
+ btnClear() {
+
 }
-//back button
-backButton(){
+// back button
+backButton() {
   this.location.back();
  }
 
