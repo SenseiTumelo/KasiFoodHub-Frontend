@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
+import {Router} from '@angular/router';
+import {ActionSheetController} from '@ionic/angular';
 
 @Component({
   selector: 'app-super-admin',
@@ -15,9 +17,34 @@ export class SuperAdminPage implements OnInit {
     speed: 400
   };
 
-  constructor() { }
+  constructor(private router:Router,public menuController: ActionSheetController) { }
 
   ngOnInit() {
+  }
+
+  async presentMenuController() {
+    const actionSheet = await this.menuController.create({
+      header: 'Menu',
+      buttons: [{
+        text: 'Add Admin',
+        role: 'destructive',
+        icon: 'person-add-outline',
+        handler: () => {
+          console.log('addAdmin clicked');
+          this.router.navigateByUrl('/add-remove-admin');
+        }
+      },{
+        text: 'Remove Admin',
+        icon: 'person-add-outline',
+        handler: () => {
+          console.log('removeAdmin clicked');
+          this.router.navigateByUrl('/remove-add-admin');
+        }
+      }]
+
+
+    });
+    await actionSheet.present();
   }
 
   async segmentChanged() {

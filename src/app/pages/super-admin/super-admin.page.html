@@ -1,5 +1,5 @@
 <ion-header no-header>
-  <ion-toolbar color = "dark">
+  <ion-toolbar color = "primary">
     <ion-segment mod = "md" [(ngModel)]="segment" (ionChange)="segmentChanged($event)">
       <ion-segment-button value = "0">
         <ion-icon name="pie-chart-outline"></ion-icon>
@@ -17,8 +17,17 @@
       </ion-segment-button>
 
     </ion-segment>
-  </ion-toolbar>
+
+
+    <ion-grid>
+      <ion-col>
+        <ion-icon name="home" (click)="presentMenuController()"></ion-icon>
+      </ion-col>
+   </ion-grid>
+
+  </ion-toolbar>  
 </ion-header>
+  
 
 <ion-content color = "light">
   <ion-slides #slides pager = "false" [options]="sliderOptions" (ionSlidesDidChange)="slideChanged(slides)" (ionSlidesDidLoad)="slideChanged(slides)">

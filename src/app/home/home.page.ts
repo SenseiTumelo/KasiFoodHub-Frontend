@@ -110,8 +110,8 @@ export class HomePage implements OnInit {
             text:'Super Admin',
             icon:'person-add-outline',
             handler:() => {
-              console.log('addRemoveAdmin clicked');
-              this.route.navigateByUrl('/remove-add-admin');  
+              console.log('superAdmin clicked');
+              this.route.navigateByUrl('/super-admin');  
           }
       }, {
          text: 'Cancel',
