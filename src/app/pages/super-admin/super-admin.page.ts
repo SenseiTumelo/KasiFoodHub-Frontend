@@ -49,10 +49,10 @@ export class SuperAdminPage implements OnInit {
     this.barChart = new Chart(this.barCanvas.nativeElement, {
       type: 'bar',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Mamas Kitchen', 'Nkukhu Box', 'KFC', 'Chicken Licken', 'Nandos', 'Kasi Krumps'],
         datasets: [
           {
-            label: '# of Votes',
+            label: '# Based on Restaurant Order Volume',
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
@@ -90,7 +90,7 @@ export class SuperAdminPage implements OnInit {
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
       type: 'doughnut',
       data: {
-        labels: ['Spathlo', 'Skopo', 'Pap And Wors', 'Pap', 'Marapo', 'Mogodu'],
+        labels: ['Spathlo', 'Skopo', 'Pap And Wors', 'Zinger Bucket', 'Marapo', 'Mogodu'],
         datasets: [
           {
             label: '# of Votes',
@@ -115,7 +115,7 @@ export class SuperAdminPage implements OnInit {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', ],
         datasets: [
           {
-            label: 'Annual Business Performance',
+            label: 'System User Activity',
             fill: false,
             lineTension: 0.1,
             backgroundColor: 'rgba(75,192,192,0.4)',

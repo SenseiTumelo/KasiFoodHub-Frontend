@@ -2,11 +2,11 @@
     margin: 0 auto;
 
     .header {
-        height: 200px;
+        height: 180px;
 
         .avatar {
             width: 160px;
-            height: 160px;
+            height: 80px;
             position: relative;
             margin: 0 auto;
 
@@ -28,7 +28,7 @@
     overflow: hidden;
 
     .user-meta {
-        padding-top: 40px;
+        padding-top: 20px;
 
         .playername {
             font-size: 24px;

@@ -1,11 +1,12 @@
 <ion-header>
   <ion-toolbar color = 'warning'>
     <ion-icon name="arrow-black" (click)="backButton()"></ion-icon>
-    <ion-title>Customer</ion-title>
+    <ion-title>Customer Signup</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
   <div class="card">
     <div class="header">
       <div class="avatar">
@@ -13,41 +14,48 @@
       </div>
     </div>
   </div>
+
   <div class="card-body">
     <div class="user-meta ion-text-center">
       <h3 class="playername">Welcome</h3>
       <h5 class="country">kasi food hub</h5>
       <ion-item>
         <ion-label position="floating">First Name</ion-label>
-        <ion-input ngModel #name = "ngModel" [(ngModel)]="userData.name"></ion-input>
+        <ion-input  [(ngModel)]="name"></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label position="floating">Last Name</ion-label>
-        <ion-input ngModel #surname = "ngModel" [(ngModel)]="userData.surname" type= "text"></ion-input>
+        <ion-input [(ngModel)]="surname" type= "text"></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label>Gender</ion-label>
-        <ion-select placeholder="Select One">
+        <ion-select placeholder="Select One" name = "gender" [(ngModel)]="gender">
           <ion-select-option value="f">Female</ion-select-option>
           <ion-select-option value="m">Male</ion-select-option>
         </ion-select>
       </ion-item>
+
       <ion-item>
         <ion-label position="floating">Cellphone number</ion-label>
-        <ion-input ngModel #cell_no = "ngModel" [(ngModel)]="userData.cell_no" type="number"></ion-input>
+        <ion-input  [(ngModel)]="cell_no" type="number"></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label  position="floating">Password</ion-label>
-        <ion-input ngModel #password ="ngModel" [(ngModel)]="userData.password" type ="password"></ion-input>
+        <ion-input  [(ngModel)]="password" type ="password"></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label  position="floating">Confirm Password</ion-label>
-        <ion-input ngModel #password ="ngModel" [(ngModel)]="userData.cpassword" type ="password"></ion-input>
+        <ion-input  [(ngModel)]="confirm_password" type ="password"></ion-input>
       </ion-item>
-      
+            
     </div>
     <ion-button shape="round" (click)="registerEnter()" >Register</ion-button>
     <ion-button shape = "round" (click)= "backButton()">Cancel</ion-button>
   
   </div>
+
 </ion-content>

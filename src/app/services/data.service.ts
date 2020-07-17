@@ -31,12 +31,16 @@ export class DataService {
    }
 
 // create an API here, likke this?
+  // tslint:disable-next-line: variable-name
   reg_url = '';
+  // tslint:disable-next-line: variable-name
   log_url = '';
+  // tslint:disable-next-line: variable-name
   show_rest_url = 'http://localhost:4000/allrestuarant';
+  // tslint:disable-next-line: variable-name
   prof_url = '';
+  // tslint:disable-next-line: variable-name
   admin_prof_url = 'http://localhost:4000/admin';
-
   logged =  0;
 
   adminService() {
