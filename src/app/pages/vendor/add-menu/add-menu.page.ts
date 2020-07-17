@@ -32,7 +32,7 @@ export class AddMenuPage implements OnInit {
       this.item_name = data.name;
       this.item_description = data.description;
       this.item_price = data.price;
-      this.itemStatus = data.stutas;
+      this.itemStatus = data.status;
       console.log(data);
             
     });

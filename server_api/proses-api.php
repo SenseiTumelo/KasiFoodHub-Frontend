@@ -33,8 +33,6 @@ $postjson = json_decode(file_get_contents('php://input'), true);
             rest_status = '$postjson[rest_status]',
             contact = '$postjson[contact]',
             address_loc = '$postjson[address_loc]'");
-           
-           
     
                 $restuarant_id = mysqli_insert_id($mysqli);
     
