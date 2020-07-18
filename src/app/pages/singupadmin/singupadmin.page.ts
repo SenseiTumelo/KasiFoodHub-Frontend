@@ -48,7 +48,7 @@ export class SingupadminPage implements OnInit {
 
         const body = {
 
-          aksi: 'add',
+          aksi: 'add-restInfo',
           restuarant_name: this.restuarant_name,
           pass_word: this.pass_word,
           email_address: this.email_address,
