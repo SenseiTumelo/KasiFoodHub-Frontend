@@ -11,11 +11,15 @@ import { SearchService } from '../services/search.service';
 })
 export class HomePage implements OnInit {
 
-
+  contentLoaded = false;
    // tslint:disable-next-line: max-line-length
    constructor(private route: Router, public actionSheetController: ActionSheetController,
                private loadingCtrl: LoadingController, private dataService: DataService,
-               private searchService: SearchService) {}
+               private searchService: SearchService) {
+                 setTimeout(() => {
+                   this.contentLoaded = true;
+                 }, 3000);
+               }
 
    searchTerm: any = '';
 
@@ -132,6 +136,11 @@ export class HomePage implements OnInit {
     this.route.navigateByUrl('/restaurants');
   }
 
+  gotoMenu() {
+
+    this.route.navigateByUrl('/menu');
+
+  }
   // Refresh fuction
   doRefresh(event) {
 
@@ -158,6 +167,9 @@ export class HomePage implements OnInit {
     }, 5000);
   }
 }
+
+// function for the restaurant click to menu
+
 
 //  setFilteredItems() {
 
