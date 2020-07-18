@@ -17,12 +17,13 @@ export class SingupadminPage implements OnInit {
     pass_word: string = "";
     email_address: string = "";
     rest_status: string = "";
+    conPassword: string = "";
 
   constructor(   
     private router: Router,
     private postPvdr: PostProvider,
     private actRoute:ActivatedRoute,
-    private location: Location,) { }
+    private location: Location) { }
 
   ngOnInit() {
   
@@ -35,6 +36,7 @@ export class SingupadminPage implements OnInit {
       this.rest_status = data.status;
       this.contact = data.phone;
       this.address_loc = data.address;
+      this.conPassword = data.conP;
       console.log(data);
             
     });
@@ -55,11 +57,13 @@ export class SingupadminPage implements OnInit {
           rest_status: this.rest_status,
           contact: this.contact,
           address_loc: this.address_loc,
+          conPassword: this.conPassword,
 
         };
-        
+  
+        this.router.navigateByUrl('/signin');
         this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
-        this.router.navigate(['signin']);
+        this.router.navigateByUrl('/signin');
         console.log('submit works');
 
         });

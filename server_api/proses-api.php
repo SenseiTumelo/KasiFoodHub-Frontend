@@ -84,7 +84,8 @@ $postjson = json_decode(file_get_contents('php://input'), true);
             email_address = '$postjson[email_address]',
             rest_status = '$postjson[rest_status]',
             contact = '$postjson[contact]',
-            address_loc = '$postjson[address_loc]'");
+            address_loc = '$postjson[address_loc]'
+            ");
     
                 $restuarant_id = mysqli_insert_id($mysqli);
     
@@ -94,7 +95,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
               echo $restua;     
 
         }          
-    }
+    
 
 
 ?>             
