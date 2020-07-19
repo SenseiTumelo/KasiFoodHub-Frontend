@@ -1,11 +1,12 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color = 'primary'>
     <ion-title>Add Admin</ion-title>
+    <ion-icon name="arrow-white" (click)="backButton()" ></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form>
+  <form (ngSubmit)="onSubmit">
     <ion-item lines="full">
       <ion-label position="floating">First name</ion-label>
       <ion-input type="text" required></ion-input>
