@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="warning">
-    <ion-icon name="arrow-back" (click)="back()" ></ion-icon>
-    <ion-title>signin</ion-title>
+    <ion-icon name="arrow-back" size="large" (click)="back()"></ion-icon>
+    <ion-title>Sign In</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,7 +16,7 @@
   <div class="card-body">
     <div class="user-meta ion-text-center">
       <h3 class="playername">Welcome</h3>
-      <h5 class="country">kasi food hub</h5>
+      <h5 class="country">Kasi Food Hub</h5>
       <ion-item>
         <ion-label position="floating" class="country">email</ion-label>
         <ion-input ngModel #email ="ngModel" type="text" [(ngModel)]="userData.email" ></ion-input>
