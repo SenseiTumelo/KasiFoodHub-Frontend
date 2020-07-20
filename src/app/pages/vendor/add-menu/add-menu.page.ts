@@ -34,7 +34,6 @@ export class AddMenuPage implements OnInit {
       this.item_price = data.price;
       this.itemStatus = data.stutas;
       console.log(data);
-            
     });
 
   }
@@ -49,14 +48,10 @@ export class AddMenuPage implements OnInit {
         item_description : this.item_description,
         item_price: this.item_price,
         itemStatus: this.itemStatus,
-        
       };
-      
       this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
         this.router.navigate(['menu']);
         console.log('submit works');
-     
-
       });
 
     });
@@ -64,11 +59,8 @@ export class AddMenuPage implements OnInit {
   }
 
   updateProses(){
-   
-    return new Promise(resolve => {
-
-      let body = {
-
+        return new Promise(resolve => {
+        let body = {
         aksi: 'update',
         item_id: this.id,
         item_name: this.item_name,

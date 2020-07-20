@@ -19,14 +19,15 @@
     <div class="user-meta ion-text-center">
       <h3 class="playername">Welcome</h3>
       <h5 class="country">kasi food hub</h5>
+
       <ion-item>
         <ion-label position="floating">First Name</ion-label>
-        <ion-input  [(ngModel)]="name"></ion-input>
+        <ion-input type = "text" [(ngModel)]="firstName" name = "firstName"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Last Name</ion-label>
-        <ion-input [(ngModel)]="surname" type= "text"></ion-input>
+        <ion-input type= "text" [(ngModel)]="surname" name = "surname"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -39,21 +40,31 @@
 
       <ion-item>
         <ion-label position="floating">Cellphone number</ion-label>
-        <ion-input  [(ngModel)]="cell_no" type="number"></ion-input>
+        <ion-input  [(ngModel)]="cell_no" type="number" name = "cell_no"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" >Email Address</ion-label>
+        <ion-input type = "email" [(ngModel)]= "email_address" name = "email_address"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Address</ion-label>
+        <ion-input  [(ngModel)]= "addressInfo" type="text" name = "addressInfo"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label  position="floating">Password</ion-label>
-        <ion-input  [(ngModel)]="password" type ="password"></ion-input>
+        <ion-input name = "passCode" [(ngModel)] = "passCode" type ="password"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label  position="floating">Confirm Password</ion-label>
-        <ion-input  [(ngModel)]="confirm_password" type ="password"></ion-input>
+        <ion-input  [(ngModel)]="confirm_password" type ="password" name = "confirm_password"></ion-input>
       </ion-item>
             
     </div>
-    <ion-button shape="round" (click)="registerEnter()" >Register</ion-button>
+    <ion-button type = "submit" shape="round" (click)="registerEnter()" >Register</ion-button>
     <ion-button shape = "round" (click)= "backButton()">Cancel</ion-button>
   
   </div>

@@ -26,18 +26,19 @@ export class SingupadminPage implements OnInit {
     // tslint:disable-next-line: no-inferrable-types
     // tslint:disable-next-line: variable-name
     // tslint:disable-next-line: quotemark
-    restuarant_name: string = "";
-    contact: string = "";
-    address_loc: string = "";
-    pass_word: string = "";
-    email_address: string = "";
-    rest_status: string = "";
+    // tslint:disable-next-line: variable-name
+    restuarant_name: string = '';
+    contact: string = '';
+    address_loc: string = '';
+    pass_word: string = '';
+    email_address: string = '';
+    rest_status: string = '';
 
   constructor(
     private router: Router,
     private postPvdr: PostProvider,
     private actRoute: ActivatedRoute,
-    private location: Location, ) { }
+    private location: Location) { }
 
   ngOnInit() {
 

@@ -25,24 +25,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
             else $result = json_encode(array('success'=> false)); 
           
           echo $result;        
-            
-            $sql = mysqli_query($mysqli,"INSERT INTO restuarant_admin SET 
-            restuarant_name = '$postjson[restuarant_name]',
-            pass_word = '$postjson[pass_word]',
-            email_address = '$postjson[email_address]',
-            rest_status = '$postjson[rest_status]',
-            contact = '$postjson[contact]',
-            address_loc = '$postjson[address_loc]'");
-           
-           
-    
-                $restuarant_id = mysqli_insert_id($mysqli);
-    
-                if ($sql) $restua = json_encode(array('success'=> true, 'restuarant_id' => $restuarant_id));
-                else $restua = json_encode(array('success'=> false)); 
-              
-              echo $restua;     
-              
+                 
     }elseif($postjson['aksi'] === 'getdata'){
 
             $data = array();
@@ -93,5 +76,43 @@ $postjson = json_decode(file_get_contents('php://input'), true);
 
             echo $result;
 
+        }elseif ($postjson['aksi'] === 'add-restInfo') {
+            
+            $sql = mysqli_query($mysqli,"INSERT INTO restuarant_admin SET 
+            restuarant_name = '$postjson[restuarant_name]',
+            pass_word = '$postjson[pass_word]',
+            email_address = '$postjson[email_address]',
+            rest_status = '$postjson[rest_status]',
+            contact = '$postjson[contact]',
+            address_loc = '$postjson[address_loc]'
+            ");
+    
+                $restuarant_id = mysqli_insert_id($mysqli);
+    
+                if ($sql) $restua = json_encode(array('success'=> true, 'restuarant_id' => $restuarant_id));
+                else $restua = json_encode(array('success'=> false)); 
+              
+              echo $restua;     
+
+        }elseif($postjson['aksi'] === 'addCustomer'){
+
+                    $sql = mysqli_query($mysqli,"INSERT INTO customer SET 
+                firstName = '$postjson[firstName]',
+                surname = '$postjson[surname]',
+                addressInfo = '$postjson[addressInfo]',
+                email_address = '$postjson[email_address]',
+                cell_no = '$postjson[cell_no]',
+                pass_code = '$postjson[pass_code]'");
+
+                    $cust_id = mysqli_insert_id($mysqli);
+
+                    if ($sql) $result = json_encode(array('success'=> true, 'customer_id' => $cust_id));
+                    else $result = json_encode(array('success'=> false)); 
+                
+                echo $result;        
+                
         }
+
+
+
 ?>             
