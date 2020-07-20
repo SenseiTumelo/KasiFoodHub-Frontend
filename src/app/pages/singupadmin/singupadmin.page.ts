@@ -26,18 +26,18 @@ export class SingupadminPage implements OnInit {
     // tslint:disable-next-line: no-inferrable-types
     // tslint:disable-next-line: variable-name
     // tslint:disable-next-line: quotemark
-    // tslint:disable-next-line: variable-name
-    restuarant_name: string = '';
-    contact: string = '';
-    address_loc: string = '';
-    pass_word: string = '';
-    email_address: string = '';
-    rest_status: string = '';
+    restuarant_name: string = "";
+    contact: string = "";
+    address_loc: string = "";
+    pass_word: string = "";
+    email_address: string = "";
+    rest_status: string = "";
+    conPassword: string = "";
 
   constructor(
     private router: Router,
     private postPvdr: PostProvider,
-    private actRoute: ActivatedRoute,
+    private actRoute:ActivatedRoute,
     private location: Location) { }
 
   ngOnInit() {
@@ -51,6 +51,7 @@ export class SingupadminPage implements OnInit {
       this.rest_status = data.status;
       this.contact = data.phone;
       this.address_loc = data.address;
+      this.conPassword = data.conP;
       console.log(data);
 
     });
@@ -63,18 +64,18 @@ export class SingupadminPage implements OnInit {
 
         const body = {
 
-          aksi: 'add',
+          aksi: 'add-restInfo',
           restuarant_name: this.restuarant_name,
           pass_word: this.pass_word,
           email_address: this.email_address,
           rest_status: this.rest_status,
           contact: this.contact,
           address_loc: this.address_loc,
+          conPassword: this.conPassword,
 
         };
-
         this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
-        this.router.navigate(['signin']);
+        this.router.navigateByUrl('/signin');
         console.log('submit works');
 
         });
