@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http'; // step 1
   providedIn: 'root'
 })
 export class AdminService { // class name
-  profile_url = 'http://localhost:3000/admin';  // step 2 variable
+  profile_url = 'http://localhost:6000/admin';  // step 2 variable
   overview_url = 'http://localhost:6000/'; // check
 
   constructor(private http: HttpClient) { }
