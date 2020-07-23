@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-//import { DataService } from 'src/app/services/data.service';
+// import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
 import { ServiceproviderService } from 'src/app/services/serviceprovider.service';
 // import { AuthenticationService } from 'src/app/services/authentication.service';
@@ -14,27 +14,29 @@ import { ServiceproviderService } from 'src/app/services/serviceprovider.service
 export class SigninPage implements OnInit {
 
  result: any;
-  userData = {"email":"","password":""};
+  // tslint:disable-next-line: quotemark
+  // tslint:disable-next-line: object-literal-key-quotes
+  userData = {"email": "", "password": ""};
   // tslint:disable-next-line: max-line-length
   constructor(private location: Location, private serv: ServiceproviderService , private route: Router /* , private authService: AuthenticationService */ ) { }
 
   ngOnInit() {
   }
-  
-  signin(){
-    this.serv.loginData(this.userData.email, this.userData.password).subscribe(data => {this.result = data;console.log(this.result);});
+
+  signin() {
+    this.serv.loginData(this.userData.email, this.userData.password).subscribe(data => {this.result = data; console.log(this.result); });
     this.route.navigateByUrl('/home');
   }
 
 
 
 
- back(){
+ back() {
    this.location.back();
  }
 
 
- gotoProfile(){
+ gotoProfile() {
    this.route.navigateByUrl('/custprof');
  }
 
