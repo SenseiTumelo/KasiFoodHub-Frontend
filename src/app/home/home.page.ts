@@ -136,7 +136,7 @@ export class HomePage implements OnInit {
     this.route.navigateByUrl('/restaurants');
   }
 
-  gotoMenu() {
+  gotoMenu1() {
 
     this.route.navigateByUrl('/menu');
 
@@ -149,6 +149,14 @@ export class HomePage implements OnInit {
       event.target.complete();
     }, 550);
 
+  }
+
+  gotoVendorMenu2() {
+    this.route.navigateByUrl('/vendor-menu1');
+  }
+
+  gotoVendorMenu3() {
+    this.route.navigateByUrl('/vendor-menu3');
   }
   // search bar
   // --------------------------------------------------

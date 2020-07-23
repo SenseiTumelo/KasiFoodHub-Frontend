@@ -139,7 +139,15 @@ const routes: Routes = [
   {
     path: 'show-menu/:id/:name/:price/:description/:status',
     loadChildren: () => import('./pages/vendor/show-menu/show-menu.module').then( m => m.ShowMenuPageModule)
+  },  {
+    path: 'vendor-menu1',
+    loadChildren: () => import('./pages/vendor/vendor-menu1/vendor-menu1.module').then( m => m.VendorMenu1PageModule)
+  },
+  {
+    path: 'vendor-menu3',
+    loadChildren: () => import('./pages/vendor/vendor-menu3/vendor-menu3.module').then( m => m.VendorMenu3PageModule)
   }
+
 
 ];
 @NgModule({
