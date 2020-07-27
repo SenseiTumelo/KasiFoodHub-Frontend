@@ -103,8 +103,8 @@ export class CartService {
 
   adminRe: Admin[] = [
     {name: 'Mary', email: 'maryzp@gmail.com',phone: "072 759 6153",address: '2427 Block L'},
-    {name: 'Mary', email: 'maryzp@gmail.com',phone: "031 589 1934",address: '2847 Block vv'},
-    {name: 'Mary', email: 'maryzp@gmail.com',phone: "071 379 6842",address: '4480 Block H'},
+    {name: 'sam', email: 'samzp@gmail.com',phone: "031 589 1934",address: '2847 Block vv'},
+    {name: 'saroon', email: 'saroonzp@gmail.com',phone: "071 379 6842",address: '4480 Block H'},
     
   ];
   private cart = [];
@@ -215,12 +215,12 @@ export class CartService {
 
 
   //remove admin from local ()array
-  removeAdmin(name:string){
+  /*removeAdmin(name:string){
     const i=this.adminRe.findIndex(e=>e.name===name);
     if(i !== -1){
       this.adminRe.splice(i,1); 
     }
-  }
+  }*/
 
   //remove admin from data base (db.json)
 

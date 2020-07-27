@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color = 'primary'>
+  <ion-toolbar color = 'warning'>
     <ion-title>Add Admin</ion-title>
     <ion-icon name="arrow-white" (click)="backButton()" ></ion-icon>
   </ion-toolbar>
@@ -15,6 +15,14 @@
     <ion-item lines="full">
       <ion-label position="floating">Restaurants</ion-label>
       <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option value="f">Female</ion-select-option>
+        <ion-select-option value="m">Male</ion-select-option>
+      </ion-select>
     </ion-item>
 
     <ion-item lines="full">
@@ -34,7 +42,7 @@
 
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="primary" expand="block" (click)="addAdmin()">Add Admin</ion-button>
+        <ion-button type="submit" color="success" expand="block" (click)="addAdmin()">Add Admin</ion-button>
       </ion-col>
     </ion-row>
   </form>
