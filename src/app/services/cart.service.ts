@@ -8,42 +8,8 @@ export interface Product {
   price: number;
   amount: number;
 }
-export interface Products {
-  id: number;
-  name: string;
-  price: number;
-  amount: number;
-}
-export interface Prods {
-  id: number;
-  name: string;
-  price: number;
-  amount: number;
-  image: ImageBitmap;
-}
-export interface Extras {
-  id: number;
-  name: string;
-  price: number;
-}
 
-export interface Employee {
-  id: number;
-   name: string;
-   shopName: string;
-   orderingData: Date;
-   address: string;
-   price: number;
-  photoPath?: string;
-  amount: number;
-}
-
-const ITEMS_KEY = 'myItems';
-@Injectable({
-  providedIn: 'root'
-})
 export class CartService {
-
 
   constructor(private httpClient: HttpClient) { }
 
@@ -63,35 +29,6 @@ export class CartService {
     {id: 2, name: '1/4 Ribs', price: 66.99, amount: 1},
   ];
 
-  dat: Products[] = [
-    {id: 0, name: 'Chips', price: 22.94, amount: 1},
-    {id: 1, name: 'Kota: Russian,Cheese,Eggs', price: 32.99, amount: 1},
-    {id: 2, name: 'Kota: Vianna,Polony,Garlic', price: 18.99, amount: 1},
-    {id: 2, name: 'Kota: Russian,Polony,Garlic', price: 20.99, amount: 1},
-    {id: 2, name: 'Kota: Beef', price: 18.99, amount: 1}
-  ];
-
-  datas: Products[] = [
-    {id: 0, name: 'Skopo', price: 29.99, amount: 1},
-    {id: 1, name: 'Mogodu&Pap', price: 43.99, amount: 1},
-    {id: 2, name: 'Marapo', price: 19.99, amount: 1},
-    {id: 2, name: 'Chicken&Pap', price: 28.99, amount: 1},
-    {id: 2, name: '2 Wings', price: 15.99, amount: 1},
-    {id: 2, name: 'Maotwana&Pap', price: 19.99, amount: 1},
-  ];
-  datar: Extras[] = [
-    {id: 0, name: 'Tomato Sauce', price: 0.00},
-    {id: 1, name: 'Mustard', price: 1.99},
-    {id: 2, name: 'Chilli Sauce', price: 1.99},
-    {id: 3, name: 'Spicy Cheese', price: 3.46}
-  ];
-
-  employees: Employee[] = [
-    {id: 1, name: 'Skopo', shopName: 'Shisa Nyama', orderingData: new Date('10/25/1988'), address: '2427 Block L', price: 49.99, photoPath: 'assets/images/food1.png', amount: 1},
-    {id: 2, name: 'Kota', shopName: 'KFC', orderingData: new Date('11/05/1978'), address: '024 Block H', price: 79.50, photoPath: 'assets/images/kota1.jpg', amount: 1},
-    {id: 2, name: 'Beef', shopName: 'wimpy', orderingData: new Date('11/05/1978'), address: '014 Block vv', price: 79.50, photoPath: 'assets/images/food4.jpg', amount: 1}
-  ];
-
   private cart = [];
   private ext = [];
   private cartItemCount = new BehaviorSubject(0);
@@ -104,17 +41,17 @@ export class CartService {
   // read
 
   getEmploye() {
-    return this.employees;
+    
   }
 
   getProducts() {
     return this.data;
   }
   getProduct() {
-    return this.dat;
+  
   }
   getProds() {
-    return this.datas;
+   
   }
   getCart() {
     return this.cart;
@@ -124,7 +61,6 @@ export class CartService {
     return this.ext;
   }
   getExtras() {
-    return this.datar;
   }
   getCartItemCount() {
     return this.cartItemCount;

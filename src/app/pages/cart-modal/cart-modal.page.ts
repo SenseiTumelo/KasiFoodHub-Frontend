@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product, CartService, Extras } from 'src/app/services/cart.service';
+import { Product, CartService} from 'src/app/services/cart.service';
 import { ModalController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 import { empty } from 'rxjs';
@@ -14,7 +14,6 @@ export class CartModalPage implements OnInit {
 
   composersForm: FormGroup;
   cart: Product[] = [];
-  ext: Extras[] = [];
   value: any;
 
   // tslint:disable-next-line: max-line-length
@@ -24,9 +23,6 @@ export class CartModalPage implements OnInit {
 
   ngOnInit() {
     this.cart = this.cartService.getCart();
-    this.ext = this.cartService.getExt();
-    this.cartService.disableCheckout();
-
 
   }
 
