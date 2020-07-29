@@ -12,8 +12,8 @@ export class StartComponent implements OnInit {
 
   ngOnInit() {}
 
-  navigateToLoginPage() {
-    this.router.navigateByUrl('/signin');
+  navigateToHomePage() {
+    this.router.navigateByUrl('/home');
   }
 
 }

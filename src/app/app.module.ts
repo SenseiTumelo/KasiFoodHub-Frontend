@@ -6,7 +6,7 @@ import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CartModalPage } from './pages/cart-modal/cart-modal.page';
@@ -24,7 +24,7 @@ import { AuthenticationService } from './services/authentication.service';
 import { ServiceproviderService } from './services/serviceprovider.service';
 import { HttpModule } from '@angular/http';
 import { PostProvider } from '../providers/post-provider';
-// import { Storage } from '@ionic/storage'; error
+import { IonicStorageModule } from '@ionic/storage';
 
 // import { ActionsheetComponent } from './components/actionsheet/actionsheet.component';
 
@@ -37,6 +37,7 @@ import { PostProvider } from '../providers/post-provider';
   entryComponents: [],
 
   imports: [BrowserModule,
+    // tslint:disable-next-line: deprecation
     HttpModule,
     IonicModule.forRoot(),
     AppRoutingModule,
@@ -45,11 +46,12 @@ import { PostProvider } from '../providers/post-provider';
     AddMenuPageModule,
     ExtrasPageModule,
     HttpClientModule,
-    ProfilePageModule
+    ProfilePageModule,
+    IonicStorageModule.forRoot(),
 
   ],
   providers: [
-    StatusBar, 
+    StatusBar,
     PostProvider,
     ServiceproviderService,
     SplashScreen, // NativeStorage,

@@ -20,7 +20,7 @@ export class RestaurantsPage implements OnInit {
 
 
   constructor(private route: Router, private location: Location, private dataService: DataService) { }
-rest: any=[];
+rest: any = [];
 
   ngOnInit() {
    this.getRest();

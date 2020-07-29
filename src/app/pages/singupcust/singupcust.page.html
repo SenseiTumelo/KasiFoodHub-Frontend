@@ -1,7 +1,8 @@
 <ion-header>
   <ion-toolbar color = 'warning'>
     <ion-icon name="arrow-black" (click)="backButton()"></ion-icon>
-    <ion-title>Customer</ion-title>
+    <ion-icon name="arrow-back-outline" size="large" (click)="backButton()"></ion-icon>
+    <ion-title>Customer Signup</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,28 +14,43 @@
         <ion-label position="floating">Name</ion-label>
         <ion-input ngModel #name = "ngModel" [(ngModel)]="userData.name"></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label position="floating">Last Name</ion-label>
-        <ion-input ngModel #surname = "ngModel" [(ngModel)]="userData.surname" type= "text"></ion-input>
+        <ion-input type= "text" [(ngModel)]="surname" name = "surname"></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label>Gender</ion-label>
-        <ion-select placeholder="Select One">
+        <ion-select placeholder="Select One" name = "gender" [(ngModel)]="gender">
           <ion-select-option value="f">Female</ion-select-option>
           <ion-select-option value="m">Male</ion-select-option>
         </ion-select>
       </ion-item>
+
       <ion-item>
         <ion-label position="floating">Cellphone number</ion-label>
-        <ion-input ngModel #cell_no = "ngModel" [(ngModel)]="userData.cell_no" type="number"></ion-input>
+        <ion-input  [(ngModel)]="cell_no" type="number" name = "cell_no"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" >Email Address</ion-label>
+        <ion-input type = "email" [(ngModel)]= "email_address" name = "email_address"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Address</ion-label>
+        <ion-input  [(ngModel)]= "addressInfo" type="text" name = "addressInfo"></ion-input>
+      </ion-item>
+
       <ion-item>
         <ion-label  position="floating">Password</ion-label>
-        <ion-input ngModel #password ="ngModel" [(ngModel)]="userData.password" type ="password"></ion-input>
+        <ion-input name = "passCode" [(ngModel)] = "passCode" type ="password"></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label  position="floating">Confirm Password</ion-label>
-        <ion-input ngModel #password ="ngModel" [(ngModel)]="userData.cpassword" type ="password"></ion-input>
+        <ion-input  [(ngModel)]="confirm_password" type ="password" name = "confirm_password"></ion-input>
       </ion-item>
       
     </div-->

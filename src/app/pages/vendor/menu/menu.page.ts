@@ -17,7 +17,35 @@ export class MenuPage implements OnInit {
   constructor(
     private router: Router,
     private postPvdr: PostProvider,
-  ) { }
+  ) {
+
+    this.loadMenu();
+
+   }
+
+  setFilteredItems(event) {
+
+    this.loadMenu();
+    const val = event.target.value;
+
+    if (val && val.trim() != '') {
+
+          this.menus = this.menus.filter((item) => {
+
+              return (item.item_name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+
+          });
+
+      }
+
+
+  }
+
+  selectVal(val) {
+
+      alert("You have selected = " + val);
+
+  }
 
   ngOnInit() {
   }
@@ -36,9 +64,9 @@ export class MenuPage implements OnInit {
 
   }
 
-  deleteMenu(id){
- 
-      let body = {
+  deleteMenu(id) {
+
+      const body = {
 
         aksi: 'delete',
         item_id: id
@@ -50,22 +78,22 @@ export class MenuPage implements OnInit {
         this.ionViewWillEnter();
 
       });
- 
-  }
-  
-  updateMenu(id,name,price,description){
-
-    this.router.navigate(['add-menu/' + id  + '/' + name + '/' + price + '/' + description]);
 
   }
 
-showMenu(id,name,price,description){
+  updateMenu(id, name, price, description, status) {
 
-    this.router.navigate(['show-menu/' + id  + '/' + name + '/' + price + '/' + description]);
+    this.router.navigate(['add-menu/' + id  + '/' + name + '/' + price + '/' + description + '/' + status]);
 
   }
 
-  doRefresh(event){
+showMenu(id, name, price, description, status) {
+
+    this.router.navigate(['show-menu/' + id  + '/' + name + '/' + price + '/' + description + '/' + status]);
+
+  }
+
+  doRefresh(event) {
 
     setTimeout(() => {
       this.ionViewWillEnter();

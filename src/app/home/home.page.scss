@@ -1,3 +1,4 @@
+
 .masters{
     background-color: orange;
 }
@@ -6,19 +7,13 @@
     background-color: black;
 }
 
-ion-content{
-   --background: rgb(201, 92, 41);
-   // --background-image: url(/src/assets/images/kfh6.png);
-   // --background: url(/src/assets/images/kfh6.png) 0 0/100% 100% no-repeat;
-   //assets/images/kfh6.png
-}
-
 .card {
   --background: gold;
   padding: 30px;
-  height: calc(100vh - (200px + 56px));
+  height: calc(500vh - (100px + 56px));
   overflow: hidden;
   }
+
   .card-body {
     
     --background: gold;
@@ -54,5 +49,14 @@ ion-content{
     padding: 30px;
    
   }
+
+  /* Custom Skeleton Line Height and Margin */
+.custom-skeleton ion-skeleton-text {
+  line-height: 13px;
+}
+
+.custom-skeleton ion-skeleton-text:last-child {
+  margin-bottom: 5px;
+}
 
   

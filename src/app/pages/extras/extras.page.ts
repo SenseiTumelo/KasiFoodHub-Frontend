@@ -24,30 +24,6 @@ export class ExtrasPage implements OnInit {
   flavor: string;
 
   ngOnInit() {
-    this.prod = this.cartService.getProds();
-    this.cart = this.cartService.getCart();
-    this.ext = this.cartService.getExt();
-    this.cartItemCount = this.cartService.getCartItemCount();
-    this.extra = this.cartService.getExtras();
+ 
   }
-
-  addToCart(product) {
-    this.cartService.addProduct(product);
-  }
-  addExtra(extr) {
-    this.cartService.extraProd(extr);
-  }
-  removeExtraItem(product) {
-    this.cartService.removeExtra(product);
-  }
-
-  close() {
-    this.modalCtrl.dismiss();
-  }
-
-  radioChangeHandler(event: any) {
-    this.flavor = event.target.value;
-    console.log(this.flavor);
-  }
-
 }
