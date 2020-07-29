@@ -217,16 +217,16 @@ export class CartService {
 
   // tslint:disable-next-line: member-ordering
   data: Product[] = [
-    { id: 0, name: 'Chapo Madondo', price: 50, amount: 1 },
-    { id: 1, name: 'Githeri', price: 30, amount: 1 },
-    { id: 2, name: 'Ugali Mboga', price: 50, amount: 1 },
-    { id: 3, name: 'Salad', price: 30, amount: 1 },
-    { id: 4, name: 'Samosa', price: 20, amount: 1 },
-    { id: 5, name: 'Ugali Nyama', price: 100, amount: 1 },
-    { id: 6, name: 'Mursik', price: 50, amount: 1 },
-    { id: 7, name: 'Maziwa Fresh', price: 40, amount: 1 },
-    { id: 8, name: 'Soda', price: 30, amount: 1 },
-    { id: 9, name: 'Pancakes', price: 50, amount: 1 }
+    { id: 0, name: 'Chapo Madondo', price: 50, amount: 0 },
+    { id: 1, name: 'Githeri', price: 30, amount: 0 },
+    { id: 2, name: 'Ugali Mboga', price: 50, amount: 0 },
+    { id: 3, name: 'Salad', price: 30, amount: 0 },
+    { id: 4, name: 'Samosa', price: 20, amount: 0 },
+    { id: 5, name: 'Ugali Nyama', price: 100, amount: 0 },
+    { id: 6, name: 'Mursik', price: 50, amount: 0 },
+    { id: 7, name: 'Maziwa Fresh', price: 40, amount: 0 },
+    { id: 8, name: 'Soda', price: 30, amount: 0 },
+    { id: 9, name: 'Pancakes', price: 50, amount: 0 }
   ];
 
   // tslint:disable-next-line: member-ordering
