@@ -12,7 +12,8 @@ export class CartModalPage implements OnInit {
 
   cart: Product[] = [];
 
-  constructor(private cartService: CartService, private modalCtrl: ModalController, private alertCtrl: AlertController, private router:Router) { }
+  // tslint:disable-next-line: max-line-length
+  constructor(private cartService: CartService, private modalCtrl: ModalController, private alertCtrl: AlertController, private router: Router) { }
 
   ngOnInit() {
     this.cart = this.cartService.getProducts();

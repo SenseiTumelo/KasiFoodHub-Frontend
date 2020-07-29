@@ -217,16 +217,16 @@ export class CartService {
 
   // tslint:disable-next-line: member-ordering
   data: Product[] = [
-    { id: 0, name: 'Chapo Madondo', price: 50, amount: 0 },
-    { id: 1, name: 'Githeri', price: 30, amount: 0 },
-    { id: 2, name: 'Ugali Mboga', price: 50, amount: 0 },
-    { id: 3, name: 'Salad', price: 30, amount: 0 },
-    { id: 4, name: 'Samosa', price: 20, amount: 0 },
-    { id: 5, name: 'Ugali Nyama', price: 100, amount: 0 },
-    { id: 6, name: 'Mursik', price: 50, amount: 0 },
-    { id: 7, name: 'Maziwa Fresh', price: 40, amount: 0 },
-    { id: 8, name: 'Soda', price: 30, amount: 0 },
-    { id: 9, name: 'Pancakes', price: 50, amount: 0 }
+    { id: 0, name: 'Dikilana', price: 15, amount: 0 },
+    { id: 1, name: 'Half Kop', price: 30, amount: 0 },
+    { id: 2, name: 'Steak & Pap', price: 50, amount: 0 },
+    { id: 3, name: 'Salad', price: 15, amount: 0 },
+    { id: 4, name: 'Samoosa', price: 10, amount: 0 },
+    { id: 5, name: 'Spathlo + cold drink', price: 40, amount: 0 },
+    { id: 6, name: 'Kasi Platter Mix', price: 150, amount: 0 },
+    { id: 7, name: 'Nqombhothi 2Litre', price: 8, amount: 0 },
+    { id: 8, name: 'Cold Drink', price: 20, amount: 0 },
+    { id: 9, name: 'Chips', price: 50, amount: 0 }
   ];
 
   // tslint:disable-next-line: member-ordering
@@ -234,7 +234,8 @@ export class CartService {
   public cartItemCount = new BehaviorSubject(0);
   getItems() {
     // tslint:disable-next-line: quotemark
-    throw new Error("Method not implemented.");
+  //  throw new Error("Method not implemented.");
+  return 'senseimahlangu finger guitars';
   }
   getExt(): any[] {
     // tslint:disable-next-line: quotemark
