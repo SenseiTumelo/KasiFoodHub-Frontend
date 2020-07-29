@@ -1,13 +1,15 @@
 <ion-header> 
   <ion-toolbar color = "warning" >
+    <ion-col>
+      <ion-icon name="menu-sharp" size="large"(click)="presentActionSheet()"></ion-icon>
+    </ion-col>
+    
     <ion-title>
       Kasi Food Hub
     </ion-title>
     
   </ion-toolbar>
-      <ion-col>
-        <ion-icon name="menu-sharp" size="large"(click)="presentActionSheet()"></ion-icon>
-      </ion-col>
+      
   <ion-searchbar [(ngModel)] = "searchTerm"></ion-searchbar>
 
 </ion-header>

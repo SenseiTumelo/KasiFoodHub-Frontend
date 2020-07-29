@@ -76,6 +76,14 @@ export class HomePage implements OnInit {
            this.route.navigateByUrl('/signup');
          }
         },
+        {
+          text: 'Order',
+          icon: 'time-outline',
+          handler: () => {
+            console.log('Share clicked');
+            this.route.navigateByUrl('/order2');
+          }
+        },
       {
        text: 'login',
        icon: 'person',
