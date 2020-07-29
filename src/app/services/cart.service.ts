@@ -14,7 +14,7 @@ export class CartService {
   constructor(private httpClient: HttpClient) { }
 
   // tslint:disable-next-line: variable-name
-  private _addProduct = 'http://168.172.185.4:6000/viewMenu';
+  private _addProduct = 'http://localhost:4000/viewMenu';
   // read
   // getItems(){
   //   return this.http.get<any>(this._addProduct);

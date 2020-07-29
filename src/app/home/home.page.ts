@@ -112,6 +112,15 @@ export class HomePage implements OnInit {
             console.log('admin clicked');
             this.route.navigateByUrl('/vendor-admin');
           }
+      }
+      ,
+         {
+          text: 'goto superadmin',
+          icon: 'help-circle-outline',
+          handler: () => {
+            console.log('super admin clicked');
+            this.route.navigateByUrl('/super-admin');
+          }
       }, {
          text: 'Cancel',
          icon: 'close',
