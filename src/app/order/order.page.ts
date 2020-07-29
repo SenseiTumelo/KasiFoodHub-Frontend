@@ -28,12 +28,13 @@ export class OrderPage implements OnInit {
   //   this.cartItemCount = this.cartService.getCartItemCount();
   // }
   ngOnInit() {
-    this.cartService.getItems().subscribe((data: any) => {
-      this.menuList = data.menu;
-      console.log(this.menuList);
-    });
-    this.ext = this.cartService.getExt();
-    this.cartItemCount = this.cartService.getCartItemCount();
+
+    // this.cartService.getItems().subscribe((data: any) => {
+    //   this.menuList = data.menu;
+    //   console.log(this.menuList);
+    // });
+    // this.ext = this.cartService.getExt();
+    // this.cartItemCount = this.cartService.getCartItemCount();
   }
 
 
