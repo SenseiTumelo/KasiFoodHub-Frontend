@@ -31,16 +31,16 @@ export class SuperAdminPage implements OnInit {
         icon: 'person-add-outline',
         handler: () => {
           console.log('addAdmin clicked');
-          this.router.navigateByUrl('/add-remove-admin');
+          this.router.navigateByUrl('/remove-add-admin');
         }
-      },{
+      }/*,{
         text: 'Remove Admin',
         icon: 'person-add-outline',
         handler: () => {
           console.log('removeAdmin clicked');
           this.router.navigateByUrl('/remove-add-admin');
         }
-      }]
+      }*/]
 
 
     });

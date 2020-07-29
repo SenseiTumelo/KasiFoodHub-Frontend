@@ -69,7 +69,18 @@ export class HomePage implements OnInit {
           console.log('Register as a customer clicked');
           this.route.navigateByUrl('/signupcust');
         }
-      },   {
+      }, 
+      
+      {
+        text:'Super Admin',
+        icon:'person-add-outline',
+        handler:() => {
+          console.log('superAdmin clicked');
+          this.route.navigateByUrl('/super-admin');  
+      }
+  },
+      
+      {
         text: 'Sign in',
         icon: 'person',
         handler: () => {
@@ -105,15 +116,7 @@ export class HomePage implements OnInit {
             console.log('admin clicked');
             this.route.navigateByUrl('/vendor-admin');
           }
-          },
-          {
-            text:'Super Admin',
-            icon:'person-add-outline',
-            handler:() => {
-              console.log('superAdmin clicked');
-              this.route.navigateByUrl('/super-admin');  
-          }
-      }, {
+          }, {
          text: 'Cancel',
          icon: 'close',
          role: 'cancel',
