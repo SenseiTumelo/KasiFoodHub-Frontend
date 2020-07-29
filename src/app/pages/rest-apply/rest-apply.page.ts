@@ -12,9 +12,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestApplyPage implements OnInit {
   alertCtrl: any;
-
+ 
   constructor(private route: Router, public atrCtrl: AlertController) { }
-
+  restAdmin = {
+  
+  }
   ngOnInit() {
   }
   goHome() {

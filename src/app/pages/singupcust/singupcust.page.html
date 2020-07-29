@@ -6,19 +6,11 @@
 </ion-header>
 
 <ion-content>
-  <div class="card">
-    <div class="header">
-      <div class="avatar">
-        <img src="/assets/images/kfh6.png" alt="profile">
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="user-meta ion-text-center">
-      <h3 class="playername">Welcome</h3>
-      <h5 class="country">kasi food hub</h5>
-      <ion-item>
-        <ion-label position="floating">First Name</ion-label>
+  
+  <!--div class="card-body">
+
+    
+        <ion-label position="floating">Name</ion-label>
         <ion-input ngModel #name = "ngModel" [(ngModel)]="userData.name"></ion-input>
       </ion-item>
       <ion-item>
@@ -45,9 +37,30 @@
         <ion-input ngModel #password ="ngModel" [(ngModel)]="userData.cpassword" type ="password"></ion-input>
       </ion-item>
       
-    </div>
-    <ion-button shape="round" (click)="registerEnter()" >Register</ion-button>
+    </div-->
+    <ion-item>
+      <ion-label position="floating" [(ngModel)] = "userData.name">Name</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" [(ngModel)] = "userData.surname">Surname</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" [(ngModel)] = "userData.email_address" #email>Email</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" [(ngModel)] = "userData.cell_no">Cellphone no.</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" [(ngModel)] = "userData.password">password</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    
+    <ion-button shape="round" (click) ="register()" >Register</ion-button>
     <ion-button shape = "round" (click)= "backButton()">Cancel</ion-button>
   
-  </div>
+  
 </ion-content>

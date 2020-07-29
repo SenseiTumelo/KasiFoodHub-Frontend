@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 export class DataService {
 
 
-  jsonData: any  = 'http://localhost:6000/viewMenu'; // search bar purpose
+  jsonData: any  = 'http://localhost:4000/viewMenu'; // search bar purpose
 
   constructor(private http: HttpClient) {
     // data for testing searchbar, this will be deleted !!!
@@ -31,16 +31,26 @@ export class DataService {
    }
 
 // create an API here, likke this?
-  reg_url = '';
+  restu_reg_url = 'http://localhost:4000/restu_register'; //register retaurant
   log_url = '';
   show_rest_url = 'http://localhost:4000/allrestuarant';
   prof_url = '';
   admin_prof_url = 'http://localhost:4000/admin';
+  cust_reg_url = 'http://localhost:4000/';
+
   
   logged =  0;
 
   adminService() {
     return this.http.get<any>(this.admin_prof_url);
+  }
+
+  public registerRest(data){// for registration of the restaurant
+    return this.http.post(this.restu_reg_url, data);
+  }
+
+  public registerCust(dat){// for registration of the customer
+    return this.http.post(this.cust_reg_url, dat);
   }
 
   grest() {

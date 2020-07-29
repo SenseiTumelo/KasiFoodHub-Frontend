@@ -83,9 +83,7 @@
   <ion-card class="card" >
     <ion-card-title>Resturants</ion-card-title>
     <img class= "pics" src = 'https://cdn.primedia.co.za/primedia-broadcasting/image/upload/v1488364912/qjwnidvakslcmh6rbp62.jpg'>
-    <div  *ngFor = "let a of adminData">
-      <ion-title>{{a.id}}</ion-title>
-  </div>
+  
     <ion-button expand="block" color = 'success'  (click)="gotoRest()">View all Restaurant</ion-button>
   </ion-card>
 
