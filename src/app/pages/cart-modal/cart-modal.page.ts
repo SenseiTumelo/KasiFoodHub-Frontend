@@ -1,10 +1,7 @@
+import { Product, CartService } from '../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
-import { Product, CartService} from 'src/app/services/cart.service';
-import { ModalController } from '@ionic/angular';
-import { Router, ActivatedRoute } from '@angular/router';
-import { empty } from 'rxjs';
-import { Validators, FormBuilder, FormGroup} from '@angular/forms';
-import { NavController} from '@ionic/angular';
+import { ModalController, AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-cart-modal',
   templateUrl: './cart-modal.page.html',
@@ -12,18 +9,12 @@ import { NavController} from '@ionic/angular';
 })
 export class CartModalPage implements OnInit {
 
-  composersForm: FormGroup;
   cart: Product[] = [];
-  value: any;
 
-  // tslint:disable-next-line: max-line-length
-  constructor(public activatedRoute: ActivatedRoute, private formBuilder: FormBuilder, private navCtrl: NavController, private cartService: CartService, private modalCtrl: ModalController, private router: Router) {
-
-  }
+  constructor(private cartService: CartService, private modalCtrl: ModalController, private alertCtrl: AlertController) { }
 
   ngOnInit() {
-    this.cart = this.cartService.getCart();
-
+    this.cart = this.cartService.getProducts();
   }
 
   decreaseCartItem(product) {
@@ -46,12 +37,23 @@ export class CartModalPage implements OnInit {
     this.modalCtrl.dismiss();
   }
 
-  checkout() {
-    this.router.navigate(['checkout']);
-    /*disable button if cart is empty
-      clear all*/
+  async checkout() {
+    // Perfom M-pesa, Mastercard, PayPal checkout process
 
+    const cartCount =  this.cart.length;
+    console.log('cart item count: ' + cartCount);
+
+    this.cartService.clearCart();
+
+
+    const alert = await this.alertCtrl.create({
+      mode: 'ios',
+      header: 'Thanks for your Order!',
+      message: 'We will deliver your order as soon as possible',
+      buttons: ['Ok !!']
+    });
+    alert.present().then(() => {
+      this.modalCtrl.dismiss();
+    });
   }
-
-
 }
