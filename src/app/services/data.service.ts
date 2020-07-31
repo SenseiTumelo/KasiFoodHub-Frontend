@@ -9,6 +9,7 @@ export class DataService {
 
 
   jsonData: any  = 'http://localhost:4000/viewMenu'; // search bar purpose
+  cust_reg_url='';
 
   constructor(private http: HttpClient) {
     // data for testing searchbar, this will be deleted !!!
@@ -31,13 +32,7 @@ export class DataService {
    }
 
 // create an API here, likke this?
-<<<<<<< HEAD
-  restu_reg_url = 'http://localhost:4000/restu_register'; //register retaurant
-=======
-  // tslint:disable-next-line: variable-name
-  reg_url = '';
-  // tslint:disable-next-line: variable-name
->>>>>>> 197ef2bbfd75d0efb7b95c2704421019c61a27d1
+  restu_reg_url = 'http://localhost:4000/restu_register'; // register retaurant
   log_url = '';
   // tslint:disable-next-line: variable-name
   show_rest_url = 'http://localhost:4000/allrestuarant';
@@ -45,12 +40,6 @@ export class DataService {
   prof_url = '';
   // tslint:disable-next-line: variable-name
   admin_prof_url = 'http://localhost:4000/admin';
-<<<<<<< HEAD
-  cust_reg_url = 'http://localhost:4000/';
-
-  
-=======
->>>>>>> 197ef2bbfd75d0efb7b95c2704421019c61a27d1
   logged =  0;
 
   adminService() {

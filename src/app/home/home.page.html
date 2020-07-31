@@ -16,15 +16,6 @@
 
 <ion-content class = "card-background-page">
   
-<<<<<<< HEAD
-  <!--Restaurants picture with the view button-->
-  <ion-card class="card" >
-    <ion-card-title>Resturants</ion-card-title>
-    <img class= "pics" src = 'https://cdn.primedia.co.za/primedia-broadcasting/image/upload/v1488364912/qjwnidvakslcmh6rbp62.jpg'>
-  
-    <ion-button expand="block" color = 'success'  (click)="gotoRest()">View all Restaurant</ion-button>
-  </ion-card>
-=======
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content
       pullingIcon="chevron-down-circle-outline"
@@ -33,7 +24,6 @@
       refreshingText="Refreshing...">
     </ion-refresher-content> 
   </ion-refresher>
->>>>>>> 197ef2bbfd75d0efb7b95c2704421019c61a27d1
 
   <!--Restaurants picture with the view button-->
   <ion-card class="card">
@@ -92,7 +82,7 @@
             <ion-card (click)="gotoMenu1()">
               <ion-img class = "back-image" src="/assets/images/logo2.jpg"></ion-img>
               <ion-card-content>
-                <ion-card-title>Mamas Kitchen</ion-card-title>
+                <ion-card-title>Kasi Food</ion-card-title>
                 <p>Delicious Dish</p>
               </ion-card-content>
               
@@ -103,7 +93,7 @@
             <ion-card (click)="gotoVendorMenu2()" >
               <ion-img class = "back-image" src="/assets/images/logo.png"></ion-img>
               <ion-card-content>
-                <ion-card-title>Mamas Kitchen</ion-card-title>
+                <ion-card-title>Kasi Food</ion-card-title>
                 <p>Delicious Dish</p>
               </ion-card-content>
             </ion-card>

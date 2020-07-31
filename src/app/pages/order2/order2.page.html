@@ -3,7 +3,7 @@
 
     <ion-toolbar color="warning">
       <ion-icon name="arrow-black" (click)="backButton()"></ion-icon>
-      <ion-title>Order</ion-title>
+      <ion-title><strong>Place Order</strong></ion-title>
     </ion-toolbar>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
@@ -37,11 +37,11 @@
       <ion-row> <!--This is just one row with mulitiple columns-->
         <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
           <ion-card>
-            <ion-img class = "back-image" src="/assets/images/logo2.jpg" (click) = "addToCart(product)"></ion-img>
+            <ion-img class = "back-image" src="/assets/images/gizzards.jpg" (click) = "addToCart(product)"></ion-img>
             <ion-card-content>
               <ion-card-title>Dikilana</ion-card-title>
               <h3>R 15</h3>
-              <p>Scrumptious 6 Runaways with spice</p>
+              <p>Scrumptious 6 grilled gizzards with spice and special souce</p>
             </ion-card-content>
             
           </ion-card>
@@ -49,7 +49,7 @@
   
         <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
           <ion-card>
-            <ion-img class = "back-image" src="/assets/images/logo.png" (click) = "addToCart(product)"></ion-img>
+            <ion-img class = "back-image" src="/assets/images/halfskop.jpg" (click) = "addToCart(product)"></ion-img>
             <ion-card-content>
               <ion-card-title>Half Kop</ion-card-title>
               <h3>R 30</h3>

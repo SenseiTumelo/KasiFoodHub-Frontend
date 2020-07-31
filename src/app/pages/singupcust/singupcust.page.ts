@@ -27,7 +27,6 @@ export class SingupcustPage implements OnInit {
 
   // userData = {"name":"", "surname":"", "email":"","password":"", "cpassword":"", "cell_no":""};//reg
   // tslint:disable-next-line: max-line-length
-<<<<<<< HEAD
   userData = {
     name: '',
     surname: '',
@@ -39,10 +38,8 @@ export class SingupcustPage implements OnInit {
     // published: false
   };
   constructor(private route: Router, private location: Location, private toastController: ToastController,
-               private serv: ServiceproviderService, private dataService: DataService) { }
-=======
-  constructor(private route: Router, private location: Location, private actRoute: ActivatedRoute, private postPvdr: PostProvider) { }
->>>>>>> 197ef2bbfd75d0efb7b95c2704421019c61a27d1
+               private serv: ServiceproviderService, private dataService: DataService ,private actRoute: ActivatedRoute,) { }
+             //  constructor(private route: Router, private location: Location,  private postPvdr: PostProvider) { }
 
   ngOnInit() {
 
@@ -58,7 +55,6 @@ export class SingupcustPage implements OnInit {
     });
 
   }
-<<<<<<< HEAD
   register(){
     const data = {
       name: this.userData.name,
@@ -70,34 +66,6 @@ export class SingupcustPage implements OnInit {
     }
      this.dataService.registerCust(data).subscribe(response => {console.log(response); } , error => console.log(error));
     };
-=======
-
-  registerEnter() {
-
-    return new Promise(resolve => {
-
-      const body = {
-
-        aksi: 'addCustomer',
-        firstName: this.firstName,
-        surname: this.surname,
-        passCode: this.passCode,
-        email_address: this.email_address,
-        addressInfo: this.addressInfo,
-        gender: this.gender,
-
-      };
-
-      this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
-      this.route.navigate(['signin']);
-      console.log('submit works');
-
-      });
-
-    });
-
-  }
->>>>>>> 197ef2bbfd75d0efb7b95c2704421019c61a27d1
  /* registerEnter() {
 
     // tslint:disable-next-line: max-line-length
