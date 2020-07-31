@@ -170,11 +170,11 @@ export class HomePage implements OnInit {
   }
 
   gotoVendorMenu2() {
-    this.route.navigateByUrl('/vendor-menu1');
+    this.route.navigateByUrl('/order2');
   }
 
   gotoVendorMenu3() {
-    this.route.navigateByUrl('/vendor-menu3');
+    this.route.navigateByUrl('/order2');
   }
   // search bar
   // --------------------------------------------------
