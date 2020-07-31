@@ -51,8 +51,8 @@ export class CartModalPage implements OnInit {
 
     const alert = await this.alertCtrl.create({
       mode: 'ios',
-      header: 'Thanks for your Order!',
-      message: 'We will deliver your order as soon as possible',
+      header: 'Payment options ahead',
+      message: 'Please make sure to enter correct info',
       buttons: ['Ok !!']
     });
     alert.present().then(() => {
