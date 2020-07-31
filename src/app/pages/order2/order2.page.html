@@ -37,10 +37,11 @@
       <ion-row> <!--This is just one row with mulitiple columns-->
         <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
           <ion-card>
-            <ion-img class = "back-image" src="/assets/images/logo2.jpg"></ion-img>
+            <ion-img class = "back-image" src="/assets/images/logo2.jpg" (click) = "addToCart(product)"></ion-img>
             <ion-card-content>
-              <ion-card-title>Mamas Kitchen</ion-card-title>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+              <ion-card-title>Dikilana</ion-card-title>
+              <h3>R 15</h3>
+              <p>Scrumptious 6 Runaways with spice</p>
             </ion-card-content>
             
           </ion-card>
@@ -48,20 +49,22 @@
   
         <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
           <ion-card>
-            <ion-img class = "back-image" src="/assets/images/logo.png"></ion-img>
+            <ion-img class = "back-image" src="/assets/images/logo.png" (click) = "addToCart(product)"></ion-img>
             <ion-card-content>
-              <ion-card-title>Mamas Kitchen</ion-card-title>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+              <ion-card-title>Half Kop</ion-card-title>
+              <h3>R 30</h3>
+              <p>King Kop of sheep</p>
             </ion-card-content>
           </ion-card>
         </ion-col>
      
         <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
           <ion-card>
-            <ion-img class = "back-image" src="/assets/images/food1.png"></ion-img>
+            <ion-img class = "back-image" src="/assets/images/food1.png" (click) = "addToCart(product)"></ion-img>
             <ion-card-content>
-              <ion-card-title>Mamas Kitchen</ion-card-title>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+              <ion-card-title>Steak & Pap</ion-card-title>
+              <h3>R 50</h3>
+              <p>Pap & Steak served with some sides</p>
             </ion-card-content>
             
           </ion-card>
@@ -72,8 +75,9 @@
           <ion-card>
             <ion-img src="/assets/images/food2.jpg"></ion-img>
             <ion-card-content>
-              <ion-card-title>Mamas Kitchen</ion-card-title>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+              <ion-card-title>Salad</ion-card-title>
+              <h3>R 15</h3>
+              <p>Essential veggies for a healthy kasi lifestyle</p>
             </ion-card-content>
           </ion-card>
         </ion-col>
@@ -85,8 +89,9 @@
           <ion-card>
             <ion-img src="/assets/images/food3.jpg"></ion-img>
             <ion-card-content>
-              <ion-card-title>Mamas Kitchen</ion-card-title>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+              <ion-card-title>Samoosa</ion-card-title>
+              <h3>R 10</h3>
+              <p>East meets Kasi</p>
             </ion-card-content>
             
           </ion-card>
@@ -96,8 +101,9 @@
           <ion-card>
             <ion-img class = "back-image" src="/assets/images/food4.jpg"></ion-img>
             <ion-card-content>
-              <ion-card-title>Mamas Kitchen</ion-card-title>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+              <ion-card-title>Spathlo & cold drink</ion-card-title>
+              <h3>R 40</h3>
+              <p>Kasi Kota with chips, vienna, atchar, patty with drink</p>
             </ion-card-content>
           </ion-card>
         </ion-col>
@@ -106,8 +112,9 @@
           <ion-card>
             <ion-img class = "back-image" src="/assets/images/food5.jpg"></ion-img>
             <ion-card-content>
-              <ion-card-title>Mamas Kitchen</ion-card-title>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+              <ion-card-title>Nqombhothi 2Litre</ion-card-title>
+              <h3>R 8</h3>
+              <p>Taste of the real african goodness</p>
             </ion-card-content>
             
           </ion-card>
@@ -132,7 +139,7 @@
             <ion-img class = "back-image" src="/assets/images/kota.jpg"></ion-img>
             <ion-card-content>
               <ion-card-title>Mamas Kitchen</ion-card-title>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+              <p>Kasi Kota with chips, vienna, atchar, patty with drink</p>
             </ion-card-content>
             
           </ion-card>
@@ -143,7 +150,7 @@
             <ion-img class = "back-image" src="/assets/images/kota1.jpg"></ion-img>
             <ion-card-content>
               <ion-card-title>Mamas Kitchen</ion-card-title>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+              <p>Kasi Kota with chips, vienna, atchar, patty with drink</p>
             </ion-card-content>
           </ion-card>
         </ion-col>
@@ -154,7 +161,7 @@
             <ion-img class = "back-image" src="/assets/images/kota2.jpg"></ion-img>
             <ion-card-content>
               <ion-card-title>Mamas Kitchen</ion-card-title>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+              <p>Kasi Kota with chips, vienna, atchar, patty with drink</p>
             </ion-card-content>
             
           </ion-card>
@@ -166,7 +173,7 @@
             <ion-img class = "back-image" src="/assets/images/kota3.jpg"></ion-img>
             <ion-card-content>
               <ion-card-title>Mamas Kitchen</ion-card-title>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elitme. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+              <p>Kasi Platter mix</p>
             </ion-card-content>
           </ion-card>
         </ion-col>
@@ -179,7 +186,7 @@
             <ion-img class = "back-image" src="/assets/images/kota4.jpg"></ion-img>
             <ion-card-content>
               <ion-card-title>Mamas Kitchen</ion-card-title>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+              <p>Kasi Kota with chips, vienna, atchar, patty with drink</p>
             </ion-card-content>
             
           </ion-card>
@@ -190,7 +197,7 @@
             <ion-img src="/assets/images/kota5.jpg"></ion-img>
             <ion-card-content>
               <ion-card-title>Mamas Kitchen</ion-card-title>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+              <p>Kasi Kota with chips, vienna, atchar, patty with drink</p>
             </ion-card-content>
           </ion-card>
         </ion-col>
@@ -200,7 +207,7 @@
             <ion-img src="/assets/images/logo2.jpg"></ion-img>
             <ion-card-content>
               <ion-card-title>Mamas Kitchen</ion-card-title>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+              <p>Kasi Kota with chips, vienna, atchar, patty with drink</p>
             </ion-card-content>
             
           </ion-card >
