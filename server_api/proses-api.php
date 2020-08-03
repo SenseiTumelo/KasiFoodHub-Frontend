@@ -13,7 +13,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
 
     if ($postjson['aksi'] === 'add') {
 
-        $sql = mysqli_query($mysqli,"INSERT INTO restaurantmenu_2 SET 
+        $sql = mysqli_query($mysqli,"INSERT INTO menu SET 
         item_name = '$postjson[item_name]',
         item_description = '$postjson[item_description]',
         item_price = '$postjson[item_price]',
@@ -29,7 +29,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
     }elseif($postjson['aksi'] === 'getdata'){
 
             $data = array();
-            $sql = mysqli_query($mysqli,"SELECT * FROM restaurantmenu_2 ORDER BY item_id ASC LIMIT $postjson[start], $postjson[limit]");
+            $sql = mysqli_query($mysqli,"SELECT * FROM menu ORDER BY item_id ASC LIMIT $postjson[start], $postjson[limit]");
 
             while ($row = mysqli_fetch_array($sql)) {
                 
@@ -104,6 +104,30 @@ $postjson = json_decode(file_get_contents('php://input'), true);
                     
                     'item_name' => $row['item_name'],
             
+                );
+
+            }
+  
+            if ($sql) $result = json_encode(array('success' => true, 'result' => $data));
+            else $result = json_encode(array('success' => false)); 
+
+            echo $result;
+ 
+        }elseif($postjson['aksi'] === 'getResInfo'){
+
+            $data = array();
+            $sql = mysqli_query($mysqli,"SELECT * FROM menu ORDER BY item_id ASC LIMIT $postjson[start], $postjson[limit]");
+
+            while ($row = mysqli_fetch_array($sql)) {
+                
+                $data[] = array(
+
+                    'item_id' => $row['item_id'],
+                    'item_name' => $row['item_name'],
+                    'item_description' => $row['item_description'],
+                    'item_price' => $row['item_price'], 
+                    'itemStatus' => $row['itemStatus'],
+
                 );
 
             }
