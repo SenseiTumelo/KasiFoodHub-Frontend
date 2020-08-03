@@ -113,6 +113,30 @@ $postjson = json_decode(file_get_contents('php://input'), true);
 
             echo $result;
  
+        }elseif($postjson['aksi'] === 'getResInfo'){
+
+            $data = array();
+            $sql = mysqli_query($mysqli,"SELECT * FROM menu ORDER BY item_id ASC LIMIT $postjson[start], $postjson[limit]");
+
+            while ($row = mysqli_fetch_array($sql)) {
+                
+                $data[] = array(
+
+                    'item_id' => $row['item_id'],
+                    'item_name' => $row['item_name'],
+                    'item_description' => $row['item_description'],
+                    'item_price' => $row['item_price'], 
+                    'itemStatus' => $row['itemStatus'],
+
+                );
+
+            }
+  
+            if ($sql) $result = json_encode(array('success' => true, 'result' => $data));
+            else $result = json_encode(array('success' => false)); 
+
+            echo $result;
+ 
         }          
     
 ?>             

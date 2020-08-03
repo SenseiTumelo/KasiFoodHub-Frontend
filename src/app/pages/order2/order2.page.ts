@@ -4,9 +4,9 @@ import { BehaviorSubject } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';
 import { ModalController } from '@ionic/angular';
 import { CartModalPage } from '../cart-modal/cart-modal.page';
-
+import { Router } from '@angular/router';
 import { ExtrasPage } from '../extras/extras.page';
-
+import { PostProvider } from '../../../providers/post-provider'
 import { Location } from '@angular/common';
 
 
@@ -17,6 +17,9 @@ import { Location } from '@angular/common';
 })
 export class Order2Page implements OnInit {
 
+  menuItems: any[];
+  limit = 10;
+  start = 0;
   cart = [];
   product = [];
   ext = [];
@@ -25,7 +28,12 @@ export class Order2Page implements OnInit {
 
   @ViewChild('cart', {static: false, read: ElementRef})fab: ElementRef;
 
-  constructor(private cartService: CartService, private modalCtrl: ModalController, private location: Location) { }
+  constructor(private cartService: CartService, private modalCtrl: ModalController, private location: Location, private router: Router,
+    private postPvdr: PostProvider) { 
+
+        this.loadMenu();
+
+    }
 
   // ngOnInit() {
   //   this.product = this.cartService.getProduct();
@@ -39,6 +47,14 @@ export class Order2Page implements OnInit {
     // });
      // this.ext = this.cartService.getExt();
      this.cartItemCount = this.cartService.getCartItemCount();
+  }
+
+  ionViewWillEnter() {
+
+    this.menuItems = [];
+    this.start = 0;
+    this.loadMenu();
+  
   }
 
   addToCart(product) {
@@ -86,6 +102,33 @@ export class Order2Page implements OnInit {
 // back button
 backButton() {
   this.location.back();
+ }
+
+loadMenu(){
+
+  return new Promise(resolve => {
+
+    const body = {
+
+      aksi: 'getResInfo',
+      limit: this.limit,
+      start: this.start,
+
+    };
+
+    this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
+
+          for (const menuItem of data.result) {
+            this.menuItems.push(menuItem);
+
+          }
+
+          resolve(true);
+
+        });
+
+    });
+
  }
 
 }
