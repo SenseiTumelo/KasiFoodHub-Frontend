@@ -25,8 +25,6 @@ const routes: Routes = [
   {
     path: 'checkout',
     loadChildren: () => import('./pages/checkout/checkout.module').then( m => m.CheckoutPageModule)
-
-  // canActivate: [AuthGuard]
   },
   {
     path: 'order2',
@@ -97,12 +95,6 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
    },
-// master
-//   {
-
-//     path: 'history',
-//     loadChildren: () => import('./pages/history/history.module').then( m => m.HistoryPageModule)
-//   },
   {
     path: 'signin',
     loadChildren: () => import('./pages/signin/signin.module').then( m => m.SigninPageModule)
