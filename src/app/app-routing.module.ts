@@ -29,8 +29,6 @@ const routes: Routes = [
   {
     path: 'checkout',
     loadChildren: () => import('./pages/checkout/checkout.module').then( m => m.CheckoutPageModule)
-
-  // canActivate: [AuthGuard]
   },
   {
     path: 'order2',
@@ -148,6 +146,7 @@ const routes: Routes = [
     path: 'notifications',
     loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule)
   }
+
 
 
 ];

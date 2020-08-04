@@ -21,7 +21,8 @@ export class Order3Page implements OnInit {
   product = [];
   ext = [];
   cartItemCount: BehaviorSubject<number>;
-  menuList: Array<any> = [];
+  menuList: any;
+  
 
   @ViewChild('cart', {static: false, read: ElementRef})fab: ElementRef;
   enableBackdropDismiss = true;
@@ -33,15 +34,16 @@ export class Order3Page implements OnInit {
     this.cartItemCount = this.cartService.getCartItemCount();
   }*/
   ngOnInit() {
-  //  this.cartService.getItems().subscribe((data: any) => {
-  //  this.menuList = data.menuList;
-  //  console.log(this.menuList);
-  //   });
-  //  this.ext = this.cartService.getExt();
-  //  this.cartItemCount = this.cartService.getCartItemCount();
+    this.cartService.getItems().subscribe(data => {
+      console.log(data);
+      this.menuList = data.data;
+      console.log(this.menuList);
+    });
+    this.ext = this.cartService.getExt();
+    this.cartItemCount = this.cartService.getCartItemCount();
   }
-
-  addToCart(product) {
+  
+  addToCart(product){
     this.animateCSS('tada');
     this.cartService.addProduct(product);
   }
@@ -52,7 +54,9 @@ export class Order3Page implements OnInit {
     this.animateCSS('bounceOutLeft', true);
     const modal = await this.modalCtrl.create({
       component: CartModalPage,
-      cssClass: 'cart-modal'
+      cssClass: 'cart-modal',
+      animated: true,
+      showBackdrop: true
     });
     modal.onWillDismiss().then(() => {
       this.fab.nativeElement.classList.remove('animated', 'bounceOutLeft');
@@ -60,10 +64,13 @@ export class Order3Page implements OnInit {
     });
     modal.present();
   }
-  async openExtras() {
-    const modal = await this.modalCtrl.create({
+  
+  async openExtras(){
+    let modal = await this.modalCtrl.create({
       component: ExtrasPage,
-      cssClass: 'extras'
+      cssClass: 'extras',
+      showBackdrop: true,
+      backdropDismiss: false
     });
     modal.present();
 

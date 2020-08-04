@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { empty } from 'rxjs';
 import { ReactiveFormsModule, FormBuilder, FormControl, Validators} from '@angular/forms';
 import {Location } from '@angular/common';
+import {HttpClient,HttpHeaders} from '@angular/common/http';
+import {Platform} from '@ionic/angular';
+import { CartService } from 'src/app/services/cart.service';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-checkout',
@@ -11,7 +15,73 @@ import {Location } from '@angular/common';
 })
 export class CheckoutPage implements OnInit {
 
-  /*get house(){
+  product = [];
+  
+  isDisplay = true;
+  toggleDisplay(){
+    this.isDisplay = true;
+  }
+  toggleDisplayNot(){
+    this.isDisplay = false;
+  }
+
+  data: any;
+
+  constructor(private alertService: AlertService, public http:HttpClient, private route:ActivatedRoute, 
+    private router: Router, private formBuilder: FormBuilder/**/,
+    private location: Location,public platform:Platform,private cartService: CartService) {
+
+      //
+      // this.platform.ready().then(() =>{
+      //   this.order();
+      // });
+
+      this.route.queryParams.subscribe(params => {
+        console.log('Params: ',params)
+        if(params && params.special){
+          this.data = params.special;
+        }
+        if(this.router.getCurrentNavigation().extras.state){
+          this.data = this.router.getCurrentNavigation().extras.state.user;
+        }
+      });
+   
+   }
+   
+
+  ngOnInit() {
+    this.product = this.cartService.getCheckout();
+  }
+
+  order(){
+    // var dataToSend = {
+    //   oder_id:2,fk_Customer_ID:258741,quantity:10,totalAmount:78,order_Status:0
+    // };
+    // var url ="http://localhost:4000/";
+    // this.http.post(url,{data:JSON.stringify(dataToSend)},{headers:new HttpHeaders(
+    //   {"content-Type":"application/json"}
+    // )}).subscribe(
+    //   (data)=>{
+    //     alert(data);
+    //   }
+    // )
+
+    // document.getElementById("name").innerHTML="Order SUCCESSFUL";
+     
+    
+      this.alertService.presentToast("You have successfully placed your order.");
+    (<HTMLInputElement> document.getElementById("submit")).disabled = true;
+  }
+
+  home(){
+    this.router.navigate(['home']);
+  }
+//back button
+back(){
+  this.location.back();
+}
+}
+/*get house(){
     return this.addressForm.get('house');
   }
   get street(){
@@ -57,35 +127,3 @@ export class CheckoutPage implements OnInit {
     zip: ['',,[Validators.required, Validators.pattern("^[0-9]{5}(?:-[0-9]{4})?$")]]
   });
 */
-  isDisplay = true;
-  toggleDisplay(){
-    this.isDisplay = true;
-  }
-  toggleDisplayNot(){
-    this.isDisplay = false;
-  }
-  constructor(private router: Router, private formBuilder: FormBuilder/**/, private location: Location) {
-    
-   
-
-  /* public submit(){
-     console.log(this.addressForm.value);*/
-   }
-
-  ngOnInit() {
-  }
-
-  order(){
-    document.getElementById("name").innerHTML="Order SUCCESSFUL";
-    (<HTMLInputElement> document.getElementById("submit")).disabled = true;
-    //
-  }
-
-  home(){
-    this.router.navigate(['home']);
-  }
-//back button
-back(){
-  this.location.back();
-}
-}
