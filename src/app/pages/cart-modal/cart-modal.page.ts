@@ -1,3 +1,4 @@
+import { Product, CartService } from '../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { Product, CartService, Extras } from 'src/app/services/cart.service';
 import { ModalController } from '@ionic/angular';
@@ -58,11 +59,11 @@ export class CartModalPage implements OnInit {
     this.cartService.decreaseProduct(product);
   }
 
-  increaseCartItem(product){
+  increaseCartItem(product) {
     this.cartService.addProduct(product);
   }
 
-  removeCartItem(product){
+  removeCartItem(product) {
     this.cartService.removeProduct(product);
   }
   
@@ -80,8 +81,9 @@ export class CartModalPage implements OnInit {
     price: this.priceAmnt
   }
 
-  close(){
+  close() {
     this.modalCtrl.dismiss();
+    this.router.navigateByUrl('/home');
   }
 
   checkout(){
@@ -95,4 +97,22 @@ export class CartModalPage implements OnInit {
     
    }
 
+    const cartCount =  this.cart.length;
+    console.log('cart item count: ' + cartCount);
+
+    this.cartService.clearCart();
+
+
+    const alert = await this.alertCtrl.create({
+      mode: 'ios',
+      header: 'Payment options ahead',
+      message: 'Please make sure to enter correct info',
+      buttons: ['Ok !!']
+    });
+    alert.present().then(() => {
+      this.modalCtrl.dismiss();
+    });
+    this.router.navigateByUrl('/checkout');
+
+  }
 }

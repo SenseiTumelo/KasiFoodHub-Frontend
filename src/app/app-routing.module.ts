@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './gaurds/auth.guard';
@@ -6,6 +5,11 @@ import { AdminauthGuard } from './gaurds/adminauth.guard';
 
 
 const routes: Routes = [
+
+  {
+    path: 'menu',
+    loadChildren: () => import('./pages/vendor/menu/menu.module').then( m => m.MenuPageModule)
+  },
   {
     path: '',
     loadChildren: () => import('./index/index.module').then(m => m.IndexPageModule)
@@ -48,7 +52,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/singupadmin/singupadmin.module').then( m => m.SingupadminPageModule)
   },
   {
-    path: 'signupcust',
+    path: 'singupcust',
 
     loadChildren: () => import('./pages/singupcust/singupcust.module').then( m => m.SingupcustPageModule)
   },
@@ -71,8 +75,16 @@ const routes: Routes = [
     loadChildren: () => import('./pages/vendor/add-menu/add-menu.module').then( m => m.AddMenuPageModule)
   },
   {
+    path: 'add-menu/:id/:name/:price/:description/:status',
+    loadChildren: () => import('./pages/vendor/add-menu/add-menu.module').then( m => m.AddMenuPageModule)
+  },
+  {
     path: 'overview',
     loadChildren: () => import('./pages/vendor/overview/overview.module').then( m => m.OverviewPageModule)
+  },
+  {
+    path: 'menu',
+    loadChildren: () => import('./pages/vendor/menu/menu.module').then( m => m.MenuPageModule)
   },
   {
 
@@ -94,10 +106,12 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
-   },
+  },
+
   {
-    path: 'signin',
-    loadChildren: () => import('./pages/signin/signin.module').then( m => m.SigninPageModule)
+
+    path: 'history',
+    loadChildren: () => import('./pages/history/history.module').then( m => m.HistoryPageModule)
   },
   {
     path: 'custprof',
@@ -112,6 +126,27 @@ const routes: Routes = [
     path: 'reset-password',
     loadChildren: () => import('./pages/reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
   },
+  {
+    path: 'super-admin',
+    loadChildren: () => import('./pages/super-admin/super-admin.module').then( m => m.SuperAdminPageModule)
+  },
+  {
+    path: 'show-menu/:id/:name/:price/:description/:status',
+    loadChildren: () => import('./pages/vendor/show-menu/show-menu.module').then( m => m.ShowMenuPageModule)
+  },
+  {
+    path: 'vendor-menu1',
+    loadChildren: () => import('./pages/vendor/vendor-menu1/vendor-menu1.module').then( m => m.VendorMenu1PageModule)
+  },
+  {
+    path: 'vendor-menu3',
+    loadChildren: () => import('./pages/vendor/vendor-menu3/vendor-menu3.module').then( m => m.VendorMenu3PageModule)
+  },
+  {
+    path: 'notifications',
+    loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule)
+  }
+
 
 
 ];
