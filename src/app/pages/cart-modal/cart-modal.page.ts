@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class CartModalPage implements OnInit {
 
   cart: Product[] = [];
-
+  qty = 0;
   // tslint:disable-next-line: max-line-length
   constructor(private cartService: CartService, private modalCtrl: ModalController, private alertCtrl: AlertController, private router: Router) { }
 
@@ -32,33 +32,17 @@ export class CartModalPage implements OnInit {
   }
 
   getTotal() {
-    return this.cart.reduce((i, j) => i + j.price * j.amount, 0);
+    return this.cart.reduce((i, j) => i + j.price * j.qty, 0);
   }
 
   close() {
     this.modalCtrl.dismiss();
-    this.router.navigateByUrl('/home');
   }
 
-  async checkout() {
-    // Perfom M-pesa, Mastercard, PayPal checkout process
-
-    const cartCount =  this.cart.length;
-    console.log('cart item count: ' + cartCount);
-
-    this.cartService.clearCart();
-
-
-    const alert = await this.alertCtrl.create({
-      mode: 'ios',
-      header: 'Payment options ahead',
-      message: 'Please make sure to enter correct info',
-      buttons: ['Ok !!']
-    });
-    alert.present().then(() => {
-      this.modalCtrl.dismiss();
-    });
-    this.router.navigateByUrl('/checkout');
-
+  carddetails() {
+    this.close();
+   // this.router.navigate(['/checkout']);
   }
+
 }
+

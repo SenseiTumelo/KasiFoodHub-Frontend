@@ -10,6 +10,7 @@ export class OverviewPage implements OnInit {
 
   constructor(private adminService: AdminService ) { }
   adminProf: any = '';
+
  ngOnInit() {
   this.getAdminData();
  }
