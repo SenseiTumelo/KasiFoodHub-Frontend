@@ -20,7 +20,7 @@
             </ion-col>
 
             <ion-col size="1" class="ion-align-self-center">
-              {{c.amount}}
+              {{c.num_items}}
             </ion-col>
 
             <ion-col size="2" class="ion-align-self-center">
@@ -41,7 +41,7 @@
               <b>{{ c.item_name }}</b>
             </ion-col>
             <ion-col size="3" class="ion-text-end">
-              {{ c.amount * c.item_price | currency:'R'}}
+              {{ c.num_items * c.price | currency:'R'}}
             </ion-col>
           </ion-row>
           <ion-row *ngFor="let e of ext">

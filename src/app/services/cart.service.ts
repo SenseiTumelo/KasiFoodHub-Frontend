@@ -50,6 +50,9 @@ export class CartService {
   private _viewProduct = "http://localhost:4000/viewMenu";
   private _viewCart = "http://localhost:4000/viewCart";
   private _addProduct ="http://localhost:4000/add";
+  private _menu = "http://localhost:4000/viewrest1";
+  private _menu2 = "http://localhost:4000/viewrest2";
+  private _menu3 = "http://localhost:4000/viewrest3";
 
   responseData: any;
   
@@ -76,6 +79,15 @@ export class CartService {
   }
   addProductCart(prod){
     return this.httpClient.post<any>(this._addProduct,prod);
+  }
+  getMenu(){
+    return this.httpClient.get<any>(this._menu);
+  }
+  getMenu2(){
+    return this.httpClient.get<any>(this._menu2);
+  }
+  getMenu3(){
+    return this.httpClient.get<any>(this._menu3);
   }
  
 
@@ -176,7 +188,7 @@ export class CartService {
     let added = false;
     for (const p of this.cart) {
       if (p.item_id === product.item_id) {
-        p.amount += 1;
+        p.num_items += 1;
         added = true;
         break;
       }
@@ -190,8 +202,8 @@ export class CartService {
   decreaseProduct(product) {
     for (const [index, p] of this.cart.entries()) {
       if (p.item_id === product.item_id) {
-        p.amount -= 1;
-        if (p.amount === 0) {
+        p.num_items -= 1;
+        if (p.num_items === 0) {
           this.cart.splice(index, 1);
         }
       }
@@ -201,7 +213,7 @@ export class CartService {
   removeProduct(product) {
     for (const [index, p] of this.cart.entries()) {
       if (p.id === product.id) {
-        this.cartItemCount.next(this.cartItemCount.value - p.amount);
+        this.cartItemCount.next(this.cartItemCount.value - p.num_items);
 
           this.cart.splice(index, 1);
           

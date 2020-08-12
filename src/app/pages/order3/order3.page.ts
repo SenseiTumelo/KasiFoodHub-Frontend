@@ -33,7 +33,7 @@ export class Order3Page implements OnInit {
     this.cartItemCount = this.cartService.getCartItemCount();
   }*/
   ngOnInit() {
-    this.cartService.getItems().subscribe(data => {
+    this.cartService.getMenu3().subscribe(data => {
       console.log(data);
       this.menuList = data.data;
       console.log(this.menuList);

@@ -14,14 +14,14 @@
                 <ion-col class="ion-align-self-center" size-md="6" size-lg="5" size-xs="12" color="transparent">
                   <div class="ion-padding" >
                     <ion-item>
-                      <ion-input [(ngModel)]="loginUserData.email_address" name="email_address" type="text" placeholder="Username/Name@email.com"></ion-input>
+                      <ion-input [(ngModel)]="loginUserData.email_address" name="email" type="text" placeholder="Username/Name@email.com"></ion-input>
                     </ion-item>
                     <ion-item>
                       <ion-input [(ngModel)]="loginUserData.password" name="password" type="password" placeholder="Password"></ion-input>
                     </ion-item>
                   </div>
                   <div class="ion-padding">
-                    <ion-button block  (click)="checkEmail()">Login</ion-button>
+                    <ion-button block  (click)="valid()">Login</ion-button>
                   </div>
                 </ion-col>
               </ion-row>

@@ -10,6 +10,8 @@ export class AdminService {
   overview_url = 'http://localhost:4000/'; // check
   private _adminLogin ="http://localhost:4000/admin_login";
 
+  loggedIn = false;
+
   constructor(private http: HttpClient) { }
 
   getProfile() {
@@ -17,7 +19,9 @@ export class AdminService {
     return this.http.get<any>(this.profile_url);
   }
 
-  adminLogin(admin){
-    return this.http.post<any>(this._adminLogin,admin);
+  adminLogin(email){
+    return this.http.get<any>(this._adminLogin,email
+      ).pipe();
   }
+
 }

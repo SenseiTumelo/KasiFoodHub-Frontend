@@ -67,11 +67,11 @@ export class CartModalPage implements OnInit {
   }
   
   checkoutProduct(product){
-    this.cartService.addToCheckout(product);
+    //this.cartService.addToCheckout(product);
   }
 
   getTotal(){
-    this.priceAmnt = this.cart.reduce((i,j) => i + j.item_price * j.amount, 0);
+    this.priceAmnt = this.cart.reduce((i,j) => i + j.price * j.num_items, 0);
     return this.priceAmnt;
   }
 
