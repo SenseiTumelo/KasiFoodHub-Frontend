@@ -19,20 +19,7 @@
     </ion-fab>
   
      <h4>Menu</h4>
-    <!-- <ion-segment scrollable value="heart">
-      <ion-segment-button value="home">
-        <ion-icon name="home"></ion-icon>
-      </ion-segment-button>
-      <ion-segment-button value="heart">
-        <ion-icon name="heart"></ion-icon>
-      </ion-segment-button>
-      <ion-segment-button value="pin">
-        <ion-icon name="pin"></ion-icon>
-      </ion-segment-button>
-      <ion-segment-button value="call">
-        <ion-icon name="call"></ion-icon>
-      </ion-segment-button>
-    </ion-segment> -->
+    
      <ion-list>
        <ion-row>
         <ion-img class="logo" src="assets/images/logo2.png" alt=""></ion-img>
@@ -63,28 +50,190 @@
       <ion-row>
         <ion-col>
           <ion-img class="" src="assets/images/kota2.jpg" alt=""></ion-img>
+
         </ion-col>
+  
+        <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
+          <ion-card>
+            <ion-img class = "back-image" src="/assets/images/logo.png" (click) = "addToCart(product)"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Half Kop</ion-card-title>
+              <h3>R 30</h3>
+              <p>King Kop of sheep</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+     
+        <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
+          <ion-card>
+            <ion-img class = "back-image" src="/assets/images/food1.png" (click) = "addToCart(product)"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Steak & Pap</ion-card-title>
+              <h3>R 50</h3>
+              <p>Pap & Steak served with some sides</p>
+            </ion-card-content>
+            
+          </ion-card>
+         
+        </ion-col>
+  
+        <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
+          <ion-card>
+            <ion-img src="/assets/images/food2.jpg"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Salad</ion-card-title>
+              <h3>R 15</h3>
+              <p>Essential veggies for a healthy kasi lifestyle</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
       </ion-row>
+  
+      <ion-row> <!--This is just one row with mulitiple columns-->
+        <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
+          <ion-card>
+            <ion-img src="/assets/images/food3.jpg"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Samoosa</ion-card-title>
+              <h3>R 10</h3>
+              <p>East meets Kasi</p>
+            </ion-card-content>
+            
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
+          <ion-card>
+            <ion-img class = "back-image" src="/assets/images/food4.jpg"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Spathlo & cold drink</ion-card-title>
+              <h3>R 40</h3>
+              <p>Kasi Kota with chips, vienna, atchar, patty with drink</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+     
+        <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
+          <ion-card>
+            <ion-img class = "back-image" src="/assets/images/food5.jpg"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Nqombhothi 2Litre</ion-card-title>
+              <h3>R 8</h3>
+              <p>Taste of the real african goodness</p>
+            </ion-card-content>
+            
+          </ion-card>
+         
+        </ion-col>
+  
+        <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
+          <ion-card>
+            <ion-img class = "back-image" src="/assets/images/food6.jpg"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Mamas Kitchen</ion-card-title>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elitme. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
+      </ion-row>
+  
+      <ion-row> <!--This is just one row with mulitiple columns-->
+        <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
+          <ion-card>
+            <ion-img class = "back-image" src="/assets/images/kota.png"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Mamas Kitchen</ion-card-title>
+              <p>Kasi Kota with chips, vienna, atchar, patty with drink</p>
+            </ion-card-content>
+            
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
+          <ion-card>
+            <ion-img class = "back-image" src="/assets/images/kota1.jpg"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Mamas Kitchen</ion-card-title>
+              <p>Kasi Kota with chips, vienna, atchar, patty with drink</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+     
+     
+        <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
+          <ion-card>
+            <ion-img class = "back-image" src="/assets/images/kota2.jpg"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Mamas Kitchen</ion-card-title>
+              <p>Kasi Kota with chips, vienna, atchar, patty with drink</p>
+            </ion-card-content>
+            
+          </ion-card>
+         
+        </ion-col>
+  
+        <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
+          <ion-card>
+            <ion-img class = "back-image" src="/assets/images/kota3.jpg"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Mamas Kitchen</ion-card-title>
+              <p>Kasi Platter mix</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
+      </ion-row>
+  
+      <ion-row> <!--This is just one row with mulitiple columns-->
+        <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
+          <ion-card>
+            <ion-img class = "back-image" src="/assets/images/kota4.jpg"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Mamas Kitchen</ion-card-title>
+              <p>Kasi Kota with chips, vienna, atchar, patty with drink</p>
+            </ion-card-content>
+            
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
+          <ion-card>
+            <ion-img src="/assets/images/kota5.jpg"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Mamas Kitchen</ion-card-title>
+              <p>Kasi Kota with chips, vienna, atchar, patty with drink</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+     
+        <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
+          <ion-card>
+            <ion-img src="/assets/images/logo2.jpg"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Mamas Kitchen</ion-card-title>
+              <p>Kasi Kota with chips, vienna, atchar, patty with drink</p>
+            </ion-card-content>
+            
+          </ion-card >
+         
+        </ion-col>
+  
+        <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of [1]; let i = index">
+          <ion-card>
+            <ion-img src="/assets/images/food6.jpg"></ion-img>
+            <ion-card-content>
+              <ion-card-title>Mamas Kitchen</ion-card-title>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elitme. Ab aspernatur, id suscipit dolorem tenetur possimus.</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
+      </ion-row>
+  
     </ion-grid>
-  </ion-list>
-      <ion-card>
-        <!--this is the slides you will see on the home page-->
-        <ion-slides pager  >
-
-          <ion-slide >
-            <ion-img class="" src="assets/images/kota1.jpg" alt=""></ion-img>
-          </ion-slide>
-        
-          <ion-slide >
-            <ion-img class="" src="assets/images/kota2.jpg" alt=""></ion-img>
-          </ion-slide>
-        
-          <ion-slide >
-            <ion-img class="" src="assets/images/food5.jpg" alt=""></ion-img>
-          </ion-slide>    
-        </ion-slides>
-
-      </ion-card>
+    </ion-list>
   </ion-content>
 
   
