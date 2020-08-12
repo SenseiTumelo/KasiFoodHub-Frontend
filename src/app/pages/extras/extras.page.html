@@ -1,8 +1,7 @@
 
 <ion-content padding>
   
-  <ion-item-group [ngSwitch]="addSegment">
-    <ion-list *ngSwitchCase="">
+  
   <div class="ion-text-end" *ngFor="let p of ext" >
   
     <ion-button (click)="close()" (click)="removeExtraItem(p)" fill="clear" color="dark">
@@ -11,7 +10,7 @@
   
 
   <ion-item>
-    <b>{{p.item_name}}</b>
+    <b>{{p.name}}</b>
   </ion-item>
 
   <ion-list>
@@ -55,6 +54,4 @@
       <ion-button expand="full" (click)="addExtra(extra)"  (click)="removeExtraItem(p)" (click)="addToCart(p)" (click)="close()">Add to Cart</ion-button>
  </div>
 </div>
-</ion-list>
-</ion-item-group>
 </ion-content>

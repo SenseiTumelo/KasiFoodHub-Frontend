@@ -1,38 +1,29 @@
-<ion-header>
+ <ion-header>
   <ion-toolbar color = "dark">
     <ion-title>overview</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <div>
-    <h4 color="Primary" class="">Orders</h4>
+ 
+  <div class="">
+    <h4>Previous Orders</h4>
+    
+  </div>
+  <div class="">
+    <h4>Menu</h4> 
     <table class="table table-bordered" color="danger">
       <thead>
         <tr>
-<<<<<<< HEAD
-          <th scope="col">Customer ID</th>
-          <th scope="col">Quantity</th>
-          <th scope="col">Total Amount</th>
-          <th scope="col">Order status</th>
-=======
           <th scope="col"> Number</th>
           <th scope="col"> Name</th>
           <th scope="col"> Price</th>
           <th scope="col"> Status</th>
->>>>>>> 65a981809345503643d8ccaa8382b840011ead1d
         </tr>
       </thead>
-      <tbody *ngFor="let item of orderList">
+      <tbody>
         <tr>
           <th scope="row">1</th>
-<<<<<<< HEAD
-          <td>{{item.fk_Customer_ID}}</td>
-          <td>{{item.quantity}}</td>
-          <td>{{item.totalAmount}}</td>
-          <td>{{item.order_Status}}</td>
-=======
           <td>Beef</td>
           <td>R</td>
           <td><ion-button color = "warning">
@@ -42,7 +33,6 @@
               <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
             </ion-button>
           </td>
->>>>>>> 65a981809345503643d8ccaa8382b840011ead1d
         </tr>
         <tr>
           <th scope="row">2</th>
@@ -70,37 +60,5 @@
         </tr>
       </tbody>
     </table>    
-  </div>
-<<<<<<< HEAD
-  <div class="">
-    <h4>Menu</h4> 
-    <table class="table table-bordered" color="danger">
-      <thead>
-        <tr>
-          <th scope="col"> Number</th>
-          <th scope="col"> Name</th>
-          <th scope="col"> Price</th>
-          <th scope="col"> Update</th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let m of menuList">
-        <tr>
-          <th scope="row">{{m.item_id}}</th>
-          <td>{{m.item_name}}</td>
-          <td>{{m.item_price}}</td>
-          <td><button type="button" class="btn btn-primary">Edit</button>
-            <button type="button" class="btn btn-primary">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>    
-  </div>
-  <div class="">
-    <h4>Stats</h4>
-  </div>
-=======
->>>>>>> 65a981809345503643d8ccaa8382b840011ead1d
-
+  </div> 
 </ion-content>
-
-
