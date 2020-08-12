@@ -85,7 +85,7 @@ export class CheckoutPage implements OnInit {
   }
 
   home() {
-    this.router.navigate(['payments']);
+    this.router.navigate(['home']);
   }
 // back button
 back() {

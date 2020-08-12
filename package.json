@@ -36,6 +36,7 @@
     "cordova-plugin-stripe": "^1.5.3",
     "core-js": "^2.6.11",
     "ionic2-super-tabs": "^4.3.1",
+    "jshint": "^2.12.0",
     "node-sass": "^4.14.1",
     "rxjs": "^6.6.0",
     "rxjs-compat": "^6.6.0",

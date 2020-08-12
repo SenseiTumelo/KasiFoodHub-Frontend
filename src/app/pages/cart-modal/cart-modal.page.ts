@@ -1,5 +1,6 @@
 import { Product, CartService } from '../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { ModalController, AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
@@ -12,6 +13,7 @@ export class CartModalPage implements OnInit {
 
   cart: Product[] = [];
   qty = 0;
+  cartItemCount: BehaviorSubject<number>;
   // tslint:disable-next-line: max-line-length
   constructor(private cartService: CartService, private modalCtrl: ModalController, private alertCtrl: AlertController, private router: Router) { }
 
@@ -37,11 +39,12 @@ export class CartModalPage implements OnInit {
 
   close() {
     this.modalCtrl.dismiss();
+
   }
 
   carddetails() {
     this.close();
-   // this.router.navigate(['/checkout']);
+    this.router.navigate(['/checkout']);
   }
 
 }
