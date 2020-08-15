@@ -206,7 +206,7 @@ export interface Product {
   id: number;
   name: string;
   price: number;
-  amount: number;
+  qty: number;
 }
 @Injectable({
   providedIn: 'root'
@@ -217,16 +217,16 @@ export class CartService {
 
   // tslint:disable-next-line: member-ordering
   data: Product[] = [
-    { id: 0, name: 'Dikilana', price: 15, amount: 0 },
-    { id: 1, name: 'Half Kop', price: 30, amount: 0 },
-    { id: 2, name: 'Steak & Pap', price: 50, amount: 0 },
-    { id: 3, name: 'Salad', price: 15, amount: 0 },
-    { id: 4, name: 'Samoosa', price: 10, amount: 0 },
-    { id: 5, name: 'Spathlo + cold drink', price: 40, amount: 0 },
-    { id: 6, name: 'Kasi Platter Mix', price: 150, amount: 0 },
-    { id: 7, name: 'Nqombhothi 2Litre', price: 8, amount: 0 },
-    { id: 8, name: 'Cold Drink', price: 20, amount: 0 },
-    { id: 9, name: 'Chips', price: 50, amount: 0 }
+    { id: 0, name: 'Dikilana', price: 15, qty: 0 },
+    { id: 1, name: 'Half Kop', price: 30, qty: 0 },
+    { id: 2, name: 'Steak & Pap', price: 50, qty: 0 },
+    { id: 3, name: 'Salad', price: 15, qty: 0 },
+    { id: 4, name: 'Samoosa', price: 10, qty: 0 },
+    { id: 5, name: 'Spathlo + cold drink', price: 40, qty: 0 },
+    { id: 6, name: 'Kasi Platter Mix', price: 150, qty: 0 },
+    { id: 7, name: 'Nqombhothi 2Litre', price: 8, qty: 0 },
+    { id: 8, name: 'Cold Drink', price: 20, qty: 0 },
+    { id: 9, name: 'Chips', price: 50, qty: 0 }
   ];
 
   // tslint:disable-next-line: member-ordering
@@ -254,14 +254,16 @@ export class CartService {
   }
 
   getCartItemCount() {
+
     return this.cartItemCount;
+
   }
 
   addProduct(product) {
     let added = false;
     for (const p of this.cart) {
       if (p.id === product.id) {
-        p.amount += 1;
+        p.qty += 1;
         added = true;
         break;
       }
@@ -276,19 +278,21 @@ export class CartService {
   decreaseProduct(product) {
     for (const [index, p] of this.cart.entries()) {
       if (p.id === product.id) {
-        p.amount -= 1;
-        if (p.amount === 0) {
+        p.qty -= 1;
+        if (p.qty === 0) {
           this.cart.splice(index, 1);
+          // p.qty = 0;
         }
       }
     }
     this.cartItemCount.next(this.cartItemCount.value - 1);
+    this.getCartItemCount();
   }
 
   removeProduct(product) {
     for (const [index, p] of this.cart.entries()) {
       if (p.id === product.id) {
-        this.cartItemCount.next(this.cartItemCount.value - p.amount);
+        this.cartItemCount.next(this.cartItemCount.value - p.qty);
         this.cart.splice(index, 1);
       }
     }

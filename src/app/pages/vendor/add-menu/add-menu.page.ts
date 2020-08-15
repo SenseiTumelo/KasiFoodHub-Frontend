@@ -10,23 +10,26 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 export class AddMenuPage implements OnInit {
 
-  item_name: string ="";
-  item_description: string ="";
-  item_price: string ="";
-  itemStatus: string = "";
+  // tslint:disable-next-line: variable-name
+  item_name = '';
+  // tslint:disable-next-line: variable-name
+  item_description = '';
+  // tslint:disable-next-line: variable-name
+  item_price = '';
+  itemStatus = '';
   id: number;
 
   constructor(
 
     private router: Router,
     private postPvdr: PostProvider,
-    private actRoute:ActivatedRoute
-    
+    private actRoute: ActivatedRoute
+
     ) { }
 
   ngOnInit() {
 
-    this.actRoute.params.subscribe((data:any) => {
+    this.actRoute.params.subscribe((data: any) => {
 
       this.id = data.id;
       this.item_name = data.name;
@@ -58,9 +61,9 @@ export class AddMenuPage implements OnInit {
 
   }
 
-  updateProses(){
+  updateProses() {
         return new Promise(resolve => {
-        let body = {
+        const body = {
         aksi: 'update',
         item_id: this.id,
         item_name: this.item_name,
@@ -70,7 +73,7 @@ export class AddMenuPage implements OnInit {
 
       };
 
-      this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
+        this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
 
         this.router.navigate(['menu']);
         console.log('submit works');

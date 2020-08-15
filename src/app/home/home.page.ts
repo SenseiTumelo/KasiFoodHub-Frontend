@@ -174,7 +174,7 @@ export class HomePage implements OnInit {
   }
 
   gotoVendorMenu3() {
-    this.route.navigateByUrl('/order2');
+    this.route.navigateByUrl('/order3');
   }
   // search bar
   // --------------------------------------------------
