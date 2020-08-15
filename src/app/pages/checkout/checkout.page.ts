@@ -10,6 +10,11 @@ import {Location } from '@angular/common';
   styleUrls: ['./checkout.page.scss'],
 })
 export class CheckoutPage implements OnInit {
+name: string = "";
+surname: string = "";
+home_address: string = "";
+cell_no: number;
+email_address:string ="";
 
   /*get house(){
     return this.addressForm.get('house');
