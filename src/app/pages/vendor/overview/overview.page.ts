@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-overview',
@@ -8,8 +9,9 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class OverviewPage implements OnInit {
 
-  constructor(private adminService: AdminService ) { }
+  constructor(private adminService: AdminService, private route: Router ) { }
   adminProf: any = '';
+
  ngOnInit() {
   this.getAdminData();
  }
