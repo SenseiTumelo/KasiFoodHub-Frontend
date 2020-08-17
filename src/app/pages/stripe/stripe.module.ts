@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
-import { StripePageRoutingModule } from './stripe-routing.module';
+import { RouterModule } from '@angular/router';
 
 import { StripePage } from './stripe.page';
 
@@ -13,8 +11,13 @@ import { StripePage } from './stripe.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    StripePageRoutingModule
+    RouterModule.forChild([
+      {
+        path: '',
+        component: StripePage
+      }
+    ])
   ],
   declarations: [StripePage]
 })
-export class StripePageModule {}
+export class StripePageModule { }
