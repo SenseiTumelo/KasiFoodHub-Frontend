@@ -78,6 +78,7 @@ $postjson = json_decode(file_get_contents('php://input'), true);
 
         }elseif ($postjson['aksi'] === 'add-restInfo') {
             // NOT FULLY FUNCTIONAL
+            //$pass_word = md5('pass_word');
             $sql = mysqli_query($mysqli,"INSERT INTO restuarant_admin SET 
             restuarant_name = '$postjson[restuarant_name]',
             pass_word = '$postjson[pass_word]',

@@ -40,51 +40,43 @@ export class SingupadminPage implements OnInit {
     private actRoute:ActivatedRoute,
     private location: Location) { }
 
-  ngOnInit() {
+    ngOnInit() {
 
-    this.actRoute.params.subscribe((data: any) => {
-
-      this.restuarant_id = data.id;
-      this.restuarant_name = data.name;
-      this.pass_word = data.password;
-      this.email_address = data.e_address;
-      this.rest_status = data.status;
-      this.contact = data.phone;
-      this.address_loc = data.address;
-      this.conPassword = data.conP;
-      console.log(data);
-
-    });
-
-  }
-
-  goHome() {
-
+      this.actRoute.params.subscribe((data:any) => {
+  
+        this.restuarant_id = data.id;
+        this.restuarant_name = data.name;
+        this.address_loc = data.address;
+        this.pass_word = data.pass;
+        this.email_address = data.email;
+        this.rest_status = data.status;
+        console.log(data);
+      });
+  
+    }
+  
+    goHome() {
       return new Promise(resolve => {
-
+  
         const body = {
-
+  
           aksi: 'add-restInfo',
-          restuarant_name: this.restuarant_name,
-          pass_word: this.pass_word,
-          email_address: this.email_address,
-          rest_status: this.rest_status,
-          contact: this.contact,
-          address_loc: this.address_loc,
-          conPassword: this.conPassword,
+          restuarant_id_name : this.restuarant_name,
+          address_loc : this.address_loc,
+          pass_word : this.pass_word,
+          email_address : this.email_address,
+          rest_status : this.rest_status,
 
         };
-        this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
-        this.router.navigateByUrl('/signin');
         console.log('submit works');
-
+        this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
+          this.router.navigate(['singin']);
+         
         });
-
+  
       });
-
-      this.router.navigate(['home']);
-
- }
+  
+    }
  navAdmin() {
   return this.router.navigateByUrl('/vendor-admin');
 }
