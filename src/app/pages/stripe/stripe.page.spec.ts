@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
@@ -10,6 +11,7 @@ describe('StripePage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ StripePage ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

@@ -155,15 +155,15 @@ const routes: Routes = [
   {
     path: 'cart',
     loadChildren: () => import('./pages/cart/cart.module').then( m => m.CartPageModule)
-  },  {
-    path: 'stripe',
-    loadChildren: () => import('./pages/stripe/stripe.module').then( m => m.StripePageModule)
   },
-  {
+   {
+     path: 'stripe',
+     loadChildren: () => import('./pages/stripe/stripe.module').then( m => m.StripePageModule)
+  },
+   {
     path: 'stripe-web',
     loadChildren: () => import('./pages/stripe-web/stripe-web.module').then( m => m.StripeWebPageModule)
-  },
-
+   }
 
 ];
 @NgModule({

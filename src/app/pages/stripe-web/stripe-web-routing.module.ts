@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { StripeWebPage } from './stripe-web.page';
+import { StripePage } from './stripe-web.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: StripeWebPage
+    component: StripePage
   }
 ];
 
