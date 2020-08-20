@@ -156,7 +156,7 @@ export class HomePage implements OnInit {
 
   gotoMenu1() {
 
-    this.route.navigateByUrl('/menu');
+    this.route.navigateByUrl('/order2');
 
   }
   // Refresh fuction
@@ -169,12 +169,12 @@ export class HomePage implements OnInit {
 
   }
 
-  gotoVendorMenu2() {
-    this.route.navigateByUrl('/order2');
+  gotoMenu2() {
+    this.route.navigateByUrl('/order');
   }
 
-  gotoVendorMenu3() {
-    this.route.navigateByUrl('/order2');
+  gotoMenu3() {
+    this.route.navigateByUrl('/order3');
   }
   // search bar
   // --------------------------------------------------

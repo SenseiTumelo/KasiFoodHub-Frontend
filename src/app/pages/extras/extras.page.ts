@@ -12,7 +12,7 @@ import { Router, NavigationExtras } from '@angular/router';
 })
 export class ExtrasPage implements OnInit {
 
-  constructor(private router: Router, private cartService: CartService, private modalCtrl: ModalController) { }
+
   extra = [];
   cart = [];
   prod = [];
@@ -36,7 +36,7 @@ export class ExtrasPage implements OnInit {
    }
 
   ngOnInit() {
-    this.prod = this.cartService.getProds();
+    //this.prod = this.cartService.getProds();
     this.cart = this.cartService.getCart();
     this.ext = this.cartService.getExt();
     this.cartItemCount = this.cartService.getCartItemCount();
@@ -66,5 +66,16 @@ export class ExtrasPage implements OnInit {
   }
   removeExtraItem(product){
     this.cartService.removeExtra(product);
+  }
+
+  close(){
+    this.modalCtrl.dismiss();
+  }
+  
+  flavor: string;
+  
+  radioChangeHandler(event: any){
+    this.flavor = event.target.value;
+    console.log(this.flavor);
   }
 }

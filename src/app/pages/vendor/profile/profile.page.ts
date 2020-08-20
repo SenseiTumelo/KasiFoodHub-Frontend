@@ -9,7 +9,9 @@ import { AdminService } from 'src/app/services/admin.service'; // here is that c
 })
 export class ProfilePage implements OnInit {
 
-  rest_profile: any;
+  rest_profile: any; 
+
+  constructor(private resturant: RestaurantService, private adminService: AdminService ) { }
 
   ngOnInit() {
     this.resturant.getProfile().subscribe(data => {
@@ -17,8 +19,7 @@ export class ProfilePage implements OnInit {
       this.rest_profile = data.data
       this.getAdminData();
     })
-    
-  constructor(private resturant: RestaurantService, private adminService: AdminService ) { }
+  }
    adminProf: any = '';
     
   getAdminData(){

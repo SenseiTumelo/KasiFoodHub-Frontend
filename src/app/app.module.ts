@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms'
 
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -48,6 +49,8 @@ import { IonicStorageModule } from '@ionic/storage';
     HttpClientModule,
     ProfilePageModule,
     IonicStorageModule.forRoot(),
+    ReactiveFormsModule,
+    FormsModule
 
   ],
   providers: [

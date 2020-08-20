@@ -82,7 +82,6 @@ export class CartModalPage implements OnInit {
 
   close() {
     this.modalCtrl.dismiss();
-    this.router.navigateByUrl('/home');
   }
 
   checkout(){

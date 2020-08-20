@@ -66,7 +66,7 @@ export class Order2Page implements OnInit {
   }
   async openCart() {
     this.animateCSS('bounceOutLeft', true);
-    const modal = await this.modalCtrl.create({
+    let modal = await this.modalCtrl.create({
       component: CartModalPage,
       cssClass: 'cart-modal'
     });
