@@ -1,6 +1,5 @@
-import { Product, CartService } from '../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
-import { Product, CartService, Extras } from 'src/app/services/cart.service';
+import { Product, CartService } from 'src/app/services/cart.service';
 import { ModalController } from '@ionic/angular';
 import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 import { empty } from 'rxjs';
@@ -17,7 +16,7 @@ export class CartModalPage implements OnInit {
 
   composersForm: FormGroup; 
   cart: any;
-  ext: Extras[] = [];
+  ext = [];
   priceAmnt: any;
 
   
@@ -96,23 +95,4 @@ export class CartModalPage implements OnInit {
   //    this.router.navigate(['checkout'],navigationExtras);
     
    }
-
-    const cartCount =  this.cart.length;
-    console.log('cart item count: ' + cartCount);
-
-    this.cartService.clearCart();
-
-
-    const alert = await this.alertCtrl.create({
-      mode: 'ios',
-      header: 'Payment options ahead',
-      message: 'Please make sure to enter correct info',
-      buttons: ['Ok !!']
-    });
-    alert.present().then(() => {
-      this.modalCtrl.dismiss();
-    });
-    this.router.navigateByUrl('/checkout');
-
-  }
 }
