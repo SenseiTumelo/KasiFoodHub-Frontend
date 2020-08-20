@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./overview.page.scss'],
 })
 export class OverviewPage implements OnInit {
-
+  currencyIcon = 'R';
+  paymentAmount = '400';
   constructor(private adminService: AdminService, private route: Router ) { }
   adminProf: any = '';
 

@@ -2,20 +2,19 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { StripeWebPage } from '../stripe-web/stripe-web.page';
-
+import { StripePage } from '../stripe/stripe.page';
 describe('StripeWebPage', () => {
-  let component: StripeWebPage;
-  let fixture: ComponentFixture<StripeWebPage>;
+  let component: StripePage;
+  let fixture: ComponentFixture<StripePage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StripeWebPage ],
+      declarations: [ StripePage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(StripeWebPage);
+    fixture = TestBed.createComponent(StripePage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

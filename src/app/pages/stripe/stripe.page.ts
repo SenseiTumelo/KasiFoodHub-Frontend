@@ -35,7 +35,8 @@ export class StripePage {
         this.makePayment(token.id);
       })
       .catch(error => console.error(error));
-  }
+    this.route.navigate(['stripe-web']);
+    }
 
   makePayment(token) {
     this.http

@@ -9,7 +9,6 @@ import { StripeWebPageRoutingModule } from './stripe-web-routing.module';
 
 // import { StripeWebPage } from '../stripe-web/stripe-web.page';
 import { StripePage } from '../stripe/stripe.page';
-import { StripeWebPage } from './stripe-web.page';
 
 @NgModule({
   imports: [
@@ -24,6 +23,6 @@ import { StripeWebPage } from './stripe-web.page';
     ]),
     StripeWebPageRoutingModule,
   ],
-  declarations: [StripeWebPage]
+  declarations: [StripePage]
 })
 export class StripeWebPageModule {}
