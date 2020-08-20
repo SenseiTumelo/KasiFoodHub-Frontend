@@ -9,11 +9,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['stripe.page.scss'],
 })
 export class StripePage {
-  paymentAmount = '3.33';
-  currency = 'USD';
-  currencyIcon = '$';
-  // tslint:disable-next-line: variable-name
-  stripe_key = 'YOUR_STRIPE_PUBLISHABLE_KEY';
+  paymentAmount = '200';
+  currency = 'ZAR';
+  currencyIcon = 'R';
+  // tslint:disable-next-line: variable-name and publishable stripe key
+  stripe_key = 'pk_test_51HCjoXCp71m9KMQuzhegHPbWREpe6PbgUy0IMmXrjsCZGH5DzlVO2JaUT0AXlN0mQu0YVEZNmjgBCrjBz31lypvL00J4BZIWnY';
   cardDetails: any = {};
 
   constructor(private stripe: Stripe, private http: HttpClient, private route: Router) {
