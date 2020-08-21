@@ -1,60 +1,12 @@
-// import { Product, CartService } from '../../services/cart.service';
-// import { Component, OnInit } from '@angular/core';
-// import { BehaviorSubject } from 'rxjs';
-// import { ModalController, AlertController } from '@ionic/angular';
-// import { Router } from '@angular/router';
-
-// @Component({
-//   selector: 'app-cart-modal',
-//   templateUrl: './cart-modal.page.html',
-//   styleUrls: ['./cart-modal.page.scss'],
-// })
-// export class CartModalPage implements OnInit {
-
-//   cart: Product[] = [];
-//   qty = 0;
-//   cartItemCount: BehaviorSubject<number>;
-//   // tslint:disable-next-line: max-line-length
-// tslint:disable-next-line: max-line-length
-//   constructor(private cartService: CartService, private modalCtrl: ModalController, private alertCtrl: AlertController, private router: Router) { }
-
-//   ngOnInit() {
-//     this.cart = this.cartService.getProducts();
-//   }
-
-//   decreaseCartItem(product) {
-//     this.cartService.decreaseProduct(product);
-//   }
-
-//   increaseCartItem(product) {
-//     this.cartService.addProduct(product);
-//   }
-
-//   removeCartItem(product) {
-//     this.cartService.removeProduct(product);
-//   }
-
-//   getTotal() {
-//     return this.cart.reduce((i, j) => i + j.price * j.qty, 0);
-//   }
-
-//   close() {
-//     this.modalCtrl.dismiss();
-
-//   }
-
-//   carddetails() {
-//     this.close();
-//     this.router.navigate(['/stripe']);
-//   }
-
-// }
-
-import { Product, CartService } from '../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
-import { ModalController, AlertController } from '@ionic/angular';
-import { Router } from '@angular/router';
-
+import { Product, CartService } from 'src/app/services/cart.service';
+import { ModalController } from '@ionic/angular';
+import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
+import { empty } from 'rxjs';
+import { Validators,FormBuilder,FormGroup} from '@angular/forms';
+import { NavController} from "@ionic/angular";
+import {HttpClient,HttpHeaders} from '@angular/common/http';
+import { Platform} from '@ionic/angular';
 @Component({
   selector: 'app-cart-modal',
   templateUrl: './cart-modal.page.html',
@@ -62,7 +14,10 @@ import { Router } from '@angular/router';
 })
 export class CartModalPage implements OnInit {
 
-  cart: Product[] = [];
+  composersForm: FormGroup; 
+  cart: any;
+  ext = [];
+  priceAmnt: any;
 
   // tslint:disable-next-line: max-line-length
   constructor(private cartService: CartService, private modalCtrl: ModalController, private alertCtrl: AlertController, private router: Router) { }
@@ -82,37 +37,33 @@ export class CartModalPage implements OnInit {
   removeCartItem(product) {
     this.cartService.removeProduct(product);
   }
+  
+  checkoutProduct(product){
+    //this.cartService.addToCheckout(product);
+  }
 
-  getTotal() {
-    return this.cart.reduce((i, j) => i + j.price * j.amount, 0);
+  getTotal(){
+    this.priceAmnt = this.cart.reduce((i,j) => i + j.price * j.num_items, 0);
+    return this.priceAmnt;
+  }
+
+  user ={
+    name: 'Nthabi',
+    price: this.priceAmnt
   }
 
   close() {
     this.modalCtrl.dismiss();
   }
 
-  carddetails() {
-     this.close();
-     this.router.navigate(['/stripe']);
-  }
-
-  async checkout() {
-    // Perfom M-pesa, Mastercard, PayPal checkout process
-
-    const cartCount =  this.cart.length;
-    console.log('cart item count: ' + cartCount);
-
-    this.cartService.clearCart();
-
-
-    const alert = await this.alertCtrl.create({
-      mode: 'ios',
-      header: 'Thanks for your Order!',
-      message: 'We will deliver your chakula as soon as possible',
-      buttons: ['SAWA']
-    });
-    alert.present().then(() => {
-      this.modalCtrl.dismiss();
-    });
-  }
+  checkout(){
+    this.router.navigate(['checkout']);
+  //     let navigationExtras: NavigationExtras={
+  //       state:{
+  //        user: this.user
+  //       }
+  //     }
+  //    this.router.navigate(['checkout'],navigationExtras);
+    
+   }
 }

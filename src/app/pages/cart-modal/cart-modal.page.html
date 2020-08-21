@@ -1,12 +1,11 @@
 <!-- <ion-header>
   <ion-toolbar color="danger">
 
-    <ion-title>
-      Review Your Cart
-    </ion-title>
-
-    <ion-button color="clear" size="small" slot="end" (click)="close()">
-      <ion-icon name="close"></ion-icon>
+ <ion-content fullscreen>
+  
+  <div class="ion-text-end">
+    <ion-button (click)="close()" fill="clear" color="dark">
+      <ion-icon name="close" slot="start"></ion-icon>
     </ion-button>
 
   </ion-toolbar>
@@ -104,7 +103,7 @@
             </ion-col>
  
             <ion-col size="1" class="ion-align-self-center">
-              {{ p.amount }}
+              {{c.num_items}}
             </ion-col>
  
             <ion-col size="2" class="ion-align-self-center">
@@ -124,13 +123,14 @@
               <b>{{ p.name }}</b>
             </ion-col>
             <ion-col size="3" class="ion-text-end">
-            <ion-label color="secondary">
-                {{ p.amount * p.price }}
-            </ion-label>
+              {{ c.num_items * c.price | currency:'R'}}
             </ion-col>
           </ion-row>
         </ion-grid>
       </ion-item>
+    </ion-card>
+    </ion-list>
+  </div>
       <ion-item>
         <ion-grid>
           <ion-row>
@@ -145,15 +145,5 @@
           </ion-row>
         </ion-grid>
       </ion-item>
-    </ion-list>
-
-    <a href = "www.stripe.com"></a> <ion-button expand="full" color="dark" (click)="carddetails()">
-      Pay Now
-    </ion-button>
- 
-    <!-- <ion-button expand="block" shape="round" (click)="checkout()">
-      Checkout
-    </ion-button> -->
-  </div>
- 
+    <ion-button id="check" expand="full" (click)="checkoutProduct()" (click)="checkout()" (click)="close()">Checkout</ion-button>
 </ion-content>

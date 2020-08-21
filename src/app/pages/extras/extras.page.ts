@@ -12,7 +12,7 @@ import { Router, NavigationExtras } from '@angular/router';
 })
 export class ExtrasPage implements OnInit {
 
-  constructor(private router: Router, private cartService: CartService, private modalCtrl: ModalController) { }
+
   extra = [];
   cart = [];
   prod = [];
@@ -24,6 +24,46 @@ export class ExtrasPage implements OnInit {
   flavor: string;
 
   ngOnInit() {
- 
+    //this.prod = this.cartService.getProds();
+    this.cart = this.cartService.getCart();
+    this.ext = this.cartService.getExt();
+    this.cartItemCount = this.cartService.getCartItemCount();
+    this.extra = this.cartService.getExtras();
+  }
+  // addToCarts(){
+  //   this.cartService.addProductCart(this.menu).subscribe(
+  //     res =>console.log(res)
+  //     )
+  // }
+
+  ionViewWillAdd(ev: any){
+    this.addSegment='res';
+  }
+  addFoodData(){
+    this.cartService.addProductCart(this.addFood).subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    )
+  }
+
+  addToCart(product){
+    this.cartService.addProduct(product);
+  }
+  addExtra(extr){
+    this.cartService.extraProd(extr);
+  }
+  removeExtraItem(product){
+    this.cartService.removeExtra(product);
+  }
+
+  close(){
+    this.modalCtrl.dismiss();
+  }
+  
+  flavor: string;
+  
+  radioChangeHandler(event: any){
+    this.flavor = event.target.value;
+    console.log(this.flavor);
   }
 }

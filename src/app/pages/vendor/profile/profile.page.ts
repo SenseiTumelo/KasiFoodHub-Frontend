@@ -8,13 +8,16 @@ import { AdminService } from 'src/app/services/admin.service'; // here is that c
 })
 export class ProfilePage implements OnInit {
 
-  constructor(private adminService: AdminService ) { }
-   adminProf: any = '';
+  rest_profile: any; 
+
+  constructor(private resturant: RestaurantService, private adminService: AdminService ) { }
+
   ngOnInit() {
-   this.getAdminData();
-  }
-  getAdminData(){
-    return this.adminService.getProfile().subscribe((data: any) => {this.adminProf = data; console.log(this.adminProf); });
+    this.resturant.getProfile().subscribe(data => {
+      console.log(data)
+      this.rest_profile = data.data
+      this.getAdminData();
+    })
   }
 
 }

@@ -32,9 +32,13 @@ export class Order2Page implements OnInit {
   constructor(private cartService: CartService, private modalCtrl: ModalController, private router: Router, private postPvdr: PostProvider ) {}
 
   ngOnInit() {
-    this.products = this.cartService.getProducts();
-    this.cart = this.cartService.getCart();
+    this.cartService.getMenu2().subscribe((data:any) => {
+      this.menuList = data.data;
+      console.log(this.menuList);
+    });
+    this.ext = this.cartService.getExt();
     this.cartItemCount = this.cartService.getCartItemCount();
+  }
 
   }
 
