@@ -54,6 +54,7 @@ import { Product, CartService } from '../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { ModalController, AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cart-modal',
@@ -63,9 +64,8 @@ import { Router } from '@angular/router';
 export class CartModalPage implements OnInit {
 
   cart: Product[] = [];
-
   // tslint:disable-next-line: max-line-length
-  constructor(private cartService: CartService, private modalCtrl: ModalController, private alertCtrl: AlertController, private router: Router) { }
+  constructor(private cartService: CartService, private modalCtrl: ModalController, private alertCtrl: AlertController, private router: Router, private actRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.cart = this.cartService.getCart();
@@ -93,7 +93,9 @@ export class CartModalPage implements OnInit {
 
   carddetails() {
      this.close();
-     this.router.navigate(['/stripe']);
+     //this.router.navigate(['/stripe']);
+     const total =  this.cart.reduce((i, j) => i + j.price * j.amount, 0);
+     this.router.navigate(['/stripe'],{queryParams:{total }});
   }
 
   async checkout() {

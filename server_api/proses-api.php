@@ -78,7 +78,6 @@ $postjson = json_decode(file_get_contents('php://input'), true);
 
         }elseif ($postjson['aksi'] === 'add-restInfo') {
             // NOT FULLY FUNCTIONAL
-            //$pass_word = md5('pass_word');
             $sql = mysqli_query($mysqli,"INSERT INTO restuarant_admin SET 
             restuarant_name = '$postjson[restuarant_name]',
             pass_word = '$postjson[pass_word]',
@@ -94,26 +93,6 @@ $postjson = json_decode(file_get_contents('php://input'), true);
               
               echo $restua;     
 
-        }elseif($postjson['aksi'] === 'add-chart'){
-
-            $data = array();
-            $sql = mysqli_query($mysqli,"SELECT * FROM restaurantmenu_2 ORDER BY item_id ASC LIMIT $postjson[start], $postjson[limit]");
-
-            while ($row = mysqli_fetch_array($sql)) {
-                
-                $data[] = array(
-                    
-                    'item_name' => $row['item_name'],
-            
-                );
-
-            }
-  
-            if ($sql) $result = json_encode(array('success' => true, 'result' => $data));
-            else $result = json_encode(array('success' => false)); 
-
-            echo $result;
- 
         }elseif($postjson['aksi'] === 'getResInfo'){
 
             $data = array();
