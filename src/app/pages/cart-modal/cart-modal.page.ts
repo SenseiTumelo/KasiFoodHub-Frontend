@@ -19,42 +19,14 @@ export class CartModalPage implements OnInit {
   ext = [];
   priceAmnt: any;
 
-  
-  constructor(public http:HttpClient,public platform:Platform, public activatedRoute: ActivatedRoute, private formBuilder: FormBuilder, private navCtrl: NavController,private cartService: CartService, private modalCtrl: ModalController,private router: Router){
-    // this.platform.ready().then(()=>{
-    //   this.cartAdd();
-    // }) 
-
-  }
+  // tslint:disable-next-line: max-line-length
+  constructor(private cartService: CartService, private modalCtrl: ModalController, private alertCtrl: AlertController, private router: Router) { }
 
   ngOnInit() {
     this.cart = this.cartService.getCart();
-    this.ext = this.cartService.getExt();
-    this.cartService.disableCheckout();
-    // this.cartService.getCartItems().subscribe(data => {
-    //   console.log(data);
-    //   this.cart = data.data;
-    //   console.log(this.cart);
-    // });
   }
 
-  
-  // cartAdd(){
-  //   var dataToSend = {
-  //     order_id:2,name:"kota",price:57.96,qty:2,totalAmt:78
-  //   };
-  //   var url ="http://localhost:4000/add";
-  //   this.http.post(url,{data:JSON.stringify(dataToSend)},{headers:new HttpHeaders(
-  //     {"content-Type":"application/json"}
-  //   )}).subscribe(
-  //     (data)=>{
-  //       alert(data);
-  //     }
-  //   )
-
-  // }
-
-  decreaseCartItem(product){
+  decreaseCartItem(product) {
     this.cartService.decreaseProduct(product);
   }
 

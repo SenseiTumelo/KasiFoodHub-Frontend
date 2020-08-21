@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 import { Platform, ToastController } from '@ionic/angular';
-//import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage';
 
 @Injectable({
   providedIn: 'root'

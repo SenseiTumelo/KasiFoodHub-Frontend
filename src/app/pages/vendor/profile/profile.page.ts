@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RestaurantService } from 'src/app/services/restaurant.service'
 import { AdminService } from 'src/app/services/admin.service'; // here is that class
 
 @Component({
@@ -19,11 +18,6 @@ export class ProfilePage implements OnInit {
       this.rest_profile = data.data
       this.getAdminData();
     })
-  }
-   adminProf: any = '';
-    
-  getAdminData(){
-    return this.adminService.getProfile().subscribe((data: any) => {this.adminProf = data; console.log(this.adminProf); });
   }
 
 }

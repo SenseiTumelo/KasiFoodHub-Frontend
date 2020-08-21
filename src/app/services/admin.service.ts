@@ -5,11 +5,9 @@ import { HttpClient } from '@angular/common/http'; // step 1
 @Injectable({
   providedIn: 'root'
 })
-
-export class AdminService {
-  profile_url ='http://localhost:4000/admin';
-  overview_url = 'http://localhost:4000/'; // check
-  private _adminLogin ="http://localhost:4000/admin_login";
+export class AdminService { // class name
+  profile_url = 'http://localhost:6000/admin';  // step 2 variable
+  overview_url = 'http://localhost:6000/'; // check
 
   loggedIn = false;
 

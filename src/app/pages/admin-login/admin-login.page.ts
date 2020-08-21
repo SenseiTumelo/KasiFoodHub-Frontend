@@ -1,10 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { AdminService } from 'src/app/services/admin.service';
-import { AlertService } from 'src/app/services/alert.service';
-import { IonSegment } from '@ionic/angular';
-import { Router, ActivatedRoute } from '@angular/router';
-import { HttpClient,HttpErrorResponse} from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.page.html',

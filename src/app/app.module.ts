@@ -15,7 +15,7 @@ import { CartModalPageModule } from './pages/cart-modal/cart-modal.module';
 import { OverviewPageModule} from './pages/vendor/overview/overview.module';
 import { ExtrasPageModule } from './pages/extras/extras.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
-
+import { Stripe } from '@ionic-native/stripe/ngx';
 // import { AuthGuard } from './gaurds/auth.guard';
 
 import { ProfilePageModule } from './pages/vendor/profile/profile.module';
@@ -58,6 +58,7 @@ import { IonicStorageModule } from '@ionic/storage';
     PostProvider,
     ServiceproviderService,
     SplashScreen, // NativeStorage,
+    Stripe,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -1,38 +1,29 @@
-<ion-header>
+ <!-- <ion-header>
   <ion-toolbar color = "dark">
     <ion-title>overview</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <div>
-    <h4 color="Primary" class="">Orders</h4>
+ 
+  <div class="">
+    <h4>Previous Orders</h4>
+    
+  </div>
+  <div class="">
+    <h4>Menu</h4> 
     <table class="table table-bordered" color="danger">
       <thead>
         <tr>
-<<<<<<< HEAD
-          <th scope="col">Customer ID</th>
-          <th scope="col">Quantity</th>
-          <th scope="col">Total Amount</th>
-          <th scope="col">Order status</th>
-=======
           <th scope="col"> Number</th>
           <th scope="col"> Name</th>
           <th scope="col"> Price</th>
           <th scope="col"> Status</th>
->>>>>>> 65a981809345503643d8ccaa8382b840011ead1d
         </tr>
       </thead>
-      <tbody *ngFor="let item of orderList">
+      <tbody>
         <tr>
           <th scope="row">1</th>
-<<<<<<< HEAD
-          <td>{{item.fk_Customer_ID}}</td>
-          <td>{{item.quantity}}</td>
-          <td>{{item.totalAmount}}</td>
-          <td>{{item.order_Status}}</td>
-=======
           <td>Beef</td>
           <td>R</td>
           <td><ion-button color = "warning">
@@ -42,7 +33,6 @@
               <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
             </ion-button>
           </td>
->>>>>>> 65a981809345503643d8ccaa8382b840011ead1d
         </tr>
         <tr>
           <th scope="row">2</th>
@@ -70,37 +60,65 @@
         </tr>
       </tbody>
     </table>    
-  </div>
-<<<<<<< HEAD
-  <div class="">
-    <h4>Menu</h4> 
-    <table class="table table-bordered" color="danger">
-      <thead>
-        <tr>
-          <th scope="col"> Number</th>
-          <th scope="col"> Name</th>
-          <th scope="col"> Price</th>
-          <th scope="col"> Update</th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let m of menuList">
-        <tr>
-          <th scope="row">{{m.item_id}}</th>
-          <td>{{m.item_name}}</td>
-          <td>{{m.item_price}}</td>
-          <td><button type="button" class="btn btn-primary">Edit</button>
-            <button type="button" class="btn btn-primary">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>    
-  </div>
-  <div class="">
-    <h4>Stats</h4>
-  </div>
-=======
->>>>>>> 65a981809345503643d8ccaa8382b840011ead1d
+  </div> 
+</ion-content> -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Stripe for PWA
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content>
+  <ion-grid text-center>
+    <ion-row>
+      <ion-col>
+        Use this Pay button in your PWA's payment page with the attached logic.
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card class="welcome-card">
+    <ion-img src="/assets/stripe.png"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Get Started</ion-card-subtitle>
+      <ion-card-title>Stripe Sample</ion-card-title>
+      <ion-row>
+        <ion-col>Total Payment</ion-col>
+        <ion-col> {{currencyIcon}}{{paymentAmount}} </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content>
+      <form action="/" method="post" id="payment-form">
+        <div class="form-row">
+          <div id="card-element">
+            <!-- a Stripe Element will be inserted here. -->
+          </div>
+          <!-- Used to display Element errors -->
+          <div id="card-errors" role="alert"></div>
+        </div>
+        <ion-button type="submit" color="success" expand="full">Make Payment</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Resources</ion-label>
+    </ion-list-header>
+    <ion-item href="https://stripe.com/docs/stripe-js">
+      <ion-icon slot="start" color="medium" name="book"></ion-icon>
+      <ion-label>Stripe JS Documentation</ion-label>
+    </ion-item>
+    <ion-item href="https://medium.com/enappd/ionic-4-stripe-payment-integration-for-apps-and-pwa-d2bfbf1a7e46">
+      <ion-icon slot="start" color="medium" name="grid"></ion-icon>
+      <ion-label>Ionic 4 - Stripe Integration Blog</ion-label>
+    </ion-item>
+    <ion-item href="https://store.enappd.com">
+      <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
+      <ion-label>More Enappd Starters</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
-
-

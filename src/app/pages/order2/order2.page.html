@@ -1,5 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar  color = "warning">
+    <ion-title>
+     Menu List
+    </ion-title>
 
-  <ion-header>
+    <ion-button color="dark" size="small" slot="end" shape="round" (click)="openCart()" #cart>
+      {{ cartItemCount | async }}
+      <ion-icon name="cart" slot="end"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
 
     <ion-toolbar color="warning">
       <ion-icon name="arrow-black" (click)="backButton()"></ion-icon>
@@ -236,5 +246,3 @@
     </ion-list>
   </ion-content>
 
-  
-  

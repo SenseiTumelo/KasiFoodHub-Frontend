@@ -17,23 +17,11 @@ export class ExtrasPage implements OnInit {
   cart = [];
   prod = [];
   ext = [];
-  menu = {};
   cartItemCount: BehaviorSubject<number>;
-  addSegment: string;
-  addFood = {};
 
   @ViewChild('cart', {static: false, read: ElementRef})fab: ElementRef;
 
-  userData = {"item_name":"", "item_price":"","amount":"", "item_description":""};
-  getUserData(){
-    return this.userData;
-  }
-
-  constructor(private router: Router,private cartService: CartService, private modalCtrl: ModalController) {
-    // this.cartService.addProductCart(this.menu).subscribe(
-    //   res =>console.log(res)
-    //   )
-   }
+  flavor: string;
 
   ngOnInit() {
     //this.prod = this.cartService.getProds();

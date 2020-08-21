@@ -2,11 +2,12 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';
+import { Product } from '../../services/cart.service';
 import { ModalController } from '@ionic/angular';
 import { CartModalPage } from '../cart-modal/cart-modal.page';
 import { Router } from '@angular/router';
 import { ExtrasPage } from '../extras/extras.page';
-import { PostProvider } from '../../../providers/post-provider'
+import { PostProvider } from '../../../providers/post-provider';
 import { Location } from '@angular/common';
 
 
@@ -22,24 +23,14 @@ export class Order2Page implements OnInit {
   start = 0;
   cart = [];
   product = [];
-  ext = [];
-  menuList: Array<any> = [];
+  products = [];
   cartItemCount: BehaviorSubject<number>;
 
   @ViewChild('cart', {static: false, read: ElementRef})fab: ElementRef;
 
-  constructor(private cartService: CartService, private modalCtrl: ModalController, private location: Location, private router: Router,
-    private postPvdr: PostProvider) { 
+  // tslint:disable-next-line: max-line-length
+  constructor(private cartService: CartService, private modalCtrl: ModalController, private router: Router, private postPvdr: PostProvider ) {}
 
-        this.loadMenu();
-
-    }
-
-  // ngOnInit() {
-  //   this.product = this.cartService.getProduct();
-  //   this.cart = this.cartService.getCart();
-  //   this.cartItemCount = this.cartService.getCartItemCount();
-  // }
   ngOnInit() {
     this.cartService.getMenu2().subscribe((data:any) => {
       this.menuList = data.data;
@@ -49,41 +40,25 @@ export class Order2Page implements OnInit {
     this.cartItemCount = this.cartService.getCartItemCount();
   }
 
-  ionViewWillEnter() {
-
-    this.menuItems = [];
-    this.start = 0;
-    this.loadMenu();
-  
   }
 
   addToCart(product) {
-    this.animateCSS('tada');
     this.cartService.addProduct(product);
+    this.animateCSS('tada');
   }
-  exProduct(product) {
-    this.cartService.extraProd(product);
-  }
+
   async openCart() {
     this.animateCSS('bounceOutLeft', true);
-    let modal = await this.modalCtrl.create({
+
+    const modal = await this.modalCtrl.create({
       component: CartModalPage,
       cssClass: 'cart-modal'
     });
     modal.onWillDismiss().then(() => {
       this.fab.nativeElement.classList.remove('animated', 'bounceOutLeft');
-      this.animateCSS('bounceLeft');
+      this.animateCSS('bounceInLeft');
     });
     modal.present();
-  }
-
-  async openExtras() {
-    const modal = await this.modalCtrl.create({
-      component: ExtrasPage,
-      cssClass: 'extras'
-    });
-    modal.present();
-
   }
 
   animateCSS(animationName, keepAnimated = false) {
@@ -99,36 +74,6 @@ export class Order2Page implements OnInit {
     node.addEventListener('animationend', handleAnimationEnd);
   }
 
-// back button
-backButton() {
-  this.location.back();
- }
-
-loadMenu(){
-
-  return new Promise(resolve => {
-
-    const body = {
-
-      aksi: 'getResInfo',
-      limit: this.limit,
-      start: this.start,
-
-    };
-
-    this.postPvdr.postData(body, 'proses-api.php').subscribe(data => {
-
-          for (const menuItem of data.result) {
-            this.menuItems.push(menuItem);
-
-          }
-
-          resolve(true);
-
-        });
-
-    });
-
- }
-
 }
+
+

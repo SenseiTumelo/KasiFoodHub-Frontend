@@ -29,6 +29,8 @@ const routes: Routes = [
   {
     path: 'checkout',
     loadChildren: () => import('./pages/checkout/checkout.module').then( m => m.CheckoutPageModule)
+
+  // canActivate: [AuthGuard]
   },
   {
     path: 'order2',
@@ -145,9 +147,23 @@ const routes: Routes = [
   {
     path: 'notifications',
     loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule)
-  }
-
-
+  },
+  {
+    path: 'payments',
+    loadChildren: () => import('./pages/payments/payments.module').then( m => m.PaymentsPageModule)
+  },
+  {
+    path: 'cart',
+    loadChildren: () => import('./pages/cart/cart.module').then( m => m.CartPageModule)
+  },
+   {
+     path: 'stripe',
+     loadChildren: () => import('./pages/stripe/stripe.module').then( m => m.StripePageModule)
+  },
+   {
+    path: 'stripe-web',
+    loadChildren: () => import('./pages/stripe-web/stripe-web.module').then( m => m.StripeWebPageModule)
+   }
 
 ];
 @NgModule({

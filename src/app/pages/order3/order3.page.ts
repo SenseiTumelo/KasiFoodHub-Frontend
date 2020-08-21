@@ -27,12 +27,6 @@ export class Order3Page implements OnInit {
   @ViewChild('cart', {static: false, read: ElementRef})fab: ElementRef;
   enableBackdropDismiss = true;
 
-  /*ngOnInit() {
-    this.prod = this.cartService.getProds();
-    this.cart = this.cartService.getCart();
-    this.ext = this.cartService.getExt();
-    this.cartItemCount = this.cartService.getCartItemCount();
-  }*/
   ngOnInit() {
     this.cartService.getMenu3().subscribe(data => {
       console.log(data);
