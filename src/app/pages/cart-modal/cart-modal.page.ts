@@ -93,7 +93,10 @@ export class CartModalPage implements OnInit {
 
   carddetails() {
      this.close();
-     this.router.navigate(['/stripe']);
+    // this.router.navigate(['/stripe']);
+     const total =  this.cart.reduce((i, j) => i + j.price * j.amount, 0);
+     this.router.navigate(['/stripe'], { queryParams: { total }});
+
   }
 
   async checkout() {

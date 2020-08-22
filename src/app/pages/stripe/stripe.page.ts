@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Stripe } from '@ionic-native/stripe/ngx';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -12,11 +13,20 @@ export class StripePage {
   paymentAmount = '200';
   currency = 'ZAR';
   currencyIcon = 'R';
+  total = '';
   // tslint:disable-next-line: variable-name and publishable stripe key
   stripe_key = 'pk_test_51HCjoXCp71m9KMQuzhegHPbWREpe6PbgUy0IMmXrjsCZGH5DzlVO2JaUT0AXlN0mQu0YVEZNmjgBCrjBz31lypvL00J4BZIWnY';
   cardDetails: any = {};
 
-  constructor(private stripe: Stripe, private http: HttpClient, private route: Router) {
+  constructor(private stripe: Stripe, private http: HttpClient, private route: Router, private actRoute: ActivatedRoute) {
+
+    this.actRoute.queryParams.subscribe((data) => {
+
+      this.total = JSON.stringify(data);
+
+    });
+
+
   }
 
   payWithStripe() {
