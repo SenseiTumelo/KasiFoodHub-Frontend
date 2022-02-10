@@ -37,7 +37,7 @@
     "core-js": "^2.6.11",
     "ionic2-super-tabs": "^4.3.1",
     "jshint": "^2.12.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "rxjs": "^6.6.0",
     "rxjs-compat": "^6.6.0",
     "toolbox": "^0.1.1",
